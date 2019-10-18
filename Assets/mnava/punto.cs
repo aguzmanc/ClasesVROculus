@@ -20,6 +20,7 @@ public class punto : MonoBehaviour
          y=(derecha.position.y+izquierda.position.y)/2;
           z=(derecha.position.z+izquierda.position.z)/2;
           transform.position=new Vector3(x,y,z);
+          
         
     }
 }
