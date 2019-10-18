@@ -20,7 +20,7 @@ public class agarrado : MonoBehaviour
         if(other.name=="Palo")
         {
             other.transform.parent=medio.transform;
-            other.transform.position=medio.transform.position;
+            other.transform.position=new Vector3(0,0,0);
         }
     }
 }
