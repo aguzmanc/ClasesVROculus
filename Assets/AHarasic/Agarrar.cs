@@ -23,6 +23,8 @@ public class Agarrar : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other) {
+
+        
        agarrado=other.tag=="Mano";
     }
 }
