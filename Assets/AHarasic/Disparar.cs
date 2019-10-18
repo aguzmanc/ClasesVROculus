@@ -18,13 +18,13 @@ public class Disparar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float triggerValD=OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger, OVRInput.Controller.Touch);
-        float triggerValI=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.Touch);
-        if (triggerValD>0)
+        float triggerValD=OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger);
+        float triggerValI=OVRInput.Get(OVRInput.RawAxis1D.LIndexTrigger);
+        if (triggerValD>0.7f)
         {
             Instantiate(bala,mano1.transform.position,mano1.transform.rotation);
         }
-          if (triggerValI>0)
+          if (triggerValI>0.7f)
         {
             Instantiate(bala,mano2.transform.position,mano2.transform.rotation);
         }
