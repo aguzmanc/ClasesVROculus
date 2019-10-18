@@ -18,6 +18,9 @@ public class agarrado : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         if(other.name=="Palo")
+        {
             other.transform.parent=medio.transform;
+            other.transform.position=medio.transform.position;
+        }
     }
 }
