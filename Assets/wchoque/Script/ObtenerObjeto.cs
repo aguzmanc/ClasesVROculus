@@ -24,7 +24,7 @@ public class ObtenerObjeto : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             Physics.Raycast(centro.transform.position, centro.transform.forward, 10);
               Debug.DrawRay(centro.transform.position, centro.transform.forward, Color.red);
-            GameObject.Instantiate(prefab,new Vector3(centro.transform.position.x,centro.transform.position.y,centro.transform.position.z),Quaternion.identity);
+            GameObject.Instantiate(prefab,new Vector3(centro.transform.position.x,centro.transform.position.y,centro.transform.position.z), Quaternion.identity);
             
             
         }    
