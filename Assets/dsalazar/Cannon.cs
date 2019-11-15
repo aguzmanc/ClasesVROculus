@@ -14,6 +14,9 @@ public class Cannon : MonoBehaviour {
     float _timeSinceLastShot = 0;
 
     void Update () {
+          if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)>0.7f) {
+            Shoot();
+        }
      if (Input.GetKeyDown(KeyCode.X)) {
             Shoot();
         }
@@ -27,7 +30,7 @@ public class Cannon : MonoBehaviour {
         // de una forma muy caótica... el eje y del hueso que indica
         // la orientación del cañón, está apuntando hacia donde la
         // bala debería ir.
-        body.AddForce(cannonPivotBone.transform.up * strength,
+        body.AddForce(cannonPivotBone.transform.forward * strength,
                       ForceMode.Impulse);
     }
 
