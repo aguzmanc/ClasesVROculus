@@ -14,15 +14,7 @@ public class Cannon : MonoBehaviour {
     float _timeSinceLastShot = 0;
 
     void Update () {
-        if (shootCooldown < 0) {
-            UpdatePlayerControl();
-            return;
-        }
-
-        _timeSinceLastShot += Time.deltaTime;
-
-        if (_timeSinceLastShot > shootCooldown) {
-            _timeSinceLastShot = 0;
+     if (Input.GetKeyDown(KeyCode.X)) {
             Shoot();
         }
     }
@@ -40,11 +32,11 @@ public class Cannon : MonoBehaviour {
     }
 
     public void UpdatePlayerControl () {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.X)) {
             Shoot();
         }
 
         transform.Rotate(0, velocidadDireccion * Time.deltaTime * Input.GetAxis("Horizontal"), 0);
-        cannonPivotBone.transform.Rotate(velocidadInclinacion * Time.deltaTime * Input.GetAxis("Vertical") * -1,0,0);
+        cannonPivotBone.transform.Rotate(velocidadInclinacion * Time.deltaTime * Input.GetAxis("Vertical") * -1 ,0,0);
     }
 }
