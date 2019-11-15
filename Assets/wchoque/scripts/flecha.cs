@@ -14,14 +14,11 @@ public class flecha : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+
+        if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)==1)
         {
             Transform punto_distancia = GameObject.Find("punto_distancia").GetComponent<Transform>();
             distancia=(transform.position.magnitude-punto_distancia.position.magnitude)*20;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
             disparo=true;
             transform.GetComponent<Rigidbody>().useGravity=true;
             Debug.Log("Disparo");
