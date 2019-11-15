@@ -17,12 +17,12 @@ public class SoltarAgarrar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)==0.7f) {
+         if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)>0.7f) {
             objetoagarrado.transform.parent=mano1.transform;
         }
         else
         {
-            objetoagarrado.transform.position=new Vector3(0,0,0);
+            objetoagarrado.transform.position=new Vector3(1,1,1);
         }
         //  if(agarrado)
            // transform.position=(mano1.position+mano2.position)/2;
