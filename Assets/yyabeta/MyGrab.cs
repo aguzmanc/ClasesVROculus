@@ -19,4 +19,11 @@ public class MyGrab : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerStay(Collider other) {
+        if(other.tag=="Grab" && OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller)==1)
+        {
+            other.transform.parent=transform;
+        }
+    }
 }
