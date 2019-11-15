@@ -20,10 +20,20 @@ public class SoltarAgarrar : MonoBehaviour
          if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)>0.7f) {
             objetoagarrado.transform.parent=mano1.transform;
         }
-        else
-        {
+       if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)<0.7f) {
+           objetoagarrado.transform.parent=null;
+            objetoagarrado.transform.position=new Vector3(1,1,1);
+
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Z)) {
+            objetoagarrado.transform.parent=mano1.transform;
+        }
+         if (Input.GetKeyDown(KeyCode.A)) {
+           objetoagarrado.transform.parent=null;
             objetoagarrado.transform.position=new Vector3(1,1,1);
         }
+        
         //  if(agarrado)
            // transform.position=(mano1.position+mano2.position)/2;
     }
