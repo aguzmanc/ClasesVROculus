@@ -8,13 +8,12 @@ public class Posicion : MonoBehaviour
     public GameObject mano_zquierda;
     void Start()
     {
-        
+        transform.parent=mano_zquierda.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.parent=mano_zquierda.transform;
         transform.position=new Vector3(0,0,0);
     }
 }
