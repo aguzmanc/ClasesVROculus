@@ -12,7 +12,7 @@ public class AgarradorC : MonoBehaviour
 
     public bool estaAgarrando;
 
-    public Arco arco;
+    public ArcoC arco;
 
 
     void Start() {
@@ -58,7 +58,7 @@ public class AgarradorC : MonoBehaviour
 
 
     void OnTriggerEnter(Collider otro) {
-        Arco arcoAgarrado = otro.GetComponent<Arco>();
+        ArcoC arcoAgarrado = otro.GetComponent<ArcoC>();
 
         if(arcoAgarrado!=null) {
             arco = arcoAgarrado;
@@ -68,7 +68,7 @@ public class AgarradorC : MonoBehaviour
 
 
     void OnTriggerExit(Collider otro) {
-        Arco arcoAgarrado = otro.GetComponent<Arco>();
+        ArcoC arcoAgarrado = otro.GetComponent<ArcoC>();
         if(arcoAgarrado!=null) {
             arco.DejarDeTocar();
             arco = null;
