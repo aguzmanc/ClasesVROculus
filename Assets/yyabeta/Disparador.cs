@@ -14,6 +14,9 @@ public class Disparador : MonoBehaviour
     bool tocandoCuarda;
     bool mantenerAgarrado;
 
+
+    public Arco arco;
+
     public Transform hand;
 private void Update() {
      bool cambio = UpdateNivelAgarre();
@@ -46,7 +49,13 @@ bool UpdateNivelAgarre(){
 
     private void OnTriggerEnter(Collider other) 
     {
-        tocandoCuarda=other.name=="Cuerda";
+        
+        if(other.name=="Cuerda"){
+            arco = other.transform.parent.GetComponent<Agarrador>().arco;
+            tocandoCuarda=true;
+        }
+
+        
     }
     private void OnTriggerStay(Collider other) {
        // mantenerAgarrado=tocandoCuarda&&OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch)>LIMITE_AGARRE;

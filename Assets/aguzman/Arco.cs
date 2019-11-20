@@ -7,6 +7,8 @@ public class Arco : MonoBehaviour
     public Renderer rend;
     Rigidbody body;
 
+    public Transform cuerda;
+
 
     public Material materialTocado;
     public Material materialAgarrado;
@@ -45,6 +47,9 @@ public class Arco : MonoBehaviour
         Destroy(f,3);
     }
 
+    public void Estirar(Vector3 position){
+        cuerda.localPosition = -Vector3.forward*Vector3.Distance(transform.position,position);
+    }
 
     public void Agarrar(Transform agarrador) { 
         rend.material = materialAgarrado;
