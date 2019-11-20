@@ -19,9 +19,8 @@ private void Update() {
      bool cambio = UpdateNivelAgarre();
     if(estaAgarrando&&tocandoCuarda&&cambio)
     {
-        Debug.Break();
         mantenerAgarrado=true;
-        hand.GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePositionZ;
+        hand.GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePositionX|RigidbodyConstraints.FreezePositionY|RigidbodyConstraints.FreezeRotation;
     }
 }
 
