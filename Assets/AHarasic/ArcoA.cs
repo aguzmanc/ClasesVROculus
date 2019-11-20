@@ -16,8 +16,9 @@ public class ArcoA : MonoBehaviour
     void Start()
     {
         body= GetComponent<Rigidbody>();
-        rend = GetComponent<Renderer>();
+       // rend = GetComponent<Renderer>();??
         rend.material=materialSuelto;
+         
     }
 
     // Update is called once per frame
@@ -38,9 +39,13 @@ public class ArcoA : MonoBehaviour
 
     public void Agarrar(Transform agarrador)
     {
-        rend.material=materialAgarrado;
-        Debug.Log("agarrado");
-        transform.parent=agarrador;
+         rend.material = materialAgarrado;
+        body.isKinematic = true;
+        transform.parent = agarrador;
+
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+    
     }
 
 
