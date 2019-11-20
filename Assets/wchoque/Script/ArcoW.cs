@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArcoW : MonoBehaviour
 {
-    Renderer rend;
+   public Renderer rend;
     Rigidbody body;
     public Material materialTocado;
     public Material materialAgarrado;
@@ -14,7 +14,6 @@ public class ArcoW : MonoBehaviour
     void Start()
     {
         body =GetComponent<Rigidbody>();
-        rend= GetComponent<Renderer>();
         rend.material=materialSoltado;
     }
 
@@ -34,6 +33,8 @@ public class ArcoW : MonoBehaviour
         rend.material = materialAgarrado;
         body.isKinematic=true;
         transform.parent = agarrador;
+        transform.localPosition=Vector3.zero;
+        transform.localRotation = Quaternion.identity;
     }
     public void Soltar(){
         transform.parent =null;
