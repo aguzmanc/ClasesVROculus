@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edd7f01ccef34f4593bc58cb620c712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agarre: 0
+  agarre: 0.5
   isTaken: 0
   arco: {fileID: 0}
 --- !u!1 &810410494
@@ -583,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 3527967371141779104, guid: 5d1c614a7c5a9f64484c87ef74f51e27,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.376
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3527967371141779104, guid: 5d1c614a7c5a9f64484c87ef74f51e27,
         type: 3}
