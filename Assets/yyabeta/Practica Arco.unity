@@ -203,6 +203,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &322756864 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 422740, guid: ba1fa4a8c66106b4988c88fe4b8e8502,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119591196}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &357865004
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,9 +410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9527e42c8dbaee49b078de0e0b495e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agarre: 0
+  agarre: 0.12
   estaAgarrando: 0
-  hand: {fileID: 0}
+  hand: {fileID: 322756864}
 --- !u!1 &1113914042
 GameObject:
   m_ObjectHideFlags: 0

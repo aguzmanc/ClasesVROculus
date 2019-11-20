@@ -16,8 +16,10 @@ public class Disparador : MonoBehaviour
 
     public Transform hand;
 private void Update() {
-    if(estaAgarrando&&tocandoCuarda)
+     bool cambio = UpdateNivelAgarre();
+    if(estaAgarrando&&tocandoCuarda&&cambio)
     {
+        Debug.Break();
         mantenerAgarrado=true;
         hand.GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePositionZ;
     }
