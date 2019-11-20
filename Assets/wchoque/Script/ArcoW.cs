@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArcoW : MonoBehaviour
 {
     Renderer rend;
+    Rigidbody body;
     public Material materialTocado;
     public Material materialAgarrado;
     public Material materialSoltado;
@@ -12,6 +13,7 @@ public class ArcoW : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        body =GetComponent<Rigidbody>();
         rend= GetComponent<Renderer>();
         rend.material=materialSoltado;
     }
@@ -27,5 +29,15 @@ public class ArcoW : MonoBehaviour
     }
     public void DejarTocar(){
         rend.material = materialSoltado;
+    }
+    public void Agarrar(Transform agarrador){
+        rend.material = materialAgarrado;
+        body.isKinematic=true;
+        transform.parent = agarrador;
+    }
+    public void Soltar(){
+        transform.parent =null;
+        rend.material =materialTocado;
+        body.isKinematic =false;
     }
 }
