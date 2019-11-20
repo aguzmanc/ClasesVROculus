@@ -41,7 +41,7 @@ public class agarraodr : MonoBehaviour
         if(NivelAgarre>LimiteSuelto && actual<=LimiteSuelto)
         {
             estaAgarrando=false;
-            cambio=false;
+            cambio=true;
         }
         NivelAgarre=actual;
         return cambio;

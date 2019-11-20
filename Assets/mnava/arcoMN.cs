@@ -52,9 +52,8 @@ public class arcoMN : MonoBehaviour
         cuerpo.isKinematic=true;
 
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
-    }
-    public void soltar()
+        transform.localRotation =Quaternion.identity;
+    }    public void soltar()
     {
         foreach(Renderer red in listaRe)
         {
