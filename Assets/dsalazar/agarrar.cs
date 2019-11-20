@@ -14,21 +14,20 @@ public class agarrar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (tocoarco)
-      {
-       arco.transform.position= transform.position;
-          
-      }
+       if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)<0.7f) {
+            arco.transform.parent=null;
+        }
+        if (Input.GetKeyDown(KeyCode.Z)) {
+            arco.transform.parent=null;
+        }
     }
     public GameObject arco;
-    bool tocoarco=false;
     private void OnTriggerEnter(Collider other) {
         //if (other.gameObject.tag=="arco")
         //{
            // other = GetOtherGameObject();
             arco.transform.SetParent( transform );
              Debug.Log("toco");
-             tocoarco=true;
           //  other.transform.SetParent( transform, worldPositionStays );
         //}
     }
