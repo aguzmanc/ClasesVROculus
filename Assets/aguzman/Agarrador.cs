@@ -14,7 +14,6 @@ public class Agarrador : MonoBehaviour
 
     public Arco arco;
 
-
     void Start() {
         estaAgarrando = false;
     }
@@ -26,11 +25,17 @@ public class Agarrador : MonoBehaviour
 
         if(estaAgarrando && arco != null && cambio) {
             arco.Agarrar(transform);
+            GetComponent<SphereCollider>().enabled=false;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
 
         if(estaAgarrando==false && cambio && arco!=null){
             arco.Soltar();
+            GetComponent<SphereCollider>().enabled=true;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
+
+        
     }
 
 

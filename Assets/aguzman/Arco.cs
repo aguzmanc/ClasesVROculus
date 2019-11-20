@@ -10,13 +10,21 @@ public class Arco : MonoBehaviour
 
     public Material materialTocado;
     public Material materialAgarrado;
-    public Material materialSuelto; 
+    public Material materialSuelto;
 
-
+[Header("Flecha")]
+    public GameObject prfabFlecha;
+    public float speed;
     void Start()
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
+    }
+
+    private void Update() {
+        if(Input.GetButtonUp("Fire1")){
+            DisparaFlecha();
+        }
     }
 
 
@@ -28,6 +36,13 @@ public class Arco : MonoBehaviour
 
     public void DejarDeTocar() {
         rend.material = materialSuelto;
+    }
+
+    public void  DisparaFlecha()
+    {
+        GameObject f = Instantiate(prfabFlecha,transform.position,transform.rotation);
+        f.GetComponent<Rigidbody>().AddForce(transform.forward*speed);
+        Destroy(f,3);
     }
 
 
