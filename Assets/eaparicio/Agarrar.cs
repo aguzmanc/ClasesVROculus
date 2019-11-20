@@ -4,32 +4,66 @@ using UnityEngine;
 
 public class Agarrar : MonoBehaviour
 {
+    public float LIMITE_AGARRE=0.7F;
+    public float LIMITE_SOLTAR=0.3F;
+    public bool estaAgarrado;
+
+
+
+     [Range(0f, 1f)]
+    public float agarre;
+    public arcoea arc;
     void Start()
     {
-        
+        estaAgarrado=false;   
     }
 
+    bool cambio;
     void Update()
     {
-        
+        cambio = UpdateAgarre();
+        if (estaAgarrado && arc != null && cambio)
+        {
+            arc.Agarrar(transform);
+        }
+        if(!estaAgarrado && cambio && arc!=null){
+            arc.Soltar();
+        }
+    }
+
+    bool UpdateAgarre(){
+        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+
+        bool limitePasado=false;
+        if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        {
+            estaAgarrado=true;
+            limitePasado=true;
+        }
+        if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
+        {
+            estaAgarrado=false;
+            limitePasado=true;
+        }
+        agarre=actual;
+        return limitePasado;
     }
     private void OnTriggerEnter(Collider otro) {
-        Debug.Log(otro.name);
-        arco arc = otro.GetComponent<arco>();
-        Debug.Log(arc);
-        if (arc!=null)
+        arcoea arcoAgarrado = otro.GetComponent<arcoea>();
+        if (arcoAgarrado!=null)
         {
-            arc.Tocar();
+            arc = arcoAgarrado;
+            arcoAgarrado.Tocar();
         }
     }
 
     void OnTriggerExit(Collider otro)
     {
-        Debug.Log(otro.name);
-        arco arc = otro.GetComponent<arco>();
-        if (arc!=null)
+        arcoea arcoAgarrado = otro.GetComponent<arcoea>();
+        if (arcoAgarrado!=null)
         {
-            arc.DejarTocar();
+            arc=null;
+            arcoAgarrado.DejarTocar();
         }
     }
 }

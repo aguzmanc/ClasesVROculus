@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class flecha : MonoBehaviour
 {
-    public float distancia=2;
+    public float distancia=1.7f;
     float rotacion=5;
     bool disparo=false;
     void Start()
@@ -15,7 +15,8 @@ public class flecha : MonoBehaviour
     void Update()
     {
 
-        if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)==1)
+        //if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)==1)
+        if (Input.GetKeyDown(KeyCode.A))
         {
             Transform punto_distancia = GameObject.Find("punto_distancia").GetComponent<Transform>();
             distancia=(transform.position.magnitude-punto_distancia.position.magnitude)*20;
