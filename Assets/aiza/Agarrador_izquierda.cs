@@ -57,7 +57,7 @@ public class Agarrador_izquierda : MonoBehaviour
     private void OnTriggerEnter(Collider other)
      {
         arcosc arcoAgarrado = other.GetComponent<arcosc>();
-        if (arcoAgarrado==null)
+        if (arcoAgarrado!=null)
         {   arco = arcoAgarrado;
             arco.Tocar();
         }
@@ -65,7 +65,7 @@ public class Agarrador_izquierda : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         arcosc arcoAgarrado = other.GetComponent<arcosc>();
-        if (arcoAgarrado==null)
+        if (arcoAgarrado!=null)
         {
 
             arco.Soltar();
