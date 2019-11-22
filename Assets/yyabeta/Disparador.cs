@@ -59,6 +59,7 @@ bool UpdateNivelAgarre(){
             arco = other.transform.parent.GetComponent<Arco>();
             tocandoCuarda=true;
             arco.TocarC();
+
         }
 
         

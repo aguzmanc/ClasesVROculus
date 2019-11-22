@@ -29,11 +29,6 @@ public class Arco : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
-        
-
-        cuerdaMesh = centroCuerda.transform.Find("CuerdaMesh");
-        rendCuerda = cuerdaMesh.gameObject.GetComponent<MeshRenderer>();
-
         rendCuerda.material=materialSuelto;
     }
 
