@@ -81,17 +81,13 @@ public class Arco : MonoBehaviour
     public void MoverCuerda(Transform agarrador)
     {
         distance = Vector3.Distance(agarrador.position,centroCuerda.transform.position);
+
+        distance=Mathf.Max(0f,distance);
+        distance=Mathf.Min(0.5f,distance);
         
         rendCuerda.material = materialAgarrado;
-        //body.isKinematic = true;
-        //transform.parent = agarrador;
-
-        if(cuerdaMesh.localPosition.z>=0 && cuerdaMesh.localPosition.z<=0.05)
-        {
-            Debug.Break();
-            transform.localPosition = Vector3.forward*distance;
-            transform.localRotation = Quaternion.identity;
-        }
+        cuerdaMesh.transform.localPosition = Vector3.forward*distance;
+        cuerdaMesh.transform.localRotation = Quaternion.identity;
         
     }
     public void SoltarCuerda()
