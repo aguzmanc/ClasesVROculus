@@ -22,7 +22,7 @@ public class arcosc : MonoBehaviour
     {
         
     }
-
+    
       public void Soltar()
     {
         rend.material = materialSuelt;
@@ -33,6 +33,8 @@ public class arcosc : MonoBehaviour
         rend.material = materialAgarrad;
         body.isKinematic=true;
         transform.parent = agarrador;
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
     }
 
     public void Tocar()
