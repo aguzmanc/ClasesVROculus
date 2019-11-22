@@ -21,6 +21,7 @@ public class Arco : MonoBehaviour
     public Renderer rendCuerda;
 
     [Range(0,0.05f)]
+    public float speed;
     public float distance;
 
     [Header("Flecha")]
@@ -83,7 +84,7 @@ public class Arco : MonoBehaviour
 
     public void MoverCuerda(Transform agarrador)
     {
-        distance = Vector3.Distance(agarrador.position,centroCuerda.transform.position);
+        distance = Vector3.Distance(agarrador.position,centroCuerda.transform.position)*0.1f;
 
         distance=Mathf.Max(0f,distance);
         distance=Mathf.Min(0.05f,distance);
@@ -94,8 +95,10 @@ public class Arco : MonoBehaviour
     }
     public void SoltarCuerda()
     {
+        speed=(100*cuerdaMesh.localPosition.z)/0.05f;
         cuerdaMesh.localPosition=Vector3.zero;
-        DisparaFlecha((100*cuerdaMesh.localPosition.z)/0.05f);
+        
+        DisparaFlecha(speed);
     }
 
 
