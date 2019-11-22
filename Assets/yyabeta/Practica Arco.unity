@@ -267,6 +267,7 @@ MonoBehaviour:
   materialSuelto: {fileID: 2100000, guid: 278c5f0d3668c31429f9042bd50a2dcc, type: 2}
   centroCuerda: {fileID: 729708330}
   cuerdaMesh: {fileID: 833206468}
+  rendCuerda: {fileID: 833206470}
   prfabFlecha: {fileID: 3939217549471294186, guid: cf49eabc83ed0ab4eb4ac91c08da0b12,
     type: 3}
 --- !u!135 &146322522
@@ -688,7 +689,7 @@ GameObject:
   - component: {fileID: 833206470}
   - component: {fileID: 833206469}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CuerdaMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
