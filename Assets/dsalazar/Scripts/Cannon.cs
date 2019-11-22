@@ -8,8 +8,8 @@ public class Cannon : MonoBehaviour {
     public float shootCooldown = 1;
     public float strength = 20;
 
-    public float velocidadInclinacion = 180;
-    public float velocidadDireccion = 360;
+    public float velocidadInclinacion = 180; //antes era 180
+    public float velocidadDireccion = 270; //antes era 360
 
     float _timeSinceLastShot = 0;
 
@@ -17,7 +17,7 @@ public class Cannon : MonoBehaviour {
           if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)>0.9f) {
             Shoot();
         }
-     if (Input.GetKeyDown(KeyCode.X)) {
+     if (Input.GetKeyDown(KeyCode.Space)) {
             Shoot();
         }
     }
@@ -35,11 +35,11 @@ public class Cannon : MonoBehaviour {
     }
 
     public void UpdatePlayerControl () {
-        if (Input.GetKeyDown(KeyCode.X)) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             Shoot();
         }
 
-        transform.Rotate(0, velocidadDireccion * Time.deltaTime * Input.GetAxis("Horizontal"), 0);
-        cannonPivotBone.transform.Rotate(velocidadInclinacion * Time.deltaTime * Input.GetAxis("Vertical") * -1 ,0,0);
+      //  transform.Rotate(0, velocidadDireccion * Time.deltaTime * Input.GetAxis("Horizontal"), 0);
+        //cannonPivotBone.transform.Rotate(velocidadInclinacion * Time.deltaTime * Input.GetAxis("Vertical") * -1 ,0,0);
     }
 }
