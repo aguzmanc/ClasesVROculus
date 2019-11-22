@@ -46,8 +46,9 @@ public class AgarradorW : MonoBehaviour
         return limiteTraspasado;
     }
      private void OnTriggerEnter(Collider other) {
+         
          ArcoW arcoagarrado =other.GetComponent<ArcoW>();
-
+Debug.Log(arcoagarrado);
          if(arcoagarrado!=null){
              arco = arcoagarrado;
              arco.Tocar();
