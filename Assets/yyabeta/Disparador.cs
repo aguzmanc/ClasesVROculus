@@ -58,6 +58,7 @@ bool UpdateNivelAgarre(){
         if(other.tag=="Cuerda"){
             arco = other.transform.parent.GetComponent<Arco>();
             tocandoCuarda=true;
+            arco.TocarC();
         }
 
         
@@ -65,5 +66,6 @@ bool UpdateNivelAgarre(){
     private void OnTriggerExit(Collider other) {
         if(other.tag=="Cuerda"&&!mantenerAgarrado)
             tocandoCuarda=false;
+            arco.DejarDeTocarC();
     }
 }
