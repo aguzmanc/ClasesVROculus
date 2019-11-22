@@ -16,7 +16,7 @@ public class fidicasFlecha : MonoBehaviour
     {
         if(disparada)
         {
-            transform.Translate(0,0,0.5f,Space.Self);
+            transform.Translate(0,0,-0.1f,Space.Self);
         }
     }
     public void cambiarK()
