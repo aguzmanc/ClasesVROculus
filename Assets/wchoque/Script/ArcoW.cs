@@ -15,7 +15,7 @@ public class ArcoW : MonoBehaviour
     {
         body =GetComponent<Rigidbody>();
         rend.material=materialSoltado;
-        cuerda =transform.Find("cuerda").gameObject;
+        cuerda =transform.Find("pivotCuerda").gameObject;
         cuerda.SetActive(false);
     }
 
