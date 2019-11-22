@@ -47,12 +47,14 @@ public class agarreCuerda : MonoBehaviour
 
         
        bool cambio=actualizarAgarre();
-       if(estaAgarrando && cuerdaGlobal!=null)
-       {
-           cuerdaGlobal.agarrar();
-       }
-       if(estaAgarrando==false && cambio && cuerdaGlobal!=null){
-            cuerdaGlobal.soltar();
+        if(estaAgarrando && cambio) {
+            if(cuerdaGlobal != null)
+                cuerdaGlobal.agarrar();   
+        }
+
+        if(estaAgarrando==false && cuerdaGlobal!=null){
+            if(cuerdaGlobal!=null)
+                cuerdaGlobal.soltar();
         }
 
 
@@ -95,7 +97,7 @@ public class agarreCuerda : MonoBehaviour
         cuerdaFisica cuerdaTocada = other.GetComponent<cuerdaFisica>();
         if(cuerdaTocada!=null) {
             cuerdaGlobal.dejarTocar();
-            cuerdaGlobal = null;
+            //cuerdaGlobal = null;
             estatocada=false;
              //origenCuerda=null;
         }
