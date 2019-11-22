@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArcoA : MonoBehaviour
 {
+
+    public GameObject cuerda;
     Rigidbody body;
     public Material materialAgarrado;
     public Material materialSuelto;
@@ -11,14 +13,15 @@ public class ArcoA : MonoBehaviour
 
     
 
-    Renderer rend;
+    public Renderer rend;
     // Start is called before the first frame update
     void Start()
     {
         body= GetComponent<Rigidbody>();
        // rend = GetComponent<Renderer>();??
         rend.material=materialSuelto;
-         
+        cuerda= transform.Find("cuerda").gameObject;
+        cuerda.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,6 +48,8 @@ public class ArcoA : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        cuerda.SetActive(true);
+
     
     }
 
@@ -54,6 +59,8 @@ public void Soltar()
 transform.parent=null;
 rend.material=materialTocado;
 body.isKinematic=false;
+cuerda.SetActive(false);
+
 }
 
 
