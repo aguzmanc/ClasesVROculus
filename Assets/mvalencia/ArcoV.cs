@@ -5,8 +5,8 @@ using UnityEngine;
 public class ArcoV : MonoBehaviour
 {
     public Renderer rend;
-    public GameObject adelante;
-    BoxCollider boxCollider;
+
+    public GameObject cuerda;
     Rigidbody body;
 
 
@@ -19,7 +19,8 @@ public class ArcoV : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
-        boxCollider = adelante.GetComponent<BoxCollider>();
+        cuerda = transform.Find("cuerda").gameObject;
+        cuerda.SetActive(false);
     }
 
 
@@ -44,7 +45,7 @@ public class ArcoV : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
-        boxCollider.enabled = true;
+        cuerda.SetActive(true);
     }
 
 
@@ -54,6 +55,6 @@ public class ArcoV : MonoBehaviour
         rend.material = materialTocado;
         body.isKinematic = false;
 
-        boxCollider.enabled = false;
+        cuerda.SetActive(false);
     }
 }

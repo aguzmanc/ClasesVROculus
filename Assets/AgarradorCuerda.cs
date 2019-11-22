@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrastrar : MonoBehaviour
+public class AgarradorCuerda : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,15 @@ public class Arrastrar : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter(Collider other)
     {
-      
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        
     }
 }
+
