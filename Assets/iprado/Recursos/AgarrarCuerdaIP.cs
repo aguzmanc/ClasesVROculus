@@ -79,7 +79,7 @@ public class AgarrarCuerdaIP : MonoBehaviour
 
 
     void OnTriggerEnter(Collider other) {
-        if(other.tag == "Cuerda"){
+        if(other.tag == "cuerda"){
             cuerda = other.GetComponent<CuerdaIP>();
             cuerda.Tocar();
             tocando = true;
@@ -88,7 +88,7 @@ public class AgarrarCuerdaIP : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other) {
-        if(other.tag == "Cuerda"){
+        if(other.tag == "cuerda"){
             cuerda = other.GetComponent<CuerdaIP>();
             cuerda.DejarDeTocar();
             //cuerda = null;
