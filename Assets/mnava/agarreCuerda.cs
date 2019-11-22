@@ -57,7 +57,7 @@ public class agarreCuerda : MonoBehaviour
 
         if(flechaC)
         {
-            flecha.parent=transform;
+            flecha.parent=cuerdaGlobal.transform;
         }
 
 

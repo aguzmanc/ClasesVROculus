@@ -50,7 +50,7 @@ public class arcoMN : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation =Quaternion.identity;
-         cuerdaAgarrador.SetActive(true);
+        cuerdaAgarrador.SetActive(true);
     }   
      public void soltar()
     {
