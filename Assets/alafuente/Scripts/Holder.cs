@@ -58,6 +58,7 @@ public class Holder : MonoBehaviour
 
 
     void OnTriggerEnter(Collider otro) {
+        Debug.Log("Trigger");
         Bow arcoAgarrado = otro.GetComponent<Bow>();
 
         if(arcoAgarrado!=null) {
