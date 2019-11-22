@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff29e4212c1df145ac3f5b4c92a4d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manoArea1: 0
+  manoArea1: 1
   manoArea2: 0
   manoArea3: 0
   mano2: {fileID: 516568547}
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 268648194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.007, y: 0.0009999871, z: -0.5942}
-  m_LocalScale: {x: 1, y: 0.21024503, z: 1.0042095}
+  m_LocalScale: {x: 1, y: 0.582589, z: 1.0042095}
   m_Children: []
   m_Father: {fileID: 929873322}
   m_RootOrder: 3
@@ -511,6 +511,8 @@ GameObject:
   m_Component:
   - component: {fileID: 929873322}
   - component: {fileID: 929873321}
+  - component: {fileID: 929873324}
+  - component: {fileID: 929873323}
   m_Layer: 0
   m_Name: arco
   m_TagString: arco
@@ -559,6 +561,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &929873323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929873320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &929873324
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929873320}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1134354953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,7 +1292,6 @@ GameObject:
   - component: {fileID: 1904132027}
   - component: {fileID: 1904132026}
   - component: {fileID: 1904132025}
-  - component: {fileID: 1904132024}
   - component: {fileID: 1904132023}
   m_Layer: 0
   m_Name: base
@@ -1291,22 +1321,6 @@ MonoBehaviour:
   manoArea1: 0
   manoArea2: 0
   manoArea3: 0
---- !u!54 &1904132024
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904132022}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.005
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!65 &1904132025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1895,7 +1909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580194091363106, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4580194091363106, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
       propertyPath: m_LocalPosition.z

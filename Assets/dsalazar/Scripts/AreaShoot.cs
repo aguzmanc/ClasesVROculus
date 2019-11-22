@@ -9,7 +9,7 @@ public class AreaShoot : MonoBehaviour
     {
         distancia=0;
     }
-  public bool manoArea1=false;
+  public bool manoArea1=true;
     public bool manoArea2=false;
     public bool manoArea3=false;
     public GameObject mano2;
@@ -43,7 +43,7 @@ public class AreaShoot : MonoBehaviour
         }
         else
         {
-            manoArea1=false;
+           // manoArea1=false;
         }
 
     }
