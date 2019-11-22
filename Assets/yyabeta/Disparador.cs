@@ -25,9 +25,9 @@ private void Update() {
         mantenerAgarrado=true;
         arco.MoverCuerda(transform);
     }
-    if(estaAgarrando==false && cambio && arco!=null)
+    if(estaAgarrando==false && cambio && mantenerAgarrado)
     {
-        mantenerAgarrado=true;
+        mantenerAgarrado=false;
         arco.SoltarCuerda();
     }
 }
