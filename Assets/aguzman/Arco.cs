@@ -20,7 +20,8 @@ public class Arco : MonoBehaviour
     public Transform cuerdaMesh;
     public Renderer rendCuerda;
 
-    float distance;
+    [Range(0,0.05f)]
+    public float distance;
 
     [Header("Flecha")]
     public GameObject prfabFlecha;
@@ -85,7 +86,7 @@ public class Arco : MonoBehaviour
         distance = Vector3.Distance(agarrador.position,centroCuerda.transform.position);
 
         distance=Mathf.Max(0f,distance);
-        distance=Mathf.Min(0.3f,distance);
+        distance=Mathf.Min(0.05f,distance);
         
         rendCuerda.material = materialAgarrado;
         cuerdaMesh.transform.localPosition = Vector3.forward*distance;
@@ -94,7 +95,7 @@ public class Arco : MonoBehaviour
     public void SoltarCuerda()
     {
         cuerdaMesh.localPosition=Vector3.zero;
-        DisparaFlecha((100*cuerdaMesh.localPosition.z)/0.3f);
+        DisparaFlecha((100*cuerdaMesh.localPosition.z)/0.05f);
     }
 
 
