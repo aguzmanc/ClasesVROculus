@@ -38,7 +38,7 @@ public class agarreCuerda : MonoBehaviour
         }
         if(cuerdaGlobal!=null)
         {
-            cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia);
+            cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia*2);
         }
 
 
