@@ -35,12 +35,19 @@ public class agarreCuerda : MonoBehaviour
             distancia=Mathf.Min(1.6f,distancia);
             Debug.DrawLine(transform.position,origenCuerda.position,Color.green);
             if(distancia>0)
+            {
                 flechaC=true;
+                fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
+                feleCuer.volverK();
+            }
+
         }
         else
         {
             distancia=0f;
              flechaC=false;
+             fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
+             feleCuer.cambiarK();
         }
         if(cuerdaGlobal!=null)
         {
