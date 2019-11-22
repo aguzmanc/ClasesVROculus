@@ -9,12 +9,14 @@ public class ArcoW : MonoBehaviour
     public Material materialTocado;
     public Material materialAgarrado;
     public Material materialSoltado;
-
+    public GameObject cuerda;
     // Start is called before the first frame update
     void Start()
     {
         body =GetComponent<Rigidbody>();
         rend.material=materialSoltado;
+        cuerda =transform.Find("cuerda").gameObject;
+        cuerda.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,10 +37,12 @@ public class ArcoW : MonoBehaviour
         transform.parent = agarrador;
         transform.localPosition=Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        cuerda.SetActive(true);
     }
     public void Soltar(){
         transform.parent =null;
         rend.material =materialTocado;
         body.isKinematic =false;
+        cuerda.SetActive(false);
     }
 }
