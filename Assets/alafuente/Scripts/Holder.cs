@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManoAgarrador : MonoBehaviour
+public class Holder : MonoBehaviour
 {
     const float LIMITE_AGARRE = 0.7f;
     const float LIMITE_SOLTAR = 0.3f;
@@ -12,7 +12,7 @@ public class ManoAgarrador : MonoBehaviour
 
     public bool estaAgarrando;
 
-    public Arco arco;
+    public Bow arco;
 
 
     void Start() {
@@ -58,7 +58,7 @@ public class ManoAgarrador : MonoBehaviour
 
 
     void OnTriggerEnter(Collider otro) {
-        Arco arcoAgarrado = otro.GetComponent<Arco>();
+        Bow arcoAgarrado = otro.GetComponent<Bow>();
 
         if(arcoAgarrado!=null) {
             arco = arcoAgarrado;
@@ -68,7 +68,7 @@ public class ManoAgarrador : MonoBehaviour
 
 
     void OnTriggerExit(Collider otro) {
-        Arco arcoAgarrado = otro.GetComponent<Arco>();
+        Bow arcoAgarrado = otro.GetComponent<Bow>();
         if(arcoAgarrado!=null) {
             arco.DejarDeTocar();
             arco = null;
