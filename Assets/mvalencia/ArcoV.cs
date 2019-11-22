@@ -19,7 +19,7 @@ public class ArcoV : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
-        cuerda = transform.Find("cuerda").gameObject;
+        cuerda = transform.Find("pivot").gameObject;
         cuerda.SetActive(false);
     }
 
