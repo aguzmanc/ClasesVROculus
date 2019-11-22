@@ -20,9 +20,11 @@ public class AgarradoraCuerda : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.tag=="Cuerda")
         {
-           Cuerda cuerda=  other.GetComponent<Cuerda>();
-            cuerda.Tocar();
+           //Cuerda cuerda=  other.GetComponent<Cuerda>();
+           // cuerda.Tocar();
+           
         }
+
     }
 
     private void OnTriggerExit(Collider other) {
