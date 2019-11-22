@@ -39,6 +39,7 @@ public class agarreCuerda : MonoBehaviour
                 flechaC=true;
                 fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
                 feleCuer.volverK();
+                feleCuer.tp();
             }
 
         }

@@ -25,4 +25,9 @@ public class fidicasFlecha : MonoBehaviour
         Rigidbody rb=transform.GetComponent<Rigidbody>();
         rb.isKinematic=true;
     }
+    public void tp()
+    {
+         transform.localPosition = Vector3.zero;
+        transform.localRotation =Quaternion.identity;
+    }
 }
