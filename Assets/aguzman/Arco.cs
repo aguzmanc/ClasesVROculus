@@ -5,6 +5,8 @@ using UnityEngine;
 public class Arco : MonoBehaviour
 {
     public Renderer rend;
+
+    public GameObject cuerda;
     Rigidbody body;
 
 
@@ -17,6 +19,9 @@ public class Arco : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
+
+        cuerda = transform.Find("cuerda").gameObject;
+        cuerda.SetActive(false);
     }
 
 
@@ -38,6 +43,8 @@ public class Arco : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+
+        cuerda.SetActive(true);
     }
 
 
@@ -45,6 +52,8 @@ public class Arco : MonoBehaviour
         transform.parent = null;
         rend.material = materialTocado;
         body.isKinematic = false;
+
+        cuerda.SetActive(false);
     }
 
 
