@@ -14,7 +14,7 @@ public class Cannon : MonoBehaviour {
     float _timeSinceLastShot = 0;
 
     void Update () {
-          if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)>0.9f) {
+          if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
             Shoot();
         }
      if (Input.GetKeyDown(KeyCode.Space)) {
