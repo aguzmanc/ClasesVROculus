@@ -30,7 +30,7 @@ public class ArcoA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonUp("Fire1")){
+         if(Input.GetKeyDown(KeyCode.F)){
             DisparaFlecha(100);
         }
     }
@@ -40,7 +40,7 @@ public void DisparaFlecha(float speed)
         Quaternion quaternion = Quaternion.Euler(90, 0, 0);
         GameObject f = Instantiate(prfabFlecha,transform.position,quaternion);
         f.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed*2);
-       // Destroy(f,3);
+        Destroy(f,10);
     }
     public void Tocar(){
         rend.material=materialTocado;
@@ -72,6 +72,8 @@ transform.parent=null;
 rend.material=materialTocado;
 body.isKinematic=false;
 cuerda.SetActive(false);
+Debug.Log("DISPARO!");
+
 
 }
 
