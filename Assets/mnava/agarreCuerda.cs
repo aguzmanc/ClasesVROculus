@@ -14,10 +14,13 @@ public class agarreCuerda : MonoBehaviour
     public bool estatocada;
     public float distancia;
     public Transform origenCuerda;
+     bool flechaC;
+     public Transform flecha;
     // Start is called before the first frame update
     void Start()
     {
         estatocada=false;
+        flechaC=false;
     }
 
     // Update is called once per frame
@@ -31,16 +34,23 @@ public class agarreCuerda : MonoBehaviour
             distancia=Mathf.Max(0f,distancia);
             distancia=Mathf.Min(1.6f,distancia);
             Debug.DrawLine(transform.position,origenCuerda.position,Color.green);
+            if(distancia>0)
+                flechaC=true;
         }
         else
         {
             distancia=0f;
+             flechaC=false;
         }
         if(cuerdaGlobal!=null)
         {
             cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia*2);
         }
 
+        if(flechaC)
+        {
+            flecha.parent=transform;
+        }
 
 
 
