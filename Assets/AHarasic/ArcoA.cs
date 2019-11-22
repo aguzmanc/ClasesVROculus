@@ -30,7 +30,7 @@ public class ArcoA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(Input.GetKeyDown(KeyCode.F)){
+         if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonUp("Fire1")){
             DisparaFlecha(100);
         }
     }
