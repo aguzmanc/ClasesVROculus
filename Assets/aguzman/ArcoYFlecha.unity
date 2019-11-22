@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 27416889}
   - component: {fileID: 27416892}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: cuerda
   m_TagString: Cuerda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27416887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.284}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.053609427, y: 0.053609427, z: 0.053609427}
   m_Children: []
   m_Father: {fileID: 1884965390}
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 27416890}
-  materialSuelto: {fileID: 0}
-  materialTocado: {fileID: 0}
-  materialAgarrando: {fileID: 0}
+  materialSuelto: {fileID: 2100000, guid: 278c5f0d3668c31429f9042bd50a2dcc, type: 2}
+  materialTocado: {fileID: 2100000, guid: 36ba4485257c1db48af420cea6e41bbc, type: 2}
+  materialAgarrando: {fileID: 2100000, guid: d8ad87768679c8b43a183ab786311887, type: 2}
 --- !u!1 &48527981
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +706,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127dab080ad23174cbce390e02d11434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agarre: 0
+  estaAgarrando: 0
+  distancia: 0
+  tocando: 0
+  pivotCuerda: {fileID: 0}
+  cuerda: {fileID: 0}
 --- !u!1 &537483371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1884965390}
   m_Layer: 0
-  m_Name: cuerda
+  m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

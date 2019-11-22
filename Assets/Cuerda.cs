@@ -28,6 +28,16 @@ public class Cuerda : MonoBehaviour
 
     public void DejarDeTocar(){
         rend.material = materialSuelto;
-    }        
+    }       
+
+
+    public void Agarrar(){
+        rend.material = materialAgarrando;
+    }
+
+
+    public void Soltar(){
+        rend.material = materialTocado;
+    } 
 
 }
