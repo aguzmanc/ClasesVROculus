@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArcoE : MonoBehaviour
 {
     public Renderer rend;
+
     Rigidbody body;
 
     public Material materialTocado;

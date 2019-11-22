@@ -12,7 +12,7 @@ public class AgarradoE : MonoBehaviour
 
     public bool estaAgarrando;
 
-    public Arco arco;
+    public ArcoE arco;
 
 
     void Start() {
@@ -33,9 +33,6 @@ public class AgarradoE : MonoBehaviour
         }
     }
 
-
-
-
     bool UpdateNivelAgarre(){
         float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
         bool limiteTraspasado = false;
@@ -55,10 +52,9 @@ public class AgarradoE : MonoBehaviour
         return limiteTraspasado;
     }
 
-
-
-    void OnTriggerEnter(Collider otro) {
-        Arco arcoAgarrado = otro.GetComponent<Arco>();
+    void OnTriggerEnter(Collider c) {
+        ArcoE arcoAgarrado = c.GetComponent<ArcoE>();
+        Debug.Log(arcoAgarrado.name);
 
         if(arcoAgarrado!=null) {
             arco = arcoAgarrado;
@@ -66,9 +62,8 @@ public class AgarradoE : MonoBehaviour
         }
     }
 
-
-    void OnTriggerExit(Collider otro) {
-        Arco arcoAgarrado = otro.GetComponent<Arco>();
+    void OnTriggerExit(Collider c) {
+        ArcoE arcoAgarrado = c.GetComponent<ArcoE>();
         if(arcoAgarrado!=null) {
             arco.DejarDeTocar();
             arco = null;
