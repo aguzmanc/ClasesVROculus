@@ -29,7 +29,7 @@ public class agarreCuerda : MonoBehaviour
         {
             distancia=Vector3.Distance(transform.position,origenCuerda.transform.position);
             distancia=Mathf.Max(0f,distancia);
-            distancia=Mathf.Min(0f,distancia);
+            distancia=Mathf.Min(1.6f,distancia);
             Debug.DrawLine(transform.position,origenCuerda.position,Color.green);
         }
         else
