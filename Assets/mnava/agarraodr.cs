@@ -20,7 +20,13 @@ public class agarraodr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+       
+
+
+        //estaAgarrando=true;
        bool cambio=actualizarAgarre();
+       //bool cambio=false;
        if(estaAgarrando && arcoGlo!=null)
        {
            arcoGlo.agarrar(transform);
@@ -62,4 +68,5 @@ public class agarraodr : MonoBehaviour
             arcoGlo = null;
         }
      }
+    
 }

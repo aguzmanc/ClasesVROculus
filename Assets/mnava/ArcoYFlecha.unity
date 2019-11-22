@@ -891,7 +891,6 @@ GameObject:
   - component: {fileID: 1148951763}
   - component: {fileID: 1148951762}
   - component: {fileID: 1148951761}
-  - component: {fileID: 1148951765}
   - component: {fileID: 1148951764}
   m_Layer: 0
   m_Name: agarradorC
@@ -990,22 +989,6 @@ MonoBehaviour:
   Magarrado: {fileID: 2100000, guid: c607200435e6027488174a58c3dddec6, type: 2}
   Msuelto: {fileID: 2100000, guid: 1881e7f21a099a54e871cb16ff8999dc, type: 2}
   Mtocado: {fileID: 2100000, guid: 0a9d06320bbe0a94bb9a5b2e5678de0a, type: 2}
---- !u!114 &1148951765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148951759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aea9e620a5c4ac469b06eb2dbfc0497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  red: {fileID: 0}
-  Magarrado: {fileID: 0}
-  Msuelto: {fileID: 0}
-  Mtocado: {fileID: 0}
 --- !u!1 &1219383060
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class cuerdaFisica : MonoBehaviour
             red.material=Msuelto;
        
     }
-      public void agarrar(Transform mano)
+      public void agarrar()
     {
         
         red.material=Magarrado;

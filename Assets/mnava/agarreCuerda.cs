@@ -11,24 +11,52 @@ public class agarreCuerda : MonoBehaviour
     [Range (0f,1f)]
     public float NivelAgarre;
     public cuerdaFisica cuerdaGlobal;
+    public bool estatocada;
+    public float distancia;
+    public Transform origenCuerda;
     // Start is called before the first frame update
     void Start()
     {
-        
+        estatocada=false;
     }
 
     // Update is called once per frame
     
     void Update()
     {
+
+        if(estaAgarrando)
+        {
+            distancia=Vector3.Distance(transform.position,origenCuerda.transform.position);
+            distancia=Mathf.Max(0f,distancia);
+            distancia=Mathf.Min(0f,distancia);
+            Debug.DrawLine(transform.position,origenCuerda.position,Color.green);
+        }
+        else
+        {
+            distancia=0f;
+        }
+        if(cuerdaGlobal!=null)
+        {
+            cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia);
+        }
+
+
+
+
+
+        
        bool cambio=actualizarAgarre();
        if(estaAgarrando && cuerdaGlobal!=null)
        {
-           cuerdaGlobal.agarrar(transform);
+           cuerdaGlobal.agarrar();
        }
        if(estaAgarrando==false && cambio && cuerdaGlobal!=null){
             cuerdaGlobal.soltar();
         }
+
+
+
     }
     bool actualizarAgarre()
     {
@@ -54,6 +82,8 @@ public class agarreCuerda : MonoBehaviour
             if(cuerdaTocada!=null) {
                 cuerdaGlobal=cuerdaTocada;
                 cuerdaGlobal.tocar();
+                estatocada=true;
+                origenCuerda=cuerdaGlobal.transform.parent;
             }
         }
        
@@ -66,6 +96,8 @@ public class agarreCuerda : MonoBehaviour
         if(cuerdaTocada!=null) {
             cuerdaGlobal.dejarTocar();
             cuerdaGlobal = null;
+            estatocada=false;
+             //origenCuerda=null;
         }
      }
      }
