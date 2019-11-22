@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 345024060}
   - component: {fileID: 345024059}
   - component: {fileID: 345024058}
+  - component: {fileID: 345024061}
   m_Layer: 0
   m_Name: cuerda
   m_TagString: Cuerda
@@ -498,6 +499,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345024056}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &345024061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345024056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6bdd942438e774e889b3b4f6a1a18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 345024059}
+  materialSuelto: {fileID: 2100000, guid: 4e044345282e4f840b4a60a495266572, type: 2}
+  materialTocado: {fileID: 2100000, guid: 71f678f801d6a6146af09825c929ac03, type: 2}
+  materialAgarrando: {fileID: 2100000, guid: 0964719636e10534c972349d1cd9711b, type: 2}
 --- !u!1 &410406599
 GameObject:
   m_ObjectHideFlags: 0
