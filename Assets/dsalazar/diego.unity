@@ -1013,7 +1013,7 @@ MonoBehaviour:
   arcoMaterial: {fileID: 1904132026}
   materialverde: {fileID: 2100000, guid: 35cd4d46173f651449ffb905634d35db, type: 2}
   materialrojo: {fileID: 2100000, guid: f8e1bcab8028d744db07cb54c110580e, type: 2}
-  arco: {fileID: 1904132022}
+  arco: {fileID: 929873320}
   tocando: 0
   arcoAgarrado: 0
 --- !u!65 &1666898390
@@ -1857,7 +1857,7 @@ Transform:
   m_GameObject: {fileID: 2036387795}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 21.098948, y: -0.77, z: 0.23705103}
-  m_LocalScale: {x: 0.1527302, y: 0.9826603, z: 0.1527302}
+  m_LocalScale: {x: 0.1527302, y: 0.3010871, z: 0.1527302}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
