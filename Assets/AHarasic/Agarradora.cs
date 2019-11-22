@@ -50,7 +50,9 @@ public class Agarradora : MonoBehaviour
                 limiteTraspasado=true;
             }
             agarre=actual;
+            Debug.Log(actual);
         return limiteTraspasado;
+        
     }
 
     private void OnTriggerEnter(Collider other) {
