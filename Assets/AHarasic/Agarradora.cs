@@ -18,6 +18,7 @@ public class Agarradora : MonoBehaviour
     void Start()
     {
         estaAgarrando=false;
+        
     }
 
     // Update is called once per frame
@@ -48,6 +49,7 @@ public class Agarradora : MonoBehaviour
             {
                 estaAgarrando=false;
                 limiteTraspasado=true;
+                
             }
             agarre=actual;
             Debug.Log(actual);
