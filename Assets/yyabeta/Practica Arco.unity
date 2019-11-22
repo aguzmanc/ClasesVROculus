@@ -271,6 +271,7 @@ MonoBehaviour:
   rendCuerda: {fileID: 833206470}
   prfabFlecha: {fileID: 3939217549471294186, guid: cf49eabc83ed0ab4eb4ac91c08da0b12,
     type: 3}
+  disparador: {fileID: 1587275277}
 --- !u!135 &146322522
 SphereCollider:
   m_ObjectHideFlags: 0
