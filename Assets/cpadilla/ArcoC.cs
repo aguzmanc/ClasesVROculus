@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArcoC : MonoBehaviour
 {
     public Renderer rend;
+    public GameObject cuerda;
     Rigidbody body;
 
     public Material materialTocado;
@@ -15,12 +16,9 @@ public class ArcoC : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        cuerda = transform.Find("pivot").gameObject;
+        cuerda.SetActive(false);
     }
 
     public void Tocar() {
@@ -40,6 +38,8 @@ public class ArcoC : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+
+        cuerda.SetActive(true);
     }
 
 
@@ -47,5 +47,7 @@ public class ArcoC : MonoBehaviour
         transform.parent = null;
         rend.material = materialTocado;
         body.isKinematic = false;
+
+        cuerda.SetActive(false);
     }
 }
