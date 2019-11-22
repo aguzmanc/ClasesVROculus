@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class agarrar : MonoBehaviour
 {
+    public Renderer arcoMaterial;
+    public Material materialverde;
+    public Material materialrojo;
+
+
     void Start()
     {
         // arco.transform.SetParent( transform );
@@ -18,10 +23,10 @@ public class agarrar : MonoBehaviour
             arcoAgarrado=true;
         }
        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger)<0.7f) {
-        //    arco.transform.parent=null; //suelta el arco cuando no se esta tocando 
+            arco.transform.parent=null; //suelta el arco cuando no se esta tocando 
             if (arcoAgarrado)
             {
-        //    arco.GetComponent<Rigidbody>().useGravity=true; //activa la gravedad del arco
+            arco.GetComponent<Rigidbody>().useGravity=true; //activa la gravedad del arco
             }
         }
         if (Input.GetKeyDown(KeyCode.Z)) {
@@ -51,18 +56,22 @@ public class agarrar : MonoBehaviour
            // arco.transform.SetParent( transform );
              Debug.Log("toco");
              tocando=true;
-             arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
+             arcoMaterial.material= materialverde;
+             //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
 
           //  other.transform.SetParent( transform, worldPositionStays );
         //}
     }
     private void OnTriggerStay(Collider other) {
              tocando=true;
-             arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
+             //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
+             arcoMaterial.material= materialverde;
+
     }
     private void OnTriggerExit(Collider other) {
       tocando=false;
-     arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.green);
+     //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.green);
+             arcoMaterial.material= materialrojo;
       
     }
 }

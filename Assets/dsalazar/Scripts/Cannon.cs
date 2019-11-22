@@ -12,9 +12,32 @@ public class Cannon : MonoBehaviour {
     public float velocidadDireccion = 270; //antes era 360
 
     float _timeSinceLastShot = 0;
+    public bool manoArea1=false;
+    public bool manoArea2=false;
+    public bool manoArea3=false;
+
+    AreaShoot verifArea= new AreaShoot();
 
     void Update () {
-          if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
+        manoArea1=verifArea.manoArea1;
+        manoArea2=verifArea.manoArea2;
+        manoArea3=verifArea.manoArea3;
+          //if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
+          if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)&&OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)>0.7f&&manoArea1==true) { //sera esto para derecha?
+
+            //  if (manoArea1)
+              //{
+              //    strength=20;
+              //}
+               //if (manoArea2)
+              //{
+                //  strength=40;
+              //}
+               //if (manoArea3)
+              //{
+                //  strength=60;
+              //}
+              strength=10+(50*verifArea.distancia);   
             Shoot();
         }
      if (Input.GetKeyDown(KeyCode.Space)) {
@@ -26,10 +49,6 @@ public class Cannon : MonoBehaviour {
         GameObject createdBullet = Instantiate(bullet);
         createdBullet.transform.position = cannonPivotBone.transform.position;
         Rigidbody body = createdBullet.GetComponent<Rigidbody>();
-        // al importar modelos de blender, las rotaciones se importan
-        // de una forma muy caótica... el eje y del hueso que indica
-        // la orientación del cañón, está apuntando hacia donde la
-        // bala debería ir.
         body.AddForce(cannonPivotBone.transform.forward * strength,
                       ForceMode.Impulse);
     }
