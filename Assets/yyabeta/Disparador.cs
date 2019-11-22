@@ -23,7 +23,12 @@ private void Update() {
     if(estaAgarrando&&tocandoCuarda&&cambio)
     {
         mantenerAgarrado=true;
-        hand.GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePositionX|RigidbodyConstraints.FreezePositionY|RigidbodyConstraints.FreezeRotation;
+        arco.MoverCuerda(transform);
+    }
+    if(estaAgarrando==false && cambio && arco!=null)
+    {
+        mantenerAgarrado=true;
+        arco.SoltarCuerda();
     }
 }
 
@@ -50,18 +55,15 @@ bool UpdateNivelAgarre(){
     private void OnTriggerEnter(Collider other) 
     {
         
-        if(other.name=="Cuerda"){
-            arco = other.transform.parent.GetComponent<Agarrador>().arco;
+        if(other.tag=="Cuerda"){
+            arco = other.transform.parent.GetComponent<Arco>();
             tocandoCuarda=true;
         }
 
         
     }
-    private void OnTriggerStay(Collider other) {
-       // mantenerAgarrado=tocandoCuarda&&OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch)>LIMITE_AGARRE;
-    }
     private void OnTriggerExit(Collider other) {
-        if(other.name=="Cuerda"&&!mantenerAgarrado)
+        if(other.tag=="Cuerda"&&!mantenerAgarrado)
             tocandoCuarda=false;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Arco : MonoBehaviour
 {
+    [Header("Arco")]
     public Renderer rend;
     Rigidbody body;
 
@@ -14,18 +15,26 @@ public class Arco : MonoBehaviour
     public Material materialAgarrado;
     public Material materialSuelto;
 
-[Header("Flecha")]
+    [Header("Cuerda")]
+    public GameObject centroCuerda;
+    public Transform cuerdaMesh;
+
+    float distance;
+
+    [Header("Flecha")]
     public GameObject prfabFlecha;
-    public float speed;
+    
     void Start()
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
+
+        cuerdaMesh = centroCuerda.transform.Find("Cuerda");
     }
 
     private void Update() {
         if(Input.GetButtonUp("Fire1")){
-            DisparaFlecha();
+            DisparaFlecha(100);
         }
     }
 
@@ -40,7 +49,7 @@ public class Arco : MonoBehaviour
         rend.material = materialSuelto;
     }
 
-    public void  DisparaFlecha()
+    public void DisparaFlecha(float speed)
     {
         GameObject f = Instantiate(prfabFlecha,transform.position,transform.rotation);
         f.GetComponent<Rigidbody>().AddForce(transform.forward*speed);
@@ -58,6 +67,28 @@ public class Arco : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+    }
+
+    public void MoverCuerda(Transform agarrador)
+    {
+        distance = Vector3.Distance(centroCuerda.transform.position,agarrador.position);
+        
+
+        //rend.material = materialAgarrado;
+        //body.isKinematic = true;
+        //transform.parent = agarrador;
+
+        if(cuerdaMesh.localPosition.z>=0 && cuerdaMesh.localPosition.z<=0.05)
+        {
+            transform.localPosition = Vector3.forward*distance;
+            transform.localRotation = Quaternion.identity;
+        }
+        
+    }
+    public void SoltarCuerda()
+    {
+        cuerdaMesh.localPosition=Vector3.zero;
+        DisparaFlecha((100*cuerdaMesh.localPosition.z)/0.05f);
     }
 
 

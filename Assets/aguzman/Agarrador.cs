@@ -25,14 +25,14 @@ public class Agarrador : MonoBehaviour
 
         if(estaAgarrando && arco != null && cambio) {
             arco.Agarrar(transform);
-            GetComponent<SphereCollider>().enabled=false;
-            transform.GetChild(0).gameObject.SetActive(true);
+            arco.centroCuerda.SetActive(true);
+            
         }
 
         if(estaAgarrando==false && cambio && arco!=null){
             arco.Soltar();
-            GetComponent<SphereCollider>().enabled=true;
-            transform.GetChild(0).gameObject.SetActive(false);
+            arco.centroCuerda.SetActive(false);
+            
         }
 
         
