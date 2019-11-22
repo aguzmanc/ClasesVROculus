@@ -38,7 +38,7 @@ public class ArcoV : MonoBehaviour
 
 
     public void Agarrar(Transform agarrador)
-    {
+    {   
         rend.material = materialAgarrado;
         body.isKinematic = true;
         transform.parent = agarrador;
