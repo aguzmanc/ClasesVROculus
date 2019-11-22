@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class arcoea : MonoBehaviour
 {
-    Renderer render;
+    public Renderer render;
     Rigidbody body;
     public Material matSuelto;
     public Material matTocado;
@@ -13,7 +13,7 @@ public class arcoea : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
-        render = GetComponent<Renderer>();
+        //render = GetComponent<Renderer>();
         render.material= matSuelto;
     }
     public void Tocar(){

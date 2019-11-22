@@ -12,6 +12,8 @@ public class Agarrar : MonoBehaviour
 
      [Range(0f, 1f)]
     public float agarre;
+     [Range(0f, 1f)]
+    public float actu;
     public arcoea arc;
     void Start()
     {
@@ -35,17 +37,17 @@ public class Agarrar : MonoBehaviour
         float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
 
         bool limitePasado=false;
-        if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        if (agarre<LIMITE_AGARRE && actu>=LIMITE_AGARRE)
         {
             estaAgarrado=true;
             limitePasado=true;
         }
-        if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
+        if (agarre>LIMITE_SOLTAR && actu <=LIMITE_SOLTAR)
         {
             estaAgarrado=false;
             limitePasado=true;
         }
-        agarre=actual;
+        agarre=actu;
         return limitePasado;
     }
     private void OnTriggerEnter(Collider otro) {
