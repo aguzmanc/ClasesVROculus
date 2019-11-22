@@ -20,7 +20,7 @@ public class ArcoA : MonoBehaviour
         body= GetComponent<Rigidbody>();
        // rend = GetComponent<Renderer>();??
         rend.material=materialSuelto;
-        cuerda= transform.Find("cuerda").gameObject;
+        cuerda= transform.Find("pivot").gameObject;
         cuerda.SetActive(false);
     }
 
