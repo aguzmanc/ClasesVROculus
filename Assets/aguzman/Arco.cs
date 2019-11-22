@@ -56,7 +56,7 @@ public class Arco : MonoBehaviour
     public void DisparaFlecha(float speed)
     {
         GameObject f = Instantiate(prfabFlecha,disparador.position,disparador.rotation);
-        f.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed*2);
+        f.GetComponent<Rigidbody>().AddForce(disparador.transform.forward*speed*2);
         Destroy(f,3);
     }
 
@@ -84,13 +84,13 @@ public class Arco : MonoBehaviour
 
     public void MoverCuerda(Transform agarrador)
     {
-        distance = Vector3.Distance(agarrador.position,centroCuerda.transform.position)*0.1f;
+        distance = Vector3.Distance(agarrador.position,centroCuerda.transform.position);
 
-        distance=Mathf.Max(0f,distance);
-        distance=Mathf.Min(0.05f,distance);
+        distance=Mathf.Min(0f,distance);
+        distance=Mathf.Max(0.5f,distance);
         
         rendCuerda.material = materialAgarrado;
-        cuerdaMesh.transform.localPosition = Vector3.forward*distance;
+        cuerdaMesh.transform.localPosition = Vector3.forward*distance*0.1f;
         
     }
     public void SoltarCuerda()
