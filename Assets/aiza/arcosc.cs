@@ -63,7 +63,5 @@ public class arcosc : MonoBehaviour
         cuerda.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other) {
-        
-    }
+   
 }
