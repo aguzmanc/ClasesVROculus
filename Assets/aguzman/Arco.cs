@@ -18,6 +18,7 @@ public class Arco : MonoBehaviour
     [Header("Cuerda")]
     public GameObject centroCuerda;
     public Transform cuerdaMesh;
+    public Renderer rendCuerda;
 
     float distance;
 
@@ -28,8 +29,12 @@ public class Arco : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
+        
 
-        cuerdaMesh = centroCuerda.transform.Find("Cuerda");
+        cuerdaMesh = centroCuerda.transform.Find("CuerdaMesh");
+        rendCuerda = cuerdaMesh.gameObject.GetComponent<MeshRenderer>();
+
+        rendCuerda.material=materialSuelto;
     }
 
     private void Update() {
@@ -69,12 +74,21 @@ public class Arco : MonoBehaviour
         transform.localRotation = Quaternion.identity;
     }
 
+    public void TocarC() {
+        rendCuerda.material = materialTocado;
+    }
+
+
+    public void DejarDeTocarC() {
+        rendCuerda.material = materialSuelto;
+    }
+
     public void MoverCuerda(Transform agarrador)
     {
         distance = Vector3.Distance(centroCuerda.transform.position,agarrador.position);
         
 
-        //rend.material = materialAgarrado;
+        rendCuerda.material = materialAgarrado;
         //body.isKinematic = true;
         //transform.parent = agarrador;
 
