@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agarre: 0
-  arco: {fileID: 1412374837}
+  arco: {fileID: 0}
   estaAgarrando: 0
 --- !u!1001 &1327184420
 PrefabInstance:
