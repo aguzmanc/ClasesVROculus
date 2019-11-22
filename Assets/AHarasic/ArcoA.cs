@@ -5,6 +5,9 @@ using UnityEngine;
 public class ArcoA : MonoBehaviour
 {
 
+    [Header("Flecha")]
+    public GameObject prfabFlecha;
+
     public GameObject cuerda;
     Rigidbody body;
     public Material materialAgarrado;
@@ -27,9 +30,18 @@ public class ArcoA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         if(Input.GetKeyDown(KeyCode.F)){
+            DisparaFlecha(100);
+        }
     }
 
+public void DisparaFlecha(float speed)
+    {
+        Quaternion quaternion = Quaternion.Euler(90, 0, 0);
+        GameObject f = Instantiate(prfabFlecha,transform.position,quaternion);
+        f.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed*2);
+       // Destroy(f,3);
+    }
     public void Tocar(){
         rend.material=materialTocado;
 
