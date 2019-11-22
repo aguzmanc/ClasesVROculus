@@ -304,6 +304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0ee9597b6c350488bb4537d830a563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agarre: 0
+  estaAgarrando: 0
+  distancia: 0
+  tocando: 0
+  pivotCuerda: {fileID: 0}
+  cuerda: {fileID: 0}
 --- !u!1 &296912441
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +420,7 @@ GameObject:
   - component: {fileID: 345024058}
   m_Layer: 0
   m_Name: cuerda
-  m_TagString: Untagged
+  m_TagString: Cuerda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -884,7 +890,7 @@ GameObject:
   - component: {fileID: 966791887}
   m_Layer: 0
   m_Name: pivot
-  m_TagString: Cuerda
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
