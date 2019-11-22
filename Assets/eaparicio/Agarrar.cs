@@ -34,6 +34,8 @@ public class Agarrar : MonoBehaviour
     }
 
     bool UpdateAgarre(){
+
+        //PRUEBAS PC
         float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
 
         bool limitePasado=false;
@@ -49,6 +51,25 @@ public class Agarrar : MonoBehaviour
         }
         agarre=actu;
         return limitePasado;
+
+
+
+        //PRUEBAS VR
+        // float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+
+        // bool limitePasado=false;
+        // if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        // {
+        //     estaAgarrado=true;
+        //     limitePasado=true;
+        // }
+        // if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
+        // {
+        //     estaAgarrado=false;
+        //     limitePasado=true;
+        // }
+        // agarre=actual;
+        // return limitePasado;
     }
     private void OnTriggerEnter(Collider otro) {
         arcoea arcoAgarrado = otro.GetComponent<arcoea>();
