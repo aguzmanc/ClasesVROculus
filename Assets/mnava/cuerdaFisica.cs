@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class arcoMN : MonoBehaviour
+public class cuerdaFisica : MonoBehaviour
 {
-   
     public Renderer red;
     Rigidbody cuerpo;
-    GameObject cuerdaAgarrador;
+
     Rigidbody body;
     public Material Magarrado;
     public Material Msuelto;
@@ -15,13 +14,9 @@ public class arcoMN : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-       
-         cuerpo=GetComponent<Rigidbody>();
-         cuerdaAgarrador=transform.Find("cuerda").gameObject;
-         cuerdaAgarrador.SetActive(false);
-        red.material=Msuelto;
+        cuerpo=GetComponent<Rigidbody>();
         
+        red.material=Msuelto;
     }
 
     // Update is called once per frame
@@ -45,21 +40,12 @@ public class arcoMN : MonoBehaviour
         
         red.material=Magarrado;
       
-        transform.parent=mano;
-        cuerpo.isKinematic=true;
-
-        transform.localPosition = Vector3.zero;
-        transform.localRotation =Quaternion.identity;
-         cuerdaAgarrador.SetActive(true);
+       
+         
     }   
      public void soltar()
     {
        
-            red.material=Msuelto;
-      
-       
-        transform.parent=null;
-        cuerpo.isKinematic=false;
-        cuerdaAgarrador.SetActive(false);
+            red.material=Msuelto;    
     }
 }
