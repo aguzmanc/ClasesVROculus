@@ -17,6 +17,9 @@ public class AgarradorCuerda : MonoBehaviour
     public Transform pivotCuerda;
     public Cuerda cuerda;
 
+    public GameObject flecha;
+   
+
     void Start()
     {
         tocando = false;
@@ -35,6 +38,7 @@ public class AgarradorCuerda : MonoBehaviour
         }
         else
         {
+            
             distancia = 0;
         }
 
@@ -57,7 +61,16 @@ public class AgarradorCuerda : MonoBehaviour
         if (estaAgarrando == false && cuerda != null)
         {
             if (cuerda != null)
+            {
                 cuerda.Soltar();
+                GameObject createdBullet = Instantiate(flecha);
+                createdBullet.transform.position = pivotCuerda.transform.position;
+                Rigidbody body = createdBullet.GetComponent<Rigidbody>();
+                body.AddForce(0, 0, distancia * 10f,
+                          ForceMode.Impulse);
+            }
+              
+           
         }
 
     }
