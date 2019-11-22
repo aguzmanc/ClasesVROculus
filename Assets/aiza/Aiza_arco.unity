@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 331562979}
   - component: {fileID: 331562978}
   - component: {fileID: 331562977}
-  - component: {fileID: 331562976}
   - component: {fileID: 331562975}
   m_Layer: 0
   m_Name: manoderecha
@@ -433,18 +432,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &331562976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331562973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145bb7128b4de9a42b0940786057a5ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &331562977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -979,7 +966,7 @@ GameObject:
   m_Layer: 0
   m_Name: cuerda
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
