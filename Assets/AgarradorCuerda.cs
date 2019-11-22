@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AgarradorCuerda : MonoBehaviour
 {
-
+ [Header("Flecha")]
+    public GameObject prfabFlecha;
     const float LIMITE_AGARRE = 0.7f;
     const float LIMITE_SOLTAR = 0.3f;
 
@@ -17,7 +18,7 @@ public class AgarradorCuerda : MonoBehaviour
     public bool tocando;
     public Transform pivotCuerda;
     public Cuerda cuerda;
-
+    bool cambio=false;
     void Start()
     {
         tocando = false;
@@ -44,7 +45,7 @@ public class AgarradorCuerda : MonoBehaviour
 
 
 
-        bool cambio = UpdateNivelAgarre();
+        cambio = UpdateNivelAgarre();
         
         if(estaAgarrando && cambio) {
             if(cuerda != null)
@@ -55,7 +56,21 @@ public class AgarradorCuerda : MonoBehaviour
             if(cuerda!=null)
                 cuerda.Soltar();
         }
+        if(cambio && estaAgarrando==false)
+        {
+            DisparaFlecha(100)
+;            cambio=false;
+        }
         
+        
+    }
+
+    public void DisparaFlecha(float speed)
+    {
+        Quaternion quaternion = Quaternion.Euler(90, 0, 0);
+        GameObject f = Instantiate(prfabFlecha,transform.position,quaternion);
+        f.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed*2);
+        Destroy(f,10);
     }
 
 
