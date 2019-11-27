@@ -21,12 +21,12 @@ public class Disparador : MonoBehaviour
 private void Update() {
      bool cambio = UpdateNivelAgarre();
 
-    if(estaAgarrando && arco!=null)
+    if(estaAgarrando && arco!=null && !mantenerAgarrado)
     {
         mantenerAgarrado=true;
         arco.MoverCuerda(hand.transform);
     }
-    if(estaAgarrando==false && arco!=null)
+    if(estaAgarrando==false && arco!=null && mantenerAgarrado)
     {
         mantenerAgarrado=false;
         arco.SoltarCuerda();
