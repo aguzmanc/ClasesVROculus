@@ -7,6 +7,8 @@ public class Bow : MonoBehaviour
     public Renderer rend;
     Rigidbody body;
 
+    public GameObject cuerda;
+
 
     public Material materialTocado;
     public Material materialAgarrado;
@@ -17,6 +19,9 @@ public class Bow : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
+        cuerda = transform.Find("cuerda").gameObject;
+
+        cuerda.SetActive(false);
     }
 
 
@@ -38,6 +43,8 @@ public class Bow : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+
+        cuerda.SetActive(true);
     }
 
 
@@ -45,6 +52,8 @@ public class Bow : MonoBehaviour
         transform.parent = null;
         rend.material = materialTocado;
         body.isKinematic = false;
+
+        cuerda.SetActive(false);
     }
 
 }
