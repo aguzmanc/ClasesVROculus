@@ -19,12 +19,16 @@ public class AgarradorCuerda : MonoBehaviour
     public Transform pivotCuerda;
     public Cuerda cuerda;
     bool cambio=false;
+
+    PuntoDisparo pd;
     void Start()
     {
         tocando = false;
         estaAgarrando = false;
+        pd = new PuntoDisparo();
     }
 
+    bool disponible=false;
     void Update()
     {
         if(estaAgarrando) {
@@ -55,11 +59,12 @@ public class AgarradorCuerda : MonoBehaviour
         if(estaAgarrando==false && cuerda!=null){
             if(cuerda!=null)
                 cuerda.Soltar();
+                disponible=true;
         }
-        if(cambio && estaAgarrando==false)
+        if(disponible)
         {
-            DisparaFlecha(100)
-;            cambio=false;
+             DisparaFlecha(100)
+;            disponible=false;
         }
         
         

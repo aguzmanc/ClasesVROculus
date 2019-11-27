@@ -10,6 +10,8 @@ public class Cuerda : MonoBehaviour
     public Material materialTocado;
     public Material materialAgarrando;
 
+    public GameObject preview;
+
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class Cuerda : MonoBehaviour
 
     void Update()
     {
+       
     }
 
 
@@ -33,11 +36,14 @@ public class Cuerda : MonoBehaviour
 
     public void Agarrar(){
         rend.material = materialAgarrando;
+       // preview.GetComponent()<Renderer>.enabled = true/false
+       preview.SetActive(true);
     }
 
 
     public void Soltar(){
         rend.material = materialTocado;
+        preview.SetActive(false);
     } 
 
 }
