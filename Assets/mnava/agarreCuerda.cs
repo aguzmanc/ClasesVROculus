@@ -49,7 +49,7 @@ public class agarreCuerda : MonoBehaviour
              flechaC=false;
              fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
              feleCuer.cambiarK();
-             origenCuerda=null;
+             
         }
         if(cuerdaGlobal!=null)
         {
@@ -117,9 +117,9 @@ public class agarreCuerda : MonoBehaviour
         cuerdaFisica cuerdaTocada = other.GetComponent<cuerdaFisica>();
         if(cuerdaTocada!=null) {
             cuerdaGlobal.dejarTocar();
-            cuerdaGlobal = null;
+            //cuerdaGlobal = null;
             estatocada=false;
-            origenCuerda=null;
+            //origenCuerda=null;
         }
      }
      }
