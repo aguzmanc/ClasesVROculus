@@ -16,7 +16,7 @@ public class AgarradorCuerda : MonoBehaviour
     public bool tocando;
     public Transform pivotCuerda;
     public Cuerda cuerda;
-
+   
     public GameObject flecha;
    
 
@@ -34,14 +34,16 @@ public class AgarradorCuerda : MonoBehaviour
             distancia = Mathf.Max(0f, distancia);
             distancia = Mathf.Min(0.3f, distancia);
             Debug.DrawLine(transform.position, pivotCuerda.position, Color.green);
-
+           
         }
         else
         {
-            
+           
             distancia = 0;
         }
-
+       
+         
+        
         if (cuerda != null)
             cuerda.transform.localPosition = new Vector3(0, 0, distancia);
 
@@ -63,11 +65,7 @@ public class AgarradorCuerda : MonoBehaviour
             if (cuerda != null)
             {
                 cuerda.Soltar();
-                GameObject createdBullet = Instantiate(flecha);
-                createdBullet.transform.position = pivotCuerda.transform.position;
-                Rigidbody body = createdBullet.GetComponent<Rigidbody>();
-                body.AddForce(0, 0, distancia * 10f,
-                          ForceMode.Impulse);
+               
             }
               
            
@@ -89,6 +87,14 @@ public class AgarradorCuerda : MonoBehaviour
 
         if (agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR)
         {
+            if (estaAgarrando)
+            {
+                
+                GameObject createdBullet = Instantiate(flecha);
+                createdBullet.transform.position = pivotCuerda.transform.position;
+                Rigidbody body = createdBullet.GetComponent<Rigidbody>();
+                body.AddForce(0, 0, distancia * 10f, ForceMode.Impulse);
+            }
             estaAgarrando = false;
             limiteTraspasado = true;
         }
