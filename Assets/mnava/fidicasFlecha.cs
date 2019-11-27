@@ -50,4 +50,11 @@ public class fidicasFlecha : MonoBehaviour
 
 
     }
+    public void parar()
+    {
+        Rigidbody rb=transform.GetComponent<Rigidbody>();
+         rb.isKinematic=true;
+        disparada=false;
+
+    }
 }

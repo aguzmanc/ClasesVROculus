@@ -28,7 +28,7 @@ public class agarraodr : MonoBehaviour
         //estaAgarrando=true;
        bool cambio=actualizarAgarre();
        //bool cambio=false;
-       if(estaAgarrando && arcoGlo!=null)
+       if(AGARREF && arcoGlo!=null)
        {
            arcoGlo.agarrar(transform);
        }
