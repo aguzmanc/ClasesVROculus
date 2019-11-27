@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PuntoDisparo : MonoBehaviour
 {
+    public GameObject arco;
     // Start is called before the first frame update
     public GameObject prfabFlecha;
     void Start()
@@ -27,7 +28,7 @@ public class PuntoDisparo : MonoBehaviour
         //Quaternion quaternion = Quaternion.Euler(90, 0, 0);
         Quaternion quaternion = Quaternion.Euler(0, 0, 0);
         GameObject f = Instantiate(prfabFlecha,transform.position,quaternion);
-        f.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed*2);
+        f.GetComponent<Rigidbody>().AddForce(arco.transform.forward*speed*2);
         Destroy(f,10);
     }
 

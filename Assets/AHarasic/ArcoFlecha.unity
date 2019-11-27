@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d361cefb38450409dc7b72e59b59e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arco: {fileID: 4214485766942717341}
   prfabFlecha: {fileID: 984453514}
 --- !u!1001 &312702982
 PrefabInstance:
