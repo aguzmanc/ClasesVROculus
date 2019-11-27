@@ -25,7 +25,7 @@ public class AgarradorBallestaW : MonoBehaviour
     void Update()
     {
            cambio= UpdateNivelAgarre();
-      cambio=true;
+      //cambio=true;
         if(estaagarrando && ballesta!=null && cambio){
             ballesta.Agarrar(transform);
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AgarradorCuerdaBallesta : MonoBehaviour
 {
+     Rigidbody flecha;
        Transform pivotCuerda;
             const float limite_agarre =0.7f;
     const float limite_soltar =0.3f;
@@ -17,6 +18,7 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
     public float distancia;
      public float distanciaValor;
     public bool tocado;
+    public bool prepararMunicion;
     void Start()
     {
         
@@ -34,19 +36,29 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
             distanciaValor = distancia;
         }
         else {
-            distancia =0;
+            if(distancia<0.15f){
+                distancia = 0;
+                prepararMunicion = false;
+            }
+
+            //distancia =distancia;
+          //  prepararMunicion = true;
         }
         if(cuerdaBallesta!=null){
             cuerdaBallesta.transform.localPosition =new Vector3(0,0,distancia);
             
-            /*if(distancia>0.15f && flecha==null){
-                flecha = cuerda.proyectil();
-            }*/
+           if(distancia>0.15f && flecha==null){
+               flecha = cuerdaBallesta.proyectil();
+               prepararMunicion = true;
+            }
+            if(distancia>0.15f && flecha!=null){
+                prepararMunicion = true;
+            }
         }
 
 
          cambio= UpdateNivelAgarreDerecha();
-        cambio=true;
+      //  cambio=true;
             if(estaagarrando  && cambio){
             if(cuerdaBallesta!=null)
             cuerdaBallesta.Agarrar();
@@ -59,7 +71,9 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
                 flecha.isKinematic = false;
                 flecha.AddForce(transform.parent.transform.forward * distanciaValor * 1000, ForceMode.Force);
                 flecha =null;
+                
             }*/
+            
         }
     }
      bool UpdateNivelAgarreDerecha(){
@@ -99,5 +113,14 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
            /* Cuerda cuerda =other.GetComponent<Cuerda>();
             cuerda.DejarTocar();*/
         }
+    }
+    public void lanzarFlecha(){
+        if(flecha !=null){
+                flecha.transform.parent.transform.parent = null;
+                flecha.isKinematic = false;
+                flecha.AddForce(transform.parent.transform.forward * distanciaValor * 1000, ForceMode.Force);
+                flecha =null;
+                
+            }
     }
 }
