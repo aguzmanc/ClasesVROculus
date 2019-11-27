@@ -91,7 +91,7 @@ public class AgarradorCuerda : MonoBehaviour
             {
                 
                 GameObject createdBullet = Instantiate(flecha);
-                createdBullet.transform.position =pivotCuerda.transform.localPosition;
+                createdBullet.transform.position =pivotCuerda.transform.forward;
                 Rigidbody body = createdBullet.GetComponent<Rigidbody>();
                 body.AddForce(0, 0, distancia * 50f, ForceMode.Impulse);
             }
