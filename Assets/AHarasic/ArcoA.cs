@@ -27,12 +27,31 @@ public class ArcoA : MonoBehaviour
         cuerda.SetActive(false);
     }
 
+    bool test=false;
+    bool vuelve=false;
     // Update is called once per frame
     void Update()
     {
          //if(Input.GetKeyDown(KeyCode.F)){
          //   DisparaFlecha(100);
       //  }
+      
+        if(cuerda.transform.localPosition.z<=-0.600f)
+        {
+            test=true;
+
+        }
+        if(cuerda.transform.localPosition.z>=-0.351f)
+        {
+            vuelve=true;
+        }
+        if(vuelve & test)
+        {
+            DisparaFlecha(100);
+            test=false;
+        }
+        vuelve=false;
+
     }
 
 public void DisparaFlecha(float speed)

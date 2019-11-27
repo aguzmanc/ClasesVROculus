@@ -52,7 +52,7 @@ public class Agarradora : MonoBehaviour
                 
             }
             agarre=actual;
-            Debug.Log(actual);
+            //Debug.Log(actual);
         return limiteTraspasado;
         
     }
@@ -64,7 +64,7 @@ public class Agarradora : MonoBehaviour
            arco=arcoAgarrado;
            arco.Tocar();
        }
-        Debug.Log(other.name);
+       // Debug.Log(other.name);
     }
 
 

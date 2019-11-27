@@ -28,7 +28,7 @@ public class AgarradorCuerda : MonoBehaviour
         pd = new PuntoDisparo();
     }
 
-    bool disponible=false;
+   // bool disponible=false;
     void Update()
     {
         if(estaAgarrando) {
@@ -59,13 +59,13 @@ public class AgarradorCuerda : MonoBehaviour
         if(estaAgarrando==false && cuerda!=null){
             if(cuerda!=null)
                 cuerda.Soltar();
-                disponible=true;
+              //  disponible=true;
         }
-        if(disponible)
-        {
-             DisparaFlecha(100)
-;            disponible=false;
-        }
+        //if(disponible)
+      //  {
+          //   DisparaFlecha(100);            
+         //    disponible=false;
+        //}
         
         
     }
