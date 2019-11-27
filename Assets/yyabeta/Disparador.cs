@@ -24,7 +24,7 @@ private void Update() {
     if(estaAgarrando && arco!=null)
     {
         mantenerAgarrado=true;
-        arco.MoverCuerda(transform);
+        arco.MoverCuerda(hand.transform);
     }
     if(estaAgarrando==false && arco!=null)
     {
