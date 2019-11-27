@@ -10,11 +10,15 @@ public class ArcoIP : MonoBehaviour
 
     public Renderer rend;
     Rigidbody body;
+    GameObject cuerda;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
         rend.material = noStatus;
+        cuerda= GameObject.FindGameObjectWithTag("cuerda");
+        cuerda.SetActive(false);
+        
     }
 
 
@@ -34,12 +38,14 @@ public class ArcoIP : MonoBehaviour
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+        cuerda.SetActive(true);
     }
 
     public void Soltar() {
         transform.parent = null;
         rend.material = canTake;
         body.isKinematic = false;
+        cuerda.SetActive(false);
     }
 
 }
