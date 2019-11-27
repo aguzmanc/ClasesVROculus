@@ -94,7 +94,7 @@ public class AgarradorCuerda : MonoBehaviour
                 createdBullet.transform.position =transformleft.position;
                 Rigidbody body = createdBullet.GetComponent<Rigidbody>();
                 //body.AddForce(0,0,distancia*50f ,ForceMode.Impulse);
-                body.velocity = transformleft.position * distancia;
+                body.velocity = transformleft.position * distancia*50f;
             }
             estaAgarrando = false;
             limiteTraspasado = true;
