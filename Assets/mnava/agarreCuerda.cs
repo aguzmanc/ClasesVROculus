@@ -16,9 +16,7 @@ public class agarreCuerda : MonoBehaviour
     public Transform origenCuerda;
      bool flechaC;
      public Transform flecha;
-
-     bool sotado=false;
-         // Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
         estatocada=false;
@@ -30,48 +28,41 @@ public class agarreCuerda : MonoBehaviour
     void Update()
     {
 
-        if(estaAgarrando&&origenCuerda!=null)
+        if(estaAgarrando)
         {
             distancia=Vector3.Distance(transform.position,origenCuerda.transform.position);
             distancia=Mathf.Max(0f,distancia);
             distancia=Mathf.Min(1.6f,distancia);
             Debug.DrawLine(transform.position,origenCuerda.position,Color.green);
-          
+            if(distancia>0)
+            {
+                flechaC=true;
+               
+            }
 
         }
         else
         {
             distancia=0f;
+             flechaC=false;
             
-             
         }
-          if(distancia>0&&estaAgarrando&&origenCuerda!=null)
-            {
-                flechaC=true;
-                fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
-                feleCuer.volverK();
-                feleCuer.tp();
-            }
-            if(sotado)
-            {
-                sotado=false;
-                flechaC=false;
-                fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
-                feleCuer.cambiarK();
-                sotado=true;
-            }
-            if(flechaC)
-            {
-                flecha.parent=cuerdaGlobal.transform;
-                flecha.transform.localScale=new Vector3(0,0,0);
-            }
         if(cuerdaGlobal!=null)
         {
             cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia*2);
-           
         }
-
-        
+        if(flechaC)
+        {
+            fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
+            feleCuer.volverK();
+            feleCuer.tp();
+            flecha.parent=cuerdaGlobal.transform;
+        }
+        if(!flechaC)
+        {
+             fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
+             feleCuer.cambiarK();
+        }
 
 
 
@@ -83,7 +74,7 @@ public class agarreCuerda : MonoBehaviour
                 cuerdaGlobal.agarrar();   
         }
 
-        if(estaAgarrando==false){
+        if(estaAgarrando==false && cuerdaGlobal!=null){
             if(cuerdaGlobal!=null)
                 cuerdaGlobal.soltar();
         }
@@ -130,7 +121,7 @@ public class agarreCuerda : MonoBehaviour
             cuerdaGlobal.dejarTocar();
             //cuerdaGlobal = null;
             estatocada=false;
-            //origenCuerda=null;
+             //origenCuerda=null;
         }
      }
      }
