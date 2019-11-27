@@ -91,9 +91,9 @@ public class AgarradorCuerda : MonoBehaviour
             {
                 
                 GameObject createdBullet = Instantiate(flecha);
-                createdBullet.transform.position = pivotCuerda.transform.position;
+                createdBullet.transform.position =pivotCuerda.transform.localPosition;
                 Rigidbody body = createdBullet.GetComponent<Rigidbody>();
-                body.AddForce(0, 0, distancia * 10f, ForceMode.Impulse);
+                body.AddForce(0, 0, distancia * 50f, ForceMode.Impulse);
             }
             estaAgarrando = false;
             limiteTraspasado = true;
