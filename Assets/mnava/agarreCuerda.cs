@@ -49,10 +49,12 @@ public class agarreCuerda : MonoBehaviour
              flechaC=false;
              fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
              feleCuer.cambiarK();
+             origenCuerda=null;
         }
         if(cuerdaGlobal!=null)
         {
             cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia*2);
+           
         }
 
         if(flechaC)
