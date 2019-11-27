@@ -16,7 +16,9 @@ public class agarreCuerda : MonoBehaviour
     public Transform origenCuerda;
      bool flechaC;
      public Transform flecha;
-    // Start is called before the first frame update
+
+     bool sotado=false;
+         // Start is called before the first frame update
     void Start()
     {
         estatocada=false;
@@ -34,33 +36,42 @@ public class agarreCuerda : MonoBehaviour
             distancia=Mathf.Max(0f,distancia);
             distancia=Mathf.Min(1.6f,distancia);
             Debug.DrawLine(transform.position,origenCuerda.position,Color.green);
-            if(distancia>0)
+          
+
+        }
+        else
+        {
+            distancia=0f;
+            
+             
+        }
+          if(distancia>0&&estaAgarrando&&origenCuerda!=null)
             {
                 flechaC=true;
                 fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
                 feleCuer.volverK();
                 feleCuer.tp();
             }
-
-        }
-        else
-        {
-            distancia=0f;
-             flechaC=false;
-             fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
-             feleCuer.cambiarK();
-             origenCuerda=null;
-        }
+            if(sotado)
+            {
+                sotado=false;
+                flechaC=false;
+                fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
+                feleCuer.cambiarK();
+                sotado=true;
+            }
+            if(flechaC)
+            {
+                flecha.parent=cuerdaGlobal.transform;
+                flecha.transform.localScale=new Vector3(0,0,0);
+            }
         if(cuerdaGlobal!=null)
         {
             cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia*2);
            
         }
 
-        if(flechaC)
-        {
-            flecha.parent=cuerdaGlobal.transform;
-        }
+        
 
 
 
@@ -72,7 +83,7 @@ public class agarreCuerda : MonoBehaviour
                 cuerdaGlobal.agarrar();   
         }
 
-        if(estaAgarrando==false && cuerdaGlobal!=null){
+        if(estaAgarrando==false){
             if(cuerdaGlobal!=null)
                 cuerdaGlobal.soltar();
         }
@@ -117,9 +128,9 @@ public class agarreCuerda : MonoBehaviour
         cuerdaFisica cuerdaTocada = other.GetComponent<cuerdaFisica>();
         if(cuerdaTocada!=null) {
             cuerdaGlobal.dejarTocar();
-            cuerdaGlobal = null;
+            //cuerdaGlobal = null;
             estatocada=false;
-            origenCuerda=null;
+            //origenCuerda=null;
         }
      }
      }
