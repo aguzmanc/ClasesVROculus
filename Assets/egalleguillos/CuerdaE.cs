@@ -5,6 +5,9 @@ using UnityEngine;
 public class CuerdaE : MonoBehaviour
 {
     public Renderer rend;
+    public GameObject flecha;
+
+    AgarradorCuerdaE e;
 
     public Material materialSuelto;
     public Material materialTocado;
@@ -14,6 +17,7 @@ public class CuerdaE : MonoBehaviour
     void Start()
     {
         rend.material = materialSuelto;
+        e = FindObjectOfType<AgarradorCuerdaE>();
     }
 
 
@@ -38,6 +42,13 @@ public class CuerdaE : MonoBehaviour
 
     public void Soltar(){
         rend.material = materialTocado;
+        Disparar();
     } 
+
+    public void Disparar(){
+        GameObject newFlecha = (GameObject) Instantiate(flecha);
+        newFlecha.transform.position = transform.position;
+        //newFlecha.GetComponent<Flecha>().fuerza = 10f;
+    }
 
 }

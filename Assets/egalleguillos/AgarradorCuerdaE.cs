@@ -10,7 +10,7 @@ public class AgarradorCuerdaE : MonoBehaviour
     [Range(0f, 1f)]
     public float agarre;
     public bool estaAgarrando;
-
+    public bool lanzarFlecha;
 
     public float distancia;
     public bool tocando;
@@ -74,18 +74,18 @@ public class AgarradorCuerdaE : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider other) {
-        if(other.tag == "Cuerda"){
-            cuerda = other.GetComponent<CuerdaE>();
+    void OnTriggerEnter(Collider c) {
+        if(c.tag == "Cuerda"){
+            cuerda = c.GetComponent<CuerdaE>();
             cuerda.Tocar();
             tocando = true;
             pivotCuerda = cuerda.transform.parent;
         }
     }
 
-    void OnTriggerExit(Collider other) {
-        if(other.tag == "Cuerda"){
-            cuerda = other.GetComponent<CuerdaE>();
+    void OnTriggerExit(Collider c) {
+        if(c.tag == "Cuerda"){
+            cuerda = c.GetComponent<CuerdaE>();
             cuerda.DejarDeTocar();
             tocando = false;
             //cuerda = null;
