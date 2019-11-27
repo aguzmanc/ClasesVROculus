@@ -65,8 +65,8 @@ public class agarrarCuerdaEA : MonoBehaviour
                         cuerdaEA.DejarTocar();
                         if (distancia>0.1f)
                         {
-                            cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);
-                            cuerdaEA=null;
+                            cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);        
+                            cuerdaEA.transform.parent.parent=null;                    
                         }
                     }
                 }
