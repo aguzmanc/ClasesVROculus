@@ -28,21 +28,22 @@ public class agarrarCuerdaEA : MonoBehaviour
     bool cambio;
     void Update()
     {
+        
         if(estaAgarrado) {
             
             distancia = Vector3.Distance(transform.position, pivotCuerda.position);
             distancia = Mathf.Max(0f, distancia);
-            distancia = Mathf.Min(0.3f, distancia);
+            distancia = Mathf.Min(0.5f, distancia);
             Debug.DrawLine(transform.position, pivotCuerda.position, Color.green);
 
         } else
             distancia = 0;
 
         if(cuerdaEA!=null)
-            cuerdaEA.transform.localPosition = new Vector3(0,0,distancia);
+            cuerdaEA.transform.parent.localPosition = new Vector3(0,0,distancia);
 
 
-
+        
 
 
 
@@ -58,7 +59,17 @@ public class agarrarCuerdaEA : MonoBehaviour
                 if(tocando)
                     cuerdaEA.Soltar();
                 else
-                    cuerdaEA.DejarTocar();
+                {
+                    if (cuerdaEA!=null)
+                    {
+                        cuerdaEA.DejarTocar();
+                        if (distancia>0.1f)
+                        {
+                            cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);
+                            cuerdaEA=null;
+                        }
+                    }
+                }
 
             }
         }
@@ -112,7 +123,7 @@ public class agarrarCuerdaEA : MonoBehaviour
                 cuerdaEA = otro.GetComponent<cuerdaEA>();
                 cuerdaEA.Tocar();
                 tocando = true;
-                pivotCuerda = cuerdaEA.transform.parent;
+                pivotCuerda = cuerdaEA.transform.parent.parent;
             }
            
         }
