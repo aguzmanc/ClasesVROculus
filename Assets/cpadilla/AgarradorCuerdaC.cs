@@ -16,11 +16,17 @@ public class AgarradorCuerdaC : MonoBehaviour
     public bool tocando;
     public Transform pivotCuerda;
     public CuerdaC cuerdac;
+    public GameObject flechaPrefab;
+    public Transform arrowSpan;
+    public float shootForce=20f;
+    public Rigidbody rb;
+
 
     void Start()
     {
         tocando = false;
         estaAgarrando = false;
+        
     }
 
     void Update()
@@ -48,6 +54,12 @@ public class AgarradorCuerdaC : MonoBehaviour
         if(estaAgarrando==false && cuerdac!=null){
             if(cuerdac!=null)
                 cuerdac.Soltar();
+                if(flechaPrefab!=null && cambio)
+                {
+                    Instantiate(flechaPrefab,arrowSpan.position,Quaternion.identity);            
+                    rb.velocity=transform.forward*shootForce;
+                }
+                
         }
         
     }

@@ -35,4 +35,5 @@ public class CuerdaC : MonoBehaviour
         rend.material = materialTocado;
     } 
 
+    
 }

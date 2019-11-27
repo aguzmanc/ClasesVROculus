@@ -703,7 +703,7 @@ public class OvrAvatar : MonoBehaviour
                 catch (Exception e)
                 {
                     assetsFinishedLoading = true;
-                    throw; // rethrow the original exception to preserve callstack
+                    throw e; // rethrow the original exception to preserve callstack
                 }
 #if AVATAR_INTERNAL
                 AssetsDoneLoading.Invoke();
