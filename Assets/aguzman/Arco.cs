@@ -90,7 +90,7 @@ public class Arco : MonoBehaviour
         distance=Mathf.Min(0.5f,distance);
         
         rendCuerda.material = materialAgarrado;
-        cuerdaMesh.localPosition = Vector3.forward*distance;
+        cuerdaMesh.localPosition = Vector3.forward*distance*0.1f;
         
     }
     public void SoltarCuerda()
