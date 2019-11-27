@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class fidicasFlecha : MonoBehaviour
 {
-    bool disparada;
+    public bool disparada;
+    float fuerza;
     // Start is called before the first frame update
     void Start()
     {
         disparada=false;
+        fuerza=1;
     }
  
     // Update is called once per frame
@@ -16,7 +18,9 @@ public class fidicasFlecha : MonoBehaviour
     {
         if(disparada)
         {
-            transform.Translate(0,0,-0.1f,Space.Self);
+            Rigidbody cuerpo= transform.GetComponent<Rigidbody>();
+            cuerpo.AddForce(transform.forward*(fuerza*-1));
+            
         }
     }
     public void cambiarK()
@@ -25,6 +29,7 @@ public class fidicasFlecha : MonoBehaviour
         rb.isKinematic=false;
         transform.parent=null;
         disparada=true;
+         transform.localScale=Vector3.one;
     }
     public void volverK()
     {
@@ -36,6 +41,13 @@ public class fidicasFlecha : MonoBehaviour
     {
          transform.localPosition = Vector3.zero;
         transform.localRotation =Quaternion.identity;
-        transform.localScale=new Vector3(0,0,0);
+       
+    }
+    public void darf(float distancia)
+    {
+        float porc=(distancia*100f)/1.6f;
+        fuerza=(porc*20)/100;
+
+
     }
 }

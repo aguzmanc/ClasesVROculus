@@ -8,6 +8,7 @@ public class agarraodr : MonoBehaviour
     const float LimiteSuelto = 0.3f;
     public bool estaAgarrando;
 
+    public bool AGARREF;
     [Range (0f,1f)]
     public float NivelAgarre;
     public arcoMN arcoGlo;
