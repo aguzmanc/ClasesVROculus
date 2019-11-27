@@ -43,8 +43,9 @@ public class disparoFlecha : MonoBehaviour
         
     }
     private void OnTriggerEnter(Collider other) {
-        disparar=false;
-        rigidbody.useGravity=false;
+        //disparar=false;
+        //rigidbody.useGravity=false;
+        //Debug.Log(other.tag);
         if (other.tag=="pared")
         {
             disparar=false;
