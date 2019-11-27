@@ -37,31 +37,27 @@ public class agarreCuerda : MonoBehaviour
             if(distancia>0)
             {
                 flechaC=true;
-               
+                fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
+                feleCuer.volverK();
+                feleCuer.tp();
             }
 
         }
         else
         {
             distancia=0f;
-            flechaC=false;
-            
+             flechaC=false;
+             fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
+             feleCuer.cambiarK();
         }
         if(cuerdaGlobal!=null)
         {
             cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia*2);
         }
+
         if(flechaC)
         {
-            fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
-            feleCuer.volverK();
-            feleCuer.tp();
             flecha.parent=cuerdaGlobal.transform;
-        }
-        if(!flechaC)
-        {
-             fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
-             feleCuer.cambiarK();
         }
 
 
