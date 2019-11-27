@@ -17,6 +17,9 @@ public class PuntoDisparo : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P)){
             DisparaFlecha(100);
         }
+        Test();
+        // float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+        
     }
 
     public void DisparaFlecha(float speed)
@@ -26,5 +29,14 @@ public class PuntoDisparo : MonoBehaviour
         GameObject f = Instantiate(prfabFlecha,transform.position,quaternion);
         f.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed*2);
         Destroy(f,10);
+    }
+
+
+    private void Test();
+    {
+         if(OVRInput.GetDown(OVRInput.Button.One));
+        {
+             DisparaFlecha(102);
+        }
     }
 }

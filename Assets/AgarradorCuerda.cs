@@ -58,7 +58,9 @@ public class AgarradorCuerda : MonoBehaviour
 
         if(estaAgarrando==false && cuerda!=null){
             if(cuerda!=null)
+            {
                 cuerda.Soltar();
+            }
               //  disponible=true;
         }
         //if(disponible)
