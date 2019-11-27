@@ -840,7 +840,7 @@ MonoBehaviour:
   manoArea1: 0
   manoArea2: 0
   manoArea3: 0
-  manoDerecha: {fileID: 0}
+  manoDerecha: {fileID: 247721558}
 --- !u!4 &929873322
 Transform:
   m_ObjectHideFlags: 0
@@ -2539,7 +2539,7 @@ Transform:
   m_GameObject: {fileID: 2036387795}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 21.098948, y: -0.77, z: 0.23705103}
-  m_LocalScale: {x: 0.1527302, y: 0.3010871, z: 0.1527302}
+  m_LocalScale: {x: 0.057273824, y: 0.49679372, z: 0.05921808}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5

@@ -23,14 +23,18 @@ public class Cannon : MonoBehaviour {
         manoArea1=verifArea.manoArea1;
         manoArea2=verifArea.manoArea2;
         manoArea3=verifArea.manoArea3;
+                   float distancia=Vector3.Distance( cannonPivotBone.transform.position,manoDerecha.transform.position);
           //if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
+          if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)>0.7f) //sera esto para derecha?
+         {
+              Debug.DrawRay(cannonPivotBone.transform.position, transform.TransformDirection(manoDerecha.transform.position) , Color.white);
+         }
           //if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)&&OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)>0.7f&&manoArea1==true) { //sera esto para derecha?
           if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger)&&manoArea1==true) { //sera esto para derecha?
                    GameObject createdBullet = Instantiate(bullet);
-                   float distancia=Vector3.Distance( cannonPivotBone.transform.position,manoDerecha.transform.position);
         
-        createdBullet.transform.position = manoDerecha.transform.position;
-              strength=10+(50*verifArea.distancia);   
+        createdBullet.transform.position = cannonPivotBone.transform.position;
+              strength=(20*distancia);   
 
                Rigidbody body = createdBullet.GetComponent<Rigidbody>();
         body.AddForce(cannonPivotBone.transform.forward * strength,
@@ -40,6 +44,7 @@ public class Cannon : MonoBehaviour {
      if (Input.GetKeyDown(KeyCode.Space)) {
             Shoot();
         }
+     
     }
 
     public void Shoot () {
