@@ -32,9 +32,9 @@ public class PuntoDisparo : MonoBehaviour
     }
 
 
-    private void Test();
+    private void Test()
     {
-         if(OVRInput.GetDown(OVRInput.Button.One));
+         if(OVRInput.GetDown(OVRInput.Button.One))
         {
              DisparaFlecha(102);
         }
