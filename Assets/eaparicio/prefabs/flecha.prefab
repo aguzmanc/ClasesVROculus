@@ -251,6 +251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac7e3b59ad3fb24089a1f85078d5981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flechaPrefab: {fileID: 7717099594785876441}
+  flecha: {fileID: 0}
+  distancia: 0
+  rotacion: 0
+  disparar: 0
 --- !u!54 &7717099594785876444
 Rigidbody:
   m_ObjectHideFlags: 0

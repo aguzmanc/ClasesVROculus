@@ -55,23 +55,22 @@ public class agarrarCuerdaEA : MonoBehaviour
         }
 
         if(estaAgarrado==false && cuerdaEA!=null){
-            if(cuerdaEA!=null){
-                if(tocando)
-                    cuerdaEA.Soltar();
-                else
-                {
-                    if (cuerdaEA!=null)
-                    {
-                        cuerdaEA.DejarTocar();
-                        if (distancia>0.1f)
-                        {
-                            cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);   
-                            cuerdaEA.transform.parent.parent=null;                    
-                        }
-                    }
-                }
-
+            if(tocando)
+            {
+                cuerdaEA.Soltar();
+                cuerdaEA=null;
             }
+            else
+            {
+                cuerdaEA.DejarTocar();
+                if (distancia>0.1f)
+                {
+                    cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);   
+                    cuerdaEA.transform.parent.parent=null;  
+                    cuerdaEA=null;                  
+                }
+            }
+
         }
 
         
