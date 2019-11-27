@@ -19,6 +19,8 @@ public class flecha : MonoBehaviour
         if (other.gameObject.tag=="circulo")
         {
         GetComponent<Rigidbody>().useGravity=false;
+        GetComponent<Rigidbody>().isKinematic=true;
+        
         }
     }
 }
