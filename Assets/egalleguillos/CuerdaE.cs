@@ -6,12 +6,15 @@ public class CuerdaE : MonoBehaviour
 {
     public Renderer rend;
     public GameObject flecha;
+    public bool disparar = false;
 
     AgarradorCuerdaE e;
 
     public Material materialSuelto;
     public Material materialTocado;
     public Material materialAgarrando;
+    
+    int cont = 0;
 
 
     void Start()
@@ -32,6 +35,7 @@ public class CuerdaE : MonoBehaviour
 
     public void DejarDeTocar(){
         rend.material = materialSuelto;
+        
     }       
 
 
@@ -43,12 +47,11 @@ public class CuerdaE : MonoBehaviour
     public void Soltar(){
         rend.material = materialTocado;
         Disparar();
+        
     } 
 
     public void Disparar(){
-        GameObject newFlecha = (GameObject) Instantiate(flecha);
-        newFlecha.transform.position = transform.position;
-        //newFlecha.GetComponent<Flecha>().fuerza = 10f;
+        GameObject newFlecha = (GameObject) Instantiate(flecha, transform.position, transform.rotation);
     }
 
 }

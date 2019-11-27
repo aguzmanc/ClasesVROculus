@@ -10,7 +10,6 @@ public class AgarradorCuerdaE : MonoBehaviour
     [Range(0f, 1f)]
     public float agarre;
     public bool estaAgarrando;
-    public bool lanzarFlecha;
 
     public float distancia;
     public bool tocando;
@@ -36,7 +35,7 @@ public class AgarradorCuerdaE : MonoBehaviour
         }
 
         if(cuerda!=null)
-            cuerda.transform.localPosition = new Vector3(0,0,distancia);
+            cuerda.transform.localPosition = new Vector3(0,0,distancia * -1);
 
 
         bool cambio = UpdateNivelAgarre();
@@ -46,9 +45,8 @@ public class AgarradorCuerdaE : MonoBehaviour
                 cuerda.Agarrar();   
         }
 
-        if(estaAgarrando==false && cuerda!=null){
-            if(cuerda!=null)
-                cuerda.Soltar();
+        if(cuerda!=null && estaAgarrando==false){
+            cuerda.Soltar();
         }
         
     }

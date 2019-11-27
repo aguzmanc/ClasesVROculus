@@ -8,11 +8,6 @@ public class Flecha : MonoBehaviour
 
     void Start()
     {
-        GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,0, fuerza), ForceMode.Force);
-    }
-
-    void Update()
-    {
-        
+        GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,0, fuerza), ForceMode.Impulse);
     }
 }
