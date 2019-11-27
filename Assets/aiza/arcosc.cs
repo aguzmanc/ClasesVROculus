@@ -19,7 +19,7 @@ public class arcosc : MonoBehaviour
        
         rend.material = materialSuelt;
 
-        cuerda = transform.Find("cuerda").gameObject;
+        cuerda = transform.Find("pivot").gameObject;
         cuerda.SetActive(false);
 
     }

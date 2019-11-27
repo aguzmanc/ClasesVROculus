@@ -445,6 +445,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b90439c3a0b1941a3cc5d636765b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agarre: 0
+  estaAgarrando: 0
+  distancia: 0
+  tocando: 0
+  pivotCuerda: {fileID: 0}
+  cuerdab: {fileID: 0}
 --- !u!65 &331562977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -977,7 +983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902130121}
   m_Layer: 0
-  m_Name: cuerda
+  m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1656,7 +1662,7 @@ GameObject:
   - component: {fileID: 2052847210}
   - component: {fileID: 2052847213}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: cuerda
   m_TagString: Cuerda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1748,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052847208}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4013ad31c593e7f4a94f07c40311d1a7, type: 3}
   m_Name: 
