@@ -44,7 +44,7 @@ public class agarreCuerda : MonoBehaviour
         else
         {
             distancia=0f;
-             flechaC=false;
+            flechaC=false;
             
         }
         if(cuerdaGlobal!=null)
