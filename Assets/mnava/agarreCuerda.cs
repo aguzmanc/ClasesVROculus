@@ -28,7 +28,7 @@ public class agarreCuerda : MonoBehaviour
     void Update()
     {
 
-        if(estaAgarrando)
+        if(estaAgarrando&&origenCuerda!=null)
         {
             distancia=Vector3.Distance(transform.position,origenCuerda.transform.position);
             distancia=Mathf.Max(0f,distancia);
@@ -115,9 +115,9 @@ public class agarreCuerda : MonoBehaviour
         cuerdaFisica cuerdaTocada = other.GetComponent<cuerdaFisica>();
         if(cuerdaTocada!=null) {
             cuerdaGlobal.dejarTocar();
-            //cuerdaGlobal = null;
+            cuerdaGlobal = null;
             estatocada=false;
-             //origenCuerda=null;
+            origenCuerda=null;
         }
      }
      }
