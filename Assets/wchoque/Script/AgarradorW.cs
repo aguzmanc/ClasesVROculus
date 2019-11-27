@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class AgarradorW : MonoBehaviour
 {
+    //Arco
+      public ArcoW arco;
+
+ 
+      //Configuraciones
     const float limite_agarre =0.7f;
     const float limite_soltar =0.3f;
-    public ArcoW arco;
+  
     [Range(0,1)]
     public float agarre ;
     bool cambio;
@@ -23,12 +28,13 @@ public class AgarradorW : MonoBehaviour
     {
      
        cambio= UpdateNivelAgarre();
-     //  cambio=true;
+      cambio=true;
         if(estaagarrando && arco!=null && cambio){
             arco.Agarrar(transform);
         }
         if(!estaagarrando && cambio && arco!=null){
             arco.Soltar();
+            //Quaternion
         }
         
     }
@@ -47,13 +53,16 @@ public class AgarradorW : MonoBehaviour
         return limiteTraspasado;
     }
      private void OnTriggerEnter(Collider other) {
-         
-         ArcoW arcoagarrado =other.GetComponent<ArcoW>();
-Debug.Log(arcoagarrado);
-         if(arcoagarrado!=null){
+         if(other.tag == "Arcos"){
+            ArcoW arcoagarrado =other.GetComponent<ArcoW>();
+            Debug.Log(arcoagarrado);
+                if(arcoagarrado!=null){
              arco = arcoagarrado;
              arco.Tocar();
+            }
          }
+   
+       
          Debug.Log(other.name);
     }
     /// <summary>
