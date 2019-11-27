@@ -36,7 +36,7 @@ public class AgarrarCuerdaIP : MonoBehaviour
         }
 
         if(cuerda!=null)
-            cuerda.transform.localPosition = new Vector3(0,0,distancia);
+            cuerda.transform.localPosition = new Vector3(0,0,-distancia);
 
 
 

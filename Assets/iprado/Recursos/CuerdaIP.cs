@@ -37,6 +37,7 @@ public class CuerdaIP : MonoBehaviour
 
 
     public void Agarrar(){
+        print("Cuerda agarrada");
         rend.material = taken;
         flecha=Instantiate(prefabFlecha,transform.position,transform.rotation,transform);
         flecha.transform.forward=-transform.forward;
@@ -46,6 +47,7 @@ public class CuerdaIP : MonoBehaviour
 
 
     public void Soltar(){
+        print("Cuerda soltada");
         rend.material = canTake;
         if (canShot)
         {
