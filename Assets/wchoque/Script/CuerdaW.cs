@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CuerdaW : MonoBehaviour
 {
-    
+       public GameObject flechaProyectil;
+    public GameObject flechaInstaciado;
 
       public Renderer rend;
       public Material materialTocado;
@@ -39,5 +40,16 @@ public class CuerdaW : MonoBehaviour
       
         rend.material =materialTocado;
       //  body.isKinematic =false;
+    }
+       public Rigidbody proyectil(){
+         Debug.Log("entro");
+       flechaInstaciado = Instantiate(flechaProyectil);
+      
+        
+        flechaInstaciado.transform.localScale = Vector3.one;
+          flechaInstaciado.transform.parent = transform;
+          flechaInstaciado.transform.localPosition = Vector3.zero;
+        flechaInstaciado.transform.Rotate(new Vector3(0f,-180f,0f));
+        return flechaInstaciado.GetComponentInChildren<Rigidbody>();
     }
 }

@@ -23,7 +23,7 @@ public class AgarradorW : MonoBehaviour
     {
      
        cambio= UpdateNivelAgarre();
-       cambio=true;
+     //  cambio=true;
         if(estaagarrando && arco!=null && cambio){
             arco.Agarrar(transform);
         }
