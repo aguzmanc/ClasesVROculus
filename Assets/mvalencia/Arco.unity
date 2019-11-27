@@ -311,7 +311,7 @@ MonoBehaviour:
   tocando: 0
   pivotCuerda: {fileID: 0}
   cuerda: {fileID: 0}
-  flecha: {fileID: 641228456}
+  flecha: {fileID: 2131502691}
 --- !u!1 &296912441
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,10 +345,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 676236728}
-  cuerda: {fileID: 0}
+  cuerda: {fileID: 345024056}
   materialTocado: {fileID: 2100000, guid: 71f678f801d6a6146af09825c929ac03, type: 2}
   materialAgarrado: {fileID: 2100000, guid: 0964719636e10534c972349d1cd9711b, type: 2}
-  materialSuelto: {fileID: 2100000, guid: d19a5b85663198e4f98b7db30f15fdc8, type: 2}
+  materialSuelto: {fileID: 2100000, guid: 4e044345282e4f840b4a60a495266572, type: 2}
 --- !u!135 &296912443
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -513,10 +513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6bdd942438e774e889b3b4f6a1a18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 345024059}
-  materialSuelto: {fileID: 2100000, guid: 4e044345282e4f840b4a60a495266572, type: 2}
-  materialTocado: {fileID: 2100000, guid: 71f678f801d6a6146af09825c929ac03, type: 2}
-  materialAgarrando: {fileID: 2100000, guid: 0964719636e10534c972349d1cd9711b, type: 2}
+  rend: {fileID: 0}
+  materialSuelto: {fileID: 0}
+  materialTocado: {fileID: 0}
+  materialAgarrando: {fileID: 0}
 --- !u!1 &410406599
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,8 +642,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.213, y: 1.665, z: -0.904}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2131502695}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -862,7 +861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agarre: 0
   estaAgarrando: 0
-  arco: {fileID: 0}
+  arco: {fileID: 296912442}
 --- !u!1001 &836233214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1916,13 +1915,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131502691}
- m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.19197012, z: 0.0100000035}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.567, y: 1.067, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.26497, z: 0.01}
   m_Children: []
-  m_Father: {fileID: 641228457}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!54 &2131502696
 Rigidbody:
   m_ObjectHideFlags: 0

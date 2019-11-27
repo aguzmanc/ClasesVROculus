@@ -92,11 +92,9 @@ public class AgarradorCuerda : MonoBehaviour
 
                 GameObject createdBullet = Instantiate(flecha);
                 createdBullet.transform.position = transformleft.position;
-<<<<<<< HEAD
+
                  createdBullet.transform.rotation = transformleft.rotation;
-=======
-                //createdBullet.transform.rotation = transformleft.rotation;
->>>>>>> 329f2df68f71d175a6dca33efd85c38cddd2018a
+
                 Rigidbody body = createdBullet.GetComponent<Rigidbody>();
                
                 body.velocity = transformleft.forward * distancia * 50f;
