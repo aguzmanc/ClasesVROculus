@@ -86,8 +86,8 @@ public class Arco : MonoBehaviour
     {
         distance = Vector3.Distance(agarrador.position,centroCuerda.transform.position);
 
-        distance=Mathf.Min(0f,distance);
-        distance=Mathf.Max(0.5f,distance);
+        distance=Mathf.Max(0f,distance);
+        distance=Mathf.Min(0.5f,distance);
         
         rendCuerda.material = materialAgarrado;
         cuerdaMesh.localPosition = Vector3.forward*distance*0.1f;
