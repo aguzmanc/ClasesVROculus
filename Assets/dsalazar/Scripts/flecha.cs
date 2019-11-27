@@ -16,6 +16,9 @@ public class flecha : MonoBehaviour
         
     }
     private void OnCollisionEnter(Collision other) {
-        GetComponent
+        if (other.gameObject.tag=="circulo")
+        {
+        GetComponent<Rigidbody>().useGravity=false;
+        }
     }
 }

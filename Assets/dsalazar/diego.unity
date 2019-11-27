@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 927229171}
   m_Layer: 0
   m_Name: circulo2
-  m_TagString: Untagged
+  m_TagString: circulo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1963,7 +1963,7 @@ GameObject:
   - component: {fileID: 1859151174}
   m_Layer: 0
   m_Name: circulo3
-  m_TagString: Untagged
+  m_TagString: circulo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2649,6 +2649,7 @@ GameObject:
   - component: {fileID: 2036387797}
   - component: {fileID: 2036387796}
   - component: {fileID: 2036387800}
+  - component: {fileID: 2036387801}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -2746,6 +2747,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2036387801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036387795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c492a81aa614e4ea96da33e6582677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2081307829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,7 +2773,7 @@ GameObject:
   - component: {fileID: 2081307830}
   m_Layer: 0
   m_Name: circulo1
-  m_TagString: Untagged
+  m_TagString: circulo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
