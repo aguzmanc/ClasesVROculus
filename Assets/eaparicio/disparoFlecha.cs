@@ -28,6 +28,11 @@ public class disparoFlecha : MonoBehaviour
     }
 
     public void Disparar(float distan){
+        gameObject.layer = LayerMask.NameToLayer("flecha");
+        Debug.Log(1<<9);
+        Debug.Log(1<<5);
+        Debug.Log(gameObject.layer);
+        
         distancia = distan;
         rotacion=distancia*2.5f;
         disparar=true;

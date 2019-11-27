@@ -65,7 +65,7 @@ public class agarrarCuerdaEA : MonoBehaviour
                         cuerdaEA.DejarTocar();
                         if (distancia>0.1f)
                         {
-                            cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);        
+                            cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);   
                             cuerdaEA.transform.parent.parent=null;                    
                         }
                     }
@@ -118,7 +118,7 @@ public class agarrarCuerdaEA : MonoBehaviour
 
      private void OnTriggerEnter(Collider otro) {
         
-        if(otro.tag == "cuerda" && !estaAgarrado){
+        if(otro.tag == "cuerda"){
             if(!estaAgarrado){
                 cuerdaEA = otro.GetComponent<cuerdaEA>();
                 cuerdaEA.Tocar();
