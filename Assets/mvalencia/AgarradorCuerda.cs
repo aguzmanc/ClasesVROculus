@@ -10,7 +10,7 @@ public class AgarradorCuerda : MonoBehaviour
     [Range(0f, 1f)]
     public float agarre;
     public bool estaAgarrando;
-
+    public Transform transformleft;
 
     public float distancia;
     public bool tocando;

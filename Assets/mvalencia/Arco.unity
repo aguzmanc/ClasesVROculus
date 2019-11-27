@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agarre: 0
   estaAgarrando: 0
+  transformleft: {fileID: 1509309842}
   distancia: 0
   tocando: 0
   pivotCuerda: {fileID: 0}
