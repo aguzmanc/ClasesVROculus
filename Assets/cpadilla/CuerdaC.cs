@@ -17,11 +17,6 @@ public class CuerdaC : MonoBehaviour
     }
 
 
-    void Update()
-    {
-    }
-
-
     public void Tocar(){
         rend.material = materialTocado;
     }
