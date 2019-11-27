@@ -269,11 +269,10 @@ MonoBehaviour:
   centroCuerda: {fileID: 729708330}
   cuerdaMesh: {fileID: 833206468}
   rendCuerda: {fileID: 833206470}
-  speed: 0.0108
+  speed: 0
   distance: 0
-  prfabFlecha: {fileID: 3939217549471294186, guid: cf49eabc83ed0ab4eb4ac91c08da0b12,
-    type: 3}
-  disparador: {fileID: 1587275277}
+  prfabFlecha: {fileID: 0}
+  disparador: {fileID: 0}
 --- !u!135 &146322522
 SphereCollider:
   m_ObjectHideFlags: 0
