@@ -50,17 +50,13 @@ public class agarrarCuerdaEA : MonoBehaviour
         cambio = UpdateAgarre();
         
         if(estaAgarrado && cambio) {
+        Debug.Log(cuerdaEA);
             if(cuerdaEA != null)
                 cuerdaEA.Agarrar();   
         }
 
         if(estaAgarrado==false && cuerdaEA!=null){
-            if(tocando)
-            {
-                cuerdaEA.Soltar();
-                cuerdaEA=null;
-            }
-            else
+            if(!tocando)
             {
                 cuerdaEA.DejarTocar();
                 if (distancia>0.1f)
@@ -69,6 +65,8 @@ public class agarrarCuerdaEA : MonoBehaviour
                     cuerdaEA.transform.parent.parent=null;  
                     cuerdaEA=null;                  
                 }
+                // cuerdaEA.Soltar();
+                // cuerdaEA=null;
             }
 
         }

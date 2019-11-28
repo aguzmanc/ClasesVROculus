@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class disparoFlecha : MonoBehaviour
-{
+{    
     Rigidbody rigidbody;
     public GameObject flechaPrefab;
     public GameObject flecha;
@@ -46,7 +46,7 @@ public class disparoFlecha : MonoBehaviour
         //disparar=false;
         //rigidbody.useGravity=false;
         //Debug.Log(other.tag);
-        if (other.tag=="pared")
+        if (other.tag=="pared" || other.tag=="piso" || other.tag=="diana")
         {
             disparar=false;
             rigidbody.isKinematic=true;

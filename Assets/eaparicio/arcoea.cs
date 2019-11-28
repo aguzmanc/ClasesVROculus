@@ -42,4 +42,12 @@ public class arcoea : MonoBehaviour
         body.isKinematic = false;
         render.material = matTocado;
     }
+    void OnTriggerEnter(Collider other) {
+        if (other.tag=="piso")
+        {
+            body.isKinematic = true;
+            transform.position = new Vector3(0,1.34f,-1.34f);
+            transform.rotation = Quaternion.identity;
+        }
+    }
 }
