@@ -16,13 +16,13 @@ public class agarreCuerda : MonoBehaviour
     public Transform origenCuerda;
 
      public bool agarreF;
-     bool agarrada;
+     bool agarradaFlecha;
      public Transform flecha;
     // Start is called before the first frame update
     void Start()
     {
         estatocada=false;
-        agarrada=false;
+        agarradaFlecha=false;
     }
 
     // Update is called once per frame
@@ -44,17 +44,18 @@ public class agarreCuerda : MonoBehaviour
                 feleCuer.volverK();
                 feleCuer.tp();
                 feleCuer.darf(distancia);
-                agarrada=true;
+                agarradaFlecha=true;
             }
 
         }
         else
         {
             distancia=0f;
-            if(agarrada)
+            if(agarradaFlecha)
             {
                 fidicasFlecha feleCuer=flecha.GetComponent<fidicasFlecha>(); 
                 feleCuer.cambiarK();
+                 agarradaFlecha=false;
             }
         }
         if(cuerdaGlobal!=null)

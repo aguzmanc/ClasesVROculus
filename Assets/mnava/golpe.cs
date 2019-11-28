@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class choqueFlecha : MonoBehaviour
+public class golpe : MonoBehaviour
 {
-    
-    fidicasFlecha feleCuer;
     // Start is called before the first frame update
     void Start()
     {
-       feleCuer=transform.GetComponent<fidicasFlecha>();
+        
     }
 
     // Update is called once per frame
@@ -17,12 +15,13 @@ public class choqueFlecha : MonoBehaviour
     {
         
     }
-     void OnTriggerEnter(Collider other) {
-       if(other.tag=="pared")
+    void OnTriggerEnter(Collider other) {
+      
+        if(other.tag=="pared")
        {
-           feleCuer.parar();
            Debug.Log("Si");
        }
+       
         
     }
 }

@@ -18,7 +18,7 @@ public class fidicasFlecha : MonoBehaviour
     {
         if(disparada)
         {
-            Rigidbody cuerpo= transform.GetComponent<Rigidbody>();
+            Rigidbody cuerpo= this.transform.GetComponent<Rigidbody>();
             cuerpo.AddForce(transform.forward*(fuerza*-1));
             
         }
@@ -46,7 +46,7 @@ public class fidicasFlecha : MonoBehaviour
     public void darf(float distancia)
     {
         float porc=(distancia*100f)/1.6f;
-        fuerza=(porc*20)/100;
+        fuerza=(porc*5)/100;
 
 
     }
