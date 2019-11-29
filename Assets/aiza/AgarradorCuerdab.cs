@@ -21,6 +21,8 @@ public class AgarradorCuerdab : MonoBehaviour
     public Flechag flechag;
 
     public  bool suelta;
+
+    bool auxiliarUna;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,7 @@ public class AgarradorCuerdab : MonoBehaviour
             estaAgarrando=true;
             suelta=false;
             limiteTraspasado = true;
+            auxiliarUna=true;
         }
         if (agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR)
         {
@@ -92,7 +95,9 @@ public class AgarradorCuerdab : MonoBehaviour
             if ( cuerdab !=null)
             {
             cuerdab.Soltar();
-                    if (suelta && estaAgarrando == false)
+            if (auxiliarUna)
+            {
+                    if (suelta )
                     {
                         flechag.disparar=true;
                     }
@@ -100,6 +105,9 @@ public class AgarradorCuerdab : MonoBehaviour
                     {
                         flechag.disparar=false;
                     }
+                auxiliarUna=false;
+            }
+                
 
             }
         }
