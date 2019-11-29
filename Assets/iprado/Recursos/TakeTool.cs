@@ -23,25 +23,27 @@ public class TakeTool : MonoBehaviour
     {
         bool cambio = UpdateNivelAgarre();
         
-        if(isTaken && arco != null && cambio) {
-            arco.Agarrar(transform);
-        }
-
-        if(isTaken==false && cambio && arco!=null){
-            arco.Soltar();
-        }
-
-        // if(agarrar) {
+        // if(isTaken && arco != null && cambio) {
         //     arco.Agarrar(transform);
         // }
 
-        // if(!agarrar){
+        // if(isTaken==false && cambio && arco!=null){
         //     arco.Soltar();
         // }
+        
+        if(agarrar && arco != null) {
+            arco.Agarrar(transform);
+        }
 
+        if(!agarrar && arco != null){
+            arco.Soltar();
+        }
+
+        
 
 
     }
+
 
     bool UpdateNivelAgarre(){
         float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);

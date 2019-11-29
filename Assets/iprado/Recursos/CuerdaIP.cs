@@ -40,13 +40,7 @@ public class CuerdaIP : MonoBehaviour
     public void Agarrar(){
         print("Cuerda agarrada");
         rend.material = taken;
-        if (!flechaEnArco)
-        {
-            flecha=Instantiate(prefabFlecha,transform.position,transform.rotation,transform);
-            flecha.transform.forward=-transform.forward;
-            canShot=true;
-            flechaEnArco=true;
-        }
+        
         
     }
 
@@ -54,17 +48,13 @@ public class CuerdaIP : MonoBehaviour
     public void Soltar(){
         print("Cuerda soltada");
         rend.material = canTake;
-        if (canShot && flechaEnArco)
-        {
-            Disparar();
-            canShot=false;
-            flechaEnArco=false;
-        }
         
 
     } 
 
     public void Disparar(){
+        flecha=Instantiate(prefabFlecha,transform.position,transform.rotation);
+        flecha.transform.forward=-transform.forward;
         FlechaIP miFlecha=flecha.GetComponent<FlechaIP>();
         miFlecha.Disparar(agarrador.distancia);
         

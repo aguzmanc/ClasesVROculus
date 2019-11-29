@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class FlechaIP : MonoBehaviour
 {
-    public float fuerza=10;
+    public float fuerza=140;
     
     Rigidbody body;
     // Start is called before the first frame update
     void Start()
     {
-        
+        body=GetComponent<Rigidbody>();
         body.isKinematic=true;
         body.useGravity=false;
     }
 
+    void Update()
+    {
+
+    }
     public void Agarrar()
     {
 
