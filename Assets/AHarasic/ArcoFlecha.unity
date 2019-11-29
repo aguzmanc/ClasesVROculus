@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 704436459}
   - component: {fileID: 704436457}
   - component: {fileID: 704436460}
+  - component: {fileID: 704436458}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -1237,6 +1238,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &704436458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704436455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94f8ca424c170940b0000f4a47a41ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agarre: 0
+  ballesta: {fileID: 0}
+  estaAgarrando: 0
 --- !u!33 &704436459
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2216,7 +2232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283916016}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.017, y: -0.388, z: -0.119}
+  m_LocalPosition: {x: 0.0116, y: -0.3754, z: -0.1396}
   m_LocalScale: {x: 0.029100893, y: 0.029100893, z: 0.029100893}
   m_Children: []
   m_Father: {fileID: 3274934691651573612}
@@ -2732,6 +2748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flecha
+      objectReference: {fileID: 0}
+    - target: {fileID: 4888224922849823639, guid: f7e094fe0794d3848bfb2e82693c53c6,
+        type: 3}
+      propertyPath: m_TagString
+      value: flecha
       objectReference: {fileID: 0}
     - target: {fileID: 8778168162458147405, guid: f7e094fe0794d3848bfb2e82693c53c6,
         type: 3}
@@ -3666,6 +3687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3274934692475252755}
+  - component: {fileID: 3274934692475252765}
   m_Layer: 0
   m_Name: puntoDisparoB
   m_TagString: Untagged
@@ -3673,6 +3695,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3274934692475252765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274934692475252764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d361cefb38450409dc7b72e59b59e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arco: {fileID: 3274934692811010545}
+  prfabFlecha: {fileID: 984453514}
 --- !u!23 &3274934692546623840
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4028,6 +4064,7 @@ GameObject:
   - component: {fileID: 3274934692811010549}
   - component: {fileID: 3274934692811010550}
   - component: {fileID: 3274934692811010548}
+  - component: {fileID: 3274934692811010546}
   m_Layer: 0
   m_Name: Ballesta
   m_TagString: Ballesta
@@ -4035,7 +4072,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3274934692811010548
+--- !u!114 &3274934692811010546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4043,6 +4080,25 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3274934692811010545}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee3a371edcf34d47a783f93bfa95de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prfabFlecha: {fileID: 984453514}
+  materialAgarrado: {fileID: 2100000, guid: b8693c1c1b4b1954ebdc34dd86f667e4, type: 2}
+  materialSuelto: {fileID: 2100000, guid: 3297957022b15d5419225cba4d49801e, type: 2}
+  materialTocado: {fileID: 2100000, guid: 1cfef637f3576d74eb9dccd19ed8a43f, type: 2}
+  cu: {fileID: 0}
+  pd: {fileID: 3274934692475252765}
+  rend: {fileID: 3274934692624592886}
+--- !u!114 &3274934692811010548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274934692811010545}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dc23e8b5fe0efb4d8d1d9c9bf23526d, type: 3}
   m_Name: 

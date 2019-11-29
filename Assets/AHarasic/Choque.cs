@@ -19,7 +19,7 @@ public class Choque : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
 
-        if(other.gameObject.tag=="pared")
+        if(other.gameObject.tag=="pared" ||other.gameObject.tag=="flecha" )
         {
             rig.constraints=RigidbodyConstraints.FreezeAll;
             rig.isKinematic=true;

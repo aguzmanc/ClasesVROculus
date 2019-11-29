@@ -8,6 +8,7 @@ TagManager:
   - Ballesta
   - CuerdaBallesta
   - pared
+  - flecha
   layers:
   - Default
   - TransparentFX
