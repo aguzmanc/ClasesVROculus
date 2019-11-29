@@ -26,13 +26,14 @@ public class Agarrador2 : MonoBehaviour
         bool cambio = UpdateNivelAgarre();
 
         trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger,OVRInput.Controller.LTouch)>0.3f;
+        if(trigger && ballesta != null)
+        {
+            ballesta.DisparaFlecha(100);
+        }
 
         if(estaAgarrando && ballesta != null && cambio) {
             ballesta.Agarrar(transform);
-            if(trigger)
-            {
-                ballesta.DisparaFlecha(100);
-            }
+            
         }
         if(estaAgarrando==false && cambio && ballesta!=null){
             ballesta.Soltar();
