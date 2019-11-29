@@ -51,7 +51,7 @@ public class AgarrarCuerdaIP : MonoBehaviour
             if(cuerda != null){
                 sePuedeDisparar=true;
                 cuerda.Agarrar();   
-            }
+                }
         }
 
         if(estaAgarrando==false && cuerda!=null){

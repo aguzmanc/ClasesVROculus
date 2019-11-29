@@ -62,8 +62,8 @@ public class AgarrarBallestaIP : MonoBehaviour
 
                     flecha=Instantiate(prefabFlecha,transform.position,transform.rotation);
                     flecha.transform.forward=-transform.forward;
-                    FlechaIP miFlecha=flecha.GetComponent<FlechaIP>();
-                    miFlecha.Disparar(10f);
+                    // FlechaIP miFlecha=flecha.GetComponent<FlechaIP>();
+                    // miFlecha.Disparar(10f);
                 }
                 
             }

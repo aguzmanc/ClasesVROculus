@@ -55,8 +55,8 @@ public class CuerdaIP : MonoBehaviour
     public void Disparar(){
         flecha=Instantiate(prefabFlecha,transform.position,transform.rotation);
         flecha.transform.forward=-transform.forward;
-        FlechaIP miFlecha=flecha.GetComponent<FlechaIP>();
-        miFlecha.Disparar(agarrador.distancia);
+        // FlechaIP miFlecha=flecha.GetComponent<FlechaIP>();
+        // miFlecha.Disparar(agarrador.distancia);
         
     }
 
