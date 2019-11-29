@@ -27,7 +27,7 @@ public class Agarrador2 : MonoBehaviour
 
         if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch) && ballesta != null)
         {
-            ballesta.DisparaFlecha(100);
+            ballesta.DisparaFlecha(300);
         }
 
         if(estaAgarrando && ballesta != null && cambio) {
