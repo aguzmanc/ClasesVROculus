@@ -8,7 +8,7 @@ public class Flechag : MonoBehaviour
     public GameObject flecha;
 
     public float shootcooldown = 1;
-    public float fuerza = 220;
+    public float fuerza = 70;
 
     public float velocidadInclinacion = 180;
     public float velocidadDireccion = 360;
