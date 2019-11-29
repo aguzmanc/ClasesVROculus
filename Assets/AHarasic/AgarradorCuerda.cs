@@ -71,7 +71,7 @@ public class AgarradorCuerda : MonoBehaviour
                    // {
                    //     val=1;
                    // }
-                    pd.DisparaFlecha(100);
+                    pd.DisparaFlecha(169);
                     Debug.Log("DISPARA !!!! ! !");
                 }
             }
