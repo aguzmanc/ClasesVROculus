@@ -14,22 +14,33 @@ public class TakeTool : MonoBehaviour
 
     public ArcoIP arco;
 
+    public bool agarrar=false;
     
     void Start() {
         isTaken = false;
     }
-
     void Update()
     {
         bool cambio = UpdateNivelAgarre();
         
-        if(isTaken && arco != null && cambio) {
+        // if(isTaken && arco != null && cambio) {
+        //     arco.Agarrar(transform);
+        // }
+
+        // if(isTaken==false && cambio && arco!=null){
+        //     arco.Soltar();
+        // }
+
+        if(agarrar) {
             arco.Agarrar(transform);
         }
 
-        if(isTaken==false && cambio && arco!=null){
+        if(!agarrar){
             arco.Soltar();
         }
+
+
+
     }
 
     bool UpdateNivelAgarre(){

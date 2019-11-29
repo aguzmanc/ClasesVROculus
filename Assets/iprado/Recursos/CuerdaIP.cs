@@ -14,6 +14,7 @@ public class CuerdaIP : MonoBehaviour
     public GameObject flecha;
     public AgarrarCuerdaIP agarrador;
 
+    public bool flechaEnArco=false;
     bool canShot=false;
     void Start()
     {
@@ -39,9 +40,13 @@ public class CuerdaIP : MonoBehaviour
     public void Agarrar(){
         print("Cuerda agarrada");
         rend.material = taken;
-        flecha=Instantiate(prefabFlecha,transform.position,transform.rotation,transform);
-        flecha.transform.forward=-transform.forward;
-        canShot=true;
+        if (!flechaEnArco)
+        {
+            flecha=Instantiate(prefabFlecha,transform.position,transform.rotation,transform);
+            flecha.transform.forward=-transform.forward;
+            canShot=true;
+            flechaEnArco=true;
+        }
         
     }
 
@@ -49,10 +54,11 @@ public class CuerdaIP : MonoBehaviour
     public void Soltar(){
         print("Cuerda soltada");
         rend.material = canTake;
-        if (canShot)
+        if (canShot && flechaEnArco)
         {
             Disparar();
             canShot=false;
+            flechaEnArco=false;
         }
         
 

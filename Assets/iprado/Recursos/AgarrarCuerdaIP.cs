@@ -17,6 +17,7 @@ public class AgarrarCuerdaIP : MonoBehaviour
     public Transform pivotCuerda;
     public CuerdaIP cuerda;
 
+    public bool agarrar=false;
     void Start()
     {
         tocando = false;
@@ -45,16 +46,26 @@ public class AgarrarCuerdaIP : MonoBehaviour
 
         bool cambio = UpdateNivelAgarre();
         
-        if(estaAgarrando && cambio) {
-            if(cuerda != null)
-                cuerda.Agarrar();   
-        }
+        // if(estaAgarrando && cambio) {
+        //     if(cuerda != null)
+        //         cuerda.Agarrar();   
+        // }
 
-        if(estaAgarrando==false && cuerda!=null){
-            if(cuerda!=null)
+        // if(estaAgarrando==false && cuerda!=null){
+        //     if(cuerda!=null)
+        //         cuerda.Soltar();
+        // }
+        
+        if (agarrar)
+        {
+            if(cuerda != null)
+                cuerda.Agarrar(); 
+        }
+        if (!agarrar)
+        {
+             if(cuerda!=null)
                 cuerda.Soltar();
         }
-        
     }
 
 
