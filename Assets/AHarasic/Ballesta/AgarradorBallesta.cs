@@ -5,7 +5,7 @@ using UnityEngine;
 public class AgarradorBallestaW : MonoBehaviour
 {
          //Ballesta 
-      public BallestaW ballesta;
+      public Ballesta ballesta;
           //Configuraciones
     const float limite_agarre =0.7f;
     const float limite_soltar =0.3f;
@@ -50,19 +50,16 @@ public class AgarradorBallestaW : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Ballesta"){
-            BallestaW balle = other.GetComponent<BallestaW>();
+            Ballesta balle = other.GetComponent<Ballesta>();
             ballesta = balle;
             ballesta.Tocar();
         }
     }
-    /// <summary>
-    /// OnTriggerExit is called when the Collider other has stopped touching the trigger.
-    /// </summary>
-    /// <param name="other">The other Collider involved in this collision.</param>
+   
     void OnTriggerExit(Collider other)
     {
           if(other.tag == "Ballesta"){
-            BallestaW balle = other.GetComponent<BallestaW>();
+            Ballesta balle = other.GetComponent<Ballesta>();
               if(balle!=null){
              ballesta.DejarTocar();
              ballesta=null;

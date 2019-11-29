@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cuerda
+  - Ballesta
+  - CuerdaBallesta
+  - pared
   layers:
   - Default
   - TransparentFX

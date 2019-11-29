@@ -5,10 +5,10 @@ using UnityEngine;
 public class AgarradorCuerdaBallesta : MonoBehaviour
 {
      Rigidbody flecha;
-       Transform pivotCuerda;
-            const float limite_agarre =0.7f;
+    Transform pivotCuerda;
+    const float limite_agarre =0.7f;
     const float limite_soltar =0.3f;
-    CuerdaBallestaW cuerdaBallesta;
+    CuerdaBallesta cuerdaBallesta;
     
     [Range(0,1)]
        public float agarre ;
@@ -32,7 +32,6 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
             distancia = Mathf.Max(0f,distancia);
             distancia  = Mathf.Min(0.3f,distancia);
             Debug.DrawLine(transform.position,pivotCuerda.position,Color.green);
-            Debug.Log(distancia + "distancia1");
             distanciaValor = distancia;
         }
         else {
@@ -93,8 +92,8 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
      void OnTriggerEnter(Collider other)
     {
         if(other.tag=="CuerdaBallesta"){
-            Debug.Log("Tocar Cuerda");
-            cuerdaBallesta =  other.transform.GetComponent<CuerdaBallestaW>();
+           // Debug.Log("Tocar Cuerda");
+            cuerdaBallesta =  other.transform.GetComponent<CuerdaBallesta>();
 
             cuerdaBallesta.Tocar();
             tocado=true;
@@ -105,8 +104,8 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
     }
     private void OnTriggerExit(Collider other) {
          if(other.tag=="CuerdaBallesta"){
-             Debug.Log("Dejar de Tocar Cuerda");
-            cuerdaBallesta =  other.transform.GetComponent<CuerdaBallestaW>();
+            // Debug.Log("Dejar de Tocar Cuerda");
+            cuerdaBallesta =  other.transform.GetComponent<CuerdaBallesta>();
             cuerdaBallesta.DejarTocar();
            // cuerda=null;
            tocado=false;

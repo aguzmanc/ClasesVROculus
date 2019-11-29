@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallestaW : MonoBehaviour
+public class Ballesta : MonoBehaviour
 {
        public Renderer rend;
     Rigidbody body;

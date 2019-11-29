@@ -5,6 +5,7 @@ using UnityEngine;
 public class Choque : MonoBehaviour
 {
     // Start is called before the first frame update
+     Rigidbody rig;
     void Start()
     {
         
@@ -13,11 +14,19 @@ public class Choque : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        rig=GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other) {
-        other.attachedRigidbody.isKinematic=true;
-        other.attachedRigidbody.constraints=RigidbodyConstraints.FreezeAll;
+
+        if(other.gameObject.tag=="pared")
+        {
+            rig.constraints=RigidbodyConstraints.FreezeAll;
+            rig.isKinematic=true;
+        }
+        //other.gameObject.GetComponent<Rigidbody>().isKinematic=true;
+       // other.attachedRigidbody.isKinematic=true;
+        //other.attachedRigidbody.constraints=RigidbodyConstraints.FreezeAll;
+        
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CuerdaBallestaW : MonoBehaviour
+public class CuerdaBallesta : MonoBehaviour
 {  public GameObject flechaProyectil;
     public GameObject flechaInstaciado;
     
