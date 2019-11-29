@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class arcoea : MonoBehaviour
+public class ballestaea : MonoBehaviour
 {
     public Renderer render;
     Rigidbody body;
@@ -14,7 +14,6 @@ public class arcoea : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
-        //render = GetComponent<Renderer>();
         render.material= matSuelto;
         cuerda  = transform.Find("cuerda").gameObject;
         cuerda.SetActive(false);
@@ -46,7 +45,7 @@ public class arcoea : MonoBehaviour
         if (other.tag=="piso")
         {
             body.isKinematic = true;
-            transform.position = new Vector3(-0.46f,1.34f,-1.34f);
+            transform.position = new Vector3(0,1.15f,-1.4f);
             transform.rotation = Quaternion.identity;
         }
     }

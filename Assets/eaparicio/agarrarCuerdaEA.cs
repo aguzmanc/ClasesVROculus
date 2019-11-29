@@ -5,7 +5,11 @@ using UnityEngine;
 public class agarrarCuerdaEA : MonoBehaviour
 {
     public float LIMITE_AGARRE=0.7F;
-    public float LIMITE_SOLTAR=0.3F;    
+    public float LIMITE_SOLTAR=0.3F; 
+
+    public bool limiteBallesta;
+    public bool gatilloBallesta;
+
 
     [Range(0f, 1f)]
     public float agarreCuerda;
@@ -15,6 +19,7 @@ public class agarrarCuerdaEA : MonoBehaviour
     public bool tocando;
     public Transform pivotCuerda;
     cuerdaEA cuerdaEA;
+    culataBallesta culataBallesta;
 
 
     [Range(0f, 1f)]
@@ -23,21 +28,27 @@ public class agarrarCuerdaEA : MonoBehaviour
     {
         tocando = false;
         estaAgarrado = false;
+        limiteBallesta=false;
+        gatilloBallesta=false;
     }
 
     bool cambio;
     void Update()
     {
-        
-        if(estaAgarrado) {
+        if (!limiteBallesta)
+        {
+            if(estaAgarrado) {
             
             distancia = Vector3.Distance(transform.position, pivotCuerda.position);
             distancia = Mathf.Max(0f, distancia);
             distancia = Mathf.Min(0.5f, distancia);
-            Debug.DrawLine(transform.position, pivotCuerda.position, Color.green);
 
         } else
             distancia = 0;
+        }
+        else
+            distancia=0.5f;
+        
 
         if(cuerdaEA!=null)
             cuerdaEA.transform.parent.localPosition = new Vector3(0,0,distancia);
@@ -49,27 +60,48 @@ public class agarrarCuerdaEA : MonoBehaviour
 
         cambio = UpdateAgarre();
         
-        if(estaAgarrado && cambio) {
-        Debug.Log(cuerdaEA);
-            if(cuerdaEA != null)
-                cuerdaEA.Agarrar();   
-        }
-
-        if(estaAgarrado==false && cuerdaEA!=null){
-            if(!tocando)
-            {
-                cuerdaEA.DejarTocar();
-                if (distancia>0.1f)
+        if (limiteBallesta)
+        {
+            if(estaAgarrado && cambio) {
+                if(culataBallesta != null)
+                    culataBallesta.Agarrar();   
+            }
+            if(estaAgarrado==false && culataBallesta!=null){
+                if (tocando)
                 {
-                    cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);   
-                    cuerdaEA.transform.parent.parent=null;  
-                    cuerdaEA=null;                  
+                    culataBallesta.Soltar();
                 }
-                // cuerdaEA.Soltar();
-                // cuerdaEA=null;
+                else
+                {
+                    culataBallesta.DejarTocar();
+                }
+            }
+        }
+        else
+        {
+            if(estaAgarrado && cambio) {
+                if(cuerdaEA != null)
+                    cuerdaEA.Agarrar();   
             }
 
+            if(estaAgarrado==false && cuerdaEA!=null){
+                if(!tocando)
+                {
+                    cuerdaEA.DejarTocar();
+                    if(!gatilloBallesta){
+                        if (distancia>0.1f)
+                        {
+                            cuerdaEA.transform.parent.GetComponentInParent<disparoFlecha>().Disparar(distancia);   
+                            cuerdaEA.transform.parent.parent=null;  
+                            cuerdaEA=null;                  
+                        }
+                    }
+                }
+
+            }
         }
+
+        
 
         
     }
@@ -122,7 +154,14 @@ public class agarrarCuerdaEA : MonoBehaviour
                 tocando = true;
                 pivotCuerda = cuerdaEA.transform.parent.parent;
             }
-           
+        }
+        if (otro.name=="culata")
+        {
+            if(!estaAgarrado){
+                culataBallesta = otro.GetComponent<culataBallesta>();
+                culataBallesta.Tocar();
+                tocando = true;
+            }
         }
     }
 
@@ -131,7 +170,6 @@ public class agarrarCuerdaEA : MonoBehaviour
         if (otro.tag=="cuerda")
         {
             cuerdaEA = otro.GetComponent<cuerdaEA>();
-            Debug.Log(estaAgarrado);
             if(!estaAgarrado){
                 cuerdaEA.DejarTocar();
             }
@@ -139,5 +177,23 @@ public class agarrarCuerdaEA : MonoBehaviour
 
             
         }
+    }
+
+    public void LimiteBallestaPasado(){
+        if (estaAgarrado)
+        {
+            limiteBallesta=true;
+            gatilloBallesta=true;
+            cuerdaEA.Ballesta();
+        }
+
+    }
+
+    public void TiroBallesta(){
+        if (!estaAgarrado)
+        {
+            limiteBallesta=false;
+        }
+
     }
 }

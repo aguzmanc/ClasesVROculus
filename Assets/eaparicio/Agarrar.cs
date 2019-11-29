@@ -15,6 +15,7 @@ public class Agarrar : MonoBehaviour
      [Range(0f, 1f)]
     public float actu;
     public arcoea arc;
+    public ballestaea ballesta;
     void Start()
     {
         estaAgarrado=false;   
@@ -24,12 +25,18 @@ public class Agarrar : MonoBehaviour
     void Update()
     {
         cambio = UpdateAgarre();
-        if (estaAgarrado && arc != null && cambio)
+        if (estaAgarrado && cambio)
         {
-            arc.Agarrar(transform);
+            if (arc!=null)
+                arc.Agarrar(transform);
+            if (ballesta!=null)
+                ballesta.Agarrar(transform);
         }
         if(!estaAgarrado && cambio && arc!=null){
-            arc.Soltar();
+            if (arc!=null)
+                arc.Soltar();
+            if (ballesta!=null)
+                ballesta.Soltar();
         }
     }
 
@@ -72,21 +79,46 @@ public class Agarrar : MonoBehaviour
         // return limitePasado;
     }
     private void OnTriggerEnter(Collider otro) {
-        arcoea arcoAgarrado = otro.GetComponent<arcoea>();
-        if (arcoAgarrado!=null)
+        
+        if (otro.tag=="ballesta")
         {
-            arc = arcoAgarrado;
-            arcoAgarrado.Tocar();
+            ballestaea ball = otro.GetComponent<ballestaea>();
+            if (ball!=null)
+            {
+                ballesta = ball;
+                ballesta.Tocar();
+            }
+        }
+        else{
+            arcoea arcoAgarrado = otro.GetComponent<arcoea>();
+            if (arcoAgarrado!=null)
+            {
+                arc = arcoAgarrado;
+                arcoAgarrado.Tocar();
+            }
         }
     }
 
     void OnTriggerExit(Collider otro)
     {
-        arcoea arcoAgarrado = otro.GetComponent<arcoea>();
-        if (arcoAgarrado!=null)
+        if (otro.tag=="ballesta")
         {
-            arc=null;
-            arcoAgarrado.DejarTocar();
+             ballestaea ball = otro.GetComponent<ballestaea>();
+            if (ball!=null)
+            {
+                ballesta = ball;
+                ballesta.DejarTocar();
+            }
         }
+        else{
+            arcoea arcoAgarrado = otro.GetComponent<arcoea>();
+            if (arcoAgarrado!=null)
+            {
+                arc=null;
+                arcoAgarrado.DejarTocar();
+            }
+        }
+        
+        
     }
 }

@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cuerdaEA : MonoBehaviour
+public class culataBallesta : MonoBehaviour
 {
-    public Renderer render;
+     public Renderer render;
     public Material matSuelto;
     public Material matTocado;
     public Material matAgarrado;
-    public Material matBallesta;
-    
     void Start()
     {
         render.material= matSuelto;
@@ -25,8 +23,5 @@ public class cuerdaEA : MonoBehaviour
     }
     public void Soltar(){
         render.material =matTocado;
-    }
-    public void Ballesta(){
-        render.material =matBallesta;
     }
 }

@@ -24,13 +24,10 @@ public class disparoFlecha : MonoBehaviour
         {
             rigidbody.useGravity=true;
             transform.Translate(new Vector3(0,0,-distancia*Time.deltaTime*70), Space.Self);
-            //transform.Translate(0,0,distancia*Time.deltaTime);
             distancia-=0.001f;
             transform.Rotate(new Vector3(rotacion/-distancia,0,0), Space.Self);
             if (distancia<0)
-            {
                 disparar=false;
-            }
         }
     }
 
@@ -43,9 +40,6 @@ public class disparoFlecha : MonoBehaviour
         
     }
     private void OnTriggerEnter(Collider other) {
-        //disparar=false;
-        //rigidbody.useGravity=false;
-        //Debug.Log(other.tag);
         if (other.tag=="pared" || other.tag=="piso" || other.tag=="diana")
         {
             disparar=false;
@@ -54,7 +48,6 @@ public class disparoFlecha : MonoBehaviour
             flecha.transform.parent=GameObject.Find("cuerda").transform;
             flecha.transform.localPosition=Vector3.zero;
             flecha.transform.localRotation=Quaternion.identity;
-            
         }
         
     }
