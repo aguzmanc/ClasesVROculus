@@ -5,19 +5,17 @@ using UnityEngine;
 public class CuerdaC : MonoBehaviour
 {
     public Renderer rend;
-    public GameObject proyectil;
-    public GameObject flechaIntantiate;
     public Material materialSuelto;
     public Material materialTocado;
     public Material materialAgarrando;
 
-
+    // Start is called before the first frame update
     void Start()
     {
-        rend.material = materialSuelto;
+          rend.material = materialSuelto;
     }
 
-
+    // Update is called once per frame
     public void Tocar(){
         rend.material = materialTocado;
     }
@@ -35,12 +33,5 @@ public class CuerdaC : MonoBehaviour
     public void Soltar(){
         rend.material = materialTocado;
     } 
-
-    public Rigidbody bala()
-    {
-        flechaIntantiate= Instantiate(proyectil,GameObject.Find("Spawn").transform.position,Quaternion.identity);
-        return flechaIntantiate.GetComponentInChildren<Rigidbody>();
-
-    }
     
 }

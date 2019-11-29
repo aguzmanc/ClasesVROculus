@@ -4,33 +4,63 @@ using UnityEngine;
 
 public class flecha : MonoBehaviour
 {
-    Rigidbody rb;
-    float timed;
-    bool disparado;
+    public GameObject pivote;
+    public GameObject arrow;
+
+    public float shootcooldown = 1;
+    public float fuerza = 60;
+
+    public float velocidadInclinacion = 180;
+    public float velocidadDireccion = 360;
+
+    float _timelastshot = 0;
+
+    public bool disparar;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = transform.GetComponent<Rigidbody>();
-        timed = 0;
+        
     }
 
-    // Update is called once per frame
+    public void Shoot()
+    {
+        GameObject crearFlecha = Instantiate(arrow);
+        crearFlecha.transform.position = pivote.transform.position;
+        Rigidbody body = crearFlecha.GetComponent<Rigidbody>();
+        body.AddForce(pivote.transform.forward*fuerza,ForceMode.Impulse);
+    }
+
+    public void UpdatePlayerControl()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Shoot();
+        }
+        //transform.Rotate(0,velocidadDireccion*Time.deltaTime*Input.GetAxis("Horizontal"),0);
+        //pivote.transform.Rotate(velocidadInclinacion*Time.deltaTime * Input.GetAxis("Vertical")*-1,0,0);
+     }
     void Update()
     {
-        if(disparado==true){
-            timed+= Time.deltaTime;
-            if(timed >5){
-                Destroy(transform.parent.gameObject);
-                timed=0;
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("diana"))
-        {
-            rb.isKinematic = true;
-            disparado = true;
-        }
+        
+                if (shootcooldown < 0)
+                {
+                    UpdatePlayerControl();
+                    return; 
+                }
+                _timelastshot += Time.deltaTime;
+                if (_timelastshot > shootcooldown )
+                {
+                     _timelastshot = 0;
+                    if (disparar)
+                    {
+                         Shoot();
+                         disparar=false;
+                    }
+                   
+                   
+                }
+        
+       
     }
 }

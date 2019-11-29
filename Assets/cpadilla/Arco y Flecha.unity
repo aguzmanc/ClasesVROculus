@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agarre: 0
-  estaAgarrando: 0
   arco: {fileID: 6802120018046721049}
+  estaAgarrando: 0
 --- !u!1 &486650141
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +624,18 @@ Transform:
   m_Father: {fileID: 6802120018036083094}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705818154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2158322524389589859, guid: 7016c970a4f8d434ca8311503fe41510,
+    type: 3}
+  m_PrefabInstance: {fileID: 916038315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48515d9c4d7aca142ae6c18f531301ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &750835145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1330,9 +1342,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 6802120019966707659}
   cuerda: {fileID: 6802120019928242863}
-  materialTocado: {fileID: 2100000, guid: a592cd8775fecdf47af098a37b547f46, type: 2}
-  materialAgarrado: {fileID: 2100000, guid: 6c67ed471ef09b34494f4d3170a3491c, type: 2}
-  materialSuelto: {fileID: 2100000, guid: 63bbd454bdc8da24bbab2f56492120b5, type: 2}
+  MaterialTocado: {fileID: 2100000, guid: a592cd8775fecdf47af098a37b547f46, type: 2}
+  materialAgarrad: {fileID: 2100000, guid: 6c67ed471ef09b34494f4d3170a3491c, type: 2}
+  materialSuelt: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
 --- !u!135 &6802120018046721050
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1766,9 +1778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 6802120019928242850}
-  proyectil: {fileID: 770020904838385798, guid: 7016c970a4f8d434ca8311503fe41510,
-    type: 3}
-  flechaIntantiate: {fileID: 0}
   materialSuelto: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
   materialTocado: {fileID: 2100000, guid: a592cd8775fecdf47af098a37b547f46, type: 2}
   materialAgarrando: {fileID: 2100000, guid: 6c67ed471ef09b34494f4d3170a3491c, type: 2}
@@ -1961,14 +1970,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d30a6b025ac2045aedc48061cf2653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivotCuerda: {fileID: 6802120018036083094}
-  cuerdac: {fileID: 6802120019928242864}
   agarre: 0
   estaAgarrando: 0
-  distanciaValor: 0
   distancia: 0
   tocando: 0
-  sepuedeDisparar: 0
+  pivotCuerda: {fileID: 6802120018036083094}
+  cuerdab: {fileID: 6802120019928242864}
+  flechag: {fileID: 705818154}
+  suelta: 0
 --- !u!65 &7957381219891755414
 BoxCollider:
   m_ObjectHideFlags: 0
