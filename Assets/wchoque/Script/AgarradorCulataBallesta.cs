@@ -38,26 +38,28 @@ public class AgarradorCulataBallesta : MonoBehaviour
             //Index trigger para disparar
         }
          cambio= UpdateNivelAgarreDerecha();
-      //  cambio=true;
+      //cambio=true;
             if(estaagarrando  && cambio){
-            if(culataBallesta!=null)
+            if(culataBallesta!=null){
+              agarradoDerecha = true;
             culataBallesta.Agarrar();
-            agarradoDerecha = true;
+          }
         }
         if(!estaagarrando && cambio ){
-            if(culataBallesta!=null)
+            if(culataBallesta!=null){
+             agarradoDerecha = false;
              culataBallesta.Soltar();
-            agarradoDerecha = false;
+           }
         }
     }
          bool UpdateNivelAgarreDerecha(){
    actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
     bool limiteTraspasado=false;
-        if(agarre<limite_agarre  && actual >=limite_agarre){
+        if(agarre<limite_agarre  && actual >=limite_agarre && tocado== true){
             estaagarrando =true;
             limiteTraspasado=true;
         }
-        if(agarre>limite_soltar  && actual <=limite_soltar){
+        if(agarre>limite_soltar  && actual <=limite_soltar ){
             estaagarrando =false;
             limiteTraspasado=true;
         }
@@ -90,6 +92,7 @@ public class AgarradorCulataBallesta : MonoBehaviour
             //agarradorCuerdaBallesta = transform.GetComponent<AgarradorCuerdaBallesta>();
             culataBallesta.DejarTocar();
             tocado=false;
+            culataBallesta = null;
         }   
     }
 }

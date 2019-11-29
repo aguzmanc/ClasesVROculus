@@ -58,7 +58,7 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
 
 
          cambio= UpdateNivelAgarreDerecha();
-      //  cambio=true;
+      // cambio=true;
             if(estaagarrando  && cambio){
             if(cuerdaBallesta!=null)
             cuerdaBallesta.Agarrar();
