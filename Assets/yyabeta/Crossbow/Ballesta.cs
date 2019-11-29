@@ -52,7 +52,7 @@ public class Ballesta : MonoBehaviour
     public void DisparaFlecha(float speed)
     {
         GameObject f = Instantiate(prfabFlecha,disparador.position,disparador.rotation);
-        f.GetComponent<Rigidbody>().AddForce(disparador.transform.forward*speed*3f);
+        f.GetComponent<Rigidbody>().AddForce(disparador.transform.forward*speed);
         Destroy(f,3);
     }
     public void Soltar() 
