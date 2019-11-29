@@ -23,21 +23,21 @@ public class TakeTool : MonoBehaviour
     {
         bool cambio = UpdateNivelAgarre();
         
-        // if(isTaken && arco != null && cambio) {
-        //     arco.Agarrar(transform);
-        // }
-
-        // if(isTaken==false && cambio && arco!=null){
-        //     arco.Soltar();
-        // }
-        
-        if(agarrar && arco != null) {
+        if(isTaken && arco != null && cambio) {
             arco.Agarrar(transform);
         }
 
-        if(!agarrar && arco != null){
+        if(isTaken==false && cambio && arco!=null){
             arco.Soltar();
         }
+        
+        // if(agarrar && arco != null) {
+        //     arco.Agarrar(transform);
+        // }
+
+        // if(!agarrar && arco != null){
+        //     arco.Soltar();
+        // }
 
         
 

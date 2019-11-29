@@ -11,8 +11,7 @@ public class FlechaIP : MonoBehaviour
     void Start()
     {
         body=GetComponent<Rigidbody>();
-        body.isKinematic=true;
-        body.useGravity=false;
+        
     }
 
     void Update()
