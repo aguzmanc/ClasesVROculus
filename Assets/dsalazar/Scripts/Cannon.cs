@@ -35,7 +35,7 @@ public class Cannon : MonoBehaviour {
               Debug.DrawRay(cannonPivotBone.transform.position, transform.TransformDirection(manoDerecha.transform.position) , Color.white);
               createdBullet.transform.position = cannonPivotBone.transform.position;
               
-              createdBullet.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
+             // createdBullet.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
               strength=(20*distancia);   
                Rigidbody body = createdBullet.GetComponent<Rigidbody>();
         body.AddForce(cannonPivotBone.transform.forward * strength, ForceMode.Impulse);
@@ -50,7 +50,7 @@ public class Cannon : MonoBehaviour {
     public void Shoot () {
         GameObject createdBullet = Instantiate(bullet);
         createdBullet.transform.position = cannonPivotBone.transform.position;
-              createdBullet.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
+       //       createdBullet.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
 
         Rigidbody body = createdBullet.GetComponent<Rigidbody>();
        // createdBullet.transform.rotation = cannonPivotBone.transform.rotation;
