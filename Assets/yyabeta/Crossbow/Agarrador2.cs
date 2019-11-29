@@ -25,12 +25,11 @@ public class Agarrador2 : MonoBehaviour
 
         if(estaAgarrando && ballesta != null && cambio) {
             ballesta.Agarrar(transform);
-            if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch)==1)
+            if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch))
             {
                 ballesta.DisparaFlecha(100);
             }
         }
-
         if(estaAgarrando==false && cambio && ballesta!=null){
             ballesta.Soltar();
         }
