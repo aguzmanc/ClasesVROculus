@@ -44,9 +44,11 @@ public class SoporteBallesta : MonoBehaviour
             red.material=Msuelto;
        
     }
-     public void rotar(Transform ejeMano)
+     public void rotar(Transform ejeMano,Transform manodercha)
     {
-            eje.rotation=ejeMano.rotation;
+
+            eje.rotation=Quaternion.LookRotation(ejeMano.position-manodercha.position);
+
        
     }
       public void agarrar(Transform mano)

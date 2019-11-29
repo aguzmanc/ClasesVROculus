@@ -8,7 +8,7 @@ public class AgarreBallestaIzquierda : MonoBehaviour
     const float LimiteSuelto = 0.3f;
     public bool estaAgarrando;
 
-  
+  public Transform MANODERECHA;
     [Range (0f,1f)]
     public float NivelAgarre;
     public SoporteBallesta soporteBallesta;
@@ -37,7 +37,7 @@ public bool forzado;
 
         if(estaAgarrando && soporteBallesta!=null)
         {
-            soporteBallesta.rotar(transform);
+            soporteBallesta.rotar(transform,MANODERECHA);
         }
 
     }
