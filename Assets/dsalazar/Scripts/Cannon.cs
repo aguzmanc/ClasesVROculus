@@ -36,7 +36,7 @@ public class Cannon : MonoBehaviour {
               createdBullet.transform.position = cannonPivotBone.transform.position;
               
              // createdBullet.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
-              strength=(20*distancia);   
+              strength=(50*distancia);   
                Rigidbody body = createdBullet.GetComponent<Rigidbody>();
         body.AddForce(cannonPivotBone.transform.forward * strength, ForceMode.Impulse);
             //Shoot();
