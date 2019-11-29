@@ -17,6 +17,8 @@ public class AgarradorCuerdab : MonoBehaviour
     public Transform pivotCuerda;
 
     public Cuerda cuerdab;
+
+    public Flechag flechag;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,15 @@ public class AgarradorCuerdab : MonoBehaviour
         if (cuerdab!=null)
         {
         cuerdab.transform.localPosition = new Vector3(0,0,distancia);
+
+            if (distancia== 0)
+            {
+                flechag.disparar=true;
+            }
+            if (distancia!=0)
+            {
+                flechag.disparar=false;
+            }
             
         }
 
