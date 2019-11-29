@@ -55,6 +55,7 @@ public class Flechag : MonoBehaviour
                     if (disparar)
                     {
                          Shoot();
+                         disparar=false;
                     }
                    
                    

@@ -41,6 +41,8 @@ public class AgarradorCuerdab : MonoBehaviour
             estaAgarrando=true;
             suelta=false;
             limiteTraspasado = true;
+
+
             auxiliarUna=true;
         }
         if (agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR)
@@ -95,18 +97,22 @@ public class AgarradorCuerdab : MonoBehaviour
             if ( cuerdab !=null)
             {
             cuerdab.Soltar();
-            if (auxiliarUna)
-            {
-                    if (suelta )
+           
+                    if (suelta)
                     {
-                        flechag.disparar=true;
+                        if (auxiliarUna)
+                        {
+                            flechag.disparar=true;
+                            auxiliarUna=false;
+                        }
+                       
                     }
                     else
                     {
                         flechag.disparar=false;
                     }
-                auxiliarUna=false;
-            }
+              
+            
                 
 
             }
