@@ -25,8 +25,7 @@ public class Agarrador2 : MonoBehaviour
     {
         bool cambio = UpdateNivelAgarre();
 
-        trigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger,OVRInput.Controller.LTouch)>0.3f;
-        if(trigger && ballesta != null)
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch) && ballesta != null)
         {
             ballesta.DisparaFlecha(100);
         }
