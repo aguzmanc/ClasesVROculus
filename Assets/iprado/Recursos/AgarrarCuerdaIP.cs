@@ -46,26 +46,26 @@ public class AgarrarCuerdaIP : MonoBehaviour
 
         bool cambio = UpdateNivelAgarre();
         
-        // if(estaAgarrando && cambio) {
-        //     if(cuerda != null)
-        //         cuerda.Agarrar();   
-        // }
-
-        // if(estaAgarrando==false && cuerda!=null){
-        //     if(cuerda!=null)
-        //         cuerda.Soltar();
-        // }
-        
-        if (agarrar)
-        {
+        if(estaAgarrando && cambio) {
             if(cuerda != null)
-                cuerda.Agarrar(); 
+                cuerda.Agarrar();   
         }
-        if (!agarrar)
-        {
-             if(cuerda!=null)
+
+        if(estaAgarrando==false && cuerda!=null){
+            if(cuerda!=null)
                 cuerda.Soltar();
         }
+        
+        // if (agarrar)
+        // {
+        //     if(cuerda != null)
+        //         cuerda.Agarrar(); 
+        // }
+        // if (!agarrar)
+        // {
+        //      if(cuerda!=null)
+        //         cuerda.Soltar();
+        // }
     }
 
 
