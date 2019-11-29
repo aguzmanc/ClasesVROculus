@@ -451,7 +451,7 @@ MonoBehaviour:
   tocando: 0
   pivotCuerda: {fileID: 0}
   cuerdab: {fileID: 0}
-  flechag: {fileID: 2103202749}
+  flechag: {fileID: 1004280448}
   suelta: 0
 --- !u!65 &331562977
 BoxCollider:
@@ -753,7 +753,7 @@ Transform:
   m_LocalScale: {x: 0.99201626, y: 0.14204118, z: 0.17330337}
   m_Children: []
   m_Father: {fileID: 1946894237}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &512293116
 GameObject:
@@ -1034,8 +1034,58 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1946894237}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1004280446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004280447}
+  - component: {fileID: 1004280448}
+  m_Layer: 0
+  m_Name: Inicializado
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1004280447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004280446}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.37, y: 0, z: 1.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1946894237}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1004280448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004280446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c855340d463f6449d676b768d7051c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivote: {fileID: 941573018}
+  flecha: {fileID: 845730767354348496, guid: 780271edc0d3ad340aebb7e6aaabf98c, type: 3}
+  shootcooldown: 1
+  fuerza: 220
+  velocidadInclinacion: 180
+  velocidadDireccion: 360
+  disparar: 0
 --- !u!1 &1162985570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1382,7 @@ Transform:
   m_LocalScale: {x: 0.99201626, y: 0.14204118, z: 0.17330337}
   m_Children: []
   m_Father: {fileID: 1946894237}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 30.381, z: 0}
 --- !u!23 &1479059146
 MeshRenderer:
@@ -1673,6 +1723,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.21404843, y: 0.21404843, z: 0.21404843}
   m_Children:
+  - {fileID: 1004280447}
   - {fileID: 2103202746}
   - {fileID: 390881509}
   - {fileID: 1479059145}
@@ -1906,7 +1957,6 @@ GameObject:
   - component: {fileID: 2103202746}
   - component: {fileID: 2103202748}
   - component: {fileID: 2103202747}
-  - component: {fileID: 2103202749}
   m_Layer: 0
   m_Name: adelante
   m_TagString: Untagged
@@ -1922,11 +1972,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103202745}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.60099995}
+  m_LocalPosition: {x: 0, y: 0, z: 0.9}
   m_LocalScale: {x: 0.15594018, y: 0.14204092, z: 0.51513153}
   m_Children: []
   m_Father: {fileID: 1946894237}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2103202747
 MeshRenderer:
@@ -1974,25 +2024,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103202745}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2103202749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103202745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c855340d463f6449d676b768d7051c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pivote: {fileID: 941573018}
-  flecha: {fileID: 845730767354348496, guid: 780271edc0d3ad340aebb7e6aaabf98c, type: 3}
-  shootcooldown: 1
-  fuerza: 70
-  velocidadInclinacion: 180
-  velocidadDireccion: 360
-  disparar: 0
 --- !u!1 &2132102248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,7 +2054,7 @@ Transform:
   m_LocalScale: {x: 0.99201626, y: 0.14204118, z: 0.17330337}
   m_Children: []
   m_Father: {fileID: 1946894237}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -30.381, z: 0}
 --- !u!23 &2132102250
 MeshRenderer:

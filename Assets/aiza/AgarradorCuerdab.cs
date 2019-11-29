@@ -73,15 +73,7 @@ public class AgarradorCuerdab : MonoBehaviour
            
            
         }
-         if (suelta)
-            {
-                flechag.disparar=true;
-            }
-            if (suelta==false)
-            {
-                flechag.disparar=false;
-            }
-
+         
         bool cambio = ActualizarNivelAgarre();
 
         if (estaAgarrando &&  cambio)
@@ -98,7 +90,15 @@ public class AgarradorCuerdab : MonoBehaviour
             if ( cuerdab !=null)
             {
             cuerdab.Soltar();
-                
+                    if (distancia>=0.3)
+                    {
+                        flechag.disparar=true;
+                    }
+                    else
+                    {
+                        flechag.disparar=false;
+                    }
+
             }
         }
     }
