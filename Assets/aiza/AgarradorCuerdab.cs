@@ -37,11 +37,13 @@ public class AgarradorCuerdab : MonoBehaviour
         if (agarre<LIMITE_AGARRE && actual >=LIMITE_SOLTAR)
         {
             estaAgarrando=true;
+            suelta=false;
             limiteTraspasado = true;
         }
         if (agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR)
         {
             estaAgarrando=false;
+            suelta=true;
             limiteTraspasado= true;
         }
      
@@ -90,7 +92,7 @@ public class AgarradorCuerdab : MonoBehaviour
             if ( cuerdab !=null)
             {
             cuerdab.Soltar();
-                    if (distancia>=0.3)
+                    if (suelta)
                     {
                         flechag.disparar=true;
                     }
@@ -111,7 +113,7 @@ public class AgarradorCuerdab : MonoBehaviour
             cuerdab.Tocar();
             tocando = true;
             pivotCuerda = cuerdab.transform.parent;
-            suelta= false;
+          
         }
     }
 
@@ -123,7 +125,7 @@ public class AgarradorCuerdab : MonoBehaviour
             cuerdab.DejarDeTocar();
             //cuerdab=null;            
             tocando = false;
-            suelta=true;
+           
              //pivotCuerda = null;
         }
     }
