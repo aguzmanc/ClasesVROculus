@@ -79,7 +79,7 @@ public class BowString : MonoBehaviour
             GameObject arrow = Instantiate(SM_Arrow);
             arrow.transform.position = baseCuerda.transform.position;
             arrow.transform.Rotate(-90,0,0); 
-            arrow.transform.Translate(0.06f,0,0);
+            arrow.transform.Translate(0.07f,0,0);
             strength=distancia*100;//(50);   
             Rigidbody body = arrow.GetComponent<Rigidbody>();
             body.AddForce(baseCuerda.transform.forward * -1 * strength, ForceMode.Impulse);
