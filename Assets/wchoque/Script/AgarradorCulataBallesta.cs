@@ -31,14 +31,14 @@ public class AgarradorCulataBallesta : MonoBehaviour
     {
         if(agarradorCuerdaBallesta!=null){
             //OVRInput.Button.PrimaryIndexTrigger
-          if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch) && agarradorCuerdaBallesta.prepararMunicion==true &&estaagarrando==true){
-                // if(Input.GetKeyDown(KeyCode.T) && agarradorCuerdaBallesta.prepararMunicion==true){
+         // if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch) && agarradorCuerdaBallesta.prepararMunicion==true &&estaagarrando==true){
+                if(Input.GetKeyDown(KeyCode.T) && agarradorCuerdaBallesta.prepararMunicion==true){
                 agarradorCuerdaBallesta.lanzarFlecha();
             }
             //Index trigger para disparar
         }
          cambio= UpdateNivelAgarreDerecha();
-    //  cambio=true;
+      cambio=true;
             if(estaagarrando  && cambio){
             if(culataBallesta!=null){
               agarradoDerecha = true;

@@ -49,7 +49,7 @@ public class CuerdaBallestaW : MonoBehaviour
         flechaInstaciado.transform.localScale = Vector3.one;
           flechaInstaciado.transform.parent = transform;
           flechaInstaciado.transform.localPosition = Vector3.zero;
-        flechaInstaciado.transform.Rotate(new Vector3(0f,-180f,0f));
+        flechaInstaciado.transform.Rotate(new Vector3(transform.rotation.x,-180f,transform.rotation.y));
         return flechaInstaciado.GetComponentInChildren<Rigidbody>();
     }
 }

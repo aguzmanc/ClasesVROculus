@@ -10,7 +10,7 @@ public class flechaW : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = transform.GetComponent<Rigidbody>();
+        rigidbody = transform.parent.transform.GetComponent<Rigidbody>();
         tiempo = 15;
     }
 

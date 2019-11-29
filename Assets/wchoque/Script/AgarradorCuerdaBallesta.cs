@@ -58,7 +58,7 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
 
 
          cambio= UpdateNivelAgarreDerecha();
-    //  cambio=true;
+    cambio=true;
             if(estaagarrando  && cambio){
             if(cuerdaBallesta!=null)
             cuerdaBallesta.Agarrar();
@@ -118,7 +118,7 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
         if(flecha !=null){
                 flecha.transform.parent.transform.parent = null;
                 flecha.isKinematic = false;
-                flecha.AddForce(transform.parent.transform.forward * distanciaValor * 1500, ForceMode.Force);
+                flecha.AddForce(flecha.transform.parent.transform.forward * distanciaValor * 1500, ForceMode.Force);
                 distanciaValor=0;
                 distancia=0;
                 flecha =null;

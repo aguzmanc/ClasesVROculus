@@ -61,9 +61,9 @@ public class AgarradorCuerdaW : MonoBehaviour
             if(cuerda!=null)
             cuerda.Soltar();
             if(flecha !=null){
-                flecha.transform.parent.transform.parent = null;
+                flecha.transform.parent = null;
                 flecha.isKinematic = false;
-                flecha.AddForce(transform.parent.transform.forward * distanciaValor * 1000, ForceMode.Force);
+                flecha.AddRelativeForce(flecha.transform.forward * distanciaValor * 5000, ForceMode.Force);
                 flecha =null;
             }
         }
