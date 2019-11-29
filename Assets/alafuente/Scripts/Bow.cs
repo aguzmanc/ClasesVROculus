@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bow : MonoBehaviour
 {
     public Renderer rend;
-    Rigidbody body;
 
     public GameObject cuerda;
 
@@ -17,10 +16,16 @@ public class Bow : MonoBehaviour
 
     void Start()
     {
-        body = GetComponent<Rigidbody>();
         rend.material = materialSuelto;
-        cuerda = transform.Find("cuerda").gameObject;
+        cuerda = GameObject.Find("Cuerda");
+        if(cuerda!=null)
+        {
+            Debug.Log("asd");
+        }
+        else{
+            Debug.Log("nulo");
 
+        }
         cuerda.SetActive(false);
     }
 
@@ -38,7 +43,7 @@ public class Bow : MonoBehaviour
 
     public void Agarrar(Transform agarrador) { 
         rend.material = materialAgarrado;
-        body.isKinematic = true;
+        
         transform.parent = agarrador;
 
         transform.localPosition = Vector3.zero;
@@ -51,7 +56,6 @@ public class Bow : MonoBehaviour
     public void Soltar() {
         transform.parent = null;
         rend.material = materialTocado;
-        body.isKinematic = false;
 
         cuerda.SetActive(false);
     }

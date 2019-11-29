@@ -10,25 +10,25 @@ public class Holder : MonoBehaviour
     [Range(0f, 1f)]
     public float agarre;
 
-    public bool estaAgarrando;
+    public bool manoCerrada;
 
     public Bow arco;
 
 
     void Start() {
-        estaAgarrando = false;
+        manoCerrada = false;
     }
 
 
     void Update()
     {
-        bool cambio = UpdateNivelAgarre();
+        //bool cambio = UpdateNivelAgarre();
 
-        if(estaAgarrando && arco != null && cambio) {
+        if(manoCerrada && arco != null ){// && cambio) {
             arco.Agarrar(transform);
         }
 
-        if(estaAgarrando==false && cambio && arco!=null){
+        if(!manoCerrada && arco != null ){// && cambio){
             arco.Soltar();
         }
     }
@@ -36,17 +36,18 @@ public class Holder : MonoBehaviour
 
 
 
+    /*
     bool UpdateNivelAgarre(){
         float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
         bool limiteTraspasado = false;
 
         if(agarre < LIMITE_AGARRE  && actual >= LIMITE_AGARRE){
-            estaAgarrando = true;
+            manoCerrada = true;
             limiteTraspasado = true;
         }
 
         if(agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR){
-            estaAgarrando = false;
+            manoCerrada = false;
             limiteTraspasado = true;
         }
 
@@ -54,23 +55,24 @@ public class Holder : MonoBehaviour
 
         return limiteTraspasado;
     }
+    */
 
 
 
     void OnTriggerEnter(Collider otro) {
         Debug.Log("Trigger");
-        Bow arcoAgarrado = otro.GetComponent<Bow>();
+        Bow arcoDetectado = otro.GetComponent<Bow>();
 
-        if(arcoAgarrado!=null) {
-            arco = arcoAgarrado;
+        if(arcoDetectado!=null) {
+            arco = arcoDetectado;
             arco.Tocar();
         }
     }
 
 
     void OnTriggerExit(Collider otro) {
-        Bow arcoAgarrado = otro.GetComponent<Bow>();
-        if(arcoAgarrado!=null) {
+        Bow arcoDetectado = otro.GetComponent<Bow>();
+        if(arcoDetectado!=null) {
             arco.DejarDeTocar();
             arco = null;
         }
