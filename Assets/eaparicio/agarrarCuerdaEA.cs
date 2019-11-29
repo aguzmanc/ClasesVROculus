@@ -109,6 +109,7 @@ public class agarrarCuerdaEA : MonoBehaviour
     bool UpdateAgarre(){
 
 
+        //PRUEBAS PC
         bool limiteTraspasado = false;
 
         if(agarreCuerda < LIMITE_AGARRE  && actu >= LIMITE_AGARRE && tocando){
@@ -125,7 +126,7 @@ public class agarrarCuerdaEA : MonoBehaviour
 
         return limiteTraspasado;
 
-
+        //PRUEBAS VR
     //    float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
     //     bool limiteTraspasado = false;
 

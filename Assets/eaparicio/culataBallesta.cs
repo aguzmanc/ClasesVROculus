@@ -8,6 +8,7 @@ public class culataBallesta : MonoBehaviour
     public Material matSuelto;
     public Material matTocado;
     public Material matAgarrado;
+    public Material matDisparo;
     void Start()
     {
         render.material= matSuelto;
@@ -23,5 +24,8 @@ public class culataBallesta : MonoBehaviour
     }
     public void Soltar(){
         render.material =matTocado;
+    }
+    public void Disparar(){
+        render.material =matDisparo;
     }
 }

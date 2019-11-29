@@ -1521,6 +1521,7 @@ MonoBehaviour:
   matSuelto: {fileID: 2100000, guid: ae07bcef9eadd2f4494b1999d35fa580, type: 2}
   matTocado: {fileID: 2100000, guid: 530515eb9aabbec4ba417fba23b77034, type: 2}
   matAgarrado: {fileID: 2100000, guid: bcba028820e60d3419dea07f034901fc, type: 2}
+  matDisparo: {fileID: 2100000, guid: 5354fe7ff4b3ccc4182dc16a2f75befd, type: 2}
 --- !u!1 &911537505
 GameObject:
   m_ObjectHideFlags: 0
