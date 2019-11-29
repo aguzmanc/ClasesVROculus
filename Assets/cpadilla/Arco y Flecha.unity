@@ -376,10 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca85199e3a5dd342be2f59646f8873c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estaAgarrando: 0
-  AGARREF: 0
-  NivelAgarre: 0
-  arcoGlobal: {fileID: 0}
+  arco: {fileID: 6802120018046721049}
+  agarre: 0
+  estaagarrando: 0
 --- !u!1 &486650141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,11 +1297,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e149fbe5e7f686344bdca9a4a85f7e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {fileID: 6802120019552649163}
-  cuerdaAgarrador: {fileID: 6802120019928242863}
-  MaterialTocado: {fileID: 2100000, guid: a592cd8775fecdf47af098a37b547f46, type: 2}
-  materialAgarrad: {fileID: 2100000, guid: 6c67ed471ef09b34494f4d3170a3491c, type: 2}
-  materialSuelt: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
+  rend: {fileID: 6802120019552649163}
+  materialTocado: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
+  materialAgarrado: {fileID: 2100000, guid: a592cd8775fecdf47af098a37b547f46, type: 2}
+  materialSoltado: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
+  cuerda: {fileID: 6802120019928242863}
 --- !u!135 &6802120018046721050
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1735,10 +1734,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1364268680d9dbc46a0e95a8cdcc8ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flechaProyectil: {fileID: 770020904838385798, guid: 7016c970a4f8d434ca8311503fe41510,
+    type: 3}
+  flechaInstaciado: {fileID: 0}
   rend: {fileID: 6802120019928242850}
-  materialSuelto: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
   materialTocado: {fileID: 2100000, guid: a592cd8775fecdf47af098a37b547f46, type: 2}
-  materialAgarrando: {fileID: 2100000, guid: 6c67ed471ef09b34494f4d3170a3491c, type: 2}
+  materialAgarrado: {fileID: 2100000, guid: 6c67ed471ef09b34494f4d3170a3491c, type: 2}
+  materialSoltado: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
 --- !u!54 &6802120019928242865
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1928,14 +1930,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d30a6b025ac2045aedc48061cf2653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estaAgarrando: 0
-  NivelAgarre: 0
-  cuerdaGlobal: {fileID: 0}
-  estatocada: 0
+  agarre: 0
+  estaagarrando: 0
   distancia: 0
-  origenCuerda: {fileID: 0}
-  agarreF: 0
-  flecha: {fileID: 0}
+  distanciaValor: 0
+  tocado: 0
 --- !u!65 &7957381219891755414
 BoxCollider:
   m_ObjectHideFlags: 0
