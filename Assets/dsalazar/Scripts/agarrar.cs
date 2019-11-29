@@ -63,20 +63,20 @@ public class agarrar : MonoBehaviour
     public bool tocando=false;
     public bool arcoAgarrado=false;
     private void OnTriggerEnter(Collider other) {
-        //if (other.gameObject.tag=="arco")
-        //{
+        if (other.gameObject.tag=="arco")
+        {
            // other = GetOtherGameObject();
            // arco.transform.SetParent( transform );
-             Debug.Log("toco");
+             Debug.Log(other.name);
              tocando=true;
            //  arcoMaterial.material= materialverde;
              //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
 
           //  other.transform.SetParent( transform, worldPositionStays );
-        //}
+        }
     }
     private void OnTriggerStay(Collider other) {
-             tocando=true;
+            
              //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
              //arcoMaterial.material= materialverde;
 
@@ -84,7 +84,8 @@ public class agarrar : MonoBehaviour
     private void OnTriggerExit(Collider other) {
       tocando=false;
      //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.green);
-            // arcoMaterial.material= materialrojo;
+            // arcoMaterial.material= materialrojo; 
+            tocando =false;
       
     }
 }
