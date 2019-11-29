@@ -45,7 +45,8 @@ public class CuerdaE : MonoBehaviour
 
 
     public void Soltar(){
-        rend.material = materialTocado;    
+        rend.material = materialTocado; 
+        disparar = true;   
     } 
 
     public void Disparar(){

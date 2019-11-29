@@ -85,7 +85,10 @@ public class AgarradorCuerdaE : MonoBehaviour
         if(c.tag == "Cuerda"){
             cuerda = c.GetComponent<CuerdaE>();
             cuerda.DejarDeTocar();
-            cuerda.Disparar();
+            if(cuerda.disparar && !estaAgarrando){
+                cuerda.Disparar();
+            }
+            
             tocando = false;
 
             //cuerda = null;
