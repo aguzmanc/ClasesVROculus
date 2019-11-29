@@ -795,6 +795,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: flecha
       objectReference: {fileID: 0}
+    - target: {fileID: 1302704644866746293, guid: bb11fc2551fa80c47a71f638b45742ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1302704644866746292, guid: bb11fc2551fa80c47a71f638b45742ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,6 +859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302704643489482096, guid: bb11fc2551fa80c47a71f638b45742ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb11fc2551fa80c47a71f638b45742ae, type: 3}
@@ -1006,6 +1016,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pared
+      objectReference: {fileID: 0}
+    - target: {fileID: 5957851186587550684, guid: b401c39958321e74eb1881d3bb5e14a1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5957851186587550680, guid: b401c39958321e74eb1881d3bb5e14a1,
         type: 3}

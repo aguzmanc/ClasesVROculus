@@ -23,7 +23,7 @@ public class agarradorBallesta : MonoBehaviour
         
        bool cambio=actualizarAgarre();
    
-       if(AGARREF && ballestaglobal!=null)
+       if(estaAgarrando && ballestaglobal!=null)
        {
            ballestaglobal.agarrar(transform);
        }
@@ -33,8 +33,8 @@ public class agarradorBallesta : MonoBehaviour
 
 
         //recargar
-
-        if(AGARREF && ballestaglobal!=null&&recargaForzada)
+        if(estaAgarrando && ballestaglobal!=null&& OVRInput.Get(OVRInput.Button.One))
+        //if(AGARREF && ballestaglobal!=null&&recargaForzada)
         {
             bool cargada=ballestaglobal.Cargada();
             if(!cargada)
@@ -44,8 +44,8 @@ public class agarradorBallesta : MonoBehaviour
             }
         }
         //disprar
-        //if(estaAgarrando &&( (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger,OVRInput.Controller.RTouch))>0 ))
-        if(AGARREF && shootForzado && ballestaglobal!=null)
+        if(estaAgarrando && ballestaglobal!=null&&( (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger,OVRInput.Controller.RTouch))>0.3f ))
+        //if(AGARREF && shootForzado && ballestaglobal!=null)
         {
             bool cargada=ballestaglobal.Cargada();
             if(cargada)

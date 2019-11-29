@@ -30,7 +30,7 @@ public class agarreCuerda : MonoBehaviour
     void Update()
     {
 
-        if(agarreF)
+        if(estaAgarrando)
         {
             distancia=Vector3.Distance(transform.position,origenCuerda.transform.position);
             distancia=Mathf.Max(0f,distancia);
