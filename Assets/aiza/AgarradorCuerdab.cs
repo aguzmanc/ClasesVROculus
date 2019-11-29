@@ -92,7 +92,7 @@ public class AgarradorCuerdab : MonoBehaviour
             if ( cuerdab !=null)
             {
             cuerdab.Soltar();
-                    if (suelta)
+                    if (suelta && estaAgarrando == false)
                     {
                         flechag.disparar=true;
                     }
