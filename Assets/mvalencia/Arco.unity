@@ -513,10 +513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6bdd942438e774e889b3b4f6a1a18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
-  materialSuelto: {fileID: 0}
-  materialTocado: {fileID: 0}
-  materialAgarrando: {fileID: 0}
+  rend: {fileID: 345024059}
+  materialSuelto: {fileID: 2100000, guid: 4e044345282e4f840b4a60a495266572, type: 2}
+  materialTocado: {fileID: 2100000, guid: 71f678f801d6a6146af09825c929ac03, type: 2}
+  materialAgarrando: {fileID: 2100000, guid: 0964719636e10534c972349d1cd9711b, type: 2}
 --- !u!1 &410406599
 GameObject:
   m_ObjectHideFlags: 0
