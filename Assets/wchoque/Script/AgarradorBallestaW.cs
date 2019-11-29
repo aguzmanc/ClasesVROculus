@@ -26,7 +26,7 @@ public class AgarradorBallestaW : MonoBehaviour
     void Update()
     {
            cambio= UpdateNivelAgarre();
-     // cambio=true;
+      //cambio=true;
         if(estaagarrando && ballesta!=null && cambio){
               agarradoIzquierda =true;
             ballesta.Agarrar(transform);
@@ -68,7 +68,8 @@ public class AgarradorBallestaW : MonoBehaviour
     {
           if(other.tag == "Ballesta"){
             BallestaW balle = other.GetComponent<BallestaW>();
-              if(balle!=null){
+            ballesta = balle;
+              if(ballesta!=null){
              ballesta.DejarTocar();
             // ballesta=null;
          }

@@ -15,7 +15,7 @@ public class BallestaW : MonoBehaviour
     {
             body =GetComponent<Rigidbody>();
         rend.material=materialSoltado;
-        ballesta =transform.Find("pivotCuerdaBallesta").gameObject;
+        ballesta =transform.Find("hijoBallesta").gameObject.transform.Find("pivotCuerdaBallesta").gameObject;
         ballesta.SetActive(false);
     }
 

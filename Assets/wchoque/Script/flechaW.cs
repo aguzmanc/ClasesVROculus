@@ -11,7 +11,7 @@ public class flechaW : MonoBehaviour
     void Start()
     {
         rigidbody = transform.GetComponent<Rigidbody>();
-        tiempo = 0;
+        tiempo = 15;
     }
 
     // Update is called once per frame

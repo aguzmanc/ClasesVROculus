@@ -14,7 +14,7 @@ Vector3 direccion;
     // Start is called before the first frame update
     void Start()
     {
-        velocidad = 5;
+        velocidad = 20;
 
     }
 
