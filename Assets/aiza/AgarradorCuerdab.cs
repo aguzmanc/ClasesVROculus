@@ -113,7 +113,7 @@ public class AgarradorCuerdab : MonoBehaviour
             cuerdab.Tocar();
             tocando = true;
             pivotCuerda = cuerdab.transform.parent;
-            suelta= false;
+          
         }
     }
 
@@ -125,7 +125,7 @@ public class AgarradorCuerdab : MonoBehaviour
             cuerdab.DejarDeTocar();
             //cuerdab=null;            
             tocando = false;
-            suelta=true;
+           
              //pivotCuerda = null;
         }
     }
