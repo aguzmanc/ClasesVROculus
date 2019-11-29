@@ -22,7 +22,7 @@ public class BallestaFire : MonoBehaviour
     }
     void Update()
     {
-         if (OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger)>0.7f||Input.GetKeyDown(KeyCode.Space))
+         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)||Input.GetKeyDown(KeyCode.Space))
          {
         GameObject createdBullet = Instantiate(bullet);
               createdBullet.transform.position = cannonPivotBone.transform.position;
