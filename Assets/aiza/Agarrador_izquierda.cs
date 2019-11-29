@@ -21,14 +21,14 @@ public class Agarrador_izquierda : MonoBehaviour
     }
 
     private void Update() {
-        //bool cambio = ActualizarNivelAgarre();
+        bool cambio = ActualizarNivelAgarre();
 
-        if (estaAgarrando && arco !=null )
+        if (estaAgarrando && arco !=null && cambio)
         {
             arco.Agarrar(transform);
             arco.gameObject.transform.Rotate(0,0,90);
-            //if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch))
-            if (miprueba)
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch))
+           
             {
                 flechag.disparar=true;
             }
@@ -39,7 +39,7 @@ public class Agarrador_izquierda : MonoBehaviour
 
         }
 
-        if (estaAgarrando == false  && arco !=null)
+        if (estaAgarrando == false  && cambio && arco !=null)
         {
             arco.Soltar2();
         }
