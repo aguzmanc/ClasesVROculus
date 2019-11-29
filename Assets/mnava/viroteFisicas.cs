@@ -36,9 +36,8 @@ public class viroteFisicas : MonoBehaviour
     }
     public void flechaLanzada()
     {
-         
-          cuerpo.isKinematic=false;
           transform.parent=null;
+          cuerpo.isKinematic=false;
           disparada=true;
     }
      void OnTriggerEnter(Collider other) {
