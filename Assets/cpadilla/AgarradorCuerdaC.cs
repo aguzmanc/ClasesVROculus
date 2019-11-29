@@ -6,141 +6,124 @@ public class AgarradorCuerdaC : MonoBehaviour
 {
     const float LIMITE_AGARRE=0.7F;
     const float LIMITE_SOLTAR = 0.3F;
-    [Range(0f,1f)]
-    public float agarre;
+      public bool estaAgarrando;
 
-    public bool estaAgarrando;
+    [Range (0f,1f)]
+    public float NivelAgarre;
+    public CuerdaC cuerdaGlobal;
+    public bool estatocada;
     public float distancia;
-    public bool tocando;
-    public Transform pivotCuerda;
+    public Transform origenCuerda;
 
-    public CuerdaC cuerdab;
-
-    public flecha flechag;
-
-    public  bool suelta;
-
-    bool auxiliarUna;
-    
-
-
+     public bool agarreF;
+     bool agarrada;
+     public Transform flecha;
+    // Start is called before the first frame update
     void Start()
     {
-        tocando=false;
-        estaAgarrando=false;
-
+        estatocada=false;
+        agarrada=false;
     }
 
- bool ActualizarNivelAgarre()
-
-    {
-        bool limiteTraspasado = false;
-        float actual =  OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
-        if (agarre<LIMITE_AGARRE && actual >=LIMITE_SOLTAR)
-        {
-            estaAgarrando=true;
-            suelta=false;
-            limiteTraspasado = true;
-
-
-            auxiliarUna=true;
-        }
-        if (agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR)
-        {
-            estaAgarrando=false;
-            suelta=true;
-            limiteTraspasado= true;
-        }
-     
-        agarre=actual;
-
-        return limiteTraspasado;
-    }
     // Update is called once per frame
+    
     void Update()
     {
-       
-             
-        
-        if (tocando)
-        {
-           distancia =  Vector3.Distance(transform.position,pivotCuerda.position);
-           distancia = Mathf.Max(0f,distancia);
-           distancia = Mathf.Min(0.3f,distancia);
-        }
-        else{
-            
-            distancia=0;
-        }
-        if (cuerdab!=null)
-        {
-        cuerdab.transform.localPosition = new Vector3(0,0,distancia);
-           
 
-           
-           
-        }
-         
-        bool cambio = ActualizarNivelAgarre();
-
-        if (estaAgarrando &&  cambio)
+        if(agarreF)
         {
-            if (cuerdab !=null)
+            distancia=Vector3.Distance(transform.position,origenCuerda.transform.position);
+            distancia=Mathf.Max(0f,distancia);
+            distancia=Mathf.Min(1.6f,distancia);
+            Debug.DrawLine(transform.position,origenCuerda.position,Color.green);
+            if(distancia>0)
             {
-            cuerdab.Agarrar();
-                
+               
+                flecha feleCuer=flecha.GetComponent<flecha>(); 
+                flecha.parent=cuerdaGlobal.transform;
+                feleCuer.volverK();
+                feleCuer.tp();
+                feleCuer.darf(distancia);
+                agarrada=true;
+            }
+
+        }
+        else
+        {
+            distancia=0f;
+            if(agarrada)
+            {
+                flecha feleCuer=flecha.GetComponent<flecha>(); 
+                feleCuer.cambiarK();
             }
         }
-
-        if (estaAgarrando == false && cuerdab !=null )
+        if(cuerdaGlobal!=null)
         {
-            if ( cuerdab !=null)
-            {
-            cuerdab.Soltar();
-           
-                    if (suelta)
-                    {
-                        if (auxiliarUna)
-                        {
-                            flechag.disparar=true;
-                            auxiliarUna=false;
-                        }
-                       
-                    }
-                    else
-                    {
-                        flechag.disparar=false;
-                    }
-              
-            
-                
+            cuerdaGlobal.transform.localPosition=new Vector3(0,0,distancia*2);
+        }
 
+      
+        
+
+
+
+
+        
+       bool cambio=actualizarAgarre();
+        if(estaAgarrando && cambio) {
+            if(cuerdaGlobal != null)
+                cuerdaGlobal.agarrar();   
+        }
+
+        if(estaAgarrando==false && cuerdaGlobal!=null){
+            if(cuerdaGlobal!=null)
+                cuerdaGlobal.soltar();
+        }
+
+
+
+    }
+    bool actualizarAgarre()
+    {
+        bool cambio=false;
+        float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
+        if(NivelAgarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        {
+            estaAgarrando=true;
+            cambio=true;
+        }
+        if(NivelAgarre>LIMITE_SOLTAR && actual<=LIMITE_SOLTAR)
+        {
+            estaAgarrando=false;
+            cambio=true;
+        }
+        NivelAgarre=actual;
+        return cambio;
+    }
+    void OnTriggerEnter(Collider other) {
+        if(other.tag=="CuerdaPoint")
+        {
+            CuerdaC cuerdaTocada = other.GetComponent<CuerdaC>();
+            if(cuerdaTocada!=null) {
+                cuerdaGlobal=cuerdaTocada;
+                cuerdaGlobal.tocar();
+                estatocada=true;
+                origenCuerda=cuerdaGlobal.transform.parent;
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other) {
        
-        if (other.tag == "Cuerda")
-        {
-            cuerdab = other.GetComponent<CuerdaC>();
-            cuerdab.Tocar();
-            tocando = true;
-            pivotCuerda = cuerdab.transform.parent;
-          
-        }
-    }
-
-    private void OnTriggerExit(Collider other) {
         
-           if (other.tag == "Cuerda")
-        {
-            cuerdab = other.GetComponent<CuerdaC>();
-            cuerdab.DejarDeTocar();
-            //cuerdab=null;            
-            tocando = false;
-           
-             //pivotCuerda = null;
-        }
     }
+     void OnTriggerExit(Collider other) {
+         if(other.tag=="CuerdaPoint")
+        {
+        CuerdaC cuerdaTocada = other.GetComponent<CuerdaC>();
+        if(cuerdaTocada!=null) {
+            cuerdaGlobal.dejarTocar();
+            //cuerdaGlobal = null;
+            estatocada=false;
+             //origenCuerda=null;
+        }
+     }
+     }
 }

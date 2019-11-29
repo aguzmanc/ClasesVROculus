@@ -4,72 +4,70 @@ using UnityEngine;
 
 public class AgarradorC : MonoBehaviour
 {
-     const float LIMITE_AGARRE=0.7F;
-    const float LIMITE_SOLTAR = 0.3F;
-    [Range(0f,1f)]
-    public float agarre;
-
-    public ArcoC arco;
-
+    const float limiteAgarre = 0.7f;
+    const float LimiteSuelto = 0.3f;
     public bool estaAgarrando;
 
-    private void Start() {
-        estaAgarrando=false;
-    }
-
-    private void Update() {
-        bool cambio = ActualizarNivelAgarre();
-
-        if (estaAgarrando && arco !=null && cambio)
-        {
-            arco.Agarrar(transform);
-        }
-
-        if (estaAgarrando == false && cambio && arco !=null)
-        {
-            arco.Soltar2();
-        }
-      
-    }
-
-    bool ActualizarNivelAgarre()
+    public bool AGARREF;
+    [Range (0f,1f)]
+    public float NivelAgarre;
+    public ArcoC arcoGlobal;
+    // Start is called before the first frame update
+    void Start()
     {
-        bool limiteTraspasado = false;
-        float actual =  OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.LTouch);
-        if (agarre<LIMITE_AGARRE && actual >=LIMITE_SOLTAR)
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+       
+
+
+        //estaAgarrando=true;
+       bool cambio=actualizarAgarre();
+       //bool cambio=false;
+       if(AGARREF && arcoGlobal!=null)
+       {
+           arcoGlobal.agarrar(transform);
+       }
+       if(estaAgarrando==false && cambio && arcoGlobal!=null){
+            arcoGlobal.soltar();
+        }
+    }
+    bool actualizarAgarre()
+    {
+        bool cambio=false;
+        float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.LTouch);
+        if(NivelAgarre<limiteAgarre && actual>=limiteAgarre)
         {
             estaAgarrando=true;
-            limiteTraspasado = true;
+            cambio=true;
         }
-        if (agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR)
+        if(NivelAgarre>LimiteSuelto && actual<=LimiteSuelto)
         {
             estaAgarrando=false;
-            limiteTraspasado= true;
+            cambio=true;
         }
-     
-        agarre=actual;
-
-        return limiteTraspasado;
+        NivelAgarre=actual;
+        return cambio;
     }
+    void OnTriggerEnter(Collider other) {
+       ArcoC arcoMano = other.GetComponent<ArcoC>();
 
-
-
-    private void OnTriggerEnter(Collider other)
-     {
-        ArcoC arcoAgarrado = other.GetComponent<ArcoC>();
-        if (arcoAgarrado!=null)
-        {   arco = arcoAgarrado;
-            arco.Tocar();
+        if(arcoMano!=null) {
+            arcoGlobal=arcoMano;
+            arcoGlobal.tocar();
         }
+        
     }
-
-    private void OnTriggerExit(Collider other) {
-        ArcoC arcoAgarrado = other.GetComponent<ArcoC>();
-        if (arcoAgarrado!=null)
-        {
-
-            arco.Soltar();
-            arco = null;
+     void OnTriggerExit(Collider otro) {
+        ArcoC arcoMano = otro.GetComponent<ArcoC>();
+        if(arcoMano!=null) {
+            arcoGlobal.dejarTocar();
+            arcoGlobal = null;
         }
-    }
+     }
+    
 }

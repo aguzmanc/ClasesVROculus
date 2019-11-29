@@ -4,63 +4,58 @@ using UnityEngine;
 
 public class flecha : MonoBehaviour
 {
-    public GameObject pivote;
-    public GameObject arrow;
-
-    public float shootcooldown = 1;
-    public float fuerza = 60;
-
-    public float velocidadInclinacion = 180;
-    public float velocidadDireccion = 360;
-
-    float _timelastshot = 0;
-
-    public bool disparar;
-
+    public bool disparada;
+    float fuerza;
     // Start is called before the first frame update
     void Start()
     {
-        
+        disparada=false;
+        fuerza=1;
     }
-
-    public void Shoot()
-    {
-        GameObject crearFlecha = Instantiate(arrow);
-        crearFlecha.transform.position = pivote.transform.position;
-        Rigidbody body = crearFlecha.GetComponent<Rigidbody>();
-        body.AddForce(pivote.transform.forward*fuerza,ForceMode.Impulse);
-    }
-
-    public void UpdatePlayerControl()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Shoot();
-        }
-        //transform.Rotate(0,velocidadDireccion*Time.deltaTime*Input.GetAxis("Horizontal"),0);
-        //pivote.transform.Rotate(velocidadInclinacion*Time.deltaTime * Input.GetAxis("Vertical")*-1,0,0);
-     }
+ 
+    // Update is called once per frame
     void Update()
     {
-        
-                if (shootcooldown < 0)
-                {
-                    UpdatePlayerControl();
-                    return; 
-                }
-                _timelastshot += Time.deltaTime;
-                if (_timelastshot > shootcooldown )
-                {
-                     _timelastshot = 0;
-                    if (disparar)
-                    {
-                         Shoot();
-                         disparar=false;
-                    }
-                   
-                   
-                }
-        
+        if(disparada)
+        {
+            Rigidbody cuerpo= transform.GetComponent<Rigidbody>();
+            cuerpo.AddForce(transform.forward*(fuerza*-1));
+            
+        }
+    }
+    public void cambiarK()
+    {
+        Rigidbody rb=transform.GetComponent<Rigidbody>();
+        rb.isKinematic=false;
+        transform.parent=null;
+        disparada=true;
+         transform.localScale=Vector3.one;
+    }
+    public void volverK()
+    {
+        Rigidbody rb=transform.GetComponent<Rigidbody>();
+        rb.isKinematic=true;
+        disparada=false;
+    }
+    public void tp()
+    {
+         transform.localPosition = Vector3.zero;
+        transform.localRotation =Quaternion.identity;
        
     }
+    public void darf(float distancia)
+    {
+        float porc=(distancia*100f)/1.6f;
+        fuerza=(porc*20)/100;
+
+
+    }
+    public void parar()
+    {
+        Rigidbody rb=transform.GetComponent<Rigidbody>();
+         rb.isKinematic=true;
+        disparada=false;
+
+    }
 }
+

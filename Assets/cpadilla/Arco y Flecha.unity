@@ -376,9 +376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca85199e3a5dd342be2f59646f8873c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agarre: 0
-  arco: {fileID: 6802120018046721049}
   estaAgarrando: 0
+  AGARREF: 0
+  NivelAgarre: 0
+  arcoGlobal: {fileID: 0}
 --- !u!1 &486650141
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,48 +595,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &669614884
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 669614885}
-  m_Layer: 0
-  m_Name: Spawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &669614885
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669614884}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.122, y: 0, z: -0.125}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6802120018036083094}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &705818154 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -2158322524389589859, guid: 7016c970a4f8d434ca8311503fe41510,
-    type: 3}
-  m_PrefabInstance: {fileID: 916038315}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48515d9c4d7aca142ae6c18f531301ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &750835145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1304,7 +1263,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6802120019928242848}
-  - {fileID: 669614885}
   m_Father: {fileID: 6802120018046721053}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1340,8 +1298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e149fbe5e7f686344bdca9a4a85f7e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 6802120019966707659}
-  cuerda: {fileID: 6802120019928242863}
+  red: {fileID: 6802120019552649163}
+  cuerdaAgarrador: {fileID: 6802120019928242863}
   MaterialTocado: {fileID: 2100000, guid: a592cd8775fecdf47af098a37b547f46, type: 2}
   materialAgarrad: {fileID: 2100000, guid: 6c67ed471ef09b34494f4d3170a3491c, type: 2}
   materialSuelt: {fileID: 2100000, guid: e884afcabf0c12d4f88b44dba5b3cfd0, type: 2}
@@ -1970,14 +1928,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d30a6b025ac2045aedc48061cf2653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agarre: 0
   estaAgarrando: 0
+  NivelAgarre: 0
+  cuerdaGlobal: {fileID: 0}
+  estatocada: 0
   distancia: 0
-  tocando: 0
-  pivotCuerda: {fileID: 6802120018036083094}
-  cuerdab: {fileID: 6802120019928242864}
-  flechag: {fileID: 705818154}
-  suelta: 0
+  origenCuerda: {fileID: 0}
+  agarreF: 0
+  flecha: {fileID: 0}
 --- !u!65 &7957381219891755414
 BoxCollider:
   m_ObjectHideFlags: 0
