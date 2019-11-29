@@ -35,7 +35,7 @@ public class AgarradorCuerdaE : MonoBehaviour
         }
 
         if(cuerda!=null)
-            cuerda.transform.localPosition = new Vector3(0,0,distancia * -1);
+            cuerda.transform.localPosition = new Vector3(0,0,distancia*-1);
 
 
         bool cambio = UpdateNivelAgarre();
@@ -85,8 +85,9 @@ public class AgarradorCuerdaE : MonoBehaviour
         if(c.tag == "Cuerda"){
             cuerda = c.GetComponent<CuerdaE>();
             cuerda.DejarDeTocar();
-            tocando = false;
             cuerda.Disparar();
+            tocando = false;
+
             //cuerda = null;
             //pivotCuerda = null;
         }
