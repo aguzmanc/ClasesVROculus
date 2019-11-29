@@ -22,7 +22,7 @@ public class agarrar : MonoBehaviour
             arco.GetComponent<Rigidbody>().useGravity=false; //activa la gravedad del arco
             arcoAgarrado=true;
              arcoMaterial.material= materialverde;
-            arco.transform.position=new Vector3(transform.position.x+0.01f,transform.position.y, transform.position.z);
+            arco.transform.position=new Vector3(transform.position.x+0.0051f,transform.position.y, transform.position.z);
         }
        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger)<0.7f) {
             arco.transform.parent=null; //suelta el arco cuando no se esta tocando 
@@ -45,7 +45,7 @@ public class agarrar : MonoBehaviour
             arcoAgarrado=true;
             arco.GetComponent<Rigidbody>().useGravity=false; //activa la gravedad del arco
              arcoMaterial.material= materialverde;
-            arco.transform.position=new Vector3(transform.position.x,transform.position.y, transform.position.z+1);
+            arco.transform.position=new Vector3(transform.position.x,transform.position.y, transform.position.z+0.7f);
             //arco.transform.position=transform.position;
         }
          if (Input.GetKeyDown(KeyCode.C)) {

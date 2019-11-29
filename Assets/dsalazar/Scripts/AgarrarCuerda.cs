@@ -20,7 +20,7 @@ public class AgarrarCuerda : MonoBehaviour
     {
         if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)>0.7f && cuerdaArea==true) {
             
-            cuerda.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
+           // cuerda.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
              cuerdaMaterial.material= materialVerde;
              cuerda.transform.position=transform.position;             
 
@@ -31,14 +31,15 @@ public class AgarrarCuerda : MonoBehaviour
             cuerda.transform.position= new Vector3(baseArco.transform.position.x,baseArco.transform.position.y,baseArco.transform.position.z-0.5f);
         }
          if (Input.GetKeyDown(KeyCode.V)&& cuerdaArea==true) {
-             cuerda.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
+            // cuerda.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
              cuerdaMaterial.material= materialVerde;
              cuerda.transform.position=transform.position;
         }
         else
         {
-             cuerdaMaterial.material= materialrojo;
-            cuerda.transform.position= new Vector3(baseArco.transform.position.x,baseArco.transform.position.y,baseArco.transform.position.z-0.5f);
+          //   cuerdaMaterial.material= materialrojo;
+          //  cuerda.transform.position= new Vector3(baseArco.transform.position.x,baseArco.transform.position.y,baseArco.transform.position.z-0.5f);
+       
         }
     }
     private void OnTriggerEnter(Collider other) {
