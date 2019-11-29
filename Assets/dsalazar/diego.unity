@@ -158,10 +158,28 @@ BoxCollider:
   m_GameObject: {fileID: 247721558}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08761393, y: 0.066193186, z: 0.0938678}
   m_Center: {x: 0.021550098, y: 0.023345856, z: 0.03386629}
+--- !u!114 &247721565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247721558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45db8339f4938741ac531ba617728cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cuerdaArea: 0
+  cuerda: {fileID: 268648194}
+  cuerdaMaterial: {fileID: 268648197}
+  materialVerde: {fileID: 2100000, guid: 35cd4d46173f651449ffb905634d35db, type: 2}
+  materialrojo: {fileID: 2100000, guid: f8e1bcab8028d744db07cb54c110580e, type: 2}
+  baseArco: {fileID: 1904132022}
 --- !u!1 &268648194
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +194,7 @@ GameObject:
   - component: {fileID: 268648196}
   m_Layer: 0
   m_Name: area1
-  m_TagString: Untagged
+  m_TagString: cuerda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 268648194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.007, y: 0.0009999871, z: -0.5942}
-  m_LocalScale: {x: 1, y: 0.582589, z: 1.0042095}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 929873322}
   m_RootOrder: 3
@@ -215,7 +233,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268648194}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -593,6 +611,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 516568546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &516568552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516568547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3849139091c4f2749aa815f47f3cbc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arcoMaterial: {fileID: 1904132026}
+  materialverde: {fileID: 2100000, guid: 35cd4d46173f651449ffb905634d35db, type: 2}
+  materialrojo: {fileID: 2100000, guid: f8e1bcab8028d744db07cb54c110580e, type: 2}
+  arco: {fileID: 929873320}
+  tocando: 0
+  arcoAgarrado: 0
 --- !u!1 &794623264
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,10 +773,8 @@ MonoBehaviour:
   strength: 10
   velocidadInclinacion: 180
   velocidadDireccion: 360
-  manoArea1: 0
-  manoArea2: 0
-  manoArea3: 0
   manoDerecha: {fileID: 0}
+  cuerdaAgarrado: 0
 --- !u!65 &859827848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -930,10 +964,8 @@ MonoBehaviour:
   strength: 25
   velocidadInclinacion: 180
   velocidadDireccion: 270
-  manoArea1: 0
-  manoArea2: 0
-  manoArea3: 0
   manoDerecha: {fileID: 247721558}
+  cuerdaAgarrado: 0
 --- !u!4 &929873322
 Transform:
   m_ObjectHideFlags: 0
@@ -941,7 +973,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929873320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.238, y: -1.44, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -953,7 +985,7 @@ Transform:
   - {fileID: 1962497025}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &929873323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1247,6 +1279,7 @@ GameObject:
   - component: {fileID: 1488126617}
   - component: {fileID: 1488126616}
   - component: {fileID: 1488126615}
+  - component: {fileID: 1488126619}
   m_Layer: 0
   m_Name: ballesta
   m_TagString: arco
@@ -1301,10 +1334,8 @@ MonoBehaviour:
   strength: 20
   velocidadInclinacion: 180
   velocidadDireccion: 270
-  manoArea1: 0
-  manoArea2: 0
-  manoArea3: 0
   manoDerecha: {fileID: 0}
+  cuerdaAgarrado: 0
 --- !u!4 &1488126618
 Transform:
   m_ObjectHideFlags: 0
@@ -1325,6 +1356,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488126619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488126614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be06a354feec4254996393d159a3db6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannonPivotBone: {fileID: 859827845}
+  bullet: {fileID: 2036387795}
+  shootCooldown: 1
+  strength: 0
+  velocidadInclinacion: 180
+  velocidadDireccion: 270
+  manoDerecha: {fileID: 0}
+  manoIzquierda: {fileID: 0}
 --- !u!1 &1547610313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,10 +1490,8 @@ MonoBehaviour:
   strength: 20
   velocidadInclinacion: 180
   velocidadDireccion: 360
-  manoArea1: 0
-  manoArea2: 0
-  manoArea3: 0
   manoDerecha: {fileID: 0}
+  cuerdaAgarrado: 0
 --- !u!54 &1547610319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1704,7 +1753,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666898387}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3849139091c4f2749aa815f47f3cbc81, type: 3}
   m_Name: 
@@ -1724,7 +1773,7 @@ BoxCollider:
   m_GameObject: {fileID: 1666898387}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2171,10 +2220,8 @@ MonoBehaviour:
   strength: 10
   velocidadInclinacion: 180
   velocidadDireccion: 360
-  manoArea1: 0
-  manoArea2: 0
-  manoArea3: 0
   manoDerecha: {fileID: 0}
+  cuerdaAgarrado: 0
 --- !u!65 &1904132025
 BoxCollider:
   m_ObjectHideFlags: 0
