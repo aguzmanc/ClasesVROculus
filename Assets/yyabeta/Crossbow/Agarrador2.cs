@@ -7,6 +7,8 @@ public class Agarrador2 : MonoBehaviour
    const float LIMITE_AGARRE = 0.7f;
     const float LIMITE_SOLTAR = 0.3f;
 
+    public bool trigger;
+
     [Range(0f, 1f)]
     public float agarre;
 
@@ -23,9 +25,11 @@ public class Agarrador2 : MonoBehaviour
     {
         bool cambio = UpdateNivelAgarre();
 
+        trigger = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch);
+
         if(estaAgarrando && ballesta != null && cambio) {
             ballesta.Agarrar(transform);
-            if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch))
+            if(trigger)
             {
                 ballesta.DisparaFlecha(100);
             }
