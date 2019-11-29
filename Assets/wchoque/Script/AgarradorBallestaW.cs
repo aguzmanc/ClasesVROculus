@@ -15,6 +15,7 @@ public class AgarradorBallestaW : MonoBehaviour
     bool cambio;
     public bool estaagarrando;
     float actual;
+    public bool agarradoIzquierda;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +26,16 @@ public class AgarradorBallestaW : MonoBehaviour
     void Update()
     {
            cambio= UpdateNivelAgarre();
-      //cambio=true;
+    //  cambio=true;
         if(estaagarrando && ballesta!=null && cambio){
+              agarradoIzquierda =true;
             ballesta.Agarrar(transform);
+          
         }
         if(!estaagarrando && cambio && ballesta!=null){
+              agarradoIzquierda=false;
             ballesta.Soltar();
+          
             //Quaternion
         }
     }
@@ -65,7 +70,7 @@ public class AgarradorBallestaW : MonoBehaviour
             BallestaW balle = other.GetComponent<BallestaW>();
               if(balle!=null){
              ballesta.DejarTocar();
-             ballesta=null;
+            // ballesta=null;
          }
             
         }

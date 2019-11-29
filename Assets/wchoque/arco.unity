@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212759528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pivotCuerdaBallesta
   m_TagString: Ballesta
   m_Icon: {fileID: 0}
@@ -411,13 +411,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212759527}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.0827162, z: 0.06}
-  m_LocalScale: {x: 1.862024, y: 1.3129562, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.062999964, z: -0.060000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1944546031}
-  m_Father: {fileID: 1822306252}
-  m_RootOrder: 4
+  m_Father: {fileID: 1372112527}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &213449282 stripped
 Transform:
@@ -526,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 257828224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BallestaArmazon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,16 +540,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257828223}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.53705007, y: 0.76164, z: 1}
   m_Children:
   - {fileID: 1571202631}
   - {fileID: 745155807}
   - {fileID: 544539286}
   - {fileID: 830114135}
-  m_Father: {fileID: 1822306252}
-  m_RootOrder: 0
+  m_Father: {fileID: 1372112527}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &445568846
 GameObject:
@@ -675,6 +675,7 @@ MonoBehaviour:
   ballesta: {fileID: 0}
   agarre: 0
   estaagarrando: 0
+  agarradoIzquierda: 0
 --- !u!1 &506573630
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +844,7 @@ GameObject:
   - component: {fileID: 544539289}
   - component: {fileID: 544539288}
   - component: {fileID: 544539287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +935,7 @@ GameObject:
   - component: {fileID: 668069162}
   - component: {fileID: 668069164}
   - component: {fileID: 668069163}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: palo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,7 +1014,7 @@ GameObject:
   - component: {fileID: 745155810}
   - component: {fileID: 745155809}
   - component: {fileID: 745155808}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1247,7 +1248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 830114135}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: delantera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1539,7 +1540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083403816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: indicadorBallesta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,12 +1554,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083403815}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.03807563, z: 0.21899998}
-  m_LocalScale: {x: 1.862024, y: 1.3129562, z: 1}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.028999923, z: -0.21899998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1822306252}
-  m_RootOrder: 1
+  m_Father: {fileID: 1372112527}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179961724
 GameObject:
@@ -1825,6 +1826,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1372112526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1372112527}
+  m_Layer: 10
+  m_Name: hijoBallesta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1372112527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372112526}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.862024, y: 1.3129562, z: 1}
+  m_Children:
+  - {fileID: 212759528}
+  - {fileID: 1929801543}
+  - {fileID: 2004464074}
+  - {fileID: 1083403816}
+  - {fileID: 257828224}
+  m_Father: {fileID: 1822306252}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1372763664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +1872,7 @@ GameObject:
   - component: {fileID: 1372763665}
   - component: {fileID: 1372763667}
   - component: {fileID: 1372763666}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: palo (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1995,7 +2031,7 @@ GameObject:
   - component: {fileID: 1461316249}
   - component: {fileID: 1461316248}
   - component: {fileID: 1461316247}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AgarreDisparo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2125,7 +2161,7 @@ GameObject:
   - component: {fileID: 1571202634}
   - component: {fileID: 1571202633}
   - component: {fileID: 1571202632}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2412,7 +2448,8 @@ GameObject:
   - component: {fileID: 1822306254}
   - component: {fileID: 1822306253}
   - component: {fileID: 1822306255}
-  m_Layer: 0
+  - component: {fileID: 1822306256}
+  m_Layer: 10
   m_Name: Ballesta
   m_TagString: Ballesta
   m_Icon: {fileID: 0}
@@ -2443,11 +2480,7 @@ Transform:
   m_LocalPosition: {x: -0.733, y: 1.057, z: 0.545}
   m_LocalScale: {x: 0.53705, y: 0.76164, z: 1}
   m_Children:
-  - {fileID: 257828224}
-  - {fileID: 1083403816}
-  - {fileID: 2004464074}
-  - {fileID: 1929801543}
-  - {fileID: 212759528}
+  - {fileID: 1372112527}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2497,6 +2530,21 @@ MonoBehaviour:
   materialAgarrado: {fileID: 2100000, guid: 7c97f5e44f9cbe443ac95fa8f6a04a30, type: 2}
   materialSoltado: {fileID: 2100000, guid: 85632788dc042b2469e0812af16409b2, type: 2}
   ballesta: {fileID: 0}
+--- !u!114 &1822306256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822306250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eb2d74f30179e4bb24155be8701470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manoIzquierda: {fileID: 445568852}
+  manoDerecha: {fileID: 2084419388}
+  rotar: {fileID: 1372112527}
 --- !u!1 &1929801542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929801543}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: indicadorAgarreDerecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2520,13 +2568,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929801542}
-  m_LocalRotation: {x: -0.40952772, y: -0, z: -0, w: 0.9122977}
-  m_LocalPosition: {x: 0.001862, y: -0.01312955, z: -0.27}
-  m_LocalScale: {x: 1.862024, y: 1.1382198, z: 1.1747365}
+  m_LocalRotation: {x: -0, y: -0.9122977, z: -0.40952772, w: 0}
+  m_LocalPosition: {x: -0.0009999872, y: -0.00999999, z: 0.27}
+  m_LocalScale: {x: 1, y: 1.0371292, z: 1.0371294}
   m_Children:
   - {fileID: 1461316246}
-  m_Father: {fileID: 1822306252}
-  m_RootOrder: 3
+  m_Father: {fileID: 1372112527}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944546030
 GameObject:
@@ -2542,7 +2590,7 @@ GameObject:
   - component: {fileID: 1944546032}
   - component: {fileID: 1944546035}
   - component: {fileID: 1944546036}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cuerdaBallesta
   m_TagString: CuerdaBallesta
   m_Icon: {fileID: 0}
@@ -2853,7 +2901,7 @@ GameObject:
   - component: {fileID: 2004464078}
   - component: {fileID: 2004464077}
   - component: {fileID: 2004464076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: indicadorAgarre
   m_TagString: Ballesta
   m_Icon: {fileID: 0}
@@ -2867,11 +2915,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004464073}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.023633221, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.018000007, z: 0}
+  m_LocalScale: {x: 0.03759351, y: 0.0533148, z: 0.07}
   m_Children: []
-  m_Father: {fileID: 1822306252}
+  m_Father: {fileID: 1372112527}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2004464076
@@ -3092,6 +3140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b37865775b7c774fb0ba3aea99ba8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agarre: 0
+  estaagarrando: 0
+  distancia: 0
+  distanciaValor: 0
+  tocado: 0
+  agarradoDerecha: 0
 --- !u!1 &2094819161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,7 +3157,7 @@ GameObject:
   - component: {fileID: 2094819162}
   - component: {fileID: 2094819164}
   - component: {fileID: 2094819163}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: palo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

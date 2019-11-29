@@ -118,7 +118,9 @@ public class AgarradorCuerdaBallesta : MonoBehaviour
         if(flecha !=null){
                 flecha.transform.parent.transform.parent = null;
                 flecha.isKinematic = false;
-                flecha.AddForce(transform.parent.transform.forward * distanciaValor * 1000, ForceMode.Force);
+                flecha.AddForce(transform.parent.transform.forward * distanciaValor * 1500, ForceMode.Force);
+                distanciaValor=0;
+                distancia=0;
                 flecha =null;
                 
             }
