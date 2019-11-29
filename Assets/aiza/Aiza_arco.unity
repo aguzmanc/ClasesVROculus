@@ -451,7 +451,7 @@ MonoBehaviour:
   tocando: 0
   pivotCuerda: {fileID: 0}
   cuerdab: {fileID: 0}
-  flechag: {fileID: 0}
+  flechag: {fileID: 2103202749}
 --- !u!65 &331562977
 BoxCollider:
   m_ObjectHideFlags: 0

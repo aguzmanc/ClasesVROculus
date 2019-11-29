@@ -19,6 +19,8 @@ public class AgarradorCuerdab : MonoBehaviour
     public Cuerda cuerdab;
 
     public Flechag flechag;
+
+    public  bool suelta;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,8 @@ public class AgarradorCuerdab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+             
         
         if (tocando)
         {
@@ -64,18 +68,19 @@ public class AgarradorCuerdab : MonoBehaviour
         if (cuerdab!=null)
         {
         cuerdab.transform.localPosition = new Vector3(0,0,distancia);
+           
 
-            if (distancia== 0)
+           
+           
+        }
+         if (suelta)
             {
                 flechag.disparar=true;
             }
-            if (distancia!=0)
+            if (suelta==false)
             {
                 flechag.disparar=false;
             }
-            
-        }
-
 
         bool cambio = ActualizarNivelAgarre();
 
@@ -106,6 +111,7 @@ public class AgarradorCuerdab : MonoBehaviour
             cuerdab.Tocar();
             tocando = true;
             pivotCuerda = cuerdab.transform.parent;
+            suelta= false;
         }
     }
 
@@ -117,6 +123,7 @@ public class AgarradorCuerdab : MonoBehaviour
             cuerdab.DejarDeTocar();
             //cuerdab=null;            
             tocando = false;
+            suelta=true;
              //pivotCuerda = null;
         }
     }
