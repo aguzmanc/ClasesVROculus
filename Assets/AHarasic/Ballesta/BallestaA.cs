@@ -31,8 +31,8 @@ public class BallestaA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(OVRInput.GetDown(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.O) || (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger, OVRInput.Controller.Touch)>=1)
-        || (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.Touch)>=1))
+        if(OVRInput.GetDown(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.O) || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch)
+        || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch))
         {
             pd.DisparaFlecha(169);
         }

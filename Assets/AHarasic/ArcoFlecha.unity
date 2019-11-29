@@ -2374,6 +2374,7 @@ GameObject:
   - component: {fileID: 1479144370}
   - component: {fileID: 1479144369}
   - component: {fileID: 1479144368}
+  - component: {fileID: 1479144372}
   - component: {fileID: 1479144367}
   m_Layer: 0
   m_Name: right
@@ -2492,6 +2493,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479144365}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1479144372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479144365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694d243ced4aa7c4999cb57915079849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agarre: 0
+  ballesta: {fileID: 0}
+  estaAgarrando: 0
 --- !u!1001 &1591681350
 PrefabInstance:
   m_ObjectHideFlags: 0
