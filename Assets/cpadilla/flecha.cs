@@ -4,58 +4,32 @@ using UnityEngine;
 
 public class flecha : MonoBehaviour
 {
-    public bool disparada;
-    float fuerza;
+    Rigidbody rigidbody;
+    float tiempo;
+    bool lanzado;
     // Start is called before the first frame update
     void Start()
     {
-        disparada=false;
-        fuerza=1;
+        rigidbody = transform.GetComponent<Rigidbody>();
+        tiempo = 15;
     }
- 
+
     // Update is called once per frame
     void Update()
     {
-        if(disparada)
-        {
-            Rigidbody cuerpo= transform.GetComponent<Rigidbody>();
-            cuerpo.AddForce(transform.forward*(fuerza*-1));
-            
+        if(lanzado==true){
+            tiempo+= Time.deltaTime;
+            if(tiempo >5){
+                Destroy(transform.parent.gameObject);
+                tiempo=0;
+            }
         }
     }
-    public void cambiarK()
-    {
-        Rigidbody rb=transform.GetComponent<Rigidbody>();
-        rb.isKinematic=false;
-        transform.parent=null;
-        disparada=true;
-         transform.localScale=Vector3.one;
-    }
-    public void volverK()
-    {
-        Rigidbody rb=transform.GetComponent<Rigidbody>();
-        rb.isKinematic=true;
-        disparada=false;
-    }
-    public void tp()
-    {
-         transform.localPosition = Vector3.zero;
-        transform.localRotation =Quaternion.identity;
-       
-    }
-    public void darf(float distancia)
-    {
-        float porc=(distancia*100f)/1.6f;
-        fuerza=(porc*20)/100;
-
-
-    }
-    public void parar()
-    {
-        Rigidbody rb=transform.GetComponent<Rigidbody>();
-         rb.isKinematic=true;
-        disparada=false;
-
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag=="paredMadera"){
+            rigidbody.isKinematic = true;
+            lanzado = true;
+        }
     }
 }
 

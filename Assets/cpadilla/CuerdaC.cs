@@ -4,48 +4,52 @@ using UnityEngine;
 
 public class CuerdaC : MonoBehaviour
 {
-    public Renderer rend;
-    Rigidbody cuerpo;
-    Rigidbody body;
-    public Material materialSuelto;
-    public Material materialTocado;
-    public Material materialAgarrando;
+    public GameObject flechaProyectil;
+    public GameObject flechaInstaciado;
 
-    // Start is called before the first frame update
+      public Renderer rend;
+      public Material materialTocado;
+    public Material materialAgarrado;
+    public Material materialSoltado;
+
+ 
     void Start()
     {
-        cuerpo=GetComponent<Rigidbody>();
-        
-        rend.material=materialSuelto;
+      
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+     
     }
-    public void tocar()
-    {
+      public void Tocar(){
+        rend.material = materialTocado;
+        Debug.Log("toco");
+    }
+    public void DejarTocar(){
+        rend.material = materialSoltado;
+    }
+    public void Agarrar(){
+        rend.material = materialAgarrado;
+      //  body.isKinematic=true;
+       
+        //transform.localPosition=Vector3.zero;
+       // transform.localRotation = Quaternion.identity;
+    }
+    public void Soltar(){
       
-            rend.material=materialTocado;
-       
+        rend.material =materialTocado;
+      //  body.isKinematic =false;
     }
-    public void dejarTocar()
-    {
-            rend.material=materialSuelto;
-       
-    }
-      public void agarrar()
-    {
-        
-        rend.material=materialAgarrando;
+       public Rigidbody proyectil(){
+         Debug.Log("entro");
+       flechaInstaciado = Instantiate(flechaProyectil);
       
-       
-         
-    }   
-     public void soltar()
-    {
-       
-            rend.material=materialSuelto;    
+        
+        flechaInstaciado.transform.localScale = Vector3.one;
+          flechaInstaciado.transform.parent = transform;
+          flechaInstaciado.transform.localPosition = Vector3.zero;
+        flechaInstaciado.transform.Rotate(new Vector3(0f,-180f,0f));
+        return flechaInstaciado.GetComponentInChildren<Rigidbody>();
     }
 }

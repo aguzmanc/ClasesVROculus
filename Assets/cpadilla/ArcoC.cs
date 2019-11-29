@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class ArcoC : MonoBehaviour
 {
-    public Renderer red;
-    Rigidbody cuerpo;
-    public GameObject cuerdaAgarrador;
+    public Renderer rend;
     Rigidbody body;
-    public Material MaterialTocado;
-    public Material materialAgarrad;
-    public Material materialSuelt;
+    public Material materialTocado;
+    public Material materialAgarrado;
+    public Material materialSoltado;
+    public GameObject cuerda;
+    // Start is called before the first frame update
     void Start()
     {
-       
-       
-         cuerpo=GetComponent<Rigidbody>();
-         cuerdaAgarrador.SetActive(false);
-        red.material=materialSuelt;
-        
+        body =GetComponent<Rigidbody>();
+        rend.material=materialSoltado;
+        cuerda =transform.Find("pivotCuerda").gameObject;
+        cuerda.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,37 +24,26 @@ public class ArcoC : MonoBehaviour
     {
         
     }
-    public void tocar()
-    {
-      
-            red.material=MaterialTocado;
-       
+    public void Tocar(){
+        rend.material = materialTocado;
+        Debug.Log("toco");
     }
-    public void dejarTocar()
-    {
-            red.material=materialSuelt;
-       
+    public void DejarTocar(){
+        rend.material = materialSoltado;
     }
-      public void agarrar(Transform mano)
-    {
-        
-        red.material=materialAgarrad;
-      
-        transform.parent=mano;
-        cuerpo.isKinematic=true;
-
-        transform.localPosition = Vector3.zero;
-        transform.localRotation =Quaternion.identity;
-        cuerdaAgarrador.SetActive(true);
-    }   
-     public void soltar()
-    {
-       
-            red.material=materialSuelt;
-      
-       
-        transform.parent=null;
-        cuerpo.isKinematic=false;
-        cuerdaAgarrador.SetActive(false);
+    public void Agarrar(Transform agarrador){
+        rend.material = materialAgarrado;
+        body.isKinematic=true;
+        transform.parent = agarrador;
+        transform.localPosition=Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        cuerda.SetActive(true);
+    }
+    public void Soltar(){
+        transform.parent =null;
+        rend.material =materialTocado;
+        body.isKinematic =false;
+        cuerda.SetActive(false);
     }
 }
+
