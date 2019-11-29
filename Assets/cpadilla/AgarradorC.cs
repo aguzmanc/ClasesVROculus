@@ -9,9 +9,9 @@ public class AgarradorC : MonoBehaviour
 
     [Range(0f, 1f)]
     public float agarre;
-
+    bool cambio;
     public bool estaAgarrando;
-
+    float actual;
     public ArcoC arco;
 
 
@@ -22,8 +22,8 @@ public class AgarradorC : MonoBehaviour
 
     void Update()
     {
-        bool cambio = UpdateNivelAgarre();
-
+        cambio = UpdateNivelAgarre();
+        cambio=true;
         if(estaAgarrando && arco != null && cambio) {
             arco.Agarrar(transform);
         }
@@ -37,7 +37,7 @@ public class AgarradorC : MonoBehaviour
 
 
     bool UpdateNivelAgarre(){
-        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+        actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
         bool limiteTraspasado = false;
 
         if(agarre < LIMITE_AGARRE  && actual >= LIMITE_AGARRE){
@@ -58,11 +58,15 @@ public class AgarradorC : MonoBehaviour
 
 
     void OnTriggerEnter(Collider otro) {
-        ArcoC arcoAgarrado = otro.GetComponent<ArcoC>();
+        if (otro.tag=="ArcoC")
+        {
+          ArcoC arcoAgarrado = otro.GetComponent<ArcoC>();
 
-        if(arcoAgarrado!=null) {
-            arco = arcoAgarrado;
-            arco.Tocar();
+            if(arcoAgarrado!=null) 
+            {
+                arco = arcoAgarrado;
+                arco.Tocar();
+            }   
         }
     }
 

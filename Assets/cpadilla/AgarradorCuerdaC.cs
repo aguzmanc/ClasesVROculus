@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class AgarradorCuerdaC : MonoBehaviour
 {
+    public Transform pivotCuerda;
+    public CuerdaC cuerdac;
+    Rigidbody flecha;
      const float LIMITE_AGARRE = 0.7f;
     const float LIMITE_SOLTAR = 0.3f;
 
     [Range(0f, 1f)]
     public float agarre;
     public bool estaAgarrando;
-
-
+    bool cambio;
+    float actual;
+    public float distanciaValor;
     public float distancia;
     public bool tocando;
-    public Transform pivotCuerda;
-    public CuerdaC cuerdac;
-    public GameObject flechaPrefab;
-    public Transform arrowSpan;
-    public float shootForce=20f;
-    public Rigidbody rb;
+    public bool sepuedeDisparar=false;
+    
 
 
     void Start()
     {
-        tocando = false;
-        estaAgarrando = false;
         
     }
 
@@ -36,16 +34,20 @@ public class AgarradorCuerdaC : MonoBehaviour
             distancia = Mathf.Max(0f, distancia);
             distancia = Mathf.Min(0.3f, distancia);
             Debug.DrawLine(transform.position, pivotCuerda.position, Color.green);
-
+            distanciaValor = distancia;
         } else{
             distancia = 0;
         }
 
-        if(cuerdac!=null)
+        if(cuerdac!=null){
             cuerdac.transform.localPosition = new Vector3(0,0,distancia);
-
-        bool cambio = UpdateNivelAgarre();
-        
+            if(distancia>0.15f && flecha==null && sepuedeDisparar){
+                sepuedeDisparar=false;
+                flecha = cuerdac.bala();
+            }
+        }
+        cambio = UpdateNivelAgarre();
+        cambio=true;
         if(estaAgarrando && cambio) {
             if(cuerdac != null)
                 cuerdac.Agarrar();   
@@ -54,11 +56,16 @@ public class AgarradorCuerdaC : MonoBehaviour
         if(estaAgarrando==false && cuerdac!=null){
             if(cuerdac!=null)
                 cuerdac.Soltar();
-                if(flechaPrefab!=null && cambio)
-                {
-                    Instantiate(flechaPrefab,arrowSpan.position,Quaternion.identity);            
-                    rb.velocity=transform.forward*shootForce;
-                }
+                sepuedeDisparar=true;
+            if (flecha!=null)
+            {
+                sepuedeDisparar=false;
+                flecha.transform.parent.transform.parent=null;
+                flecha.isKinematic=false;
+                flecha.AddForce(transform.parent.transform.forward*distanciaValor*1000,ForceMode.Force);
+
+                flecha=null;
+            }
                 
         }
         
@@ -66,7 +73,7 @@ public class AgarradorCuerdaC : MonoBehaviour
 
 
     bool UpdateNivelAgarre(){
-        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+         actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
         bool limiteTraspasado = false;
 
         if(agarre < LIMITE_AGARRE  && actual >= LIMITE_AGARRE){

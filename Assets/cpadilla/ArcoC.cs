@@ -23,6 +23,7 @@ public class ArcoC : MonoBehaviour
 
     public void Tocar() {
         rend.material = materialTocado;
+        Debug.Log("Tocado");
     }
 
 
