@@ -25,7 +25,7 @@ public class Flechag : MonoBehaviour
 
     public void Shoot()
     {
-        GameObject crearFlecha = Instantiate(flecha);
+        GameObject crearFlecha = Instantiate(flecha,transform.position,transform.rotation);
         crearFlecha.transform.position = pivote.transform.position;
         Rigidbody body = crearFlecha.GetComponent<Rigidbody>();
         body.AddForce(pivote.transform.forward*fuerza,ForceMode.Impulse);
