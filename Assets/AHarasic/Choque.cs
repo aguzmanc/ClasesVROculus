@@ -18,5 +18,6 @@ public class Choque : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         other.attachedRigidbody.isKinematic=true;
+        other.attachedRigidbody.constraints=RigidbodyConstraints.FreezeAll;
     }
 }

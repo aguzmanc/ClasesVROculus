@@ -39,10 +39,11 @@ public class Agarradora : MonoBehaviour
    bool UpdateNivelAgarre()
     {
         bool limiteTraspasado=false;
-  float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.LTouch);
+        float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.LTouch);
+        //float actual=0.8f;
     if( agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
     {
-        estaAgarrando=true;
+            estaAgarrando=true;
             limiteTraspasado=true;
     }
             if(agarre>LIMITE_SOLTAR && actual <= LIMITE_SOLTAR)

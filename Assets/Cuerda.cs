@@ -44,6 +44,7 @@ public class Cuerda : MonoBehaviour
     public void Soltar(){
         rend.material = materialTocado;
         preview.SetActive(false);
+        //Debug.Log("SOLTADO!!!");
     } 
 
 }

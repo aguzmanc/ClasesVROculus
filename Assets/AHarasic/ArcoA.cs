@@ -36,7 +36,7 @@ public class ArcoA : MonoBehaviour
          //   DisparaFlecha(100);
       //  }
       
-        if(cuerda.transform.localPosition.z<=-0.600f)
+        /* if(cuerda.transform.localPosition.z<=-0.600f)
         {
             test=true;
 
@@ -51,9 +51,18 @@ public class ArcoA : MonoBehaviour
             test=false;
         }
         vuelve=false;
-
+ */
     }
 
+
+/*public void DisparaFlecha(float speed)
+    {
+        //Quaternion quaternion = Quaternion.Euler(90, 0, 0);
+        //Quaternion quaternion = Quaternion.Euler(0, 0, 0);
+        GameObject f = Instantiate(prfabFlecha,transform.position,transform.rotation);
+        f.GetComponent<Rigidbody>().AddForce(arco.transform.forward*speed*2);
+        Destroy(f,10);
+    }*/
 public void DisparaFlecha(float speed)
     {
         Quaternion quaternion = Quaternion.Euler(90, 0, 0);
@@ -73,14 +82,14 @@ public void DisparaFlecha(float speed)
 
     public void Agarrar(Transform agarrador)
     {
-         rend.material = materialAgarrado;
+        rend.material = materialAgarrado;
         body.isKinematic = true;
         transform.parent = agarrador;
 
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
         cuerda.SetActive(true);
-
+        Debug.Log("SIUUU");
     
     }
 
@@ -91,7 +100,7 @@ transform.parent=null;
 rend.material=materialTocado;
 body.isKinematic=false;
 cuerda.SetActive(false);
-Debug.Log("DISPARO!");
+//Debug.Log("DISPARO!");
 
 
 }

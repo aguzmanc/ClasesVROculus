@@ -20,12 +20,15 @@ public class AgarradorCuerda : MonoBehaviour
     public Cuerda cuerda;
     bool cambio=false;
 
-    PuntoDisparo pd;
+    public PuntoDisparo pd;
+
+    public Transform previewFlecha;
+
     void Start()
     {
         tocando = false;
         estaAgarrando = false;
-        pd = new PuntoDisparo();
+        //pd = GameObject.
     }
 
    // bool disponible=false;
@@ -43,6 +46,7 @@ public class AgarradorCuerda : MonoBehaviour
 
         if(cuerda!=null)
             cuerda.transform.localPosition = new Vector3(0,0,distancia);
+            previewFlecha.localPosition= new Vector3(0,0,distancia);
 
 
 
@@ -60,6 +64,16 @@ public class AgarradorCuerda : MonoBehaviour
             if(cuerda!=null)
             {
                 cuerda.Soltar();
+                if (distancia>=0.3)
+                {
+                   // float val=distancia;
+                   // if (distancia>=1)
+                   // {
+                   //     val=1;
+                   // }
+                    pd.DisparaFlecha(169);
+                    Debug.Log("DISPARA !!!! ! !");
+                }
             }
               //  disponible=true;
         }
@@ -72,17 +86,13 @@ public class AgarradorCuerda : MonoBehaviour
         
     }
 
-    public void DisparaFlecha(float speed)
-    {
-        Quaternion quaternion = Quaternion.Euler(90, 0, 0);
-        GameObject f = Instantiate(prfabFlecha,transform.position,quaternion);
-        f.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed*2);
-        Destroy(f,10);
-    }
+    
 
 
+//public float actual=0;
     bool UpdateNivelAgarre(){
-        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+       float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+        //float actual = 0.8f;
         bool limiteTraspasado = false;
 
         if(agarre < LIMITE_AGARRE  && actual >= LIMITE_AGARRE){
