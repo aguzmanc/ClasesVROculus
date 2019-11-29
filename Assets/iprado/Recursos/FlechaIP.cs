@@ -14,7 +14,7 @@ public class FlechaIP : MonoBehaviour
         body=GetComponent<Rigidbody>();
         body.isKinematic=false;
         body.useGravity=true;
-        body.AddRelativeForce(new Vector3(0,0,fuerza*agarrador.distancia),ForceMode.Impulse);
+        body.AddRelativeForce(new Vector3(0,0,fuerza*-agarrador.distancia),ForceMode.Impulse);
     }
 
     void Update()
