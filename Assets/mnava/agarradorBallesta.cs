@@ -75,20 +75,26 @@ public class agarradorBallesta : MonoBehaviour
     }
     void OnTriggerEnter(Collider other) 
     {
+        if(other.tag=="arma")
+        {
        ballestaAgarrable ballestaTocada = other.GetComponent<ballestaAgarrable>();
-
+        
         if(ballestaTocada!=null) {
             ballestaglobal=ballestaTocada;
             ballestaglobal.tocar();
         }
+    }
         
     }
     void OnTriggerExit(Collider otro) 
     {
+         if(otro.tag=="arma")
+         {
         ballestaAgarrable ballestaTocada = otro.GetComponent<ballestaAgarrable>();
         if(ballestaTocada!=null) {
             ballestaglobal.dejarTocar();
             ballestaglobal = null;
         }
+          }
     }
 }

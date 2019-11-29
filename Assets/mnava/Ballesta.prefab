@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 1697094679570194385}
   - component: {fileID: 1697094679570194384}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: soporte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
