@@ -22,7 +22,7 @@ public class Holder : MonoBehaviour
 
     void Update()
     {
-        //bool cambio = UpdateNivelAgarre();//
+        bool cambio = UpdateNivelAgarre();//
 
         if(manoCerrada && arco != null){// && cambio) {//){//
             arco.Agarrar(transform);

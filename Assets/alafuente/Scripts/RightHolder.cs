@@ -28,7 +28,7 @@ public class RightHolder : MonoBehaviour
 
     void Update()
     {
-        //bool cambio = UpdateNivelAgarre();//
+        bool cambio = UpdateNivelAgarre();//
         
         if(manoCerrada && cuerda != null){// && cambio) {//){//
             cuerda.Agarrar(transform);
