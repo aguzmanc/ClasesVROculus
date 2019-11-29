@@ -9,6 +9,8 @@ public class agarrarCuerdaEA : MonoBehaviour
 
     public bool limiteBallesta;
     public bool gatilloBallesta;
+    public bool culataAgarrada;
+    public bool culataDisparo;
 
 
     [Range(0f, 1f)]
@@ -18,8 +20,13 @@ public class agarrarCuerdaEA : MonoBehaviour
     public float distancia;
     public bool tocando;
     public Transform pivotCuerda;
+    
     cuerdaEA cuerdaEA;
     culataBallesta culataBallesta;
+
+    public GameObject ballesta;
+    public Transform izquierda;
+    public Transform derecha;
 
 
     [Range(0f, 1f)]
@@ -30,11 +37,18 @@ public class agarrarCuerdaEA : MonoBehaviour
         estaAgarrado = false;
         limiteBallesta=false;
         gatilloBallesta=false;
+        culataAgarrada=false;
+        culataDisparo=false;
     }
 
     bool cambio;
+    Vector3 direccionManos;
     void Update()
     {
+        // direccionManos = izquierda.transform.position-derecha.transform.position;
+        // ballesta.transform.rotation = Quaternion.Slerp(ballesta.transform.rotation, Quaternion.LookRotation(direccionManos), 0.1f);
+
+
         if (!limiteBallesta)
         {
             if(estaAgarrado) {
@@ -64,7 +78,10 @@ public class agarrarCuerdaEA : MonoBehaviour
         {
             if(estaAgarrado && cambio) {
                 if(culataBallesta != null)
+                {
                     culataBallesta.Agarrar();   
+                    culataAgarrada=true;
+                }
             }
             if(estaAgarrado==false && culataBallesta!=null){
                 if (tocando)
@@ -75,6 +92,23 @@ public class agarrarCuerdaEA : MonoBehaviour
                 {
                     culataBallesta.DejarTocar();
                 }
+            }
+            //if (culataDisparo || OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.RTouch))
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.RTouch))
+            {
+                Debug.Log("Disparo");
+                //DISPARAR FLECHA
+                Transform flecha = culataBallesta.transform.parent.FindChild("cuerda").GetChild(0);
+                flecha.GetComponent<disparoFlecha>().Disparar(distancia);
+                flecha.parent=null;
+                limiteBallesta=false;
+                estaAgarrado=false;
+                cuerdaEA=null; 
+            }
+            if (culataAgarrada)
+            {
+                direccionManos = izquierda.transform.position-derecha.transform.position;
+                ballesta.transform.rotation = Quaternion.Slerp(ballesta.transform.rotation, Quaternion.LookRotation(direccionManos), 0.1f);
             }
         }
         else
@@ -110,41 +144,43 @@ public class agarrarCuerdaEA : MonoBehaviour
 
 
         //PRUEBAS PC
+        // bool limiteTraspasado = false;
+
+        // if(agarreCuerda < LIMITE_AGARRE  && actu >= LIMITE_AGARRE && tocando){
+        //     estaAgarrado = true;
+        //     limiteTraspasado = true;
+        // }
+
+        // if(agarreCuerda > LIMITE_SOLTAR && actu <= LIMITE_SOLTAR){
+        //     estaAgarrado = false;
+        //     limiteTraspasado = true;
+        // }
+
+        // agarreCuerda = actu;
+
+        // return limiteTraspasado;
+
+        //PRUEBAS VR
+       float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
         bool limiteTraspasado = false;
 
-        if(agarreCuerda < LIMITE_AGARRE  && actu >= LIMITE_AGARRE && tocando){
+        if(agarreCuerda < LIMITE_AGARRE  && actual >= LIMITE_AGARRE && tocando){
             estaAgarrado = true;
             limiteTraspasado = true;
         }
 
-        if(agarreCuerda > LIMITE_SOLTAR && actu <= LIMITE_SOLTAR){
+        if(agarreCuerda > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR){
             estaAgarrado = false;
             limiteTraspasado = true;
         }
 
-        agarreCuerda = actu;
+        agarreCuerda = actual;
 
         return limiteTraspasado;
 
-        //PRUEBAS VR
-    //    float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
-    //     bool limiteTraspasado = false;
-
-    //     if(agarre < LIMITE_AGARRE  && actual >= LIMITE_AGARRE && tocando){
-    //         estaAgarrando = true;
-    //         limiteTraspasado = true;
-    //     }
-
-    //     if(agarre > LIMITE_SOLTAR && actual <= LIMITE_SOLTAR){
-    //         estaAgarrando = false;
-    //         limiteTraspasado = true;
-    //     }
-
-    //     agarre = actual;
-
-    //     return limiteTraspasado;
-
     }
+
+    
 
      private void OnTriggerEnter(Collider otro) {
         
@@ -186,14 +222,6 @@ public class agarrarCuerdaEA : MonoBehaviour
             limiteBallesta=true;
             gatilloBallesta=true;
             cuerdaEA.Ballesta();
-        }
-
-    }
-
-    public void TiroBallesta(){
-        if (!estaAgarrado)
-        {
-            limiteBallesta=false;
         }
 
     }

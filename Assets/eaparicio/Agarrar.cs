@@ -32,7 +32,7 @@ public class Agarrar : MonoBehaviour
             if (ballesta!=null)
                 ballesta.Agarrar(transform);
         }
-        if(!estaAgarrado && cambio && arc!=null){
+        if(!estaAgarrado && cambio){
             if (arc!=null)
                 arc.Soltar();
             if (ballesta!=null)
@@ -43,40 +43,40 @@ public class Agarrar : MonoBehaviour
     bool UpdateAgarre(){
 
         //PRUEBAS PC
-        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
-
-        bool limitePasado=false;
-        if (agarre<LIMITE_AGARRE && actu>=LIMITE_AGARRE)
-        {
-            estaAgarrado=true;
-            limitePasado=true;
-        }
-        if (agarre>LIMITE_SOLTAR && actu <=LIMITE_SOLTAR)
-        {
-            estaAgarrado=false;
-            limitePasado=true;
-        }
-        agarre=actu;
-        return limitePasado;
-
-
-
-        //PRUEBAS VR
         // float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
 
         // bool limitePasado=false;
-        // if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        // if (agarre<LIMITE_AGARRE && actu>=LIMITE_AGARRE)
         // {
         //     estaAgarrado=true;
         //     limitePasado=true;
         // }
-        // if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
+        // if (agarre>LIMITE_SOLTAR && actu <=LIMITE_SOLTAR)
         // {
         //     estaAgarrado=false;
         //     limitePasado=true;
         // }
-        // agarre=actual;
+        // agarre=actu;
         // return limitePasado;
+
+
+
+        //PRUEBAS VR
+        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+
+        bool limitePasado=false;
+        if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        {
+            estaAgarrado=true;
+            limitePasado=true;
+        }
+        if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
+        {
+            estaAgarrado=false;
+            limitePasado=true;
+        }
+        agarre=actual;
+        return limitePasado;
     }
     private void OnTriggerEnter(Collider otro) {
         
@@ -89,7 +89,8 @@ public class Agarrar : MonoBehaviour
                 ballesta.Tocar();
             }
         }
-        else{
+       if (otro.tag=="arco")
+       {
             arcoea arcoAgarrado = otro.GetComponent<arcoea>();
             if (arcoAgarrado!=null)
             {

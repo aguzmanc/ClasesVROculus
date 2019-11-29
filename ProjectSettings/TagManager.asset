@@ -9,6 +9,7 @@ TagManager:
   - piso
   - diana
   - ballesta
+  - arco
   layers:
   - Default
   - TransparentFX
