@@ -1082,7 +1082,7 @@ MonoBehaviour:
   pivote: {fileID: 941573018}
   flecha: {fileID: 845730767354348496, guid: 780271edc0d3ad340aebb7e6aaabf98c, type: 3}
   shootcooldown: 1
-  fuerza: 220
+  fuerza: 60
   velocidadInclinacion: 180
   velocidadDireccion: 360
   disparar: 0
