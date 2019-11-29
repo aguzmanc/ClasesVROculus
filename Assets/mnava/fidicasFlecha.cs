@@ -16,7 +16,7 @@ public class fidicasFlecha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(disparada)
+        if(true)
         {
             Rigidbody cuerpo= this.transform.GetComponent<Rigidbody>();
             cuerpo.AddForce(transform.forward*(fuerza*-1));

@@ -263,12 +263,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estaAgarrando: 0
-  AGARREF: 0
+  MANODERECHA: {fileID: 899847611}
   NivelAgarre: 0
   soporteBallesta: {fileID: 0}
-  eje: {fileID: 524605834}
-  shootForzado: 0
-  recargaForzada: 0
+  forzado: 0
 --- !u!23 &94776350
 MeshRenderer:
   m_ObjectHideFlags: 0

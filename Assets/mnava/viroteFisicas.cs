@@ -20,7 +20,7 @@ public class viroteFisicas : MonoBehaviour
         {
             //transform.Translate(0,0,1*Time.deltaTime,Space.Self);
            
-            cuerpo.AddForce(transform.forward*5);
+            cuerpo.AddForce(transform.forward*8);
            
         }
     }
