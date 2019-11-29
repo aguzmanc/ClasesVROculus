@@ -22,13 +22,13 @@ public class Holder : MonoBehaviour
 
     void Update()
     {
-        //bool cambio = UpdateNivelAgarre();
+        bool cambio = UpdateNivelAgarre();//
 
-        if(manoCerrada && arco != null ){// && cambio) {
+        if(manoCerrada && arco != null && cambio) {//){//
             arco.Agarrar(transform);
         }
 
-        if(!manoCerrada && arco != null ){// && cambio){
+        if(!manoCerrada && arco != null && cambio){//){//
             arco.Soltar();
         }
     }
@@ -36,7 +36,7 @@ public class Holder : MonoBehaviour
 
 
 
-    /*
+    //*
     bool UpdateNivelAgarre(){
         float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
         bool limiteTraspasado = false;
@@ -55,7 +55,7 @@ public class Holder : MonoBehaviour
 
         return limiteTraspasado;
     }
-    */
+    //*/
 
 
 

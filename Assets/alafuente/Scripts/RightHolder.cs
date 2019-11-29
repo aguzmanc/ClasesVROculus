@@ -28,14 +28,14 @@ public class RightHolder : MonoBehaviour
 
     void Update()
     {
-        //bool cambio = UpdateNivelAgarre();
+        bool cambio = UpdateNivelAgarre();//
         
-        if(manoCerrada && cuerda != null ){// && cambio) {
+        if(manoCerrada && cuerda != null && cambio) {//){//
             cuerda.Agarrar(transform);
             agarrandoCuerda = true;
         }
 
-        if(!manoCerrada && cuerda != null ){// && cambio ){
+        if(!manoCerrada && cuerda != null && cambio ){//){//
             cuerda.Soltar();
             agarrandoCuerda = false;
         }
@@ -44,7 +44,7 @@ public class RightHolder : MonoBehaviour
 
 
 
-/*
+//*
     bool UpdateNivelAgarre(){
         float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
         bool limiteTraspasado = false;
@@ -63,7 +63,7 @@ public class RightHolder : MonoBehaviour
 
         return limiteTraspasado;
     }
-*/
+//*/
 
 
     void OnTriggerEnter(Collider otro) {
