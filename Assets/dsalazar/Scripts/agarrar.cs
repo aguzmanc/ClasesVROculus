@@ -21,29 +21,38 @@ public class agarrar : MonoBehaviour
             arco.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
             arco.GetComponent<Rigidbody>().useGravity=false; //activa la gravedad del arco
             arcoAgarrado=true;
+             arcoMaterial.material= materialverde;
+            arco.transform.position=new Vector3(transform.position.x+0.01f,transform.position.y, transform.position.z);
         }
        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger)<0.7f) {
             arco.transform.parent=null; //suelta el arco cuando no se esta tocando 
             if (arcoAgarrado)
             {
-            arco.GetComponent<Rigidbody>().useGravity=true; //activa la gravedad del arco
+            arco.GetComponent<Rigidbody>().useGravity=true;
+             arcoMaterial.material= materialrojo;
+             //activa la gravedad del arco
             }
         }
         if (Input.GetKeyDown(KeyCode.Z)) {
             arco.transform.parent=null; //suelta el arco, prueba con boton
             arcoAgarrado=false;
-            arco.GetComponent<Rigidbody>().useGravity=true; //activa la gravedad del arco
+            arco.GetComponent<Rigidbody>().useGravity=true;
+             arcoMaterial.material= materialrojo;
+             //activa la gravedad del arco
         }
          if (Input.GetKey(KeyCode.X) && tocando==true) {
             arco.transform.SetParent( transform ); //agarra mientras esta presionando la tecla y esta dentro del area
             arcoAgarrado=true;
             arco.GetComponent<Rigidbody>().useGravity=false; //activa la gravedad del arco
-
+             arcoMaterial.material= materialverde;
+            arco.transform.position=new Vector3(transform.position.x,transform.position.y, transform.position.z+1);
+            //arco.transform.position=transform.position;
         }
          if (Input.GetKeyDown(KeyCode.C)) {
             arco.transform.SetParent( transform ); //agarra despues de presionar la tecla
             arcoAgarrado=true;
             arco.GetComponent<Rigidbody>().useGravity=false; //activa la gravedad del arco
+             arcoMaterial.material= materialverde;
         }
     }
     public GameObject arco;
@@ -56,7 +65,7 @@ public class agarrar : MonoBehaviour
            // arco.transform.SetParent( transform );
              Debug.Log("toco");
              tocando=true;
-             arcoMaterial.material= materialverde;
+           //  arcoMaterial.material= materialverde;
              //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
 
           //  other.transform.SetParent( transform, worldPositionStays );
@@ -65,13 +74,13 @@ public class agarrar : MonoBehaviour
     private void OnTriggerStay(Collider other) {
              tocando=true;
              //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
-             arcoMaterial.material= materialverde;
+             //arcoMaterial.material= materialverde;
 
     }
     private void OnTriggerExit(Collider other) {
       tocando=false;
      //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.green);
-             arcoMaterial.material= materialrojo;
+            // arcoMaterial.material= materialrojo;
       
     }
 }

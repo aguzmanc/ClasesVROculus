@@ -282,7 +282,7 @@ Transform:
   m_GameObject: {fileID: 273866999}
   m_LocalRotation: {x: -0, y: -0.4289036, z: -0, w: 0.9033503}
   m_LocalPosition: {x: -0.855, y: 0, z: -0.29900026}
-  m_LocalScale: {x: 1, y: 0.1911423, z: 0.18781}
+  m_LocalScale: {x: 1, y: 0.064321294, z: 0.18781}
   m_Children: []
   m_Father: {fileID: 1488126618}
   m_RootOrder: 2
@@ -714,7 +714,7 @@ Transform:
   m_GameObject: {fileID: 859827845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.032000005, y: -0.014000058, z: 0.03999996}
-  m_LocalScale: {x: 1.2375, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1.2375, y: 0.062198002, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1488126618}
   m_RootOrder: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   cannonPivotBone: {fileID: 929873320}
   bullet: {fileID: 2036387795}
   shootCooldown: 1
-  strength: 50
+  strength: 25
   velocidadInclinacion: 180
   velocidadDireccion: 270
   manoArea1: 0
@@ -1499,7 +1499,7 @@ Transform:
   m_GameObject: {fileID: 1621216081}
   m_LocalRotation: {x: 2.4176263e-16, y: 0.4289042, z: 0.00000005112936, w: 0.90335}
   m_LocalPosition: {x: 0.82799995, y: -0.011000037, z: -0.29900026}
-  m_LocalScale: {x: 1, y: 0.1911423, z: 0.18781}
+  m_LocalScale: {x: 1, y: 0.0595695, z: 0.18781}
   m_Children: []
   m_Father: {fileID: 1488126618}
   m_RootOrder: 1
@@ -1884,8 +1884,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757398755}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.007, y: 0.0009999871, z: -0.5942}
-  m_LocalScale: {x: 1, y: 0.582589, z: 1.0042095}
+  m_LocalPosition: {x: -0.007, y: 0.0009999871, z: -0.566}
+  m_LocalScale: {x: 0.20821, y: 0.09065064, z: 1.0042095}
   m_Children: []
   m_Father: {fileID: 1488126618}
   m_RootOrder: 3
@@ -1910,7 +1910,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757398755}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
