@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlechaIP : MonoBehaviour
 {
-    public float fuerza=400;
+    public float fuerza=300;
     public AgarrarCuerdaIP agarrador;
     Rigidbody body;
     // Start is called before the first frame update
