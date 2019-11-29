@@ -342,7 +342,7 @@ MonoBehaviour:
   tocando: 0
   pivotCuerda: {fileID: 0}
   cuerda: {fileID: 0}
-  flecha: {fileID: 169952802}
+  flecha: {fileID: 2131502691}
 --- !u!1 &296912441
 GameObject:
   m_ObjectHideFlags: 0
