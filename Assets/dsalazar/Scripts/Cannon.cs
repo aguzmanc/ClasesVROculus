@@ -6,7 +6,7 @@ public class Cannon : MonoBehaviour {
     public GameObject cannonPivotBone;
     public GameObject bullet;
     public float shootCooldown = 1;
-    public float strength = 0;
+    public float strength = 20;
 
     public float velocidadInclinacion = 180; //antes era 180
     public float velocidadDireccion = 270; //antes era 360
@@ -34,6 +34,8 @@ public class Cannon : MonoBehaviour {
                       GameObject createdBullet = Instantiate(bullet);
               Debug.DrawRay(cannonPivotBone.transform.position, transform.TransformDirection(manoDerecha.transform.position) , Color.white);
               createdBullet.transform.position = cannonPivotBone.transform.position;
+              
+              createdBullet.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
               strength=(20*distancia);   
                Rigidbody body = createdBullet.GetComponent<Rigidbody>();
         body.AddForce(cannonPivotBone.transform.forward * strength, ForceMode.Impulse);
@@ -48,8 +50,11 @@ public class Cannon : MonoBehaviour {
     public void Shoot () {
         GameObject createdBullet = Instantiate(bullet);
         createdBullet.transform.position = cannonPivotBone.transform.position;
+              createdBullet.transform.SetParent( transform ); //agarra si esta en el area y se ejerce en el handtriger
 
         Rigidbody body = createdBullet.GetComponent<Rigidbody>();
+       // createdBullet.transform.rotation = cannonPivotBone.transform.rotation;
+
         body.AddForce(cannonPivotBone.transform.forward * strength,
                       ForceMode.Impulse);
     }
