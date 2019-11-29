@@ -54,14 +54,8 @@ public class BowString : MonoBehaviour
             Debug.DrawLine(baseCuerda.position, mano.position, Color.green);
             if(distancia < 0.5f)
             {
-                if(Application.loadedLevelName == "escena_ballesta")
-                {
-                    transform.localPosition = new Vector3(0,0,-distancia*10);
-                }
-                else
-                {
-                    transform.localPosition = new Vector3(0,0,distancia*10);
-                }    
+                transform.localPosition = new Vector3(0,0,distancia*10);
+                
                 Debug.Log("Desplazando");
             }//else
             //{
@@ -89,14 +83,8 @@ public class BowString : MonoBehaviour
             arrow.transform.Translate(0.07f,0,0);
             strength=distancia*100;//(50);   
             Rigidbody body = arrow.GetComponent<Rigidbody>();
-            if(Application.loadedLevelName == "escena_ballesta")
-            {
-                body.AddForce(baseCuerda.transform.forward * strength, ForceMode.Impulse);
-            }
-            else
-            {
-                body.AddForce(baseCuerda.transform.forward * -1 * strength, ForceMode.Impulse);
-            } 
+
+            body.AddForce(baseCuerda.transform.forward * -1 * strength, ForceMode.Impulse); 
         }  
         mano = null;
         cargado = false;

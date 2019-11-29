@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 61941233}
   - component: {fileID: 61941232}
   m_Layer: 0
-  m_Name: Cuerda
+  m_Name: Gatillo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,12 +148,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61941230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7737401, y: 0.7737401, z: 0.77373976}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -4.57}
+  m_LocalScale: {x: 0.7737412, y: 0.77374125, z: 0.77373976}
   m_Children: []
-  m_Father: {fileID: 1145802457}
-  m_RootOrder: 0
+  m_Father: {fileID: 274846691}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &61941232
 MonoBehaviour:
@@ -164,18 +164,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 61941230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757f329e73b1fe488c75a9bf15670f0, type: 3}
+  m_Script: {fileID: 11500000, guid: cce3ae8b441925c43ae3ae59914f2743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SM_Arrow: {fileID: 0}
   strength: 0
-  distancia: 0
   rend: {fileID: 61941235}
   materialTocado: {fileID: 2100000, guid: 11d1b4a7bc0cbd54ca3605ebfa97ef8d, type: 2}
   materialAgarrado: {fileID: 2100000, guid: 1eb9bec544dab4f4bb0cdc669045ef4d, type: 2}
   materialSuelto: {fileID: 2100000, guid: 9934b707e024a924ba217f41a80601eb, type: 2}
-  baseCuerda: {fileID: 0}
-  mano: {fileID: 0}
+  apretado: 0
 --- !u!54 &61941233
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -418,8 +416,8 @@ GameObject:
   - component: {fileID: 274846690}
   - component: {fileID: 274846689}
   - component: {fileID: 274846688}
-  - component: {fileID: 274846687}
   - component: {fileID: 274846686}
+  - component: {fileID: 274846687}
   m_Layer: 0
   m_Name: Bow_center
   m_TagString: Untagged
@@ -452,11 +450,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 274846685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99531693738df7c4ba6d35dd3891f71e, type: 3}
+  m_Script: {fileID: 11500000, guid: 22653584eb5f4da429ec4474d549d971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 274846689}
-  cuerda: {fileID: 0}
+  gatillo: {fileID: 0}
   materialTocado: {fileID: 2100000, guid: 11d1b4a7bc0cbd54ca3605ebfa97ef8d, type: 2}
   materialAgarrado: {fileID: 2100000, guid: 1eb9bec544dab4f4bb0cdc669045ef4d, type: 2}
   materialSuelto: {fileID: 2100000, guid: 47b39540fdcf2954fb2098caa8a8d135, type: 2}
@@ -531,8 +529,8 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 828591490}
-  - {fileID: 1145802457}
   - {fileID: 1387573184}
+  - {fileID: 61941231}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1454,37 +1452,6 @@ Transform:
   m_Father: {fileID: 989536658}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1145802456
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1145802457}
-  m_Layer: 0
-  m_Name: BaseCuerda
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1145802457
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145802456}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -2.16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 61941231}
-  m_Father: {fileID: 274846691}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1154249702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,12 +1635,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280024587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2a2acc5b595b248815e26ea00cc1b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c176144712dce342a4d26325c2a636a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agarre: 0
   manoCerrada: 0
-  arco: {fileID: 0}
+  ballesta: {fileID: 0}
 --- !u!135 &1280024590
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1807,7 +1774,7 @@ GameObject:
   - component: {fileID: 1387573186}
   - component: {fileID: 1387573185}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Mango
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1825,7 +1792,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7, z: 7}
   m_Children: []
   m_Father: {fileID: 274846691}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1387573185
 BoxCollider:
@@ -2191,12 +2158,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482437916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22209345a06e40347a9587dede682e26, type: 3}
+  m_Script: {fileID: 11500000, guid: 4850e79f40d2f8941ac9a8587f9f3a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agarre: 0
   manoCerrada: 0
-  cuerda: {fileID: 0}
+  gatillo: {fileID: 0}
 --- !u!65 &1482437919
 BoxCollider:
   m_ObjectHideFlags: 0
