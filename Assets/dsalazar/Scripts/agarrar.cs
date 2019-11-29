@@ -25,6 +25,7 @@ public class agarrar : MonoBehaviour
             arco.transform.position=new Vector3(transform.position.x+0.0051f,transform.position.y, transform.position.z);
             arco.transform.localPosition=Vector3.zero;
             arco.transform.localRotation= Quaternion.identity;
+            arco.GetComponent<Rigidbody>().isKinematic=true;
         }
        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger)<0.7f) {
             arco.transform.parent=null; //suelta el arco cuando no se esta tocando 
@@ -32,6 +33,7 @@ public class agarrar : MonoBehaviour
             {
             arco.GetComponent<Rigidbody>().useGravity=true;
              arcoMaterial.material= materialrojo;
+            arco.GetComponent<Rigidbody>().isKinematic=false;
              //activa la gravedad del arco
             }
         }
@@ -69,6 +71,7 @@ public class agarrar : MonoBehaviour
            // arco.transform.SetParent( transform );
              Debug.Log(other.name);
              tocando=true;
+             
            //  arcoMaterial.material= materialverde;
              //arco.GetComponent<Renderer>().material.SetColor("_ SpecColor", Color.red);
 
