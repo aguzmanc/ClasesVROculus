@@ -21,7 +21,7 @@ public class ArmaUnaMano : MonoBehaviour
     {
         
     }
-     public void tocar()
+    public void tocar()
     {
         indicador.material=EstadoTocado;
        
@@ -31,6 +31,7 @@ public class ArmaUnaMano : MonoBehaviour
         indicador.material=EstadoSuelto;
        
     }
+   
     public void agarrar(Transform mano)
     {
  

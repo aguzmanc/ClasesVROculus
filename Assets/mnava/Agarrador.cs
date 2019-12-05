@@ -7,17 +7,18 @@ public class Agarrador : MonoBehaviour
     const float limiteAgarre = 0.7f;
     const float LimiteSuelto = 0.3f;
     public bool estaAgarrando;
-
+    public byte tipoArma;//0= nada, 1 una mano, 2 dos manos
     public bool AGARREF;
     [Range (0f,1f)]
     public float NivelAgarre;
     public ArmaUnaMano arma;
+    public ArmaDosManos armaDos;
 
 
 
     void Start()
     {
-        
+        tipoArma=0;
     }
 
    
@@ -28,13 +29,31 @@ public class Agarrador : MonoBehaviour
 
 
        estaAgarrando=AGARREF;//agarre forzado 
-       if(estaAgarrando && arma!=null)
+
+       if(tipoArma==1)
        {
-           arma.agarrar(transform);
+            if(estaAgarrando && arma!=null)
+            {
+                arma.agarrar(transform);
+            }
+            if(estaAgarrando==false && cambio && arma!=null)
+            {
+                arma.soltar();
+                tipoArma=0;
+            }
        }
-       if(estaAgarrando==false && cambio && arma!=null){
-            arma.soltar();
-        }
+       else if(tipoArma==2)
+       {
+            if(estaAgarrando && armaDos!=null)
+            {
+                armaDos.agarrarBase();
+            }
+            if(estaAgarrando==false && cambio && armaDos!=null)
+            {
+                arma.soltar();
+                tipoArma=0;
+            }
+       }
     }
     bool actualizarAgarre()
     {
@@ -61,6 +80,27 @@ public class Agarrador : MonoBehaviour
             {
                 arma=armaTocada;
                 arma.tocar();
+                tipoArma=1;
+            }
+        }
+        else if(other.tag=="Arma2")
+        {
+            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+            if(armaTocada!=null) 
+            {
+                armaDos=armaTocada;
+                armaDos.tocar();
+                tipoArma=2;
+            }
+        }
+        else if(other.tag=="Apoyo")
+        {
+            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+            if(armaTocada!=null) 
+            {
+                armaDos=armaTocada;
+                armaDos.tocarAp();
+               
             }
         }
         
@@ -73,6 +113,25 @@ public class Agarrador : MonoBehaviour
             {
                 arma.dejarTocar();
                 arma = null;
+                tipoArma=0;
+            }
+        }
+        else if(other.tag=="Arma2")
+        {
+            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+            if(armaTocada!=null)
+            {
+                armaDos.dejarTocar();
+                armaDos = null;
+                tipoArma=0;
+            }
+        }
+        else if(other.tag=="Apoyo")
+        {
+            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+            if(armaTocada!=null)
+            {
+                armaDos.dejarTocarAp();
             }
         }
      }
