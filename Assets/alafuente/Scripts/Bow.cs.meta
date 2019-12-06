@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 99531693738df7c4ba6d35dd3891f71e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rend: {instanceID: 0}
+  - materialTocado: {fileID: 2100000, guid: 11d1b4a7bc0cbd54ca3605ebfa97ef8d, type: 2}
+  - materialAgarrado: {fileID: 2100000, guid: 1eb9bec544dab4f4bb0cdc669045ef4d, type: 2}
+  - materialSuelto: {fileID: 2100000, guid: 9934b707e024a924ba217f41a80601eb, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
