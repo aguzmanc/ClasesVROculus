@@ -26,6 +26,11 @@ public class Agarrador : MonoBehaviour
     {
        bool cambio = UpdateNivelAgarre();
 
+            if (objetoAgarrable != null && objetoAgarrable is Arma && OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,controller))
+            {
+                Arma a = objetoAgarrable as Arma;
+                a.Disparar();
+            }
         if(estaAgarrando && objetoAgarrable != null && cambio) {
             objetoAgarrable.Agarrar(transform);
             
