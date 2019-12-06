@@ -144,7 +144,7 @@ public class Agarrador : MonoBehaviour
         }
         else if(other.tag=="Apoyo")
         {
-            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+            ArmaDosManos armaTocada = other.GetComponentInParent<ArmaDosManos>();
             if(armaTocada!=null)
             {
                 armaDos.dejarTocarAp();

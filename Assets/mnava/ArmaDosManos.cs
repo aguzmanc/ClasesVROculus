@@ -28,7 +28,7 @@ public class ArmaDosManos : MonoBehaviour
         if(sostenida==false)
         {
             transform.parent=null;
-              cuerpo.isKinematic=false;
+            cuerpo.isKinematic=false;
 
         }
     }
@@ -52,6 +52,10 @@ public class ArmaDosManos : MonoBehaviour
     {
         apoyoRender.material=EstadoSuelto;
         sostenida=false;
+        indicador.material=EstadoSuelto;
+        transform.parent=null;
+        cuerpo.isKinematic=false;
+       
        
     }
      public void agarrarAp()
@@ -73,9 +77,10 @@ public class ArmaDosManos : MonoBehaviour
     public void soltar()
     {
         indicador.material=EstadoSuelto;
+          apoyoRender.material=EstadoSuelto;
         transform.parent=null;
         cuerpo.isKinematic=false;
-          apoyo.SetActive(false);
+        apoyo.SetActive(false);
     }
     public void agarrar(Transform mano)
     {
