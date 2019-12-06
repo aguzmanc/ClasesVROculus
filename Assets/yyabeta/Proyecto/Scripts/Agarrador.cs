@@ -14,6 +14,9 @@ public class Agarrador : MonoBehaviour
 
     public bool estaAgarrando;
 
+
+    public ObjetoAgarrable objetoAgarrable;
+
     void Start() {
         estaAgarrando = false;
     }
@@ -21,7 +24,16 @@ public class Agarrador : MonoBehaviour
 
     void Update()
     {
-       
+       bool cambio = UpdateNivelAgarre();
+
+        if(estaAgarrando && objetoAgarrable != null && cambio) {
+            objetoAgarrable.Agarrar(transform);
+            
+        }
+
+        if(estaAgarrando==false && cambio && objetoAgarrable!=null){
+            objetoAgarrable.Soltar();
+        }
     }
 
 
@@ -44,5 +56,23 @@ public class Agarrador : MonoBehaviour
         agarre = actual;
 
         return limiteTraspasado;
+    }
+
+    void OnTriggerEnter(Collider otro) {
+        ObjetoAgarrable obj = otro.GetComponent<ObjetoAgarrable>();
+
+        if(obj!=null) {
+            objetoAgarrable = obj;
+            objetoAgarrable.Tocar();
+        }
+    }
+
+
+    void OnTriggerExit(Collider otro) {
+        ObjetoAgarrable obj = otro.GetComponent<ObjetoAgarrable>();
+        if(obj!=null) {
+            objetoAgarrable.DejarDeTocar();
+            objetoAgarrable = null;
+        }
     }
 }

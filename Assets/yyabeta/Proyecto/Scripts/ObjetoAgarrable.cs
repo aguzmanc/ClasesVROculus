@@ -4,12 +4,48 @@ using UnityEngine;
 
 public abstract class ObjetoAgarrable : MonoBehaviour
 {
-    Rigidbody rigidbody = null;
+    [Header("Objetos")]
+    public Renderer rend;
+    Rigidbody body;
+
+
+    [Header("Materiales")]
+    public Material materialTocado;
+    public Material materialAgarrado;
+    public Material materialSuelto;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody=GetComponent<Rigidbody>();
+        body=GetComponent<Rigidbody>();
     }
+    
+    #region Estdos de Agarre
+
+    public void Tocar() {
+        rend.material = materialTocado;
+    }
+
+
+    public void DejarDeTocar() {
+        rend.material = materialSuelto;
+    }
+
+    public void Agarrar(Transform agarrador) { 
+        rend.material = materialAgarrado;
+        body.isKinematic = true;
+        transform.parent = agarrador;
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+    }
+
+    public void Soltar() 
+    {
+        transform.parent = null;
+        rend.material = materialTocado;
+        body.isKinematic = false;
+    }
+
+    #endregion
 
     // Update is called once per frame
     void Update()
