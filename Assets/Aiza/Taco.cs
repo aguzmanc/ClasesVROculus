@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Taco : MonoBehaviour
 {
-    Rigidbody bodyTaco;
-    Renderer rendTaco;
+    public Rigidbody bodyTaco;
+    public Renderer rendTaco;
     public Material materialTocado;
 
     public Material materialAgarrado;
