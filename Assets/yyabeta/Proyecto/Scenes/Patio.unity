@@ -287,10 +287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a0cf87653a4e84c93e4df20d040fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
-  materialTocado: {fileID: 0}
-  materialAgarrado: {fileID: 0}
-  materialSuelto: {fileID: 0}
+  rend: {fileID: 1749198431}
+  materialTocado: {fileID: 2100000, guid: 9b40db27cf9cbf74eaf78cdd827f089b, type: 2}
+  materialAgarrado: {fileID: 2100000, guid: 67a6ba8578ecfdd4a85b947dde205ed3, type: 2}
+  materialSuelto: {fileID: 2100000, guid: 590d03dfdd8ec66448081930de1bf4f3, type: 2}
 --- !u!1 &43546913
 GameObject:
   m_ObjectHideFlags: 0
