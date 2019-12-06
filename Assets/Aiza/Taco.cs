@@ -34,7 +34,7 @@ public class Taco : MonoBehaviour
         bodyTaco.isKinematic=true;
         transform.parent = agarrador;
 
-        transform.localPosition = Vector3.zero;
+        //transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(90,0,0);
     }
 
