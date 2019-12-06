@@ -12,6 +12,7 @@ public class AgarradorR : MonoBehaviour
     public float agarre;
     public Bola bola;
 
+    public Bola aux;
 
     public bool estaAgarrando;
 
@@ -34,6 +35,12 @@ public class AgarradorR : MonoBehaviour
       {
         bola.Soltar();
       }
+        if(OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.P))
+      {
+          
+        aux.transform.position=new Vector3(0.348f, 0, -0.041f);
+      }
+
     }
 
 

@@ -12,6 +12,7 @@ public class Agarrador : MonoBehaviour
     public float agarre;
     public Bola bola;
 
+    public Bola aux;
 
     public bool estaAgarrando;
 
@@ -32,7 +33,16 @@ public class Agarrador : MonoBehaviour
       }
       if(estaAgarrando==false && cambio && bola!=null)
       {
+        bola.Impulso(gameObject.transform.forward);
         bola.Soltar();
+        //gameObject.GetComponent<Rigidbody>().AddForce(0, 0, 1); 
+         //f.GetComponent<Rigidbody>().AddForce(arco.transform.forward*speed*2);
+      }
+
+      if(OVRInput.GetDown(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.O))
+      {
+          
+        aux.transform.position=new Vector3(0.348f, 0, 0.097f);
       }
     }
 

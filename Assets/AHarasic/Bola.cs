@@ -54,11 +54,16 @@ public class Bola : MonoBehaviour
             transform.parent=null;
             rend.material=materialTocado;
             body.isKinematic=false;
+            //gameObject.GetComponent<Rigidbody>().AddForce(0, 0, 1);   
+                    
            // cuerda.SetActive(false);
             //Debug.Log("DISPARO!");
             }
 
-
+            public void Impulso(Vector3 v3)
+            {
+                gameObject.GetComponent<Rigidbody>().AddForce(v3);
+            }
     void Update()
     {
         
