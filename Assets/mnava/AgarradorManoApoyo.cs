@@ -7,13 +7,13 @@ public class AgarradorManoApoyo : MonoBehaviour
    
     const float limiteAgarre = 0.7f;
     const float LimiteSuelto = 0.3f;
-    public bool estaAgarrando;
-    public byte tipoArma;//0= nada, 1 una mano, 2 dos manos
+     bool estaAgarrando2;
+     byte tipoArma;//0= nada, 1 una mano, 2 dos manos
     public bool AGARREF;
     [Range (0f,1f)]
     public float NivelAgarre;
-    public ArmaUnaMano arma;
-    public ArmaDosManos armaDos;
+     ArmaUnaMano arma;
+     ArmaDosManos armaDos;
     void Start()
     {
           tipoArma=0;
@@ -25,15 +25,15 @@ public class AgarradorManoApoyo : MonoBehaviour
           bool cambio=actualizarAgarre();
 
 
-       //estaAgarrando=AGARREF;//agarre forzado 
+       estaAgarrando2=AGARREF;//agarre forzado 
 
        if(tipoArma==1)
        {
-            if(estaAgarrando && arma!=null)
+            if(estaAgarrando2 && arma!=null)
             {
                 arma.agarrar(transform);
             }
-            if(estaAgarrando==false && cambio && arma!=null)
+            if(estaAgarrando2==false && cambio && arma!=null)
             {
                 arma.soltar();
                 tipoArma=0;
@@ -41,11 +41,11 @@ public class AgarradorManoApoyo : MonoBehaviour
        }
        else if(tipoArma==2)
        {
-            if(estaAgarrando && armaDos!=null)
+            if(estaAgarrando2 && armaDos!=null)
             {
                 armaDos.agarrarBase();
             }
-            if(estaAgarrando==false && cambio && armaDos!=null)
+            if(estaAgarrando2==false && cambio && armaDos!=null)
             {
                 arma.soltar();
                 tipoArma=0;
@@ -58,12 +58,12 @@ public class AgarradorManoApoyo : MonoBehaviour
         float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
         if(NivelAgarre<limiteAgarre && actual>=limiteAgarre)
         {
-            estaAgarrando=true;
+            estaAgarrando2=true;
             cambio=true;
         }
         if(NivelAgarre>LimiteSuelto && actual<=LimiteSuelto)
         {
-            estaAgarrando=false;
+            estaAgarrando2=false;
             cambio=true;
         }
         NivelAgarre=actual;
