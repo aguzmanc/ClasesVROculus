@@ -6,7 +6,7 @@ public abstract class ObjetoAgarrable : MonoBehaviour
 {
     [Header("Objetos")]
     public Renderer rend;
-    Rigidbody body;
+    protected Rigidbody body;
 
 
     [Header("Materiales")]
@@ -16,7 +16,7 @@ public abstract class ObjetoAgarrable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        body=GetComponent<Rigidbody>();
+        
     }
     
     #region Estdos de Agarre

@@ -7,7 +7,7 @@ public class Disco : ObjetoAgarrable
     // Start is called before the first frame update
     void Start()
     {
-        
+        body=GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
