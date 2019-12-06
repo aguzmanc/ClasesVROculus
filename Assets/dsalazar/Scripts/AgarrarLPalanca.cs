@@ -30,7 +30,7 @@ public class AgarrarLPalanca : MonoBehaviour
             lPalanca.GetComponent<Rigidbody>().isKinematic=true;
         }
        if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger)<0.7f) {
-            lPalanca.transform.parent=null; 
+            //lPalanca.transform.parent=null; 
             if (LpalancaAgarrado)
             {
              lPalancaRender.material= materialrojo;
