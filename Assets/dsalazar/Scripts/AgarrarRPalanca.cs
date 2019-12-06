@@ -23,7 +23,8 @@ public class AgarrarRPalanca : MonoBehaviour
            // rPalanca.GetComponent<Rigidbody>().useGravity=false; 
             RpalancaAgarrado=true;
              rPalancaRender.material= materialverde;
-            rPalanca.transform.position=new Vector3(transform.position.x+0.0051f,transform.position.y, transform.position.z);
+            //rPalanca.transform.position=new Vector3(transform.position.x+0.0051f,transform.position.y, transform.position.z);
+            rPalanca.transform.position=new Vector3(transform.position.x,transform.position.y, transform.position.z);
             rPalanca.transform.localPosition=Vector3.zero;
             rPalanca.transform.localRotation= Quaternion.identity;
             rPalanca.GetComponent<Rigidbody>().isKinematic=true;
@@ -32,10 +33,7 @@ public class AgarrarRPalanca : MonoBehaviour
             rPalanca.transform.parent=null; 
             if (RpalancaAgarrado)
             {
-            //rPalanca.GetComponent<Rigidbody>().useGravity=true;
              rPalancaRender.material= materialrojo;
-          //  rPalanca.GetComponent<Rigidbody>().isKinematic=false;
-             
             }
         }
     }

@@ -8,6 +8,7 @@ TagManager:
   - circulo
   - arco
   - Rpalanca
+  - Lpalanca
   layers:
   - Default
   - TransparentFX
