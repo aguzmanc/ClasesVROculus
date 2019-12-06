@@ -37,7 +37,7 @@ public class proy_holder_right : MonoBehaviour
 
 
     bool UpdateNivelAgarre(){
-        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
         bool limiteTraspasado = false;
 
         if(agarre < LIMITE_AGARRE  && actual >= LIMITE_AGARRE){

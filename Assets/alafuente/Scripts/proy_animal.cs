@@ -5,6 +5,7 @@ using UnityEngine;
 public class proy_animal : MonoBehaviour
 {
     public Renderer rend;
+    public Rigidbody rigid;
     public Material materialTocado;
     public Material materialAgarrado;
     public Material materialSuelto; 
@@ -13,6 +14,7 @@ public class proy_animal : MonoBehaviour
     void Start()
     {
         rend.material = materialSuelto;
+        rigid = transform.GetComponent<Rigidbody>();
     }
 
 
@@ -33,13 +35,14 @@ public class proy_animal : MonoBehaviour
         transform.parent = agarrador;
 
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
+        //transform.localRotation = Quaternion.identity;
     }
 
 
     public void Soltar() {
         transform.parent = null;
         rend.material = materialTocado;
+        rigid.isKinematic = false;
     }
 
 }
