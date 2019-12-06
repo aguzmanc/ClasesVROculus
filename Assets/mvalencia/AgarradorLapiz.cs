@@ -13,11 +13,8 @@ public class AgarradorLapiz : MonoBehaviour
     public bool estaAgarrando;
 
     public Lapiz lapiz;
-
-    public GameObject line;
-    public GameObject currentLine;
-    public LineRenderer lineRenderer;
-    public Transform leftPosition;
+    public GameObject dibujo;
+    
 
     void Start()
     {
@@ -31,15 +28,14 @@ public class AgarradorLapiz : MonoBehaviour
         if (estaAgarrando && lapiz != null && cambio)
         {
             lapiz.Agarrar(transform);
-            currentLine = Instantiate(line, transform.position, Quaternion.identity);
-            lineRenderer = currentLine.GetComponent<LineRenderer>();
-            lineRenderer.SetPosition(0, leftPosition.position);
-            lineRenderer.SetPosition(1, leftPosition.position);
+            dibujo.SetActive(true);
+            
         }
 
         if (estaAgarrando == false && cambio && lapiz != null)
         {
             lapiz.Soltar();
+            dibujo.SetActive(false);
         }
     }
     bool UpdateNivelAgarre()
