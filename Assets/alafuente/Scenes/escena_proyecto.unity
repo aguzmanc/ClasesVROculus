@@ -242,12 +242,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109983819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.702, z: 0}
+  m_LocalPosition: {x: 0.073, y: 0.864, z: 0}
   m_LocalScale: {x: 0.100000106, y: 0.10000004, z: 0.10000004}
   m_Children:
   - {fileID: 5006512736684851438}
-  m_Father: {fileID: 1616937605}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &109983821
 SphereCollider:
@@ -1403,12 +1403,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616937604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.162, z: 0}
+  m_LocalPosition: {x: 0.073, y: 0.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 109983820}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684303956
 GameObject:
@@ -1423,7 +1422,7 @@ GameObject:
   - component: {fileID: 1684303958}
   - component: {fileID: 1684303957}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Tarima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,11 +1496,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684303956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0}
+  m_LocalPosition: {x: 0.105, y: 0.15, z: 0}
   m_LocalScale: {x: 0.8, y: 0.15, z: 0.9}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1784517620
 PrefabInstance:
@@ -1677,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840742557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.057055682, y: 0.21, z: 0.034}
+  m_LocalPosition: {x: 0.044, y: 0.21, z: -0.092}
   m_LocalScale: {x: 0.63644, y: 0.63644, z: 0.63644}
   m_Children:
   - {fileID: 4971894977843227723}
@@ -1686,7 +1685,7 @@ Transform:
   - {fileID: 1816523252}
   - {fileID: 960163269}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897132691
 GameObject:
