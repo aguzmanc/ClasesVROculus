@@ -53,7 +53,7 @@ public class Agarrador : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Taco tacoAgarrado =  other.GetComponent<Taco>();
+        Taco tacoAgarrado =  other.GetComponentInParent<Taco>();
         if (tacoAgarrado!=null)
         {
             taco = tacoAgarrado;
@@ -62,7 +62,7 @@ public class Agarrador : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other) {
-        Taco tacoAgarrado =  other.GetComponent<Taco>();
+        Taco tacoAgarrado =  other.GetComponentInParent<Taco>();
         if (tacoAgarrado!=null)
         {
             taco.DejarDeTocar();
