@@ -25,7 +25,7 @@ public class AgarradorManoApoyo : MonoBehaviour
           bool cambio=actualizarAgarre();
 
 
-       estaAgarrando2=AGARREF;//agarre forzado 
+       //estaAgarrando2=AGARREF;//agarre forzado 
 
        if(tipoArma==1)
        {
@@ -55,7 +55,7 @@ public class AgarradorManoApoyo : MonoBehaviour
     bool actualizarAgarre()
     {
         bool cambio=false;
-        float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
+        float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.LTouch);
         if(NivelAgarre<limiteAgarre && actual>=limiteAgarre)
         {
             estaAgarrando2=true;
