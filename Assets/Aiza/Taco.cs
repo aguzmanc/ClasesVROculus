@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Taco : MonoBehaviour
 {
-    public Rigidbody bodyTaco;
+     Rigidbody bodyTaco;
     public Renderer rendTaco;
     public Material materialTocado;
 
@@ -13,7 +13,7 @@ public class Taco : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //bodyTaco = GetComponent<Rigidbody>();
+        bodyTaco = GetComponent<Rigidbody>();
         //rendTaco  = GetComponent<Renderer>();
         rendTaco.material = materialSuelto;
         
@@ -31,10 +31,10 @@ public class Taco : MonoBehaviour
     public void Agarrar(Transform agarrador)
     {
         rendTaco.material = materialAgarrado;
-        bodyTaco.isKinematic=true;
+        bodyTaco.isKinematic = true;
         transform.parent = agarrador;
 
-        //transform.localPosition = Vector3.zero;
+        transform.localPosition = new Vector3(0,0,1);
         transform.localRotation = Quaternion.Euler(90,0,0);
     }
 
