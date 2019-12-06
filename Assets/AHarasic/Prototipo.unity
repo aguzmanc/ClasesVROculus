@@ -1151,6 +1151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 906489465631163279, guid: ad76a916a9ab0c240a360a9023dd2256, type: 3}
+    - {fileID: 906489465631163273, guid: ad76a916a9ab0c240a360a9023dd2256, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad76a916a9ab0c240a360a9023dd2256, type: 3}
 --- !u!1 &1228843886
 GameObject:
@@ -1245,6 +1246,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1625967716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 906489465631163266, guid: ad76a916a9ab0c240a360a9023dd2256,
+    type: 3}
+  m_PrefabInstance: {fileID: 1130029140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1625967718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625967716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52d60cbaafacc6438dddf2456968e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agarre: 0
+  bola: {fileID: 0}
+  estaAgarrando: 0
 --- !u!1 &1637633285
 GameObject:
   m_ObjectHideFlags: 0
