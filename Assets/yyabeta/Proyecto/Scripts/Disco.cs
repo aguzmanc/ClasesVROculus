@@ -5,14 +5,22 @@ using UnityEngine;
 public class Disco : ObjetoAgarrable
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        body=GetComponent<Rigidbody>();
+       base.Start();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    
+
+    public override void Soltar() 
+    {
+        base.Soltar();
+        body.AddForce(transform.forward*100f);
     }
 }

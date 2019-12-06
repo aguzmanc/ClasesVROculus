@@ -14,9 +14,9 @@ public abstract class ObjetoAgarrable : MonoBehaviour
     public Material materialAgarrado;
     public Material materialSuelto;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        
+         body=GetComponent<Rigidbody>();
     }
     
     #region Estdos de Agarre
@@ -30,7 +30,7 @@ public abstract class ObjetoAgarrable : MonoBehaviour
         rend.material = materialSuelto;
     }
 
-    public void Agarrar(Transform agarrador) { 
+    public virtual void Agarrar(Transform agarrador) { 
         rend.material = materialAgarrado;
         body.isKinematic = true;
         transform.parent = agarrador;
@@ -38,7 +38,7 @@ public abstract class ObjetoAgarrable : MonoBehaviour
         transform.localRotation = Quaternion.identity;
     }
 
-    public void Soltar() 
+    public virtual void Soltar() 
     {
         transform.parent = null;
         rend.material = materialTocado;
