@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Agarrador : MonoBehaviour
 {
+    bool toque2Manos;
     const float limiteAgarre = 0.7f;
     const float LimiteSuelto = 0.3f;
      bool estaAgarrando;
@@ -19,6 +20,7 @@ public class Agarrador : MonoBehaviour
     void Start()
     {
         tipoArma=0;
+        toque2Manos=false;
     }
 
    
@@ -28,7 +30,7 @@ public class Agarrador : MonoBehaviour
        bool cambio=actualizarAgarre();
 
 
-       //estaAgarrando=AGARREF;//agarre forzado 
+       estaAgarrando=AGARREF;//agarre forzado 
 
        if(tipoArma==1)
        {
@@ -47,12 +49,23 @@ public class Agarrador : MonoBehaviour
             if(estaAgarrando && armaDos!=null)
             {
                 armaDos.agarrarBase();
+                if(armaDos.dosmanos())
+                {
+                    armaDos.AgarrarFull(transform);
+                }
             }
             if(estaAgarrando==false && cambio && armaDos!=null)
             {
                 arma.soltar();
                 tipoArma=0;
             }
+       }
+       if(toque2Manos)
+       {
+           if(estaAgarrando && armaDos!=null)
+           {
+               armaDos.agarrarAp();
+           }
        }
     }
     bool actualizarAgarre()
@@ -73,6 +86,7 @@ public class Agarrador : MonoBehaviour
         return cambio;
     }
     void OnTriggerEnter(Collider other) {
+        Debug.Log(other.name);
         if(other.tag=="Arma1")
         {
             ArmaUnaMano armaTocada = other.GetComponent<ArmaUnaMano>();
@@ -93,13 +107,15 @@ public class Agarrador : MonoBehaviour
                 tipoArma=2;
             }
         }
-        else if(other.tag=="Apoyo")
+         if(other.tag=="Apoyo")
         {
-            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+            Debug.Log("app");
+            ArmaDosManos armaTocada = other.GetComponentInParent<ArmaDosManos>();
             if(armaTocada!=null) 
             {
                 armaDos=armaTocada;
                 armaDos.tocarAp();
+                toque2Manos=true;
                
             }
         }
@@ -132,6 +148,7 @@ public class Agarrador : MonoBehaviour
             if(armaTocada!=null)
             {
                 armaDos.dejarTocarAp();
+                toque2Manos=false;
             }
         }
      }

@@ -8,6 +8,8 @@ public class AgarradorManoApoyo : MonoBehaviour
     const float limiteAgarre = 0.7f;
     const float LimiteSuelto = 0.3f;
      bool estaAgarrando2;
+
+     bool toque2Manos;
      byte tipoArma;//0= nada, 1 una mano, 2 dos manos
     public bool AGARREF;
     [Range (0f,1f)]
@@ -17,6 +19,7 @@ public class AgarradorManoApoyo : MonoBehaviour
     void Start()
     {
           tipoArma=0;
+           toque2Manos=false;
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class AgarradorManoApoyo : MonoBehaviour
           bool cambio=actualizarAgarre();
 
 
-       //estaAgarrando2=AGARREF;//agarre forzado 
+       estaAgarrando2=AGARREF;//agarre forzado 
 
        if(tipoArma==1)
        {
@@ -44,12 +47,23 @@ public class AgarradorManoApoyo : MonoBehaviour
             if(estaAgarrando2 && armaDos!=null)
             {
                 armaDos.agarrarBase();
+                if(armaDos.dosmanos())
+                {
+                    armaDos.AgarrarFull(transform);
+                }
             }
             if(estaAgarrando2==false && cambio && armaDos!=null)
             {
                 arma.soltar();
                 tipoArma=0;
             }
+       }
+       if(toque2Manos)
+       {
+           if(estaAgarrando2 && armaDos!=null)
+           {
+               armaDos.agarrarAp();
+           }
        }
     }
     bool actualizarAgarre()
@@ -92,11 +106,13 @@ public class AgarradorManoApoyo : MonoBehaviour
         }
         else if(other.tag=="Apoyo")
         {
-            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+             Debug.Log("app");
+            ArmaDosManos armaTocada = other.GetComponentInParent<ArmaDosManos>();
             if(armaTocada!=null) 
             {
                 armaDos=armaTocada;
                 armaDos.tocarAp();
+                 toque2Manos=true;
                
             }
         }
@@ -125,10 +141,11 @@ public class AgarradorManoApoyo : MonoBehaviour
         }
         else if(other.tag=="Apoyo")
         {
-            ArmaDosManos armaTocada = other.GetComponent<ArmaDosManos>();
+            ArmaDosManos armaTocada = other.GetComponentInParent<ArmaDosManos>();
             if(armaTocada!=null)
             {
                 armaDos.dejarTocarAp();
+                toque2Manos=false;
             }
         }
      }
