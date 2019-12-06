@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.13
+      value: -0.147
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1270,8 +1270,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.104666
+  m_Center: {x: -0.08390069, y: 0, z: 0}
 --- !u!33 &1772173969
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1662,7 +1662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411681699483595840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 1.2, z: 0.319}
+  m_LocalPosition: {x: 2.5, y: 1.111, z: 0.066}
   m_LocalScale: {x: 2, y: 2, z: 11}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1709,7 +1709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5080862404686643566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.343, y: 1.163, z: 0.34}
+  m_LocalPosition: {x: 2.343, y: 1.109, z: 0.06499997}
   m_LocalScale: {x: 2, y: 2, z: 11}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1840,9 +1840,9 @@ GameObject:
   - component: {fileID: 7192070755505091253}
   - component: {fileID: 6601449182575808358}
   - component: {fileID: 7170645819919075487}
-  - component: {fileID: 6225922266063223134}
   - component: {fileID: 6225922266063223133}
   - component: {fileID: 6225922266063223132}
+  - component: {fileID: 6225922266063223134}
   m_Layer: 0
   m_Name: LapizRojo
   m_TagString: Untagged
@@ -1862,7 +1862,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1878,8 +1878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f357f41f7ffc217469be5e3fbce8a760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &6225922266063223134
-MeshCollider:
+--- !u!65 &6225922266063223134
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1888,10 +1888,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8024611349946882221, guid: 90cd281cf9982ae4c8c4547870a43987, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.02, z: 0.024573894}
+  m_Center: {x: 9.313226e-10, y: 0, z: 0.0006637293}
 --- !u!33 &6601449182575808358
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1949,7 +1948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6225922266063223131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.72, y: 1.156, z: 0.355}
+  m_LocalPosition: {x: 2.638, y: 1.102, z: 0.073}
   m_LocalScale: {x: 2, y: 2, z: 11}
   m_Children: []
   m_Father: {fileID: 0}
