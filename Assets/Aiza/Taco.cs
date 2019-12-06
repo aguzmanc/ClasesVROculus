@@ -13,8 +13,8 @@ public class Taco : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bodyTaco = GetComponent<Rigidbody>();
-        rendTaco  = GetComponent<Renderer>();
+        //bodyTaco = GetComponent<Rigidbody>();
+        //rendTaco  = GetComponent<Renderer>();
         rendTaco.material = materialSuelto;
         
     }
