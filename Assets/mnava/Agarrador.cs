@@ -32,7 +32,7 @@ public class Agarrador : MonoBehaviour
        bool cambio=actualizarAgarre();
 
 
-       //estaAgarrando=AGARREF;//agarre forzado 
+       estaAgarrando=AGARREF;//agarre forzado 
         //espada
        if(tipoArma==1)
        {
