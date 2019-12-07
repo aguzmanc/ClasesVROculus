@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arma : ObjetoAgarrable{
+public abstract class Arma : ObjetoAgarrable{
     // Start is called before the first frame update
      public override void Start()
     {
@@ -15,7 +15,5 @@ public class Arma : ObjetoAgarrable{
         
     }
 
-    public virtual void Disparar(){
-        Debug.Log("Disparar");
-    }
+    public abstract void Disparar();
 }
