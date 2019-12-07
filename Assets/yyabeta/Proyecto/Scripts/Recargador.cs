@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arma : ObjetoAgarrable{
+public class Recargador : ObjetoAgarrable
+{
+
+    public bool estaRecargado = true;
+
+
     // Start is called before the first frame update
-     public override void Start()
+    public override void Start()
     {
-       base.Start();
+        base.Start();
     }
 
     // Update is called once per frame
@@ -15,7 +20,5 @@ public class Arma : ObjetoAgarrable{
         
     }
 
-    public virtual void Disparar(){
-        Debug.Log("Disparar");
-    }
+
 }

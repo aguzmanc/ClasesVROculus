@@ -21,6 +21,6 @@ public class Disco : ObjetoAgarrable
     public override void Soltar() 
     {
         base.Soltar();
-        body.AddForce(transform.forward*200f);
+        body.AddForce(body.velocity);
     }
 }
