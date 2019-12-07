@@ -12,8 +12,8 @@ public class PistolaPelotas : Arma
 
     public Recargador recarga;
 
-    [Range(0,100)]
-    public float speed=50;
+    [Range(100,500)]
+    public float speed=500;
 
 
 
@@ -39,6 +39,7 @@ public class PistolaPelotas : Arma
                 r.isKinematic=false;
                 r.AddForce(boca.forward*speed);
                 municion.RemoveAt(0);
+                municion[0].transform.localPosition=Vector3.zero;
             }
         }
     }
