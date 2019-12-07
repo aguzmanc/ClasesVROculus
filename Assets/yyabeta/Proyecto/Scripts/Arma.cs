@@ -16,4 +16,6 @@ public abstract class Arma : ObjetoAgarrable{
     }
 
     public abstract void Disparar();
+
+    
 }
