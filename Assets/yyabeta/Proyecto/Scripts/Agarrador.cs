@@ -75,7 +75,7 @@ public class Agarrador : MonoBehaviour
 
     void OnTriggerExit(Collider otro) {
         ObjetoAgarrable obj = otro.GetComponent<ObjetoAgarrable>();
-        if(obj!=null&&objetoAgarrable!=null) {
+        if(obj!=null&&objetoAgarrable==obj) {
             objetoAgarrable.DejarDeTocar();
             objetoAgarrable = null;
         }
