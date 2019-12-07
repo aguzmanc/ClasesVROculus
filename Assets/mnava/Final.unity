@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &154812577
 Transform:
   m_ObjectHideFlags: 0
@@ -364,8 +364,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: -0.0000019073486, z: 0}
+  m_Radius: 1.21
+  m_Center: {x: 0, y: -0.18, z: 0}
 --- !u!1 &157986421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,8 +2939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1422780563}
   - component: {fileID: 1422780564}
-  - component: {fileID: 1422780565}
   - component: {fileID: 1422780566}
+  - component: {fileID: 1422780565}
   m_Layer: 0
   m_Name: Lanza
   m_TagString: Arma1
@@ -2956,7 +2956,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422780562}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0.28665, y: 0.83726996, z: 0.32274}
+  m_LocalPosition: {x: 0.28665, y: 0.9, z: 0.32274}
   m_LocalScale: {x: 1.0351751, y: 1.0351751, z: 1.0351751}
   m_Children:
   - {fileID: 1038298081}
@@ -2989,13 +2989,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1422780562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52eb8dc2b7743d48988391a5571420e, type: 3}
+  m_Script: {fileID: 11500000, guid: de9a145a772f2bb4698662b021ee6234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   indicador: {fileID: 929595944}
   EstadoAgarrado: {fileID: 2100000, guid: ba1e9476582de5641bc6bf6b61caa936, type: 2}
   EstadoSuelto: {fileID: 2100000, guid: a1039b40c88c8b546be88b4863f41d62, type: 2}
   EstadoTocado: {fileID: 2100000, guid: d885042ba511d1949b1adaee31e641a7, type: 2}
+  posiciones: []
 --- !u!135 &1422780566
 SphereCollider:
   m_ObjectHideFlags: 0

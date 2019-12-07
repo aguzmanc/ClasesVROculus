@@ -15,6 +15,8 @@ public class Agarrador : MonoBehaviour
      ArmaUnaMano arma;
      ArmaDosManos armaDos;
 
+     Lanza lanzas;
+
 
 
     void Start()
@@ -31,7 +33,7 @@ public class Agarrador : MonoBehaviour
 
 
        //estaAgarrando=AGARREF;//agarre forzado 
-
+        //espada
        if(tipoArma==1)
        {
             if(estaAgarrando && arma!=null)
@@ -44,6 +46,20 @@ public class Agarrador : MonoBehaviour
                 tipoArma=0;
             }
        }
+       //lanza
+        if(tipoArma==3)
+       {
+            if(estaAgarrando && lanzas!=null)
+            {
+                lanzas.agarrar(transform);
+            }
+            if(estaAgarrando==false && cambio && lanzas!=null)
+            {
+                lanzas.soltar();
+                tipoArma=0;
+            }
+       }
+       //hacha
        else if(tipoArma==2)
        {
             if(estaAgarrando && armaDos!=null)
@@ -107,6 +123,16 @@ public class Agarrador : MonoBehaviour
                 tipoArma=2;
             }
         }
+        else if(other.tag=="Arma3")
+        {
+            Lanza armaTocada = other.GetComponent<Lanza>();
+            if(armaTocada!=null) 
+            {
+                lanzas=armaTocada;
+                lanzas.tocar();
+                tipoArma=3;
+            }
+        }
          if(other.tag=="Apoyo")
         {
             Debug.Log("app");
@@ -139,6 +165,16 @@ public class Agarrador : MonoBehaviour
             {
                 armaDos.dejarTocar();
                 armaDos = null;
+                tipoArma=0;
+            }
+        }
+        else if(other.tag=="Arma3")
+        {
+            Lanza armaTocada = other.GetComponent<Lanza>();
+             if(armaTocada!=null)
+            {
+                lanzas.dejarTocar();
+                lanzas = null;
                 tipoArma=0;
             }
         }
