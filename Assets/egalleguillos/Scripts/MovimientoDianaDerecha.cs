@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class MovimientoDianaDerecha : MonoBehaviour
 {
-    GameObject dianaRojaDer;
-    GameObject dianaVerdeDer;
-    GameObject dianaAmarillaDer;
-    void Start()
-    {
-        dianaAmarillaDer = transform.GetChild(0).gameObject;
-        dianaRojaDer = transform.GetChild(1).gameObject;
-        dianaVerdeDer = transform.GetChild(2).gameObject;
-    }
+    int numero = 30;
 
     void Update()
     {
-        
+        transform.Translate(Vector3.left / numero);
     }
 }

@@ -10,7 +10,6 @@ public class ControladorDerecho : MonoBehaviour
     GameObject Luz;
 
     float timer;
-    public int activo;
 
     IEnumerator Start()
     {
@@ -28,21 +27,19 @@ public class ControladorDerecho : MonoBehaviour
                     dianaRojaDer.SetActive(false);
                     dianaVerdeDer.SetActive(false);
                     Luz.GetComponent<Light>().color = Color.yellow;
-                    activo = 0;
                     break;
                 case 2:
                     dianaAmarillaDer.SetActive(false);
                     dianaRojaDer.SetActive(true);
                     dianaVerdeDer.SetActive(false);
                     Luz.GetComponent<Light>().color = Color.red;
-                    activo = 1;
                     break;
                 case 3:
                     dianaAmarillaDer.SetActive(false);
                     dianaRojaDer.SetActive(false);
                     dianaVerdeDer.SetActive(true);
                     Luz.GetComponent<Light>().color = Color.green;
-                    activo = 2;
+
                     break;
             }
             yield return new WaitForSeconds(2f);
