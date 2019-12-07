@@ -295,10 +295,10 @@ MonoBehaviour:
   materialSuelto: {fileID: 2100000, guid: 590d03dfdd8ec66448081930de1bf4f3, type: 2}
   municion:
   - {fileID: 161343066}
-  - {fileID: 1004151902}
-  - {fileID: 1607950706}
-  - {fileID: 1629409892}
   - {fileID: 1267701272}
+  - {fileID: 1629409892}
+  - {fileID: 1607950706}
+  - {fileID: 1004151902}
   boca: {fileID: 814322582}
   recarga: {fileID: 895323646}
   speed: 500
@@ -2647,7 +2647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592689259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.335, y: 1.03, z: 0.105}
+  m_LocalPosition: {x: -0.941, y: 1.03, z: 0.105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 287492963}
