@@ -47,24 +47,23 @@ public class MoverTanque : MonoBehaviour
             }
             if (ladelante&&ratras)
             {
-            transform.Translate(Vector3.forward * Time.deltaTime);
-            transform.Rotate(0.0f,1f*Time.deltaTime, 0.0f, Space.World);
+            transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
             }
             if (latras&&radelante)
             {
-            transform.Translate(Vector3.forward * Time.deltaTime);
-            transform.Rotate(0.0f,-1f*Time.deltaTime, 0.0f, Space.World);
+            transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
             }
         }
         else if(distanciaL>0.05f&&distanciaR<0.05f)
         {
             if (ladelante)
             {
-            transform.Rotate(0.0f,1f*Time.deltaTime, 0.0f, Space.World);
+            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Rotate(0.0f,20f*Time.deltaTime, 0.0f, Space.World);
             }
             if (latras)
             {
-            transform.Rotate(0.0f,-1f*Time.deltaTime, 0.0f, Space.World);
+            transform.Rotate(0.0f,-20f*Time.deltaTime, 0.0f, Space.World);
                 
             }
         }
@@ -72,11 +71,12 @@ public class MoverTanque : MonoBehaviour
         {
             if (radelante)
             {
-            transform.Rotate(0.0f,-1f, 0.01f*Time.deltaTime, Space.World);
+            transform.Rotate(0.0f,-20f*Time.deltaTime, 0, Space.World);
+            transform.Translate(Vector3.forward * Time.deltaTime);
             }
             if (ratras)
             {
-            transform.Rotate(0.0f,1f, 0.01f*Time.deltaTime, Space.World);
+            transform.Rotate(0.0f, 20f*Time.deltaTime,0, Space.World);
                 
             }
         }
