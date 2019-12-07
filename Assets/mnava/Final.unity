@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154812576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0, y: -0.185, z: 0}
   m_LocalScale: {x: 0.06, y: 0.074177556, z: 0.06}
   m_Children: []
   m_Father: {fileID: 2035336056}
@@ -1016,7 +1016,7 @@ Transform:
   m_GameObject: {fileID: 324590342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.082, y: 0, z: 0}
-  m_LocalScale: {x: 0.19475746, y: 0.024594229, z: 0.030375762}
+  m_LocalScale: {x: 0.19475746, y: 0.024594229, z: 0.049476042}
   m_Children: []
   m_Father: {fileID: 1195127842}
   m_RootOrder: 0
@@ -1211,7 +1211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498697777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.051, y: 0.4680001, z: -0.174}
+  m_LocalPosition: {x: 0.051, y: 0.526, z: -0.133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1547094894}
@@ -1521,7 +1521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726617715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.081, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.06, y: 0.074177556, z: 0.06}
   m_Children: []
   m_Father: {fileID: 2035336056}
@@ -2278,7 +2278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094663243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.352, z: 0}
+  m_LocalPosition: {x: 0, y: 0.535, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1734468768}
@@ -2498,7 +2498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195127841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.051, y: 0.468, z: -0.01}
+  m_LocalPosition: {x: 0.051, y: 0.528, z: -0.045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 324590343}
@@ -3361,7 +3361,7 @@ Transform:
   m_GameObject: {fileID: 1547094893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.082, y: 0, z: 0}
-  m_LocalScale: {x: 0.19475746, y: 0.024594229, z: 0.030375762}
+  m_LocalScale: {x: 0.19475746, y: 0.024594229, z: 0.04947604}
   m_Children: []
   m_Father: {fileID: 498697778}
   m_RootOrder: 0
@@ -3686,8 +3686,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734468767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.025749322, y: 0.45561588, z: 0.025749322}
+  m_LocalPosition: {x: 0, y: -0.152, z: 0}
+  m_LocalScale: {x: 0.025749322, y: 0.6714502, z: 0.025749322}
   m_Children: []
   m_Father: {fileID: 1094663244}
   m_RootOrder: 0
@@ -4076,9 +4076,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2035336056}
-  - component: {fileID: 2035336057}
   - component: {fileID: 2035336058}
   - component: {fileID: 2035336059}
+  - component: {fileID: 2035336057}
   m_Layer: 0
   m_Name: Hacha
   m_TagString: Arma2
@@ -4094,7 +4094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035336055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28352, y: 0.78966, z: -0.064391}
+  m_LocalPosition: {x: 0.369, y: 0.637, z: -0.054}
   m_LocalScale: {x: 1.0351751, y: 0.8373222, z: 1.0351751}
   m_Children:
   - {fileID: 1094663244}
@@ -4115,7 +4115,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4131,7 +4131,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.05
-  m_Center: {x: 0, y: 0.081, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2035336059
 MonoBehaviour:
   m_ObjectHideFlags: 0
