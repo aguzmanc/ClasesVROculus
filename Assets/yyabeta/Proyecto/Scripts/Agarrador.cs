@@ -38,6 +38,7 @@ public class Agarrador : MonoBehaviour
 
         if(estaAgarrando==false && cambio && objetoAgarrable!=null){
             objetoAgarrable.Soltar();
+            objetoAgarrable=null;
         }
     }
 
@@ -66,7 +67,7 @@ public class Agarrador : MonoBehaviour
     void OnTriggerEnter(Collider otro) {
         ObjetoAgarrable obj = otro.GetComponent<ObjetoAgarrable>();
 
-        if(obj!=null) {
+        if(obj!=null&&objetoAgarrable==null) {
             objetoAgarrable = obj;
             objetoAgarrable.Tocar();
         }
@@ -75,7 +76,7 @@ public class Agarrador : MonoBehaviour
 
     void OnTriggerExit(Collider otro) {
         ObjetoAgarrable obj = otro.GetComponent<ObjetoAgarrable>();
-        if(obj!=null) {
+        if(obj!=null&&objetoAgarrable==null) {
             objetoAgarrable.DejarDeTocar();
             objetoAgarrable = null;
         }
