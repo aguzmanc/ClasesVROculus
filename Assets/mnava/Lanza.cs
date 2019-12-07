@@ -71,6 +71,6 @@ public class Lanza : MonoBehaviour
         transform.parent=null;
         cuerpo.isKinematic=false;
 
-        cuerpo.AddRelativeForce(velocidadVectorial*4,ForceMode.Impulse);
+        cuerpo.AddRelativeForce(cuerpo.transform.forward * (velocidadVectorial.magnitude)*4,ForceMode.Impulse);
     }
 }
