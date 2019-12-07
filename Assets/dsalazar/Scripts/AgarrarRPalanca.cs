@@ -10,6 +10,7 @@ public class AgarrarRPalanca : MonoBehaviour
     public GameObject rPalanca;
     public bool tocandoRpalanca=false;
     public bool RpalancaAgarrado=false;
+ 
     void Start()
     {
         

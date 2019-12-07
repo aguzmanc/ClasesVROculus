@@ -6,37 +6,81 @@ public class MoverTanque : MonoBehaviour
 {
    public float distanciaR;
    public float distanciaL;
-
-
    public GameObject rPalanca;
    public GameObject lPalanca;
    public GameObject Rcentro;
    public GameObject Lcentro;
+     AreaL areaL ;
+    AreaR areaR ;
+    public bool ladelante=false;
+    public bool latras=false;
+    public bool radelante=false;
+    public bool ratras=false;
 
     void Start()
     {
-        
+        areaL =  lPalanca.GetComponent<AreaL>();
+     areaR = rPalanca.GetComponent<AreaR>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+     
+        ladelante=areaL.ladelante;
+        latras=areaL.latras;
+        radelante=areaR.radelante;
+        ratras=areaR.ratras;
+
           distanciaR = Vector3.Distance(rPalanca.transform.position, Rcentro.transform.position);
           distanciaL = Vector3.Distance(lPalanca.transform.position, Lcentro.transform.position);
-        if (distanciaL>0.315F&&distanciaR>0.315f)
+        if (distanciaL>0.05f&&distanciaR>0.05f)
         {
+            //transform.Translate(Vector3.forward * Time.deltaTime);
+            if (ladelante&&radelante)
+            {
             transform.Translate(Vector3.forward * Time.deltaTime);
+            }
+            if (latras&&ratras)
+            {
+            transform.Translate(-Vector3.forward * Time.deltaTime);
+            }
+            if (ladelante&&ratras)
+            {
+            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Rotate(0.0f,1f*Time.deltaTime, 0.0f, Space.World);
+            }
+            if (latras&&radelante)
+            {
+            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Rotate(0.0f,-1f*Time.deltaTime, 0.0f, Space.World);
+            }
         }
-        else if(distanciaL>0.315f&&distanciaR<0.315f)
+        else if(distanciaL>0.05f&&distanciaR<0.05f)
         {
-            transform.Rotate(0.0f,0.7f*Time.deltaTime, 0.0f, Space.World);
+            if (ladelante)
+            {
+            transform.Rotate(0.0f,1f*Time.deltaTime, 0.0f, Space.World);
+            }
+            if (latras)
+            {
+            transform.Rotate(0.0f,-1f*Time.deltaTime, 0.0f, Space.World);
+                
+            }
         }
-          else if(distanciaL<0.315f&&distanciaR>0.315f)
+          else if(distanciaL<0.05f&&distanciaR>0.05f)
         {
-            transform.Rotate(0.0f,-0.7f, 0.01f*Time.deltaTime, Space.World);
+            if (radelante)
+            {
+            transform.Rotate(0.0f,-1f, 0.01f*Time.deltaTime, Space.World);
+            }
+            if (ratras)
+            {
+            transform.Rotate(0.0f,1f, 0.01f*Time.deltaTime, Space.World);
+                
+            }
         }
-        // Vector3 thePosition = transform.TransformPoint(2, 0, 0);
-      //  Instantiate(someObject, thePosition, someObject.transform.rotation);
+      
 
 
     }
