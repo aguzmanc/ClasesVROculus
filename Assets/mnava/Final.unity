@@ -2943,7 +2943,7 @@ GameObject:
   - component: {fileID: 1422780565}
   m_Layer: 0
   m_Name: Lanza
-  m_TagString: Arma1
+  m_TagString: Arma3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
