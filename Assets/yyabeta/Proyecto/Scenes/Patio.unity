@@ -301,7 +301,7 @@ MonoBehaviour:
   - {fileID: 1267701272}
   boca: {fileID: 814322582}
   recarga: {fileID: 895323646}
-  speed: 100
+  speed: 500
 --- !u!1 &43546913
 GameObject:
   m_ObjectHideFlags: 0
