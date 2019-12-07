@@ -38,7 +38,7 @@ public class Lanza : MonoBehaviour
             vector=vector+posiciones[i];
         }
         velocidadVectorial=vector/posiciones.Count;
-        
+
         Debug.Log(velocidadVectorial);
 
 
@@ -70,5 +70,7 @@ public class Lanza : MonoBehaviour
         indicador.material=EstadoSuelto;
         transform.parent=null;
         cuerpo.isKinematic=false;
+
+        cuerpo.AddForce(velocidadVectorial);
     }
 }
