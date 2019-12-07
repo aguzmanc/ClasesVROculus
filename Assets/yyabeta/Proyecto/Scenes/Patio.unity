@@ -210,7 +210,6 @@ GameObject:
   - component: {fileID: 16116208}
   - component: {fileID: 16116207}
   - component: {fileID: 16116206}
-  - component: {fileID: 16116210}
   - component: {fileID: 16116211}
   m_Layer: 0
   m_Name: Pistola
@@ -278,22 +277,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &16116210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16116205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a0cf87653a4e84c93e4df20d040fac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rend: {fileID: 1749198431}
-  materialTocado: {fileID: 2100000, guid: 9b40db27cf9cbf74eaf78cdd827f089b, type: 2}
-  materialAgarrado: {fileID: 2100000, guid: 67a6ba8578ecfdd4a85b947dde205ed3, type: 2}
-  materialSuelto: {fileID: 2100000, guid: 590d03dfdd8ec66448081930de1bf4f3, type: 2}
 --- !u!114 &16116211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +301,7 @@ MonoBehaviour:
   - {fileID: 1267701272}
   boca: {fileID: 814322582}
   recarga: {fileID: 895323646}
-  speed: 50
+  speed: 100
 --- !u!1 &43546913
 GameObject:
   m_ObjectHideFlags: 0
