@@ -39,7 +39,7 @@ public class Lanza : MonoBehaviour
         }
         velocidadVectorial=vector/posiciones.Count;
 
-        Debug.Log(velocidadVectorial);
+        
 
 
         
