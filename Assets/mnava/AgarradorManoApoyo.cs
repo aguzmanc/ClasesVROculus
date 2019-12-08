@@ -16,6 +16,7 @@ public class AgarradorManoApoyo : MonoBehaviour
     public float NivelAgarre;
      ArmaUnaMano arma;
      ArmaDosManos armaDos;
+       Lanza lanzas;
     void Start()
     {
           tipoArma=0;
@@ -39,6 +40,19 @@ public class AgarradorManoApoyo : MonoBehaviour
             if(estaAgarrando2==false && cambio && arma!=null)
             {
                 arma.soltar();
+                tipoArma=0;
+            }
+       }
+        //lanza
+        if(tipoArma==3)
+       {
+            if(estaAgarrando2 && lanzas!=null)
+            {
+                lanzas.agarrar(transform);
+            }
+            if(estaAgarrando2==false && cambio && lanzas!=null)
+            {
+                lanzas.soltar();
                 tipoArma=0;
             }
        }
@@ -104,6 +118,16 @@ public class AgarradorManoApoyo : MonoBehaviour
                 tipoArma=2;
             }
         }
+         else if(other.tag=="Arma3")
+        {
+            Lanza armaTocada = other.GetComponent<Lanza>();
+            if(armaTocada!=null) 
+            {
+                lanzas=armaTocada;
+                lanzas.tocar();
+                tipoArma=3;
+            }
+        }
         else if(other.tag=="Apoyo")
         {
              Debug.Log("app");
@@ -136,6 +160,16 @@ public class AgarradorManoApoyo : MonoBehaviour
             {
                 armaDos.dejarTocar();
                 armaDos = null;
+                tipoArma=0;
+            }
+        }
+         else if(other.tag=="Arma3")
+        {
+            Lanza armaTocada = other.GetComponent<Lanza>();
+             if(armaTocada!=null)
+            {
+                lanzas.dejarTocar();
+                lanzas = null;
                 tipoArma=0;
             }
         }

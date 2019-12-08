@@ -62,7 +62,7 @@ public class Lanza : MonoBehaviour
         transform.parent=mano;
         cuerpo.isKinematic=true;
         transform.localPosition = Vector3.zero;
-        transform.localRotation =Quaternion.identity;
+        transform.localRotation =  Quaternion.Euler(90, 0, 0);
         
     }   
     public void soltar()
