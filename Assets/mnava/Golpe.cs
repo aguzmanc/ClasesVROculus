@@ -33,6 +33,7 @@ public class Golpe : MonoBehaviour
             Transform lanza=ce.parent;
             Rigidbody lanzaCuerpo=lanza.GetComponent<Rigidbody>();
             lanzaCuerpo.isKinematic=true;
+            lanza.parent=enemigo;
         }
 
      }

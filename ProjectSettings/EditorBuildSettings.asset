@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/mnava/Final.unity
+    guid: 6dd8e46de0117f740ae804d6aac8f281
   m_configObjects: {}
