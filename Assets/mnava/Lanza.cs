@@ -76,7 +76,7 @@ public class Lanza : MonoBehaviour
     }
     public void lanzar()
     {
-         cuerpo.AddRelativeForce(0,0,100*velocidadVectorial.z,ForceMode.Impulse);
+         cuerpo.AddRelativeForce(0,0,50*velocidadVectorial.z,ForceMode.Impulse);
           //cuerpo.AddRelativeTorque(transform.down);
     }
 }
