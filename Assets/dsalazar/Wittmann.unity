@@ -19971,6 +19971,7 @@ MonoBehaviour:
   rPalanca: {fileID: 570786449}
   tocandoRpalanca: 0
   RpalancaAgarrado: 0
+  Rcentro: {fileID: 147526404}
 --- !u!65 &758574874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32963,6 +32964,7 @@ MonoBehaviour:
   lPalanca: {fileID: 120756471}
   tocandoLpalanca: 0
   LpalancaAgarrado: 0
+  Lcentro: {fileID: 2009774524}
 --- !u!65 &1208414081
 BoxCollider:
   m_ObjectHideFlags: 0

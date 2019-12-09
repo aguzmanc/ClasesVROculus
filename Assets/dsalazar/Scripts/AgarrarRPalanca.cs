@@ -10,6 +10,8 @@ public class AgarrarRPalanca : MonoBehaviour
     public GameObject rPalanca;
     public bool tocandoRpalanca=false;
     public bool RpalancaAgarrado=false;
+    public GameObject Rcentro;
+
  
     void Start()
     {
@@ -35,6 +37,8 @@ public class AgarrarRPalanca : MonoBehaviour
             if (RpalancaAgarrado)
             {
              rPalancaRender.material= materialrojo;
+             RpalancaAgarrado=false;
+             rPalanca.transform.position=Rcentro.transform.position;
             }
         }
     }

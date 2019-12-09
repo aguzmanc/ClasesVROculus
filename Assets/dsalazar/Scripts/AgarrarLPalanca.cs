@@ -10,6 +10,7 @@ public class AgarrarLPalanca : MonoBehaviour
     public GameObject lPalanca;
     public bool tocandoLpalanca=false;
     public bool LpalancaAgarrado=false;
+    public GameObject Lcentro;
     void Start()
     {
         
@@ -19,7 +20,7 @@ public class AgarrarLPalanca : MonoBehaviour
     void Update()
     {
           if (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger)>0.7f && tocandoLpalanca==true) {
-            lPalanca.transform.SetParent( transform ); 
+           // lPalanca.transform.SetParent( transform ); 
            // rPalanca.GetComponent<Rigidbody>().useGravity=false; 
             LpalancaAgarrado=true;
              lPalancaRender.material= materialverde;
@@ -34,8 +35,11 @@ public class AgarrarLPalanca : MonoBehaviour
             if (LpalancaAgarrado)
             {
              lPalancaRender.material= materialrojo;
+             LpalancaAgarrado=false;
+             lPalanca.transform.position=Lcentro.transform.position;
             }
         }
+        
     }
       private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag=="Lpalanca")
