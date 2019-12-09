@@ -9,6 +9,8 @@ public class Recargador : ObjetoAgarrable
 
     public Transform tRecargador;
 
+    public float zPosition=0;
+
 
     // Start is called before the first frame update
     public override void Start()
@@ -24,11 +26,11 @@ public class Recargador : ObjetoAgarrable
 
     public override void Agarrar(Transform agarrador)
     {
-        float zPosition = Vector3.Distance(agarrador.position,transform.position);
+        zPosition = Vector3.Distance(agarrador.position,transform.position);
 
         zPosition=Mathf.Max(0f,zPosition);
         zPosition=Mathf.Min(0.8f,zPosition);
-        tRecargador.localPosition = Vector3.forward*zPosition*0.1f;
+        tRecargador.localPosition = Vector3.forward*zPosition;
         rend.material = materialAgarrado;
         tCollider.enabled=false;
     }
