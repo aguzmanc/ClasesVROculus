@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class TriggerParedCentro : MonoBehaviour
 {
-    GameObject triggerSup;
-    GameObject triggerInf;
-    GameObject triggerDer;
-    GameObject triggerIzq;
     int r;
     private void Update() {
         r = Random.Range(1,4);
@@ -16,23 +12,26 @@ public class TriggerParedCentro : MonoBehaviour
     void OnTriggerEnter(Collider c) {
         if(c.tag == "DianaCentro"){
 
-            if (GetComponent<Collider>().tag == "ColliderIzquierdo")
+            if (GetComponent<Collider>().tag == "ColliderIzqCen")
             {
                 switch (r)
                 {
                     case 1:
                         c.transform.localRotation = Quaternion.Euler(0,0,220);
+                        print("Entro");
                         break;
                     case 2:
                         c.transform.localRotation = Quaternion.Euler(0,0,180);
+                        print("Entro");
                         break;
                     case 3:
                         c.transform.localRotation = Quaternion.Euler(0,0,130);
+                        print("Entro");
                         break;
                 }
             }
             
-            if (GetComponent<Collider>().tag == "ColliderInferior")
+            if (GetComponent<Collider>().tag == "ColliderInfCen")
             {
                 switch (r)
                 {
@@ -47,7 +46,7 @@ public class TriggerParedCentro : MonoBehaviour
                         break;
                 }
             }
-            if (GetComponent<Collider>().tag == "ColliderSuperior")
+            if (GetComponent<Collider>().tag == "ColliderSupCen")
             {
                 switch (r)
                 {
@@ -63,7 +62,7 @@ public class TriggerParedCentro : MonoBehaviour
                 }
             }
 
-            if (GetComponent<Collider>().tag == "ColliderDerecho")
+            if (GetComponent<Collider>().tag == "ColliderDerCen")
             {
                 switch (r)
                 {

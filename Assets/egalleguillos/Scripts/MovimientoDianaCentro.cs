@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimientoDianaCentro : MonoBehaviour
 {
-    int numero = 2;
+    int numero = 10;
 
     void Update()
     {

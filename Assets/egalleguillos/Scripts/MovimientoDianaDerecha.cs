@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimientoDianaDerecha : MonoBehaviour
 {
-    int numero = 30;
+    int numero = 10;
 
     void Update()
     {

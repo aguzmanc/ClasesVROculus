@@ -7,10 +7,18 @@ TagManager:
   - DianaCentro
   - DianaIzquierda
   - DianaDerecha
-  - ColliderSuperior
-  - ColliderInferior
-  - ColliderDerecho
-  - ColliderIzquierdo
+  - ColliderSupCen
+  - ColliderInfCen
+  - ColliderDerCen
+  - ColliderIzqCen
+  - ColliderSupDer
+  - ColliderInfDer
+  - ColliderDerDer
+  - ColliderIzqDer
+  - ColliderSupIzq
+  - ColliderInfIzq
+  - ColliderDerIzq
+  - ColliderIzqIzq
   layers:
   - Default
   - TransparentFX
