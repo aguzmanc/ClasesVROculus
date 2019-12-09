@@ -28,12 +28,12 @@ public class Recargador : ObjetoAgarrable
     {
         zPosition = Vector3.Distance(agarrador.position,transform.position);
 
-        //zPosition=Mathf.Min(0f,zPosition);
-        //zPosition=Mathf.Max(0.8f,zPosition);
-        zPosition=Mathf.Clamp(zPosition,0,0.8f);
-        tRecargador.localPosition = Vector3.forward*zPosition*0.1f;
+        zPosition=Mathf.Max(0f,zPosition);
+        zPosition=Mathf.Min(8f,zPosition);
+        //zPosition=Mathf.Clamp(zPosition,0,0.8f);
+        tRecargador.localPosition = Vector3.forward*zPosition*0.01f;
         rend.material = materialAgarrado;
-        //tCollider.enabled=false;
+        tCollider.enabled=false;
     }
 
     public override void Soltar()
