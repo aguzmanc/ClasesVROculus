@@ -22,20 +22,24 @@ public class AgarrarCargador : MonoBehaviour
     void Update()
     {
         cambio = UpdateNivelAgarre();
-      //  cambio = true;
+        cambio = true;
         if(estaAgarrando&& cargadorArma!=null && cambio){
             cargadorArma.Agarrar(transform);
         }
         if(!estaAgarrando&&cambio&&cargadorArma!=null){
             cargadorArma.soltar();
         }
+
+ 
+
+
     }
       bool UpdateNivelAgarre(){
         actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.LTouch);
         bool limiteTraspasado=false;
         if(agarre<limite_Agarre && actual>=limite_Agarre){
             estaAgarrando=true;
-            limiteTraspasado =false;
+            limiteTraspasado =true;
         }
         if(agarre>limite_Soltar && actual<=limite_Soltar){
         estaAgarrando=false;

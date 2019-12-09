@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArradarArma : MonoBehaviour
 {
+    int cantidadMuniciones =10;
+    public CuadroTiempo cuadroTiempo;
     public Arma armaMano;
     const float limite_Agarre=0.7f;
     const float limite_Soltar=0.3f;
@@ -16,29 +18,41 @@ public class ArradarArma : MonoBehaviour
     void Start()
     {
         estaAgarrando =false;
+        
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+
+
         cambio = UpdateNivelAgarre();
-     //  cambio = true;
+        cambio = true;
         if(estaAgarrando&& armaMano!=null && cambio){
             armaMano.Agarrar(transform);
         }
         if(!estaAgarrando&& cambio && armaMano!=null){
             armaMano.soltar();
         }
+        
+         /*if(agarradorCuerdaBallesta!=null){
+            //OVRInput.Button.PrimaryIndexTrigger
+         // if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch) && agarradorCuerdaBallesta.prepararMunicion==true &&estaagarrando==true){
+                if(Input.GetKeyDown(KeyCode.T) && agarradorCuerdaBallesta.prepararMunicion==true){
+                agarradorCuerdaBallesta.lanzarFlecha();
+            }
+            //Index trigger para disparar
+        }*/
     }
     bool UpdateNivelAgarre(){
         actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
         bool limiteTraspasado=false;
         if(agarre<limite_Agarre && actual>=limite_Agarre){
             estaAgarrando=true;
-            limiteTraspasado =false;
+            limiteTraspasado =true;
         }
         if(agarre>limite_Soltar && actual<=limite_Soltar){
-        estaAgarrando=true;
+        estaAgarrando=false;
         limiteTraspasado =true;
         }
     agarre = actual;
