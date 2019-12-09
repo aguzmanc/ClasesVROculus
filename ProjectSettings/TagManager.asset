@@ -9,6 +9,7 @@ TagManager:
   - Arma1
   - Arma2
   - Filo
+  - FiloLanza
   layers:
   - Default
   - TransparentFX
