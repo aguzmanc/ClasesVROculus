@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Vida : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class Vida : MonoBehaviour
     {
         Debug.Log(vida);
         vidaTexto.text="Vida: "+vida;
+        if(vida==0){
+             SceneManager.LoadScene("Final");
+        }
        
 
     }

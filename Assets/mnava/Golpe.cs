@@ -24,6 +24,16 @@ public class Golpe : MonoBehaviour
         {
             miVida.bajarVida(daño);
         }
+         if (other.tag=="FiloLanza")
+        {
+            miVida.bajarVida(daño);
+            Transform fil=other.transform;
+            Transform cubo=fil.parent;
+            Transform ce=cubo.parent;
+            Transform lanza=ce.parent;
+            Rigidbody lanzaCuerpo=lanza.GetComponent<Rigidbody>();
+            lanzaCuerpo.isKinematic=false;
+        }
 
      }
 }
