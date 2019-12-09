@@ -1761,6 +1761,7 @@ GameObject:
   - component: {fileID: 895323646}
   - component: {fileID: 895323649}
   - component: {fileID: 895323648}
+  - component: {fileID: 895323650}
   m_Layer: 0
   m_Name: Recargador
   m_TagString: Untagged
@@ -1785,6 +1786,7 @@ MonoBehaviour:
   materialAgarrado: {fileID: 2100000, guid: 67a6ba8578ecfdd4a85b947dde205ed3, type: 2}
   materialSuelto: {fileID: 2100000, guid: 590d03dfdd8ec66448081930de1bf4f3, type: 2}
   estaRecargado: 1
+  tRecargador: {fileID: 0}
 --- !u!4 &895323647
 Transform:
   m_ObjectHideFlags: 0
@@ -1829,6 +1831,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &895323650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240130a4ff7d1df4e8eea5055045892e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 1378498710}
+  materialTocado: {fileID: 2100000, guid: 9b40db27cf9cbf74eaf78cdd827f089b, type: 2}
+  materialAgarrado: {fileID: 2100000, guid: 590d03dfdd8ec66448081930de1bf4f3, type: 2}
+  materialSuelto: {fileID: 2100000, guid: 67a6ba8578ecfdd4a85b947dde205ed3, type: 2}
+  estaRecargado: 1
+  tRecargador: {fileID: 1378498712}
 --- !u!1 &969449900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,7 +3862,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920918983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.11}
+  m_LocalPosition: {x: 0, y: 0, z: 0.19}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children:
   - {fileID: 1234823245}
