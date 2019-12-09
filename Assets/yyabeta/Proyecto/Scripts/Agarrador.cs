@@ -13,7 +13,7 @@ public class Agarrador : MonoBehaviour
     public float agarre;
 
     public bool estaAgarrando;
-
+    bool mantenerAgarrado;
 
     public ObjetoAgarrable objetoAgarrable;
 
@@ -33,11 +33,22 @@ public class Agarrador : MonoBehaviour
             }
         if(estaAgarrando && objetoAgarrable != null && cambio) {
             objetoAgarrable.Agarrar(transform);
-            
+            if(objetoAgarrable is Recargador){
+                mantenerAgarrado=true;
+            }
         }
 
         if(estaAgarrando==false && cambio && objetoAgarrable!=null){
-            objetoAgarrable.Soltar();
+            if(objetoAgarrable is Recargador && mantenerAgarrado){
+                mantenerAgarrado=false;
+                objetoAgarrable.Soltar();
+                objetoAgarrable=null;
+            }
+            else
+            {
+                objetoAgarrable.Soltar();
+            }
+            
         }
     }
 
