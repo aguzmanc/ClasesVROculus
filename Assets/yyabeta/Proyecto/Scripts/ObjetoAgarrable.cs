@@ -8,6 +8,8 @@ public abstract class ObjetoAgarrable : MonoBehaviour
     public Renderer rend;
     protected Rigidbody body;
 
+    protected SphereCollider tCollider;
+
 
     [Header("Materiales")]
     public Material materialTocado;
@@ -16,7 +18,8 @@ public abstract class ObjetoAgarrable : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-         body=GetComponent<Rigidbody>();
+        tCollider=GetComponent<SphereCollider>();
+        body=GetComponent<Rigidbody>();
     }
     
     #region Estdos de Agarre
@@ -33,6 +36,7 @@ public abstract class ObjetoAgarrable : MonoBehaviour
     public virtual void Agarrar(Transform agarrador) { 
         rend.material = materialAgarrado;
         body.isKinematic = true;
+        tCollider.enabled=false;
         transform.parent = agarrador;
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
@@ -43,6 +47,7 @@ public abstract class ObjetoAgarrable : MonoBehaviour
         transform.parent = null;
         rend.material = materialTocado;
         body.isKinematic = false;
+        tCollider.enabled=true;
     }
 
     #endregion
