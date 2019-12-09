@@ -43,6 +43,7 @@ public class proy_animal : MonoBehaviour
     public void Soltar() {
         transform.parent = null;
         rend.material = materialTocado;
+        
         rigid.isKinematic = false;
     }
 
