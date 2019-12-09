@@ -9,7 +9,7 @@ public class Recargador : ObjetoAgarrable
 
     public Transform tRecargador;
 
-    public float zPosition=0;
+    public float zPosition;
 
 
     // Start is called before the first frame update
@@ -30,6 +30,7 @@ public class Recargador : ObjetoAgarrable
 
         zPosition=Mathf.Min(0f,zPosition);
         zPosition=Mathf.Max(0.08f,zPosition);
+        Debug.Log(zPosition);
         tRecargador.localPosition = Vector3.forward*zPosition;
         rend.material = materialAgarrado;
         tCollider.enabled=false;
