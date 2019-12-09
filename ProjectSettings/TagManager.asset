@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Apoyo
+  - Arma3
+  - Arma1
+  - Arma2
+  - Filo
   layers:
   - Default
   - TransparentFX

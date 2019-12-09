@@ -32,7 +32,7 @@ public class Agarrador : MonoBehaviour
        bool cambio=actualizarAgarre();
 
 
-       //estaAgarrando=AGARREF;//agarre forzado 
+       estaAgarrando=AGARREF;//agarre forzado 
         //espada
        if(tipoArma==1)
        {
@@ -41,6 +41,7 @@ public class Agarrador : MonoBehaviour
                 arma.agarrar(transform);
             }
             if(estaAgarrando==false && cambio && arma!=null)
+            //if(estaAgarrando==false   && arma!=null)
             {
                 arma.soltar();
                 tipoArma=0;
@@ -53,7 +54,8 @@ public class Agarrador : MonoBehaviour
             {
                 lanzas.agarrar(transform);
             }
-            if(estaAgarrando==false && cambio && lanzas!=null)
+            //if(estaAgarrando==false && cambio && lanzas!=null)
+             if(estaAgarrando==false  && lanzas!=null)
             {
                 lanzas.soltar();
                 tipoArma=0;
