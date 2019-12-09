@@ -31,11 +31,12 @@ public class proy_animal : MonoBehaviour
 
     public void Agarrar(Transform agarrador) { 
         rend.material = materialAgarrado;
-        
-        transform.parent = agarrador;
 
+        transform.parent = agarrador;
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;//
+        //transform.localRotation = Quaternion.identity;
+
+        rigid.isKinematic = true;
     }
 
 
