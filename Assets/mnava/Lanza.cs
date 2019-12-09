@@ -12,6 +12,7 @@ public class Lanza : MonoBehaviour
     public Material EstadoTocado;
 
     Vector3 velocidadVectorial;
+    float ztea;
 
 
     public List<Vector3> posiciones;
@@ -33,12 +34,15 @@ public class Lanza : MonoBehaviour
         }
         posiciones.Add(transform.position);
         Vector3 vector=new Vector3();
+        ztea=0;
         for (byte i=0; i<posiciones.Count; i++) 
         {
             vector=vector+posiciones[i];
+            ztea+=Mathf.Abs(posiciones[i].z);
         }
         velocidadVectorial=vector/posiciones.Count;
         Debug.Log(velocidadVectorial.z);
+        ztea=ztea/posiciones.Count;
         
 
 
@@ -76,7 +80,7 @@ public class Lanza : MonoBehaviour
     }
     public void lanzar()
     {
-         cuerpo.AddRelativeForce(0,0,50*Mathf.Abs( velocidadVectorial.z),ForceMode.Impulse);
+         cuerpo.AddRelativeForce(0,0,50*ztea,ForceMode.Impulse);
           //cuerpo.AddRelativeTorque(transform.down);
     }
 }
