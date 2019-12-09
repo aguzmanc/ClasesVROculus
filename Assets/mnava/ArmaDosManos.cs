@@ -24,14 +24,14 @@ public class ArmaDosManos : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   /* 
+    {   
         if(sostenida==false)
         {
             transform.parent=null;
             cuerpo.isKinematic=false;
 
         }
-        */
+        
     }
     public void tocar()
     {

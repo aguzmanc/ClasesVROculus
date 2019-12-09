@@ -54,8 +54,8 @@ public class Agarrador : MonoBehaviour
             {
                 lanzas.agarrar(transform);
             }
-            //if(estaAgarrando==false && cambio && lanzas!=null)
-             if(estaAgarrando==false  && lanzas!=null)
+            if(estaAgarrando==false && cambio && lanzas!=null)
+             //if(estaAgarrando==false  && lanzas!=null)
             {
                 lanzas.soltar();
                 tipoArma=0;

@@ -29,7 +29,7 @@ public class AgarradorManoApoyo : MonoBehaviour
           bool cambio=actualizarAgarre();
 
 
-       estaAgarrando2=AGARREF;//agarre forzado 
+       //estaAgarrando2=AGARREF;//agarre forzado 
 
        if(tipoArma==1)
        {
@@ -44,13 +44,14 @@ public class AgarradorManoApoyo : MonoBehaviour
             }
        }
         //lanza
-        if(tipoArma==3)
+         if(tipoArma==3)
        {
             if(estaAgarrando2 && lanzas!=null)
             {
                 lanzas.agarrar(transform);
             }
             if(estaAgarrando2==false && cambio && lanzas!=null)
+             //if(estaAgarrando2==false  && lanzas!=null)
             {
                 lanzas.soltar();
                 tipoArma=0;
