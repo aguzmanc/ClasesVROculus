@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArradarArma : MonoBehaviour
 {
-    Arma armaMano;
+    public Arma armaMano;
     const float limite_Agarre=0.7f;
     const float limite_Soltar=0.3f;
     [Range(0,1)]
@@ -68,6 +68,7 @@ public class ArradarArma : MonoBehaviour
          if(other.tag == "Arma"){
             Arma armaV = other.GetComponent<Arma>();
             if(armaV!=null){
+                armaMano = armaV;
                 armaMano.DegarTocar();
                 armaMano=null; 
             }
