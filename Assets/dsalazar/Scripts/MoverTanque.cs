@@ -39,11 +39,11 @@ public class MoverTanque : MonoBehaviour
             //transform.Translate(Vector3.forward * Time.deltaTime);
             if (ladelante&&radelante)
             {
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(Vector3.forward * Time.deltaTime*2);
             }
             if (latras&&ratras)
             {
-            transform.Translate(-Vector3.forward * Time.deltaTime);
+            transform.Translate(-Vector3.forward * Time.deltaTime*2);
             }
             if (ladelante&&ratras)
             {

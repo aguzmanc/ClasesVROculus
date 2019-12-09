@@ -21,11 +21,14 @@ public class DisparoTiger : MonoBehaviour
         } 
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)&&cargado) {
             Shoot();
+            //Debug.Break();
             cargado=false;
         }
          if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
            // Shoot();
             cargado=true;
+           // Debug.Break();
+
         }
 
     }

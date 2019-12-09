@@ -9,6 +9,7 @@ TagManager:
   - arco
   - Rpalanca
   - Lpalanca
+  - sherman
   layers:
   - Default
   - TransparentFX
