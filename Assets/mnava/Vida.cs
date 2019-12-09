@@ -25,7 +25,7 @@ public class Vida : MonoBehaviour
            Movimiento movimiento= transform.GetComponent<Movimiento>();
             transform.localRotation=Quaternion.Euler(90, 0, 74.617f);
            movimiento.enabled=false;
-          
+              
         }
        
 
