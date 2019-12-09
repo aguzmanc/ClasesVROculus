@@ -35,7 +35,7 @@ public class proy_animal : MonoBehaviour
         transform.parent = agarrador;
 
         transform.localPosition = Vector3.zero;
-        //transform.localRotation = Quaternion.identity;
+        transform.localRotation = Quaternion.identity;//
     }
 
 
