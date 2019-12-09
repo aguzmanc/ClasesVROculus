@@ -1786,7 +1786,7 @@ MonoBehaviour:
   materialAgarrado: {fileID: 2100000, guid: 67a6ba8578ecfdd4a85b947dde205ed3, type: 2}
   materialSuelto: {fileID: 2100000, guid: 590d03dfdd8ec66448081930de1bf4f3, type: 2}
   estaRecargado: 1
-  tRecargador: {fileID: 0}
+  tRecargador: {fileID: 1378498712}
 --- !u!4 &895323647
 Transform:
   m_ObjectHideFlags: 0
@@ -3862,8 +3862,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920918983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.19}
-  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
   m_Children:
   - {fileID: 1234823245}
   - {fileID: 298462632}
