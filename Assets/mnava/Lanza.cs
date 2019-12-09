@@ -38,7 +38,7 @@ public class Lanza : MonoBehaviour
             vector=vector+posiciones[i];
         }
         velocidadVectorial=vector/posiciones.Count;
-
+        Debug.Log(velocidadVectorial.z);
         
 
 
@@ -76,7 +76,7 @@ public class Lanza : MonoBehaviour
     }
     public void lanzar()
     {
-         cuerpo.AddRelativeForce(0,0,18,ForceMode.Impulse);
-          cuerpo.AddRelativeTorque(transform.down);
+         cuerpo.AddRelativeForce(0,0,10*velocidadVectorial.z,ForceMode.Impulse);
+          //cuerpo.AddRelativeTorque(transform.down);
     }
 }
