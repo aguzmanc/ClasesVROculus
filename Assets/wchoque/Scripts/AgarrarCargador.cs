@@ -22,7 +22,7 @@ public class AgarrarCargador : MonoBehaviour
     void Update()
     {
         cambio = UpdateNivelAgarre();
-        //cambio = true;
+      //  cambio = true;
         if(estaAgarrando&& cargadorArma!=null && cambio){
             cargadorArma.Agarrar(transform);
         }
@@ -38,7 +38,7 @@ public class AgarrarCargador : MonoBehaviour
             limiteTraspasado =false;
         }
         if(agarre>limite_Soltar && actual<=limite_Soltar){
-        estaAgarrando=true;
+        estaAgarrando=false;
         limiteTraspasado =true;
         }
     agarre = actual;
