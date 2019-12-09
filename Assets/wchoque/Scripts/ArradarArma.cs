@@ -22,11 +22,11 @@ public class ArradarArma : MonoBehaviour
     void Update()
     {
         cambio = UpdateNivelAgarre();
-     //   cambio = true;
+     //  cambio = true;
         if(estaAgarrando&& armaMano!=null && cambio){
             armaMano.Agarrar(transform);
         }
-        if(!estaAgarrando&&cambio&&armaMano!=null){
+        if(!estaAgarrando&& cambio && armaMano!=null){
             armaMano.soltar();
         }
     }
