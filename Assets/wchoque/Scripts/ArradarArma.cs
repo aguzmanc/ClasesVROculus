@@ -22,7 +22,7 @@ public class ArradarArma : MonoBehaviour
     void Update()
     {
         cambio = UpdateNivelAgarre();
-//cambio = true;
+     //   cambio = true;
         if(estaAgarrando&& armaMano!=null && cambio){
             armaMano.Agarrar(transform);
         }
@@ -31,7 +31,7 @@ public class ArradarArma : MonoBehaviour
         }
     }
     bool UpdateNivelAgarre(){
-        actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.LTouch);
+        actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
         bool limiteTraspasado=false;
         if(agarre<limite_Agarre && actual>=limite_Agarre){
             estaAgarrando=true;
