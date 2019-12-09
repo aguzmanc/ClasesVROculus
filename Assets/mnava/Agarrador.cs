@@ -62,7 +62,7 @@ public class Agarrador : MonoBehaviour
             }
        }
        //hacha
-       else if(tipoArma==2)
+        if(tipoArma==2)
        {
             if(estaAgarrando && armaDos!=null)
             {
@@ -74,7 +74,7 @@ public class Agarrador : MonoBehaviour
             }
             if(estaAgarrando==false && cambio && armaDos!=null)
             {
-                arma.soltar();
+                armaDos.soltar();
                 tipoArma=0;
             }
        }

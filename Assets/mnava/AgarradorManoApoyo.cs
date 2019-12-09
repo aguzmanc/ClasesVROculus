@@ -56,7 +56,7 @@ public class AgarradorManoApoyo : MonoBehaviour
                 tipoArma=0;
             }
        }
-       else if(tipoArma==2)
+        if(tipoArma==2)
        {
             if(estaAgarrando2 && armaDos!=null)
             {
@@ -68,7 +68,7 @@ public class AgarradorManoApoyo : MonoBehaviour
             }
             if(estaAgarrando2==false && cambio && armaDos!=null)
             {
-                arma.soltar();
+                armaDos.soltar();
                 tipoArma=0;
             }
        }
