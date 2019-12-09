@@ -28,8 +28,8 @@ public class Recargador : ObjetoAgarrable
     {
         zPosition = Vector3.Distance(agarrador.position,transform.position);
 
-        zPosition=Mathf.Max(0f,zPosition);
-        zPosition=Mathf.Min(0.8f,zPosition);
+        zPosition=Mathf.Min(0f,zPosition);
+        zPosition=Mathf.Max(0.08f,zPosition);
         tRecargador.localPosition = Vector3.forward*zPosition;
         rend.material = materialAgarrado;
         tCollider.enabled=false;
