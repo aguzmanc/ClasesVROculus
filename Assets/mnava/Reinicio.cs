@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Reinicio : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class Reinicio : MonoBehaviour
     {
         if(tiempo<5)
          tiempoTexto.text=tiempo+"";
+         if(tiempo<0)
+         {
+              SceneManager.LoadScene("Final");
+         }
     }
     void OnTriggerStay(Collider other)
     {

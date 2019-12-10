@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Vida : MonoBehaviour
 {
+    AudioSource audio;
     // Start is called before the first frame update
     int vida;
     Text vidaTexto;
@@ -14,6 +15,7 @@ public class Vida : MonoBehaviour
     {
         vida=100;
         vidaTexto=textual.GetComponent<Text>();
+         audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class Vida : MonoBehaviour
            Movimiento movimiento= transform.GetComponent<Movimiento>();
             transform.localRotation=Quaternion.Euler(90, 0, 74.617f);
            movimiento.enabled=false;
-           //SceneManager.LoadScene("Final");
+           
               
         }
        
@@ -33,6 +35,8 @@ public class Vida : MonoBehaviour
     }
     public void bajarVida(int daño)
     {
+         audio.Play();
         vida-=daño;
+
     }
 }

@@ -7,10 +7,12 @@ public class Golpe : MonoBehaviour
     public Transform enemigo;
     public int daño;
     Vida miVida;
+    
     // Start is called before the first frame update
     void Start()
     {
         miVida=enemigo.GetComponent<Vida>();
+        
     }
 
     // Update is called once per frame
@@ -22,7 +24,8 @@ public class Golpe : MonoBehaviour
      {
         if (other.tag=="Filo")
         {
-            miVida.bajarVida(daño);
+            miVida.bajarVida(daño);  
+           
         }
          if (other.tag=="FiloLanza")
         {
@@ -34,6 +37,7 @@ public class Golpe : MonoBehaviour
             Rigidbody lanzaCuerpo=lanza.GetComponent<Rigidbody>();
             lanzaCuerpo.isKinematic=true;
             lanza.parent=enemigo;
+           
         }
 
      }
