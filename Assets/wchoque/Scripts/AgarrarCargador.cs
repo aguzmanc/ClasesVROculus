@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AgarrarCargador : MonoBehaviour
 {
+   
     public CargadorArma cargadorArma;
     // Start is called before the first frame update
         const float limite_Agarre=0.7f;
@@ -73,4 +74,6 @@ public class AgarrarCargador : MonoBehaviour
             }
         }
     }
+
+  
 }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ArradarArma : MonoBehaviour
 {
+    public Transform pivotBala;
+     public GameObject balaPrefab;
+    public GameObject balaInstanciado;
     int cantidadMuniciones =10;
-    public CuadroTiempo cuadroTiempo;
+   // public CuadroTiempo cuadroTiempo;
     public Arma armaMano;
     const float limite_Agarre=0.7f;
     const float limite_Soltar=0.3f;
@@ -14,6 +17,7 @@ public class ArradarArma : MonoBehaviour
     bool cambio;
     public bool estaAgarrando;
     float actual;
+  //  public Bala bala;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,19 +34,29 @@ public class ArradarArma : MonoBehaviour
         cambio = true;
         if(estaAgarrando&& armaMano!=null && cambio){
             armaMano.Agarrar(transform);
+            if(balaInstanciado==null){
+                crearBala(pivotBala);
+            }
         }
         if(!estaAgarrando&& cambio && armaMano!=null){
             armaMano.soltar();
         }
         
-         /*if(agarradorCuerdaBallesta!=null){
+         if(armaMano!=null){
             //OVRInput.Button.PrimaryIndexTrigger
          // if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch) && agarradorCuerdaBallesta.prepararMunicion==true &&estaagarrando==true){
-                if(Input.GetKeyDown(KeyCode.T) && agarradorCuerdaBallesta.prepararMunicion==true){
-                agarradorCuerdaBallesta.lanzarFlecha();
+                if(Input.GetKeyDown(KeyCode.T) && balaInstanciado!=null && estaAgarrando==true){
+                    Debug.Log("Dispara");
+                    balaInstanciado.GetComponent<Bala>().dispararBala();
+                    cantidadMuniciones-=1;
+                    balaInstanciado=null;
+                    if(balaInstanciado==null){
+                        crearBala(pivotBala);
+                    }
+                    
             }
             //Index trigger para disparar
-        }*/
+        }
     }
     bool UpdateNivelAgarre(){
         actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
@@ -87,5 +101,14 @@ public class ArradarArma : MonoBehaviour
                 armaMano=null; 
             }
         }
+    }
+      void crearBala(Transform pivot){
+        if(cantidadMuniciones>0){
+            balaInstanciado = Instantiate(balaPrefab);
+            balaInstanciado.transform.parent = pivot;
+            balaInstanciado.transform.localPosition = Vector3.zero;
+            balaInstanciado.transform.localRotation = Quaternion.identity; 
+        }
+      
     }
 }
