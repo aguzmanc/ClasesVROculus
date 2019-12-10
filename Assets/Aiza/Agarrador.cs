@@ -21,7 +21,7 @@ public class Agarrador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         bool cambio = UpdateNivelAgarre();
 
         if (estaAgarrando && taco !=null && cambio)
@@ -32,9 +32,9 @@ public class Agarrador : MonoBehaviour
         {
             taco.Soltar();
         }
-
+*/
         //mi debug
-        /*
+       
 
         if (estaAgarrando && taco !=null )
         {
@@ -44,7 +44,7 @@ public class Agarrador : MonoBehaviour
         if (estaAgarrando == false  && taco !=null)
         {
             taco.Soltar();
-        }*/
+        }
     }
 
 
