@@ -7,8 +7,12 @@ public class Vecino : MonoBehaviour
     public List<Transform> PatrolWaypoints;
     public Transform WhachtPoint;
 
+    public Transform ojo;
+
     public float speed;
     int current=0;
+
+    RaycastHit ver;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +22,27 @@ public class Vecino : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.DrawRay(ojo.position,Vector3.back*1.5f,Color.red);
+
+        if(Physics.Raycast(ojo.position,Vector3.back,out ver,1.5f))
+        {
+            if (ver.collider.tag=="Player")
+            {
+                GameObject.FindObjectOfType<GameManager>().SetText("Detectado"); 
+            }
+        }
+        else
+        {
+            GameObject.FindObjectOfType<GameManager>().SetText("No Detectado"); 
+        }
+
         if(Vector3.Distance(PatrolWaypoints[current].position,transform.position)<1)
         {
             current++;
             if(current>=PatrolWaypoints.Count)
                 current=0;
         }
-        transform.position=Vector3.MoveTowards(transform.position,PatrolWaypoints[current].position,Time.deltaTime*speed);
+        //transform.position=Vector3.MoveTowards(transform.position,PatrolWaypoints[current].position,Time.deltaTime*speed);
     }
 
     private void OnCollisionEnter(Collision other) 

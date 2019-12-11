@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
             
         string TimerString = string.Format ("{00}:{01}:{02}", mins, segs, milisegs);
 
-        cronometro.text=TimerString;
+        //cronometro.text=TimerString;
      }
 
 
@@ -31,5 +31,10 @@ public class GameManager : MonoBehaviour
     {
         ira += value;
         barraIra.value=ira;
+    }
+
+    public void SetText(string text)
+    {
+        cronometro.text=text;
     }
 }
