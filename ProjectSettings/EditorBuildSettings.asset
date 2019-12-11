@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/wchoque/proyectoPistola.unity
+    guid: d74b8fe007cec824da12af7282141385
   m_configObjects: {}
