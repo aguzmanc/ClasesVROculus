@@ -12,6 +12,7 @@ public class maquina : MonoBehaviour
         if (other.name=="bate")
         {
             other.GetComponentInChildren<bate>().NoGolpear();
+            other.GetComponentInChildren<bate>().golpear=false;
         }
     }
 

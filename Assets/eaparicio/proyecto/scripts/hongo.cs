@@ -9,8 +9,10 @@ public class hongo : MonoBehaviour
     Vector3 arriba;
     Vector3 original;
 
+    public IniciarJuego iniciarJuego;
     void Start()
     {
+        iniciarJuego = GameObject.Find("Boton_Inicio").GetComponent<IniciarJuego>();
         original = transform.position;
         arriba = new Vector3(transform.position.x, transform.position.y+0.4f, transform.position.z);
         subir=false;
@@ -18,28 +20,24 @@ public class hongo : MonoBehaviour
         StartCoroutine(SubirBajar());
     }
     void Update() {
-        Debug.Log(subir+" "+bajar);
-
         if (subir)
-        {
             SubirHongo();
-        }
         if (bajar)
-        {
             BajarHongo();
-        }
     }
 
      IEnumerator SubirBajar()
     {   
         while(true){
-            yield return new WaitForSeconds(Random.Range(1,2));
+            yield return new WaitForSeconds(Random.Range(0,1));
             subir=true;
             bajar=false;
-            yield return new WaitForSeconds(1);
-            //yield return new WaitForSeconds(Random.Range(1,3));
+            yield return new WaitForSeconds(0.75f);
             subir=false;
             bajar=true;
+            yield return new WaitForSeconds(0.75f);
+            StartCoroutine(Destruir());
+
         }
 
     }
@@ -66,6 +64,7 @@ public class hongo : MonoBehaviour
     IEnumerator Destruir()
     {   
         while(true){
+            iniciarJuego.Remover(transform);
             yield return new WaitForSeconds(1f);
             Destroy(transform.gameObject);
         }
