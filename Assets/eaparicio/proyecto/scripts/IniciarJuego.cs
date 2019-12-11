@@ -32,7 +32,7 @@ public class IniciarJuego : MonoBehaviour
     IEnumerator Generar()
     {   
         while(true){
-            yield return new WaitForSeconds(Random.RandomRange(1, 3));
+            yield return new WaitForSeconds(Random.RandomRange(1, 2));
             if (nHongos<3)
             {
                 nHongos++;

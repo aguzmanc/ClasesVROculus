@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - mano
+  - piso
   layers:
   - Default
   - TransparentFX

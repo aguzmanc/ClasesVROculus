@@ -29,13 +29,13 @@ public class hongo : MonoBehaviour
      IEnumerator SubirBajar()
     {   
         while(true){
-            yield return new WaitForSeconds(Random.Range(0,1));
+            yield return new WaitForSeconds(Random.RandomRange(1,2));
             subir=true;
             bajar=false;
             yield return new WaitForSeconds(0.75f);
             subir=false;
             bajar=true;
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.5f);
             StartCoroutine(Destruir());
 
         }
