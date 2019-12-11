@@ -45,24 +45,24 @@ public class agarrar : MonoBehaviour
        
     }
     bool limitePasado;
-    float actual;
+    public float actual;
     bool UpdateAgarre(){
 
         //PRUEBAS PC
-        actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+        actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
 
         limitePasado=false;
-        if (agarre<LIMITE_AGARRE && actu>=LIMITE_AGARRE)
+        if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
         {
             estaAgarrado=true;
             limitePasado=true;
         }
-        if (agarre>LIMITE_SOLTAR && actu <=LIMITE_SOLTAR)
+        if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
         {
             estaAgarrado=false;
             limitePasado=true;
         }
-        agarre=actu;
+        agarre=actual;
         return limitePasado;
 
 
