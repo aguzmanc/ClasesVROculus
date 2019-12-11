@@ -11,13 +11,13 @@ public class Vida : MonoBehaviour
     int vida;
     Text vidaTexto;
     public GameObject textual;
-    Rigidbody cuerpo;
+    
     void Start()
     {
         vida=100;
         vidaTexto=textual.GetComponent<Text>();
          audio = GetComponent<AudioSource>();
-          cuerpo = GetComponent<Rigidbody>();
+         
     
     }
 
@@ -28,9 +28,9 @@ public class Vida : MonoBehaviour
         vidaTexto.text="Vida: "+vida;
         if(vida<=0){
            Movimiento movimiento= transform.GetComponent<Movimiento>();
-            //transform.localRotation=Quaternion.Euler(90, 0, 74.617f);
+            
            movimiento.enabled=false;
-           cuerpo.isKinematic=true;
+           transform.gameObject.AddComponent<Rigidbody>();
            
               
         }
