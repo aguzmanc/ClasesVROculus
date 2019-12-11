@@ -6,6 +6,8 @@ public class MuerteTanque : MonoBehaviour
 {
     // Start is called before the first frame update
     public ParticleSystem particulasFuego;
+    public AudioSource fuego;
+    public AudioSource movimiento;
     void Start()
     {
         //FlamesParticleEffect
@@ -20,6 +22,8 @@ public class MuerteTanque : MonoBehaviour
     }
     public void Morir(){
         particulasFuego.Play();
+        fuego.Play();
+        movimiento.Stop();
     }
 
 }

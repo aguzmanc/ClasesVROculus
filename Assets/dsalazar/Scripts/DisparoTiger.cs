@@ -9,6 +9,7 @@ public class DisparoTiger : MonoBehaviour
     public float shootCooldown = 1;
     public float strength = 20;
     public bool cargado=true;
+    public AudioSource audioDisparo;
     void Start()
     {
         
@@ -38,5 +39,6 @@ public class DisparoTiger : MonoBehaviour
         Rigidbody body = createdBullet.GetComponent<Rigidbody>();
         body.AddForce(cannonPivotBone.transform.forward * strength,
                       ForceMode.Impulse);
+                      audioDisparo.Play();
     }
 }
