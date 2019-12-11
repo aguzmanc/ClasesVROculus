@@ -53,7 +53,7 @@ public class AgarradorR : MonoBehaviour
         if(OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.P))
       {
          // Debug.Log("2siuu");
-        aux.transform.position=new Vector3(0.348f, 0, -0.041f);
+        aux.transform.position=new Vector3(0.348f, -0.425f, -0.041f);
       }
 
 

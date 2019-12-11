@@ -50,7 +50,7 @@ public class Agarrador : MonoBehaviour
       if(OVRInput.GetDown(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.O))
       {
           
-        aux.transform.position=new Vector3(0.348f, 0, 0.097f);
+        aux.transform.position=new Vector3(0.348f, -0.425f, 0.097f);
       }
     }
 
