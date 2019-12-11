@@ -23,33 +23,39 @@ public class Bala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+           transform.position += transform.forward * 25 * Time.deltaTime;
+            
+       /* if(disparo==true && choco!=true){
+                transform.position += transform.forward * 25 * Time.deltaTime;
+            }*/
          //transform.position += transform.forward * 25 * Time.deltaTime;
-        if(disparo!=false){
+       // if(disparo!=false){
              RaycastHit hit;
-        if ( Physics.Raycast (transform.position, transform.forward, out hit,5)){
+     /*   if ( Physics.Raycast (transform.position, transform.forward, out hit,5)){
             if(hit.collider !=null){
                // if(hit.collider.gameObject.name == "azul"){
                     noColliderChoca=true;
                     transform.position = hit.point;
                     choco =true;
+                    Destroy(transform.gameObject);
                     // 
             }
             Debug.DrawRay (transform.position, transform.forward * hit.distance, Color.yellow );
           //  Debug.Log ("Did Hit");
-        }
+        }*/
           
-          if(noColliderChoca!=true){
+          /*if(noColliderChoca!=true){
                 transform.position += transform.forward * 25 * Time.deltaTime;
-            }
+            }*/
             
-        }
-        if(choco){
+     //   }
+    /*    if(choco){
             tiempoActivo+=Time.deltaTime;
             if(tiempoActivo >=6){
                Destroy(transform.gameObject);
                
-            }
-        }
+            }*/
+        
     }
 
     public void dispararBala(){
@@ -61,8 +67,8 @@ public class Bala : MonoBehaviour
     /// OnTriggerEnter is called when the Collider other enters the trigger.
     /// </summary>
     /// <param name="other">The other Collider involved in this collision.</param>
-    void OnTriggerEnter(Collider other)
+   /* void OnTriggerEnter(Collider other)
     {
       //  Destroy(transform.gameObject);
-    }
+    }*/
 }
