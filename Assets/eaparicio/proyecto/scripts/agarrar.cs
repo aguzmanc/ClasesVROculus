@@ -52,17 +52,28 @@ public class agarrar : MonoBehaviour
         actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
 
         limitePasado=false;
-        if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        if (agarre<LIMITE_AGARRE && actu>=LIMITE_AGARRE)
         {
             estaAgarrado=true;
             limitePasado=true;
         }
-        if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
+        if (agarre>LIMITE_SOLTAR && actu <=LIMITE_SOLTAR)
         {
             estaAgarrado=false;
             limitePasado=true;
         }
-        agarre=actual;
+        agarre=actu;
+        // if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
+        // {
+        //     estaAgarrado=true;
+        //     limitePasado=true;
+        // }
+        // if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
+        // {
+        //     estaAgarrado=false;
+        //     limitePasado=true;
+        // }
+        // agarre=actual;
         return limitePasado;
 
 
@@ -84,6 +95,28 @@ public class agarrar : MonoBehaviour
         // agarre=actual;
         // return limitePasado;
     }
+
+    IEnumerator MovimientoBrusco()
+    {   
+        Vector3 origen;
+        Vector3 mg;
+        while(true){
+            if (bate!=null)
+            {
+                
+                origen = transform.position;
+                yield return new WaitForSeconds(1f);
+                mg = transform.position-origen;
+                Debug.Log(mg);
+                // if (mg.magnitude>0.1f)
+                // {
+                    
+                // }
+            }
+        }
+
+    }
+
     void OnTriggerEnter(Collider otro) {
         Debug.Log(otro.name);
         tocado=true;
@@ -92,6 +125,7 @@ public class agarrar : MonoBehaviour
             bate b = otro.GetComponent<bate>();
             if (b!=null)
             {
+                StartCoroutine(MovimientoBrusco());
                 bate = b;
                 b.Tocar();
             }
@@ -108,6 +142,7 @@ public class agarrar : MonoBehaviour
             bate b = otro.GetComponent<bate>();
             if (b!=null)
             {
+                StopAllCoroutines();
                 bate = b;
                 b.DejarTocar();
             }
