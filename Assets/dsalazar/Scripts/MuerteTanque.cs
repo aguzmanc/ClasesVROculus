@@ -10,6 +10,7 @@ public class MuerteTanque : MonoBehaviour
     {
         //FlamesParticleEffect
         // particulasFuego.GetComponent<ParticleSystem>().=true;
+        Morir();
     }
 
     // Update is called once per frame

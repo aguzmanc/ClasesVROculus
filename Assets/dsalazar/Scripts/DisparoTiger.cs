@@ -7,7 +7,7 @@ public class DisparoTiger : MonoBehaviour
      public GameObject cannonPivotBone;
     public GameObject bullet;
     public float shootCooldown = 1;
-    public float strength = 50;
+    public float strength = 20;
     public bool cargado=true;
     void Start()
     {
