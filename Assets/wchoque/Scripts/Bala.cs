@@ -23,7 +23,7 @@ public class Bala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         transform.position += transform.forward * 25 * Time.deltaTime;
+         //transform.position += transform.forward * 25 * Time.deltaTime;
         if(disparo!=false){
              RaycastHit hit;
         if ( Physics.Raycast (transform.position, transform.forward, out hit,5)){
@@ -37,9 +37,10 @@ public class Bala : MonoBehaviour
             Debug.DrawRay (transform.position, transform.forward * hit.distance, Color.yellow );
           //  Debug.Log ("Did Hit");
         }
-          /*  if(noColliderChoca!=true){
+          
+          if(noColliderChoca!=true){
                 transform.position += transform.forward * 25 * Time.deltaTime;
-            }*/
+            }
             
         }
         if(choco){
