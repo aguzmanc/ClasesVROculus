@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemigos : MonoBehaviour
 {
+    public Puntuacion puntuacion;
     public GameObject posiciones;
     float VelocidadEnemigo=5;
     public CuadroTiempo tiempo;
@@ -79,6 +80,16 @@ public class Enemigos : MonoBehaviour
              inicioJuego = false;
              VelocidadEnemigo = 5;
              tiempo.segundo = 0;
+              puntuacion.ganaste = false;
+             StopAllCoroutines();
+         }
+
+         if(puntuacion.ganaste){
+         Debug.Log("se termino el juego");
+             inicioJuego = false;
+             VelocidadEnemigo = 5;
+             tiempo.segundo = 0;
+             puntuacion.ganaste = false;
              StopAllCoroutines();
          }
         

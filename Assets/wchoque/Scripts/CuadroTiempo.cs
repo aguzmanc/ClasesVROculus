@@ -5,6 +5,9 @@ using TMPro;
 
 public class CuadroTiempo : MonoBehaviour
 {
+    public ArradarArma arma;
+    public Puntuacion puntuacion;
+      public TextMeshPro txtTexto;
     public TextMeshPro txtTiempo;
     public float duracion;
     public float segundo;
@@ -24,14 +27,26 @@ public class CuadroTiempo : MonoBehaviour
     {
         if(comenzoJuego==true && evitarRepeticion==false){
             Debug.Log(comenzoJuego);
+            puntuacion.puntos =0;
+            arma.cantidadMuniciones=10;
               StartCoroutine(tiempoDuracion());
             evitarRepeticion = true;
+            txtTexto.text = "?????";
         }
 
         if(segundo==duracion && comenzoJuego==true){
             StopAllCoroutines();
             comenzoJuego=false;
             evitarRepeticion = false;
+            txtTexto.text = "PERDISTE !!!!!";
+            puntuacion.puntos = 0;
+        }
+        if(puntuacion.ganaste){
+            StopAllCoroutines();
+            comenzoJuego=false;
+            evitarRepeticion = false;
+            puntuacion.puntos = 0;
+            txtTexto.text = "GANASTE !!!!!";
         }
     }
     IEnumerator tiempoDuracion(){

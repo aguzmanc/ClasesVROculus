@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArradarArma : MonoBehaviour
 {
+    public GameObject layout;
+    public Image modeloBala;
+
+    public List<Image> imgBalas;
     public Transform pivotBala;
      public GameObject balaPrefab;
     public GameObject balaInstanciado;
-    int cantidadMuniciones =10;
+   public  int cantidadMuniciones =10;
    // public CuadroTiempo cuadroTiempo;
     public Arma armaMano;
     const float limite_Agarre=0.7f;
@@ -22,7 +27,7 @@ public class ArradarArma : MonoBehaviour
     void Start()
     {
         estaAgarrando =false;
-        
+        imgBalas = new List<Image>();
     }
 
     // Update is called once per frame
@@ -110,5 +115,9 @@ public class ArradarArma : MonoBehaviour
             balaInstanciado.transform.localRotation = Quaternion.identity; 
         }
       
+    }
+    void GenerarSpriteBalas(){
+        
+        
     }
 }
