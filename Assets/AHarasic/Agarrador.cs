@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Agarrador : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class Agarrador : MonoBehaviour
     void Update()
     {
     bool cambio = UpdateNivelAgarre();
+     if (bola != null)
+        {
+            _currentGrabbedLocation = bola.transform.position;
+
+        }
 
       if(estaAgarrando && bola!=null && cambio)
       {
@@ -36,7 +42,7 @@ public class Agarrador : MonoBehaviour
       }
       if(estaAgarrando==false && cambio && bola!=null)
       {
-        bola.Impulso(gameObject.transform.forward);
+        //bola.Impulso(gameObject.transform.forward);
         bola.Soltar();
         //gameObject.GetComponent<Rigidbody>().AddForce(0, 0, 1); 
          //f.GetComponent<Rigidbody>().AddForce(arco.transform.forward*speed*2);
