@@ -50,20 +50,13 @@ public class MoverTanque : MonoBehaviour
         {
             tanque.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
         }
-
-        if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)== (new Vector2(1, 0))) {
-            torreta.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
-        }
-       
-        if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)== (new Vector2(-1, 0))) {
-            torreta.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
-        }
-         if (OVRInput.GetUp(OVRInput.RawButton.X))
+        // if (OVRInput.Get(OVRInput.RawButton.X))
+         if (OVRInput.Get(OVRInput.RawButton.RThumbstickRight))
         {
             torreta.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
             
         }
-         if (OVRInput.GetUp(OVRInput.RawButton.Y))
+         if (OVRInput.Get(OVRInput.RawButton.RThumbstickLeft))
         {
             torreta.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
             
