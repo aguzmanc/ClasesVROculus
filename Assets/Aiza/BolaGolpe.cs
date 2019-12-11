@@ -9,7 +9,7 @@ public class BolaGolpe : MonoBehaviour
         if (other.tag == "Bola")
         {
             print("entro");
-            rb.AddForce(this.transform.parent.forward * 4,ForceMode.Impulse);
+            rb.AddForce(this.transform.parent.forward * 4.5f,ForceMode.Impulse);
         }
     }
     // Start is called before the first frame update
