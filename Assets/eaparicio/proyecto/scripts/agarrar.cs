@@ -29,25 +29,29 @@ public class agarrar : MonoBehaviour
     void Update()
     {
         cambio = UpdateAgarre();
-        if( bate!=null)
+        if( bate!=null && cambio)
         {
-            if (estaAgarrado && cambio && tocado)
+            if (estaAgarrado)
             {
-                bate.Agarrar(transform);
+                if (tocado)
+                {
+                    bate.Agarrar(transform);
+                }
             }
-            if(!estaAgarrado && cambio && !tocado){
+            if(!estaAgarrado){
                 bate.Soltar();
             }
         }
        
     }
-
+    bool limitePasado;
+    float actual;
     bool UpdateAgarre(){
 
         //PRUEBAS PC
-        float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+        actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
 
-        bool limitePasado=false;
+        limitePasado=false;
         if (agarre<LIMITE_AGARRE && actu>=LIMITE_AGARRE)
         {
             estaAgarrado=true;

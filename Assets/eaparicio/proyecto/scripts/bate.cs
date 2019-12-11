@@ -22,17 +22,19 @@ public class bate : MonoBehaviour
     public void DejarTocar(){
         render.material =matSuelto;
     }
+    public void Soltar(){
+        transform.parent.parent = null;
+        body.isKinematic = false;
+        render.material = matTocado;
+    }
     public void Agarrar(Transform agarrador){
         render.material =matAgarrado;
-        //body.isKinematic = true;
-        transform.parent = agarrador;
+        body.isKinematic = true;
+        transform.parent.parent = agarrador;
+        transform.parent.localPosition = new Vector3(0,1.5f,0);
+        transform.parent.localRotation = Quaternion.identity;
 
 
-    }
-    public void Soltar(){
-        transform.parent = null;
-        //body.isKinematic = false;
-        render.material = matTocado;
     }
     void OnTriggerEnter(Collider other) {
         if (other.tag=="piso")
