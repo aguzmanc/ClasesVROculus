@@ -1,9 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArradarArma : MonoBehaviour
 {
+    public GameObject layout;
+    public Image modeloBala;
+
+    public List<Image> imgBalas;
+    public Transform pivotBala;
+     public GameObject balaPrefab;
+    public GameObject balaInstanciado;
+   public  int cantidadMuniciones =10;
+   // public CuadroTiempo cuadroTiempo;
     public Arma armaMano;
     const float limite_Agarre=0.7f;
     const float limite_Soltar=0.3f;
@@ -12,22 +22,45 @@ public class ArradarArma : MonoBehaviour
     bool cambio;
     public bool estaAgarrando;
     float actual;
+  //  public Bala bala;
     // Start is called before the first frame update
     void Start()
     {
         estaAgarrando =false;
+        imgBalas = new List<Image>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+
+
         cambio = UpdateNivelAgarre();
-     //  cambio = true;
+      //  cambio = true;
         if(estaAgarrando&& armaMano!=null && cambio){
             armaMano.Agarrar(transform);
+            if(balaInstanciado==null){
+                crearBala(pivotBala);
+            }
         }
         if(!estaAgarrando&& cambio && armaMano!=null){
             armaMano.soltar();
+        }
+        
+         if(armaMano!=null){
+            //OVRInput.Button.PrimaryIndexTrigger
+          if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch) && balaInstanciado!=null && estaAgarrando==true){
+              //  if(Input.GetKeyDown(KeyCode.T) && balaInstanciado!=null && estaAgarrando==true){
+                    Debug.Log("Dispara");
+                    balaInstanciado.GetComponent<Bala>().dispararBala();
+                    cantidadMuniciones-=1;
+                    balaInstanciado=null;
+                    if(balaInstanciado==null){
+                        crearBala(pivotBala);
+                    }
+                    
+            }
+            //Index trigger para disparar
         }
     }
     bool UpdateNivelAgarre(){
@@ -35,10 +68,10 @@ public class ArradarArma : MonoBehaviour
         bool limiteTraspasado=false;
         if(agarre<limite_Agarre && actual>=limite_Agarre){
             estaAgarrando=true;
-            limiteTraspasado =false;
+            limiteTraspasado =true;
         }
         if(agarre>limite_Soltar && actual<=limite_Soltar){
-        estaAgarrando=true;
+        estaAgarrando=false;
         limiteTraspasado =true;
         }
     agarre = actual;
@@ -73,5 +106,18 @@ public class ArradarArma : MonoBehaviour
                 armaMano=null; 
             }
         }
+    }
+      void crearBala(Transform pivot){
+        if(cantidadMuniciones>0){
+            balaInstanciado = Instantiate(balaPrefab);
+            balaInstanciado.transform.parent = pivot;
+            balaInstanciado.transform.localPosition = Vector3.zero;
+            balaInstanciado.transform.localRotation = Quaternion.identity; 
+        }
+      
+    }
+    void GenerarSpriteBalas(){
+        
+        
     }
 }

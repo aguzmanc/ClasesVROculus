@@ -4,20 +4,54 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
+    Rigidbody rigidbody;
+    public bool disparo;
+    public bool noColliderChoca;
+    public bool ganoPuntos;
+    float tiempoActivo;
+    public bool choco;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = transform.GetComponent<Rigidbody>();
+        disparo=false;
+        noColliderChoca = false;
+        ganoPuntos = false;
+        choco = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( Physics.Raycast (transform.position, transform.forward, 10)){
-        Debug.DrawRay (transform.position, transform.forward * 10, Color.yellow );
-            Debug.Log ("Did Hit");
+        if(disparo!=false){
+             RaycastHit hit;
+        if ( Physics.Raycast (transform.position, transform.forward, out hit,5)){
+            if(hit.collider !=null){
+               // if(hit.collider.gameObject.name == "azul"){
+                    noColliderChoca=true;
+                    transform.position = hit.point;
+                    choco =true;
+               // }
+            }
+            Debug.DrawRay (transform.position, transform.forward * hit.distance, Color.yellow );
+          //  Debug.Log ("Did Hit");
         }
+            if(noColliderChoca!=true){
+                transform.position += transform.forward * 25 * Time.deltaTime;
+            }
             
-        transform.position += transform.forward * 5 * Time.deltaTime;
+        }
+        if(choco){
+            tiempoActivo+=Time.deltaTime;
+            if(tiempoActivo >=6){
+                Destroy(transform.gameObject);
+            }
+        }
+    }
+
+    public void dispararBala(){
+        transform.parent = null;
+        rigidbody.isKinematic = true;
+        disparo=true;
     }
 }
