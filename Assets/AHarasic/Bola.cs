@@ -27,7 +27,7 @@ public class Bola : MonoBehaviour
 
     public void Tocar(){
         rend.material=materialTocado;
-
+        
     }
 
     public void DejarDeTocar()

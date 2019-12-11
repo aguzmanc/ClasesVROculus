@@ -16,10 +16,13 @@ public class Agarrador : MonoBehaviour
 
     public bool estaAgarrando;
 
+     private Vector3 _currentGrabbedLocation;
+
     // Start is called before the first frame update
     void Start()
     {
          estaAgarrando=false;
+        _currentGrabbedLocation = new Vector3();
     }
 
     // Update is called once per frame
@@ -37,6 +40,11 @@ public class Agarrador : MonoBehaviour
         bola.Soltar();
         //gameObject.GetComponent<Rigidbody>().AddForce(0, 0, 1); 
          //f.GetComponent<Rigidbody>().AddForce(arco.transform.forward*speed*2);
+         Rigidbody rigidBody = bola.GetComponent<Rigidbody>();
+        Vector3 throwVector =  bola.transform.position - _currentGrabbedLocation; // Get the direction that we're throwing
+            rigidBody.AddForce(throwVector * 10, ForceMode.Impulse); // Throws the ball by sending a force
+            bola = null;
+           Debug.Log("el metodo ocurre antes left");
       }
 
       if(OVRInput.GetDown(OVRInput.Button.Three) || Input.GetKeyDown(KeyCode.O))
@@ -85,9 +93,10 @@ public class Agarrador : MonoBehaviour
          Bola bolaAgarrada = other.GetComponent<Bola>();
          if(bolaAgarrada!=null)
        {
-           
+            Debug.Log("trigger antes left");
            bola.DejarDeTocar();
-           bola =null;
+          
+          // bola =null;
        }
     }
 

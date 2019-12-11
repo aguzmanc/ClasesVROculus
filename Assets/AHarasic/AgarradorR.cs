@@ -47,6 +47,7 @@ public class AgarradorR : MonoBehaviour
         Vector3 throwVector =  bola.transform.position - _currentGrabbedLocation; // Get the direction that we're throwing
             rigidBody.AddForce(throwVector * 10, ForceMode.Impulse); // Throws the ball by sending a force
             bola = null;
+           Debug.Log("el metodo ocurre antes");
 
       }
         if(OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.P))
@@ -108,9 +109,9 @@ public class AgarradorR : MonoBehaviour
          Bola bolaAgarrada = other.GetComponent<Bola>();
          if(bolaAgarrada!=null)
        {
-           
+           Debug.Log("trigger antes");
            bola.DejarDeTocar();
-           bola =null;
+          // bola =null;
        }
     }
 
