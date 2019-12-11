@@ -28,6 +28,7 @@ public class CuadroTiempo : MonoBehaviour
     void Update()
     {
         if(comenzoJuego==true && evitarRepeticion==false){
+            Debug.Log("metodo cuador entro");
             Debug.Log(comenzoJuego);
              gano = false;
             puntuacion.puntos =0;
