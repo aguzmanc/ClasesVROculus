@@ -23,7 +23,7 @@ public class AgarrarCargador : MonoBehaviour
     void Update()
     {
         cambio = UpdateNivelAgarre();
-       // cambio = true;
+       cambio = true;
         if(estaAgarrando&& cargadorArma!=null && cambio){
             cargadorArma.Agarrar(transform);
         }

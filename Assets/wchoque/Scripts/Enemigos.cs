@@ -87,9 +87,10 @@ public class Enemigos : MonoBehaviour
          }
 
          if(puntuacion.ganaste){
+
          Debug.Log("se termino el juego");
              inicioJuego = false;
-             puntuacion.StopAllCoroutines();
+             tiempo.StopAllCoroutines();
              tiempo.comenzoJuego = false;
              tiempo.evitarRepeticion=false;
              tiempo.gano = true;
@@ -98,7 +99,7 @@ public class Enemigos : MonoBehaviour
              puntuacion.puntos=0;
              tiempo.txtTexto.text = "Ganaste !!!!";
              
-          //   puntuacion.ganaste = false;
+            puntuacion.ganaste = false;
              StopAllCoroutines();
          }
         
