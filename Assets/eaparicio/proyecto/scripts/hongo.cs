@@ -52,11 +52,15 @@ public class hongo : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.name=="bate")
         {
-            other.GetComponentInChildren<bate>().NoGolpear();
-            StopAllCoroutines();
-            subir=false;
-            bajar=true;
-            StartCoroutine(Destruir());
+            if (other.GetComponentInChildren<bate>().golpear)
+			{
+                other.GetComponentInChildren<bate>().NoGolpear();
+                StopAllCoroutines();
+                subir=false;
+                bajar=true;
+				other.GetComponentInChildren<bate>().golpear=false;
+                StartCoroutine(Destruir());
+			}
         }
     }
     IEnumerator Destruir()

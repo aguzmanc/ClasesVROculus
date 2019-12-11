@@ -13,6 +13,7 @@ public class limiteSuperior : MonoBehaviour
         if (other.name=="bate")
         {
             other.GetComponentInChildren<bate>().Golpear();
+            other.GetComponentInChildren<bate>().golpear=true;
         }
     }
 }

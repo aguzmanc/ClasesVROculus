@@ -39,7 +39,10 @@ public class MushroomMon_Ani_Test : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.name=="bate")
 		{
-			DeathAni();
+			if (other.GetComponentInChildren<bate>().golpear)
+			{
+				DeathAni();
+			}
 		}
 	}
 }

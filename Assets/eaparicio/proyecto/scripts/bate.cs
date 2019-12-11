@@ -10,9 +10,11 @@ public class bate : MonoBehaviour
     public Material matTocado;
     public Material matAgarrado;
     public Material matNoGolpear;
+    public bool golpear;
     
     void Start()
     {
+        golpear=true;
         body = transform.parent.GetComponent<Rigidbody>();
         //render = GetComponent<Renderer>();
         render.material= matSuelto;
