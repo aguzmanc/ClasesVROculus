@@ -16,16 +16,25 @@ public class AgarradorR : MonoBehaviour
 
     public bool estaAgarrando;
 
+//https://codingchronicles.com/unity-vr-development/day-66-of-100-days-of-vr-picking-up-and-throwing-objects-in-unity-part-1
+    private Vector3 _currentGrabbedLocation;
     // Start is called before the first frame update
     void Start()
     {
          estaAgarrando=false;
+         _currentGrabbedLocation = new Vector3();
     }
 
+   // float time=10f;
     // Update is called once per frame
     void Update()
     {
     bool cambio = UpdateNivelAgarre();
+      if (bola != null)
+        {
+            _currentGrabbedLocation = bola.transform.position;
+
+        }
 
       if(estaAgarrando && bola!=null && cambio)
       {
@@ -34,21 +43,38 @@ public class AgarradorR : MonoBehaviour
       if(estaAgarrando==false && cambio && bola!=null)
       {
         bola.Soltar();
+        Rigidbody rigidBody = bola.GetComponent<Rigidbody>();
+        Vector3 throwVector =  bola.transform.position - _currentGrabbedLocation; // Get the direction that we're throwing
+            rigidBody.AddForce(throwVector * 10, ForceMode.Impulse); // Throws the ball by sending a force
+            bola = null;
+
       }
         if(OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.P))
       {
-          
+         // Debug.Log("2siuu");
         aux.transform.position=new Vector3(0.348f, 0, -0.041f);
       }
 
+
+     // time -= Time.deltaTime;
+     //if ( time < 0 )
+     //{
+     //     Debug.Log("2siuu");
+     //     borrarEsto=false;
+     //     aggarreBorrar=0.1f;
+    // }
+
     }
 
-
+  //public bool borrarEsto=true;
+  // [Range(0f,1f)]
+  //public float aggarreBorrar=0.1f;
     bool UpdateNivelAgarre()
     {
-        bool limiteTraspasado=false;
-        float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
-        //float actual=0.8f;
+        //bool limiteTraspasado=borrarEsto;
+         bool limiteTraspasado=false;
+       float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
+        //float actual=aggarreBorrar;
     if( agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
     {
             estaAgarrando=true;
