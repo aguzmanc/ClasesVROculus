@@ -62,6 +62,6 @@ public class Bala : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerEnter(Collider other)
     {
-        Destroy(transform.gameObject);
+      //  Destroy(transform.gameObject);
     }
 }

@@ -36,7 +36,7 @@ public class ArradarArma : MonoBehaviour
 
 
         cambio = UpdateNivelAgarre();
-      cambio = true;
+      //cambio = true;
         if(estaAgarrando&& armaMano!=null && cambio){
             armaMano.Agarrar(transform);
             if(balaInstanciado==null){
@@ -49,8 +49,8 @@ public class ArradarArma : MonoBehaviour
         
          if(armaMano!=null){
             //OVRInput.Button.PrimaryIndexTrigger
-     //  if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch) && balaInstanciado!=null && estaAgarrando==true){
-                if(Input.GetKeyDown(KeyCode.T) && balaInstanciado==null && estaAgarrando==true){
+       if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.RTouch) && balaInstanciado==null && estaAgarrando==true){
+              //  if(Input.GetKeyDown(KeyCode.T) && balaInstanciado==null && estaAgarrando==true){
                     Debug.Log("Dispara");
                     crearBala(pivotBala);
                     if(balaInstanciado!=null){
