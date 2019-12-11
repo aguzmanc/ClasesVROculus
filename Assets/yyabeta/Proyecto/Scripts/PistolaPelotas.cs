@@ -15,12 +15,15 @@ public class PistolaPelotas : Arma
     [Range(100,500)]
     public float speed=500;
 
+    AudioSource au;
+
 
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        au=GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,7 @@ public class PistolaPelotas : Arma
                 r.AddForce(boca.forward*speed);
                 municion.RemoveAt(0);
                 municion[0].transform.localPosition=Vector3.zero;
+                au.Play();
             }
         }
     }
