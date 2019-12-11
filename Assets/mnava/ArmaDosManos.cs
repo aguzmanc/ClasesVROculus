@@ -42,6 +42,7 @@ public class ArmaDosManos : MonoBehaviour
     {
         indicador.material=EstadoSuelto;
           apoyo.SetActive(false);
+          sostenida=false;
        
     }
      public void tocarAp()
@@ -82,6 +83,7 @@ public class ArmaDosManos : MonoBehaviour
         transform.parent=null;
         cuerpo.isKinematic=false;
         apoyo.SetActive(false);
+          sostenida=false;
     }
     public void agarrar(Transform mano)
     {

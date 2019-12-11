@@ -43,7 +43,7 @@ public class Lanza : MonoBehaviour
         velocidadVectorial=vector/posiciones.Count;
         Debug.Log(velocidadVectorial.z);
         ztea=ztea/posiciones.Count;
-/*
+
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("lanzar");
@@ -53,7 +53,7 @@ public class Lanza : MonoBehaviour
             
         }
         
- */
+ 
 
         
     }
