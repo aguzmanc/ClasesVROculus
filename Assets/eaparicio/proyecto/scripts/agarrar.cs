@@ -20,10 +20,15 @@ public class agarrar : MonoBehaviour
     public bool cambio;
     public bool tocado;
 
+
+    Vector3 origen;
+    Vector3 origenRotacion;
+    Vector3 mg;
     void Start()
     {
         tocado=false;
         estaAgarrado=false;
+        
     }
 
     void Update()
@@ -98,20 +103,19 @@ public class agarrar : MonoBehaviour
 
     IEnumerator MovimientoBrusco()
     {   
-        Vector3 origen;
-        Vector3 mg;
+        
         while(true){
             if (bate!=null)
             {
                 
                 origen = transform.position;
+                origenRotacion=transform.rotation.eulerAngles;
                 yield return new WaitForSeconds(1f);
-                mg = transform.position-origen;
-                Debug.Log(mg);
-                // if (mg.magnitude>0.1f)
-                // {
-                    
-                // }
+                if (Mathf.Abs((transform.position-origen).magnitude)>0.5f ||
+                     Mathf.Abs((transform.rotation.eulerAngles-origenRotacion).magnitude)>0.5f)
+                {
+                    Debug.Log("b");
+                }
             }
         }
 
@@ -125,9 +129,10 @@ public class agarrar : MonoBehaviour
             bate b = otro.GetComponent<bate>();
             if (b!=null)
             {
-                StartCoroutine(MovimientoBrusco());
+                
                 bate = b;
                 b.Tocar();
+                StartCoroutine(MovimientoBrusco());
             }
         }
     }
