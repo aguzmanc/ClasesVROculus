@@ -16,6 +16,9 @@ public class MoverTanque : MonoBehaviour
     public bool latras=false;
     public bool radelante=false;
     public bool ratras=false;
+    public GameObject tanque;
+    public GameObject torreta;
+
 
     void Start()
     {
@@ -34,36 +37,56 @@ public class MoverTanque : MonoBehaviour
 
           distanciaR = Vector3.Distance(rPalanca.transform.position, Rcentro.transform.position);
           distanciaL = Vector3.Distance(lPalanca.transform.position, Lcentro.transform.position);
+          if (Input.GetKey(KeyCode.W)) {
+            tanque.transform.Translate(Vector3.forward * Time.deltaTime*4);
+        }
+        if (Input.GetKey(KeyCode.D)) {
+            tanque.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
+        }
+        if (Input.GetKey(KeyCode.S)) {
+            tanque.transform.Translate(-Vector3.forward * Time.deltaTime*2);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            tanque.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
+        }
+
+        if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)== (new Vector2(1, 0))) {
+            torreta.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
+        }
+        if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick)== (new Vector2(-1, 0))) {
+            torreta.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
+        }
         if (distanciaL>0.05f&&distanciaR>0.05f)
         {
             //transform.Translate(Vector3.forward * Time.deltaTime);
             if (ladelante&&radelante)
             {
-            transform.Translate(Vector3.forward * Time.deltaTime*2);
+            tanque.transform.Translate(Vector3.forward * Time.deltaTime*4);
             }
             if (latras&&ratras)
             {
-            transform.Translate(-Vector3.forward * Time.deltaTime*2);
+            tanque.transform.Translate(-Vector3.forward * Time.deltaTime*2);
             }
             if (ladelante&&ratras)
             {
-            transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
+            tanque.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
             }
             if (latras&&radelante)
             {
-            transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
+            tanque.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
             }
         }
         else if(distanciaL>0.05f&&distanciaR<0.05f)
         {
             if (ladelante)
             {
-            transform.Translate(Vector3.forward * Time.deltaTime);
-            transform.Rotate(0.0f,20f*Time.deltaTime, 0.0f, Space.World);
+            tanque.transform.Translate(Vector3.forward * Time.deltaTime);
+            tanque.transform.Rotate(0.0f,20f*Time.deltaTime, 0.0f, Space.World);
             }
             if (latras)
             {
-            transform.Rotate(0.0f,-20f*Time.deltaTime, 0.0f, Space.World);
+            tanque.transform.Rotate(0.0f,-20f*Time.deltaTime, 0.0f, Space.World);
                 
             }
         }
@@ -71,12 +94,12 @@ public class MoverTanque : MonoBehaviour
         {
             if (radelante)
             {
-            transform.Rotate(0.0f,-20f*Time.deltaTime, 0, Space.World);
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            tanque.transform.Rotate(0.0f,-20f*Time.deltaTime, 0, Space.World);
+            tanque.transform.Translate(Vector3.forward * Time.deltaTime);
             }
             if (ratras)
             {
-            transform.Rotate(0.0f, 20f*Time.deltaTime,0, Space.World);
+            tanque.transform.Rotate(0.0f, 20f*Time.deltaTime,0, Space.World);
                 
             }
         }

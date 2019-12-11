@@ -28,6 +28,8 @@ public class Bala : MonoBehaviour
             fuego.Play();
             //other.GetComponent<MuerteTanque>().Morir();
             transform.position=other.transform.position ;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
            // Destroy(other.gameObject);
         }
     }
