@@ -11,6 +11,7 @@ public class AgarrarRPalanca : MonoBehaviour
     public bool tocandoRpalanca=false;
     public bool RpalancaAgarrado=false;
     public GameObject Rcentro;
+    public Material materialPlomo;
 
  
     void Start()
@@ -25,12 +26,16 @@ public class AgarrarRPalanca : MonoBehaviour
             rPalanca.transform.SetParent( transform ); 
            // rPalanca.GetComponent<Rigidbody>().useGravity=false; 
             RpalancaAgarrado=true;
-             rPalancaRender.material= materialverde;
+             rPalancaRender.material= materialPlomo;
             //rPalanca.transform.position=new Vector3(transform.position.x+0.0051f,transform.position.y, transform.position.z);
             rPalanca.transform.position=new Vector3(transform.position.x,transform.position.y, transform.position.z);
             rPalanca.transform.localPosition=Vector3.zero;
             rPalanca.transform.localRotation= Quaternion.identity;
             rPalanca.GetComponent<Rigidbody>().isKinematic=true;
+        }
+        if (tocandoRpalanca)
+        {
+             rPalancaRender.material= materialverde;
         }
        if (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger)<0.7f) {
             rPalanca.transform.parent=null; 
@@ -38,6 +43,7 @@ public class AgarrarRPalanca : MonoBehaviour
             {
              rPalancaRender.material= materialrojo;
              RpalancaAgarrado=false;
+             tocandoRpalanca=false;
              rPalanca.transform.position=Rcentro.transform.position;
             }
         }
