@@ -97,6 +97,7 @@ public class agarrar : MonoBehaviour
             }
         }
     }
+    
 
     void OnTriggerExit(Collider otro)
     {

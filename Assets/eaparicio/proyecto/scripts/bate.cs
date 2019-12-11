@@ -9,6 +9,7 @@ public class bate : MonoBehaviour
     public Material matSuelto;
     public Material matTocado;
     public Material matAgarrado;
+    public Material matNoGolpear;
     
     void Start()
     {
@@ -21,6 +22,12 @@ public class bate : MonoBehaviour
     }
     public void DejarTocar(){
         render.material =matSuelto;
+    }
+    public void NoGolpear(){
+        render.material =matNoGolpear;
+    }
+    public void Golpear(){
+        render.material =matAgarrado;
     }
     public void Soltar(){
         transform.parent.parent = null;

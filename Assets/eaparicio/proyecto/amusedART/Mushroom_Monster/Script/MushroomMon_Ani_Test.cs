@@ -37,7 +37,9 @@ public class MushroomMon_Ani_Test : MonoBehaviour {
 		anim.CrossFade (DEATH);
 	}
 	void OnTriggerEnter(Collider other) {
-		Debug.Log(other.name);
-		DeathAni();
+		if (other.name=="bate")
+		{
+			DeathAni();
+		}
 	}
 }

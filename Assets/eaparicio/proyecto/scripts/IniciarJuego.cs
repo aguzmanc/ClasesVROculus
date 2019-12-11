@@ -22,10 +22,7 @@ public class IniciarJuego : MonoBehaviour
     }
     void MoverBoton(){
         Vector3 boton_pulsado = new Vector3(-0.351f, 0.989f, 0.055f);
-                        transform.position = Vector3.Lerp(
-                            transform.position, 
-                            boton_pulsado,
-                            0.08f);
+        transform.position = Vector3.Lerp(transform.position, boton_pulsado, 0.08f);
     }
     void OnTriggerEnter(Collider other) {
         if (other.tag=="mano")
