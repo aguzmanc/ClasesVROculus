@@ -55,4 +55,12 @@ public class AgarrarLPalanca : MonoBehaviour
              tocandoLpalanca=true;
         }
     }
+    private void OnTriggerExit(Collider other) {
+        if (other.gameObject.tag=="Lpalanca")
+        {
+             Debug.Log(other.name);
+             tocandoLpalanca=false;
+             lPalancaRender.material= materialrojo;
+        }
+    }
 }

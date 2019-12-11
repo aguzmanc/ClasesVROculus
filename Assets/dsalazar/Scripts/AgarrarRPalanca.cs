@@ -55,4 +55,12 @@ public class AgarrarRPalanca : MonoBehaviour
              tocandoRpalanca=true;
         }
     }
+      private void OnTriggerExit(Collider other) {
+        if (other.gameObject.tag=="Rpalanca")
+        {
+             Debug.Log(other.name);
+             tocandoRpalanca=false;
+             rPalancaRender.material= materialrojo;
+        }
+    }
 }

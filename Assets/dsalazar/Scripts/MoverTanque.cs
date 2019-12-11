@@ -18,7 +18,6 @@ public class MoverTanque : MonoBehaviour
     public bool ratras=false;
     public GameObject tanque;
     public GameObject torreta;
-    public GameObject camaraOculus;
 
 
     void Start()
@@ -57,11 +56,18 @@ public class MoverTanque : MonoBehaviour
             torreta.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
             
         }
-            torreta.transform.rotation=camaraOculus.transform.rotation;
          if (OVRInput.Get(OVRInput.RawButton.RThumbstickLeft))
         {
             torreta.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
             
+        }
+        if (OVRInput.Get(OVRInput.RawButton.LThumbstickLeft))
+        {
+            tanque.transform.Rotate(0.0f,-30f*Time.deltaTime, 0.0f, Space.World);
+        }
+         if (OVRInput.Get(OVRInput.RawButton.LThumbstickRight))
+        {
+            tanque.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
         }
         if (distanciaL>0.05f&&distanciaR>0.05f)
         {
