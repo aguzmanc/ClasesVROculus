@@ -13,12 +13,14 @@ public class CuadroTiempo : MonoBehaviour
     public float segundo;
     public bool comenzoJuego;
    public  bool evitarRepeticion;
+   public bool gano;
     // Start is called before the first frame update
     void Start()
     {
         comenzoJuego = false;
         duracion = 120;
         segundo =0;
+        gano = false;
       
     }
 
@@ -27,10 +29,12 @@ public class CuadroTiempo : MonoBehaviour
     {
         if(comenzoJuego==true && evitarRepeticion==false){
             Debug.Log(comenzoJuego);
+             gano = false;
             puntuacion.puntos =0;
             arma.cantidadMuniciones=10;
               StartCoroutine(tiempoDuracion());
             evitarRepeticion = true;
+           
             txtTexto.text = "?????";
         }
 
@@ -41,13 +45,13 @@ public class CuadroTiempo : MonoBehaviour
             txtTexto.text = "PERDISTE !!!!!";
             puntuacion.puntos = 0;
         }
-        if(puntuacion.ganaste){
+     /*   if(gano && puntuacion.puntos>puntuacion.){
             StopAllCoroutines();
             comenzoJuego=false;
             evitarRepeticion = false;
             puntuacion.puntos = 0;
             txtTexto.text = "GANASTE !!!!!";
-        }
+        }*/
     }
     IEnumerator tiempoDuracion(){
         while(segundo<=duracion){

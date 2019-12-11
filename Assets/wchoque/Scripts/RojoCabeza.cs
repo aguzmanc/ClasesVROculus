@@ -22,7 +22,7 @@ public class RojoCabeza : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entro azul");
+      //  Debug.Log("Entro azul");
         if(other.tag == "bala"){
            bala= other.transform.GetComponent<Bala>();
            if(!bala.ganoPuntos){

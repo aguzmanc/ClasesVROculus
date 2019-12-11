@@ -47,6 +47,7 @@ public class Enemigos : MonoBehaviour
     {
          if(tiempo.comenzoJuego==true && inicioJuego == false){
              Debug.Log("Cpmenzp al inicio del juegp");
+             StopAllCoroutines();
             StartCoroutine(instanciarEnemigos());
              Debug.Log(scaleEnemigos.GetValue(valor));
              inicioJuego = true;
@@ -80,16 +81,24 @@ public class Enemigos : MonoBehaviour
              inicioJuego = false;
              VelocidadEnemigo = 5;
              tiempo.segundo = 0;
-              puntuacion.ganaste = false;
+             tiempo.comenzoJuego = false;
+            //  puntuacion.ganaste = false;
              StopAllCoroutines();
          }
 
          if(puntuacion.ganaste){
          Debug.Log("se termino el juego");
              inicioJuego = false;
+             puntuacion.StopAllCoroutines();
+             tiempo.comenzoJuego = false;
+             tiempo.evitarRepeticion=false;
+             tiempo.gano = true;
              VelocidadEnemigo = 5;
              tiempo.segundo = 0;
-             puntuacion.ganaste = false;
+             puntuacion.puntos=0;
+             tiempo.txtTexto.text = "Ganaste !!!!";
+             
+          //   puntuacion.ganaste = false;
              StopAllCoroutines();
          }
         

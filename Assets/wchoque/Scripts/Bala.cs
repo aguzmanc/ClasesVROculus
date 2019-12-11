@@ -34,7 +34,7 @@ public class Bala : MonoBehaviour
                // }
             }
             Debug.DrawRay (transform.position, transform.forward * hit.distance, Color.yellow );
-            Debug.Log ("Did Hit");
+          //  Debug.Log ("Did Hit");
         }
             if(noColliderChoca!=true){
                 transform.position += transform.forward * 25 * Time.deltaTime;

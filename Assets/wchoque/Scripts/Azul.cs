@@ -25,7 +25,7 @@ public class Azul : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entro azul");
+       // Debug.Log("Entro azul");
         if(other.tag == "bala"){
            bala= other.transform.GetComponent<Bala>();
            if(!bala.ganoPuntos){
