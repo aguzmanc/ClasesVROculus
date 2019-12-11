@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class ArradarArma : MonoBehaviour
 {
-    public GameObject layout;
-    public Image modeloBala;
+    public GameObject[] spriteBalas;
+  //  public Image modeloBala;
 
-    public List<Image> imgBalas;
+    //public List<Image> imgBalas;
     public Transform pivotBala;
      public GameObject balaPrefab;
     public GameObject balaInstanciado;
@@ -27,7 +27,7 @@ public class ArradarArma : MonoBehaviour
     void Start()
     {
         estaAgarrando =false;
-        imgBalas = new List<Image>();
+        spriteBalas = GameObject.FindGameObjectsWithTag("SpriteMunicion");
     }
 
     // Update is called once per frame
@@ -54,6 +54,7 @@ public class ArradarArma : MonoBehaviour
                     Debug.Log("Dispara");
                     balaInstanciado.GetComponent<Bala>().dispararBala();
                     cantidadMuniciones-=1;
+                    GenerarSpriteBalas();
                     balaInstanciado=null;
                     if(balaInstanciado==null){
                         crearBala(pivotBala);
@@ -116,8 +117,15 @@ public class ArradarArma : MonoBehaviour
         }
       
     }
-    void GenerarSpriteBalas(){
-        
+   public  void GenerarSpriteBalas(){
+        foreach(GameObject g in spriteBalas){
+            g.SetActive(false);
+        }
+        for(int i=0;i<cantidadMuniciones;i++)  {
+         
+            spriteBalas[i].SetActive(true);
+         
+        }
         
     }
 }

@@ -29,6 +29,7 @@ public class CargarArma : MonoBehaviour
                 Debug.Log("Entro al metodo");
                Destroy(other.gameObject);
                  balaMunicion.cantidadMuniciones = 10;
+                 balaMunicion.GenerarSpriteBalas();
             }
          
 

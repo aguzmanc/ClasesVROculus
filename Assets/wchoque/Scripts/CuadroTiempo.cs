@@ -5,6 +5,7 @@ using TMPro;
 
 public class CuadroTiempo : MonoBehaviour
 {
+
     public ArradarArma arma;
     public Puntuacion puntuacion;
       public TextMeshPro txtTexto;
@@ -21,7 +22,6 @@ public class CuadroTiempo : MonoBehaviour
         duracion = 120;
         segundo =0;
         gano = false;
-      
     }
 
     // Update is called once per frame
@@ -32,6 +32,7 @@ public class CuadroTiempo : MonoBehaviour
              gano = false;
             puntuacion.puntos =0;
             arma.cantidadMuniciones=10;
+            arma.GenerarSpriteBalas();
               StartCoroutine(tiempoDuracion());
             evitarRepeticion = true;
            
