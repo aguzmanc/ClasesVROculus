@@ -32,16 +32,14 @@ public class IniciarJuego : MonoBehaviour
     IEnumerator Generar()
     {   
         while(true){
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(Random.RandomRange(1, 3));
             if (nHongos<3)
             {
+                nHongos++;
                 asignar = GetVector3Array();
-                Debug.Log("xd");
-                Debug.Log(asignar);
                 if (asignar != new Vector3())
                 {
                     Instantiate(hongo, asignar, Quaternion.Euler(0,180,0));
-                    nHongos++;
                 }
                 //listahongos.Add(hongo);
             }
@@ -65,7 +63,7 @@ public class IniciarJuego : MonoBehaviour
                     break;
                 }
             }
-            if (cont>10 || !repetido){
+            if (cont>100 || !repetido){
                 x = posicionesiniciales[random].transform.position;
                 break;
 
@@ -74,8 +72,9 @@ public class IniciarJuego : MonoBehaviour
         return x;
     }
     public void Remover(Transform t){
-        nHongos--;
         int remove=-1;
+        nHongos--;
+
         for (int i = 0; i < vectoresenLista.Count; i++)
         {
             if (vectoresenLista[i]==t.position)
