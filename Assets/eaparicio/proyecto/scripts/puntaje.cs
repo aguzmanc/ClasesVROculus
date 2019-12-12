@@ -44,8 +44,8 @@ public class puntaje : MonoBehaviour
         textoCentro.text = "2";
         yield return new WaitForSeconds(1);
         textoCentro.text = "1";
-        transform.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1);
+        transform.GetComponent<AudioSource>().Play();
         
         textoCentro.text = "Golpes Restantes: "+"\n"+golpes;
         while(true){

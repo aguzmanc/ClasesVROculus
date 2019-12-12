@@ -11,7 +11,7 @@ public class maquina : MonoBehaviour
         
     }
     private void OnTriggerEnter(Collider other) {
-        if (other.name=="bate")
+        if (other.name=="bate" || other.name=="martillo")
         {
             other.GetComponentInChildren<bate>().NoGolpear();
             if (other.GetComponentInChildren<bate>().golpear)

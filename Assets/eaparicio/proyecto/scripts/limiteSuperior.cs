@@ -10,7 +10,7 @@ public class limiteSuperior : MonoBehaviour
     }
    
     private void OnTriggerEnter(Collider other) {
-        if (other.name=="bate")
+        if (other.name=="bate" || other.name=="martillo")
         {
             other.GetComponentInChildren<bate>().Golpear();
             other.GetComponentInChildren<bate>().golpear=true;

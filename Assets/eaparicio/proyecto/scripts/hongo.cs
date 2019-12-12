@@ -10,6 +10,7 @@ public class hongo : MonoBehaviour
     Vector3 arriba;
     Vector3 original;
     public AudioClip golpe;
+    public AudioClip salto;
 
 
     public IniciarJuego iniciarJuego;
@@ -37,6 +38,7 @@ public class hongo : MonoBehaviour
             yield return new WaitForSeconds(Random.RandomRange(1,2));
             subir=true;
             bajar=false;
+            transform.GetComponent<AudioSource>().PlayOneShot(salto, 4f);
             yield return new WaitForSeconds(Random.RandomRange(1,2));
             subir=false;
             bajar=true;
@@ -53,7 +55,7 @@ public class hongo : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, original, 0.15f);
     }
     private void OnTriggerEnter(Collider other) {
-        if (other.name=="bate")
+        if (other.name=="bate" || other.name=="martillo")
         {
             if (other.GetComponentInChildren<bate>().golpear)
 			{
@@ -62,7 +64,7 @@ public class hongo : MonoBehaviour
                 subir=false;
                 bajar=true;
                 puntaje.GolpeEjecutado(true);
-                transform.GetComponent<AudioSource>().Play();
+                transform.GetComponent<AudioSource>().PlayOneShot(golpe, 1f);
 				other.GetComponentInChildren<bate>().golpear=false;
                 StartCoroutine(Destruir());
 			}

@@ -23,7 +23,6 @@ public class agarrar : MonoBehaviour
 
     Vector3 origen;
     Vector3 origenRotacion;
-    Vector3 mg;
     void Start()
     {
         tocado=false;
@@ -82,27 +81,6 @@ public class agarrar : MonoBehaviour
         return limitePasado;
     }
 
-    IEnumerator MovimientoBrusco()
-    {   
-        
-        while(true){
-            if (bate!=null)
-            {
-                
-                origen = transform.position;
-                origenRotacion=transform.rotation.eulerAngles;
-                yield return new WaitForSeconds(0.4f);
-                if (Mathf.Abs((transform.position-origen).magnitude)>0.65f ||
-                     Mathf.Abs((transform.rotation.eulerAngles-origenRotacion).magnitude)>100f)
-                {
-                    Debug.Log("b");
-                    Debug.Log(Mathf.Abs((transform.position-origen).magnitude)+"-"+Mathf.Abs((transform.rotation.eulerAngles-origenRotacion).magnitude));
-                }
-            }
-        }
-
-    }
-
     void OnTriggerEnter(Collider otro) {
         Debug.Log(otro.name);
         tocado=true;
@@ -114,7 +92,6 @@ public class agarrar : MonoBehaviour
                 
                 bate = b;
                 b.Tocar();
-                StartCoroutine(MovimientoBrusco());
             }
         }
     }

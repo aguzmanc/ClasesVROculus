@@ -12,22 +12,31 @@ public class IniciarJuego : MonoBehaviour
     public Material encendido;
     Vector3 boton_pulsado;
     Vector3 boton_sin_pulsar;
+
+    public GameObject enemigo;
+    public GameObject thanos;
     public GameObject hongo;
-    public int nHongos;
+    public GameObject izquierda;
+    public GameObject derecha;
+
+
+    public int nEnemigos;
     public GameObject [] posicionesiniciales;
     List<Vector3> vectoresenLista;
+
     public puntaje puntaje;
     bool boton_presionado;
 
     public GameObject mensajeInicio;
+
     void Start()
     {
         mensajeInicio.SetActive(true);        
         boton_presionado=false;
         vectoresenLista = new List<Vector3>();
-        nHongos = 0;
-        boton_pulsado = new Vector3(-0.351f, 0.824f, 0.055f);
-        boton_sin_pulsar = new Vector3(-0.351f, 0.824f, 0f);
+        nEnemigos = 0;
+        boton_pulsado = new Vector3(-0.351f, 1.056f, 0.055f);
+        boton_sin_pulsar = new Vector3(-0.351f, 1.056f, 0f);
         iniciar=false;
         terminar=false;
         generarEnemigos=false;
@@ -46,22 +55,25 @@ public class IniciarJuego : MonoBehaviour
     IEnumerator Generar()
     {   
         yield return new WaitForSeconds(4);
-        while(true){
-            yield return new WaitForSeconds(Random.RandomRange(1, 2));
-            if (puntaje.temporizador<1)
-            {
-                AcabarPartida();
-                break;
-            }
-            if (nHongos<3)
-            {
-                nHongos++;
-                asignar = GetVector3Array();
-                if (asignar != new Vector3())
+        if (enemigo!=null)
+        {
+            while(true){
+                yield return new WaitForSeconds(Random.RandomRange(1, 2));
+                if (puntaje.temporizador<1)
                 {
-                    Instantiate(hongo, asignar, Quaternion.Euler(0,180,0));
+                    AcabarPartida();
+                    break;
                 }
-                //listahongos.Add(hongo);
+                if (nEnemigos<3)
+                {
+                    nEnemigos++;
+                    asignar = GetVector3Array();
+                    if (asignar != new Vector3())
+                    {
+                        Instantiate(enemigo, asignar, Quaternion.Euler(0,180,0));
+                    }
+                    //listahongos.Add(hongo);
+                }
             }
         }
         
@@ -100,7 +112,7 @@ public class IniciarJuego : MonoBehaviour
     }
     public void Remover(Transform t){
         int remove=-1;
-        nHongos--;
+        nEnemigos--;
 
         for (int i = 0; i < vectoresenLista.Count; i++)
         {
@@ -125,6 +137,37 @@ public class IniciarJuego : MonoBehaviour
             //generarEnemigos=true;
         }
     }
+    bool BuscarObjetoGolepar(){
+        if (izquierda.GetComponentInChildren<bate>()!=null)
+        {
+            if (izquierda.GetComponentInChildren<bate>().transform.parent.name=="bate")
+            {
+                enemigo=hongo;
+                //Debug.Log("IBate");
+            }
+            else{
+                enemigo=thanos;
+                //Debug.Log("IMartillo");
+            }
+            return true;
+        }else{
+            if (derecha.GetComponentInChildren<bate>()!=null)
+            {
+                if (derecha.GetComponentInChildren<bate>().transform.parent.name=="bate")
+                {
+                    enemigo=hongo;
+                    //Debug.Log("DBate");
+                }
+                else{
+                    enemigo=thanos;
+                    //Debug.Log("DMartillo");
+                }
+                return true;
+            }
+        }
+        return false;
+        
+    }
     void MoverBotonFin(){
         transform.position = Vector3.Lerp(transform.position, boton_sin_pulsar, 0.08f);
         if (transform.position==boton_sin_pulsar)
@@ -138,13 +181,16 @@ public class IniciarJuego : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.tag=="mano")
         {
-            if (!boton_presionado)
+            if (!boton_presionado && BuscarObjetoGolepar())
             {
                 transform.GetComponent<AudioSource>().Play();
                 boton_presionado=true;
                 iniciar=true;   
                 rend.material = encendido;         
                 mensajeInicio.SetActive(false);                
+            }
+            else{
+                Debug.Log("Agarrar Bate");
             }
         }
     }
