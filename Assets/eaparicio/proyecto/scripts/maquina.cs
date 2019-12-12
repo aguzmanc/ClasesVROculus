@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class maquina : MonoBehaviour
 {
+    public puntaje puntaje;
     void Start()
     {
         
@@ -13,6 +14,7 @@ public class maquina : MonoBehaviour
         {
             other.GetComponentInChildren<bate>().NoGolpear();
             other.GetComponentInChildren<bate>().golpear=false;
+            puntaje.GolpeEjecutado(false);
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class hongo : MonoBehaviour
 {
+    public puntaje puntaje;
     bool subir;
     bool bajar;
     Vector3 arriba;
@@ -13,10 +14,12 @@ public class hongo : MonoBehaviour
     void Start()
     {
         iniciarJuego = GameObject.Find("Boton_Inicio").GetComponent<IniciarJuego>();
+        puntaje = GameObject.Find("marcadores").GetComponent<puntaje>();
         original = transform.position;
         arriba = new Vector3(transform.position.x, transform.position.y+0.4f, transform.position.z);
         subir=false;
         bajar=false;
+        puntaje.AumentarNEnemigos();
         StartCoroutine(SubirBajar());
     }
     void Update() {
@@ -57,6 +60,7 @@ public class hongo : MonoBehaviour
                 subir=false;
                 bajar=true;
 				other.GetComponentInChildren<bate>().golpear=false;
+                puntaje.GolpeEjecutado(true);
                 StartCoroutine(Destruir());
 			}
         }

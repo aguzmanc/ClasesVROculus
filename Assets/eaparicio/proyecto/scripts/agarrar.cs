@@ -80,25 +80,6 @@ public class agarrar : MonoBehaviour
         // }
         // agarre=actual;
         return limitePasado;
-
-
-
-        //PRUEBAS VR
-        // float actual = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
-
-        // bool limitePasado=false;
-        // if (agarre<LIMITE_AGARRE && actual>=LIMITE_AGARRE)
-        // {
-        //     estaAgarrado=true;
-        //     limitePasado=true;
-        // }
-        // if (agarre>LIMITE_SOLTAR && actual <=LIMITE_SOLTAR)
-        // {
-        //     estaAgarrado=false;
-        //     limitePasado=true;
-        // }
-        // agarre=actual;
-        // return limitePasado;
     }
 
     IEnumerator MovimientoBrusco()
@@ -110,11 +91,12 @@ public class agarrar : MonoBehaviour
                 
                 origen = transform.position;
                 origenRotacion=transform.rotation.eulerAngles;
-                yield return new WaitForSeconds(1f);
-                if (Mathf.Abs((transform.position-origen).magnitude)>0.5f ||
-                     Mathf.Abs((transform.rotation.eulerAngles-origenRotacion).magnitude)>0.5f)
+                yield return new WaitForSeconds(0.4f);
+                if (Mathf.Abs((transform.position-origen).magnitude)>0.65f ||
+                     Mathf.Abs((transform.rotation.eulerAngles-origenRotacion).magnitude)>100f)
                 {
                     Debug.Log("b");
+                    Debug.Log(Mathf.Abs((transform.position-origen).magnitude)+"-"+Mathf.Abs((transform.rotation.eulerAngles-origenRotacion).magnitude));
                 }
             }
         }
