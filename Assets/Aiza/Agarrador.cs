@@ -22,7 +22,7 @@ public class Agarrador : MonoBehaviour
     void Update()
     {
         
-        
+        /*
         bool cambio = UpdateNivelAgarre();
 
         if (estaAgarrando && taco !=null && cambio)
@@ -33,10 +33,12 @@ public class Agarrador : MonoBehaviour
         {
             taco.Soltar();
         }
+
+        */
   
         //mi debug
        
-        /*
+        
         if (estaAgarrando && taco !=null )
         {
             taco.Agarrar(transform);
@@ -46,7 +48,7 @@ public class Agarrador : MonoBehaviour
         {
             taco.Soltar();
         }
-        */
+        
     }
 
 
