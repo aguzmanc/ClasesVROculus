@@ -22,13 +22,13 @@ public class proy_holder_right : MonoBehaviour
 
     void Update()
     {
-        bool cambio = UpdateNivelAgarre();//
+        //bool cambio = UpdateNivelAgarre();//
 
-        if(manoCerrada && animal != null && cambio){//){//
+        if(manoCerrada && animal != null ){//&& cambio){//){//
             animal.Agarrar(transform);
         }
 
-        if(!manoCerrada && animal != null && cambio){//){//
+        if(!manoCerrada && animal != null ){//&& cambio){//){//
             animal.Soltar();
         }
     }
