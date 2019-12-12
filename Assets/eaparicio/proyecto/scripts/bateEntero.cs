@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bateEntero : MonoBehaviour
 {    
+    
     private void OnTriggerEnter(Collider other) {
         if (other.tag=="piso")
         {

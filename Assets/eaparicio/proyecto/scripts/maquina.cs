@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class maquina : MonoBehaviour
 {
+    public AudioClip golpeMaquina;
     public puntaje puntaje;
     void Start()
     {
@@ -13,8 +14,12 @@ public class maquina : MonoBehaviour
         if (other.name=="bate")
         {
             other.GetComponentInChildren<bate>().NoGolpear();
+            if (other.GetComponentInChildren<bate>().golpear)
+            {
+                transform.GetComponent<AudioSource>().Play();
+                puntaje.GolpeEjecutado(false);
+            }
             other.GetComponentInChildren<bate>().golpear=false;
-            puntaje.GolpeEjecutado(false);
         }
     }
 

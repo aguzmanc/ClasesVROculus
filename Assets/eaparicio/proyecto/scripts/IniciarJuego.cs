@@ -36,7 +36,9 @@ public class IniciarJuego : MonoBehaviour
     void Update()
     {
         if (iniciar)
+        {            
             this.MoverBotonInicio();
+        }
         if (terminar)
             this.MoverBotonFin();
     }
@@ -79,7 +81,7 @@ public class IniciarJuego : MonoBehaviour
         bool repetido=false;
         while (true)
         {
-            random=Random.Range(0, 4);
+            random=Random.Range(0, 5);
             for (int i = 0; i < vectoresenLista.Count; i++)
             {
                 if (vectoresenLista[i]==posicionesiniciales[random].transform.position)
@@ -138,6 +140,7 @@ public class IniciarJuego : MonoBehaviour
         {
             if (!boton_presionado)
             {
+                transform.GetComponent<AudioSource>().Play();
                 boton_presionado=true;
                 iniciar=true;   
                 rend.material = encendido;         

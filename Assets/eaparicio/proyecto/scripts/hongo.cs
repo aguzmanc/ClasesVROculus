@@ -9,6 +9,8 @@ public class hongo : MonoBehaviour
     bool bajar;
     Vector3 arriba;
     Vector3 original;
+    public AudioClip golpe;
+
 
     public IniciarJuego iniciarJuego;
     void Start()
@@ -35,7 +37,7 @@ public class hongo : MonoBehaviour
             yield return new WaitForSeconds(Random.RandomRange(1,2));
             subir=true;
             bajar=false;
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(Random.RandomRange(1,2));
             subir=false;
             bajar=true;
             yield return new WaitForSeconds(0.5f);
@@ -59,8 +61,9 @@ public class hongo : MonoBehaviour
                 StopAllCoroutines();
                 subir=false;
                 bajar=true;
-				other.GetComponentInChildren<bate>().golpear=false;
                 puntaje.GolpeEjecutado(true);
+                transform.GetComponent<AudioSource>().Play();
+				other.GetComponentInChildren<bate>().golpear=false;
                 StartCoroutine(Destruir());
 			}
         }

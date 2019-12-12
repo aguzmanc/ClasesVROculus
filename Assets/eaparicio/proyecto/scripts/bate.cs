@@ -26,7 +26,7 @@ public class bate : MonoBehaviour
         render.material =matSuelto;
     }
     public void NoGolpear(){
-        render.material =matNoGolpear;
+        render.material =matNoGolpear;        
     }
     public void Golpear(){
         render.material =matAgarrado;

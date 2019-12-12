@@ -44,6 +44,7 @@ public class puntaje : MonoBehaviour
         textoCentro.text = "2";
         yield return new WaitForSeconds(1);
         textoCentro.text = "1";
+        transform.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1);
         
         textoCentro.text = "Golpes Restantes: "+"\n"+golpes;
@@ -73,8 +74,7 @@ public class puntaje : MonoBehaviour
         golpes--;
         if (golpeAlTopo)
         {
-            puntos+=PUNTOS_GOLPE;
-            textoPuntos.text = puntos+"";
+            puntos+=PUNTOS_GOLPE;            
             golpesEnemigos++;
         }
         else{
@@ -85,6 +85,7 @@ public class puntaje : MonoBehaviour
         {
             temporizador=0;
         }
+        textoPuntos.text = puntos+"";
         textoCentro.text = "Golpes Restantes: "+"\n"+golpes;
     }
 
@@ -94,7 +95,7 @@ public class puntaje : MonoBehaviour
         textoCentro.text = "00000000000000";
         textoTiempo.text = "000";
         StopAllCoroutines();
-
+        transform.GetComponent<AudioSource>().Stop();
     }
     public void AumentarNEnemigos(){
         nEnemigos++;
