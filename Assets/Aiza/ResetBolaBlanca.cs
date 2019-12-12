@@ -16,13 +16,13 @@ public class ResetBolaBlanca : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* 
+        
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger,OVRInput.Controller.LTouch))
            
         {
                prueba = true;
         }
-        */
+        
         if (prueba)
            
         {
