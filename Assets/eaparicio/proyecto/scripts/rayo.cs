@@ -4,32 +4,62 @@ using UnityEngine;
 
 public class rayo : MonoBehaviour
 {
+    martillo martillo;
+    bool finalizado;
+    bool subio;
     void Start()
     {
-        
+        finalizado=false;
+        subio=false;
+        martillo=null;
     }
 
     void Update()
     {
-        RaycastHit hit;
-        bool choca = Physics.Raycast(transform.position, transform.forward,  out hit);
-        if (choca)
+        if (!finalizado)
         {
-            Debug.Log(hit.collider.name);
-            Debug.DrawRay(transform.position, 6f*transform.forward, Color.green);
-            if (hit.collider.name== "zona_martillo")
+            
+            RaycastHit hit;
+            bool choca = Physics.Raycast(transform.position, transform.forward,  out hit);
+            if (choca)
             {
-                Debug.DrawRay(transform.position, 6f*transform.forward, Color.blue);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, 6f*transform.forward, Color.red);
+                if (hit.collider.name== "zona_martillo")
+                {
+                    if (martillo==null)
+                    {
+                        martillo = hit.collider.GetComponentInChildren<bate>().transform.parent.GetComponent<martillo>();
+                        martillo.subiendo=true;
+                        martillo.DefinirFinal(transform);
+                    }
+                    else{
+                        finalizado = martillo.finalizado;
+                        subio = martillo.terminado;
+                        martillo.Mover();
+                    }
+                    Debug.DrawRay(transform.position, 6f*transform.forward, Color.blue);
+                }
+                else
+                {
+                    if (martillo!=null)
+                    {
+                        if (!subio)
+                        {
+                            martillo.Reset();
+                        }
+                        else
+                        {
+                            martillo.Mover();
+                        }
+                    }
+                    Debug.DrawRay(transform.position, 6f*transform.forward, Color.red);
+                }
             }
         }
         else
         {
-            Debug.DrawRay(transform.position, 6f*transform.forward, Color.yellow);
+            Destroy(transform.gameObject);
         }
+
 
     }
 }
