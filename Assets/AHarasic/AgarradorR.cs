@@ -30,11 +30,11 @@ public class AgarradorR : MonoBehaviour
     void Update()
     {
     bool cambio = UpdateNivelAgarre();
-      if (bola != null)
-        {
-            _currentGrabbedLocation = bola.transform.position;
+      //if (bola != null)
+       // {
+      //      _currentGrabbedLocation = bola.transform.position;
 
-        }
+      //  }
 
       if(estaAgarrando && bola!=null && cambio)
       {
