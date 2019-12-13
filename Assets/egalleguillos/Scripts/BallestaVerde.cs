@@ -10,9 +10,9 @@ public class BallestaVerde : MonoBehaviour
     public Material suelto;
      public Material tocado;
      public Transform origen;
+     public GameObject flecha;
+     public Transform origenFlecha;
      bool cargada;
-
-    public Transform flecha;
 
     public bool Cargada()
     {
@@ -67,7 +67,10 @@ public class BallestaVerde : MonoBehaviour
     {
         if(!cargada)
         {
+            GameObject newFlecha = (GameObject) Instantiate(flecha);
             cargada=true;
+            newFlecha.transform.position = origenFlecha.position;
+            newFlecha.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }

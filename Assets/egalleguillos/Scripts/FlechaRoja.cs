@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class FlechaRoja : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool disparo;
+    Rigidbody rb;
     void Start()
     {
-        
+        disparo=false;
+        rb= this.transform.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(disparo)
+        {
+            rb.AddForce(transform.forward * 5);
+        }
+    }
+
+    public void flechaLanzada()
+    {
+          transform.parent=null;
+          rb.isKinematic=false;
+          disparo=true;
     }
 }
