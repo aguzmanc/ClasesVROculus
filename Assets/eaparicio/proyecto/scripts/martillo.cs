@@ -22,14 +22,14 @@ public class martillo : MonoBehaviour
         subida = new Vector3(transform.position.x, transform.position.y+1f, transform.position.z);
     }
     public void DefinirFinal(Transform t){
-        final = new Vector3(t.position.x+0.05f, t.position.y, t.position.z+0.05f);
+        final = new Vector3(t.position.x-1f, t.position.y, t.position.z-1.55f);
     }
     public void Mover()
     {
         if (!finalizado)
         {
             if (terminado)
-            {
+            {   
                 transform.position = Vector3.Lerp(transform.position, final, 0.05f);
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotacionFinal), 0.2f);
                 if (transform.position==final)

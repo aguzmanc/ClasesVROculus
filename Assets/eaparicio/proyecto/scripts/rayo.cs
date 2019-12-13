@@ -37,9 +37,12 @@ public class rayo : MonoBehaviour
                         martillo.DefinirFinal(transform);
                     }
                     else{
-                        finalizado = martillo.finalizado;
-                        subio = martillo.terminado;
-                        martillo.Mover();
+                         if (martillo!=null)
+                        {
+                            finalizado = martillo.finalizado;
+                            subio = martillo.terminado;
+                            martillo.Mover();
+                        }
                     }
                     Debug.DrawRay(transform.position, 6f*transform.forward, Color.blue);
                 }
@@ -59,6 +62,8 @@ public class rayo : MonoBehaviour
                     }
                     Debug.DrawRay(transform.position, 6f*transform.forward, Color.red);
                 }
+                Debug.DrawRay(transform.position, 6f*transform.forward, Color.green);
+                Debug.Log(hit.collider.name);
             }
         }
         else
