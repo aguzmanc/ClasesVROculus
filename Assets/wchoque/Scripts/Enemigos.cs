@@ -6,7 +6,7 @@ public class Enemigos : MonoBehaviour
 {
     public Puntuacion puntuacion;
     public GameObject posiciones;
-    float VelocidadEnemigo=5;
+    float VelocidadEnemigo=2;
     public CuadroTiempo tiempo;
     public GameObject enemigoIns;
     public GameObject enemigoInsQuieto;
@@ -79,7 +79,7 @@ public class Enemigos : MonoBehaviour
          if(tiempo.comenzoJuego == false && tiempo.segundo == tiempo.duracion &&inicioJuego){
              Debug.Log("se termino el juego");
              inicioJuego = false;
-             VelocidadEnemigo = 5;
+             VelocidadEnemigo = 2;
              tiempo.segundo = 0;
              tiempo.comenzoJuego = false;
             //  puntuacion.ganaste = false;
@@ -94,7 +94,7 @@ public class Enemigos : MonoBehaviour
              tiempo.comenzoJuego = false;
              tiempo.evitarRepeticion=false;
              tiempo.gano = true;
-             VelocidadEnemigo = 5;
+             VelocidadEnemigo = 2;
              tiempo.segundo = 0;
              puntuacion.puntos=0;
              tiempo.txtTexto.text = "Ganaste !!!!";
@@ -114,7 +114,7 @@ public class Enemigos : MonoBehaviour
         enemigo.transform.rotation = transform.rotation;
         enemigo.transform.localScale =scaleDefinido;
         enemigo.transform.GetComponent<AndarObjetivo>().velocidad = VelocidadEnemigo;
-         yield return new WaitForSeconds(2f);
+         yield return new WaitForSeconds(6f);
          }
     }
     IEnumerator instanciarEnemigoNoCaminante(){

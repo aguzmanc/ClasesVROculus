@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Azul : MonoBehaviour
 {
+    public TextMeshPro txtPunto;
     Bala bala;
     public Puntuacion puntuacion;
     public int valorAzul;
@@ -12,6 +14,7 @@ public class Azul : MonoBehaviour
     {
         valorAzul = 5;
          puntuacion = GameObject.FindWithTag("puntuacion").GetComponent<Puntuacion>();
+         txtPunto = GameObject.Find("textPunto").GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
@@ -31,7 +34,17 @@ public class Azul : MonoBehaviour
            if(!bala.ganoPuntos){
                bala.ganoPuntos=true;
                puntuacion.puntos+=valorAzul;
-               
+                if(txtPunto.gameObject.activeSelf){
+                   //azul
+                //   txtPunto.color = new Color32(0, 0, 255, 1);
+                  // txtPunto.color = new Color32(255, 0, 0, 1);
+                   txtPunto.text = "Mas " + valorAzul + " puntos";
+               }
+               else{
+                   txtPunto.gameObject.SetActive(true);
+                  //  txtPunto.color = new Color32(0, 0, 255, 1);
+                   txtPunto.text = "Mas " + valorAzul + " puntos";
+               }
            }
             
         }

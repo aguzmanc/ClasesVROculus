@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Iniciar : MonoBehaviour
 {
+    public TextMeshPro txtIniciar;
      public CuadroTiempo tiempo;
     public bool dentroArea;
     float contador;
@@ -18,12 +20,18 @@ public class Iniciar : MonoBehaviour
     {
             if(dentroArea){
             contador+=Time.deltaTime;
+            
+              
             if(contador >=5){
                 if(tiempo.comenzoJuego==false){
-                    
+                    txtIniciar.text ="Inicio Juego";
                     tiempo.comenzoJuego = true;
                     contador = 0;
                 }
+            }
+            else{
+                if(tiempo.comenzoJuego !=true)
+                        txtIniciar.text = "Espere durante 3 segundos: seg= " + contador;    
             }
         }
     }
@@ -35,6 +43,8 @@ public class Iniciar : MonoBehaviour
     {
         if(other.name=="indicadorIzquierda"){
             dentroArea = true;
+            txtIniciar.gameObject.SetActive(true);
+              txtIniciar.text = "Espere durante 3 segundos: seg= " ;
         }
         
     }
@@ -47,6 +57,7 @@ public class Iniciar : MonoBehaviour
          
         if(other.name=="indicadorIzquierda"){
             dentroArea = false;
+            txtIniciar.gameObject.SetActive(false);
         }
         
          

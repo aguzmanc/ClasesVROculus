@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class Reiniciar : MonoBehaviour
 {
+   public  TextMeshPro txtReiniciar;
     public bool dentroArea;
     float contador;
     // Start is called before the first frame update
@@ -18,8 +21,14 @@ public class Reiniciar : MonoBehaviour
     {
         if(dentroArea){
             contador+=Time.deltaTime;
+            
             if(contador >=5){
+                txtReiniciar.text = "Reinicio";
                 SceneManager.LoadScene("proyectoPistola");
+
+            }
+            else{
+                txtReiniciar.text = "Espere durante 3 segundos: seg= " + contador;
             }
         }
     }
@@ -31,6 +40,8 @@ public class Reiniciar : MonoBehaviour
     {
         if(other.name=="indicadorIzquierda"){
             dentroArea = true;
+            txtReiniciar.gameObject.SetActive(true);
+            txtReiniciar.text = "Espere durante 3 segundos: seg= " ;
         }
         
     }
@@ -43,6 +54,7 @@ public class Reiniciar : MonoBehaviour
          
         if(other.name=="indicadorIzquierda"){
             dentroArea = false;
+            txtReiniciar.gameObject.SetActive(false);
         }
         
          
