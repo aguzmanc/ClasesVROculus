@@ -56,12 +56,8 @@ public class BallestaRoja : MonoBehaviour
     }
     public void disparar()
     {
-      if(cargada)
-      {
-          flechaRoja.flechaLanzada();
-          cargada=false;
-      }
-      
+        flechaRoja.flechaLanzada();
+        cargada=false; 
     }
     public void recargar()
     {

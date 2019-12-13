@@ -12,7 +12,7 @@ public class AgarradorBallestaRoja : MonoBehaviour
     public float NivelAgarre;
     public BallestaRoja ballestaRoja;
 
-    public bool shootForzado,recargaForzada;
+    public bool forzar = false;
     void Update() {
 
         bool cambio = actualizarAgarre();
@@ -23,16 +23,17 @@ public class AgarradorBallestaRoja : MonoBehaviour
         }
         if(estaAgarrando==false && cambio && ballestaRoja!=null)
         {
-                ballestaRoja.soltar();
+            ballestaRoja.soltar();
         }
 
         //Disparo
-        if(estaAgarrando && ballestaRoja != null &&( (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger,OVRInput.Controller.RTouch))>0.3f ))
+        if(estaAgarrando && ballestaRoja != null && ((OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger,OVRInput.Controller.RTouch))>0.3f ))
         {
             bool cargada=ballestaRoja.Cargada();
             if(cargada)
             {
                 ballestaRoja.disparar();
+                print("entre");
             }
         }
     }
