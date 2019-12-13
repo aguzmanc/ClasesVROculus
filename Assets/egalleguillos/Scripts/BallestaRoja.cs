@@ -9,7 +9,6 @@ public class BallestaRoja : MonoBehaviour
     public Material agarrado;
     public Material suelto;
      public Material tocado;
-     public Transform origen;
      public GameObject flecha;
      public Transform origenFlecha;
      bool cargada;
@@ -23,15 +22,14 @@ public class BallestaRoja : MonoBehaviour
     void Start()
     {
         cuerpo=GetComponent<Rigidbody>();
+        flechaRoja = GameObject.FindObjectOfType<FlechaRoja>();
         agarrador.material=suelto;
         cargada=false;
     }
     
       public void tocar()
     {
-      
         agarrador.material=tocado;
-       
     }
     public void dejarTocar()
     {
