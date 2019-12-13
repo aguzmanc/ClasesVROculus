@@ -8,8 +8,9 @@ public class proy_base : MonoBehaviour
     // Start is called before the first frame update
     
     Proy_controlador controlador;
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForSeconds(1f);
         Debug.Log(this.gameObject.tag);
         controlador = Proy_controlador.GetInstance();
     }

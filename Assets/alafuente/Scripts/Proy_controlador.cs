@@ -17,11 +17,15 @@ public class Proy_controlador : MonoBehaviour
     private static Proy_controlador _instance;
     private List<GameObject> animales;
     private int indice;
+
+    void Awake(){
+        _instance = this;
+    }
+
     void Start()
     {
         corutina = StartCoroutine(Temporizador());
 
-        _instance = this;
 
         puntaje = 0;
         segundos = 10;
