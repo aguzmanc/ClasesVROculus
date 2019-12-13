@@ -7,9 +7,12 @@ public class DisparoTiger : MonoBehaviour
      public GameObject cannonPivotBone;
     public GameObject bullet;
     public float shootCooldown = 1;
-    public float strength = 20;
+    public float strength = 500;
     public bool cargado=true;
     public AudioSource audioDisparo;
+    public AudioSource audioRecarga;
+    public TextMesh municionTexto;
+
     void Start()
     {
         
@@ -19,16 +22,23 @@ public class DisparoTiger : MonoBehaviour
            if (Input.GetKeyDown(KeyCode.Space)&&cargado) {
             Shoot();
             cargado=false;
+
+        } 
+          if (Input.GetKeyDown(KeyCode.R)&&!cargado) {
+            cargado=true;
+            audioRecarga.Play();
+                      municionTexto.text="CARGADO";
+
+
         } 
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)&&cargado) {
             Shoot();
-            //Debug.Break();
             cargado=false;
         }
          if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
-           // Shoot();
             cargado=true;
-           // Debug.Break();
+            audioRecarga.Play();
+                      municionTexto.text="CARGADO";
 
         }
 
@@ -40,5 +50,6 @@ public class DisparoTiger : MonoBehaviour
         body.AddForce(cannonPivotBone.transform.forward * strength,
                       ForceMode.Impulse);
                       audioDisparo.Play();
+                      municionTexto.text="RECARGA";
     }
 }

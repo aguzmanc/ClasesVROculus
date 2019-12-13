@@ -14,6 +14,7 @@ public class Bala : MonoBehaviour
     void Start()
     {
       particulas.Play();  
+      DestroyObjectDelayed();
     }
 
     // Update is called once per frame
@@ -40,7 +41,12 @@ public class Bala : MonoBehaviour
            // transform.position=other.transform.position ;
            // gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
-            Destroy(gameObject);
         }
+            Destroy(gameObject, 1);
+
+    }
+      void DestroyObjectDelayed()
+    {
+        Destroy(gameObject, 3);
     }
 }

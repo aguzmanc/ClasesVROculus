@@ -44,7 +44,7 @@ public class MoverTanque : MonoBehaviour
             tanque.transform.Rotate(0.0f,30f*Time.deltaTime, 0.0f, Space.World);
         }
         if (Input.GetKey(KeyCode.S)) {
-            tanque.transform.Translate(-Vector3.forward * Time.deltaTime*2);
+            tanque.transform.Translate(-Vector3.forward * Time.deltaTime*3.5f);
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -78,7 +78,7 @@ public class MoverTanque : MonoBehaviour
             }
             if (latras&&ratras)
             {
-            tanque.transform.Translate(-Vector3.forward * Time.deltaTime*2);
+            tanque.transform.Translate(-Vector3.forward * Time.deltaTime*3.5f);
             }
             if (ladelante&&ratras)
             {

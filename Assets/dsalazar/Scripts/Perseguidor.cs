@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Perseguidor : MonoBehaviour {
     public GameObject objetivo;
-    public float speed = 0.05f;
+    public float speed = 0.01f;
     public AudioSource moviminetoTanke;
     private void Start() {
         moviminetoTanke.Play();
