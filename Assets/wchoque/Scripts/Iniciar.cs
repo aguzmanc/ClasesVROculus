@@ -31,7 +31,7 @@ public class Iniciar : MonoBehaviour
             }
             else{
                 if(tiempo.comenzoJuego !=true)
-                        txtIniciar.text = "Espere durante 3 segundos: seg= " + contador;    
+                        txtIniciar.text = "Espere 3 segundos: seg= " + contador;    
             }
         }
     }
@@ -44,7 +44,7 @@ public class Iniciar : MonoBehaviour
         if(other.name=="indicadorIzquierda"){
             dentroArea = true;
             txtIniciar.gameObject.SetActive(true);
-              txtIniciar.text = "Espere durante 3 segundos: seg= " ;
+              txtIniciar.text = "Espere 3 segundos: seg= " ;
         }
         
     }

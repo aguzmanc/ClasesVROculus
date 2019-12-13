@@ -41,7 +41,7 @@ public class Reiniciar : MonoBehaviour
         if(other.name=="indicadorIzquierda"){
             dentroArea = true;
             txtReiniciar.gameObject.SetActive(true);
-            txtReiniciar.text = "Espere durante 3 segundos: seg= " ;
+            txtReiniciar.text = "Espere 3 segundos: seg= " ;
         }
         
     }
