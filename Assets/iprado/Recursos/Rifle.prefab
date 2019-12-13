@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 8143813072301998868}
   - component: {fileID: 937480491683233681}
   - component: {fileID: 614116067531451413}
+  - component: {fileID: 2252362297546269742}
   m_Layer: 9
   m_Name: Rifle
   m_TagString: Untagged
@@ -780,7 +781,7 @@ MeshCollider:
   m_GameObject: {fileID: 5087637192218587660}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -904,6 +905,19 @@ MonoBehaviour:
   lanzaCargador: {fileID: 2391622600868307042}
   prefabCargadorVacio: {fileID: 2263232296639356383, guid: 1f698a7efa1a8ac4eacf0cca7c295a59,
     type: 3}
+--- !u!65 &2252362297546269742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087637192218587660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.049618512, y: 0.3522339, z: 0.11850767}
+  m_Center: {x: 0.0027789026, y: 0.08528364, z: 0.04639422}
 --- !u!1 &5769117642629397985
 GameObject:
   m_ObjectHideFlags: 0
