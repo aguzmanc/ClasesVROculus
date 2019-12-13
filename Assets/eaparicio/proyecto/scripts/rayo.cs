@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class rayo : MonoBehaviour
 {
+    
+    public Renderer cuadro;
+    public Material transparente;
+    public Material verde;
     martillo martillo;
     bool finalizado;
     bool subio;
@@ -25,6 +29,7 @@ public class rayo : MonoBehaviour
             {
                 if (hit.collider.name== "zona_martillo")
                 {
+                    cuadro.material=verde;
                     if (martillo==null)
                     {
                         martillo = hit.collider.GetComponentInChildren<bate>().transform.parent.GetComponent<martillo>();
@@ -40,6 +45,7 @@ public class rayo : MonoBehaviour
                 }
                 else
                 {
+                    cuadro.material=transparente;
                     if (martillo!=null)
                     {
                         if (!subio)

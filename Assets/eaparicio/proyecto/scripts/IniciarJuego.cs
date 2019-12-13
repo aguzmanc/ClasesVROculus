@@ -35,8 +35,8 @@ public class IniciarJuego : MonoBehaviour
         boton_presionado=false;
         vectoresenLista = new List<Vector3>();
         nEnemigos = 0;
-        boton_pulsado = new Vector3(-0.351f, 1.056f, 0.055f);
-        boton_sin_pulsar = new Vector3(-0.351f, 1.056f, 0f);
+        boton_pulsado = new Vector3(-0.351f, 0.841f, 0.055f);
+        boton_sin_pulsar = new Vector3(-0.351f, 0.841f, 0f);
         iniciar=false;
         terminar=false;
         generarEnemigos=false;

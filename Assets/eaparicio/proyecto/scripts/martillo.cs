@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class martillo : MonoBehaviour
 {
-    public Renderer moviendo;
-    public Renderer quieto;
     Vector3 origen;
     Vector3 subida;
     Vector3 final;
@@ -40,6 +38,7 @@ public class martillo : MonoBehaviour
                 }
             }
             else{
+                
                 if ((transform.position-subida).magnitude<0.1f)
                 {
                     terminado=true;
