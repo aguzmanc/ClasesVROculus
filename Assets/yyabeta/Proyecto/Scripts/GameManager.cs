@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
             string TimerString = string.Format ("{00}:{01}:{02}", mins, segs, milisegs);
 
             cronometro.text=TimerString;
+            
+         }
+         else
+         {
+             Time.timeScale=0;
          }
      }
 
@@ -35,6 +40,11 @@ public class GameManager : MonoBehaviour
     public void AddIra(float value)
     {
         ira += value;
+        if (ira>=barraIra.maxValue)
+        {
+            SetText("Ganaste");
+            Time.timeScale=0;
+        }
         barraIra.value=ira;
     }
 
