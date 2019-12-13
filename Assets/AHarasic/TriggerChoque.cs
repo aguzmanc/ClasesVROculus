@@ -9,7 +9,7 @@ public class TriggerChoque : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         txt.text="Puntaje: ";
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class TriggerChoque : MonoBehaviour
         {
             count++;
             Debug.Log(count);
-            txt.text=count.ToString();
+            txt.text="Puntaje: "+count.ToString();
         }
         //other.gameObject.GetComponent<Rigidbody>().isKinematic=true;
        // other.attachedRigidbody.isKinematic=true;
