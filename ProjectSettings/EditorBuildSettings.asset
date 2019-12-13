@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/dsalazar/Wittmann.unity
+    guid: 24ed564ebf61dd94f8007f46ab6e7220
   m_configObjects: {}

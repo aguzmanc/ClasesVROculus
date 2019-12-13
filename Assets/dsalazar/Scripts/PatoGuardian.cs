@@ -13,7 +13,7 @@ public class PatoGuardian : MonoBehaviour {
     public AudioSource audioDisparo;
 
     void Update () {
-        Vector3 origen = transform.position + transform.up * 3f;
+        Vector3 origen = transform.position + transform.up * 6f;
         Vector3 direccion =
             (objetivo.transform.position - origen).normalized;
         RaycastHit hitInfo;
