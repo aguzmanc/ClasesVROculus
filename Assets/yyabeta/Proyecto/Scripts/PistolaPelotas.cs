@@ -29,7 +29,10 @@ public class PistolaPelotas : Arma
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Jump"))
+        {
+            Disparar();
+        }
     }
 
     public override void Disparar()

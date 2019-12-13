@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public float ira=0;
+    public float ira = 0;
+
+    public bool gameOver = false;
 
     public Slider barraIra;
     public Text cronometro;
@@ -16,14 +18,17 @@ public class GameManager : MonoBehaviour
          StartTime = Time.time;
      }
      void Update(){
-        float TimerControl = Time.time - StartTime;
-        string mins = ((int)TimerControl/60).ToString("00");
-        string segs = (TimerControl % 60).ToString("00");
-        string milisegs = ((TimerControl * 100)%100).ToString ("00");
-            
-        string TimerString = string.Format ("{00}:{01}:{02}", mins, segs, milisegs);
+         if (!gameOver)
+         {
+             float TimerControl = Time.time - StartTime;
+            string mins = ((int)TimerControl/60).ToString("00");
+            string segs = (TimerControl % 60).ToString("00");
+            string milisegs = ((TimerControl * 100)%100).ToString ("00");
+                
+            string TimerString = string.Format ("{00}:{01}:{02}", mins, segs, milisegs);
 
-        //cronometro.text=TimerString;
+            cronometro.text=TimerString;
+         }
      }
 
 
