@@ -25,7 +25,7 @@ public class AgarradorR : MonoBehaviour
          _currentGrabbedLocation = new Vector3();
     }
 
-   // float time=10f;
+    float time=10f;
     // Update is called once per frame
     void Update()
     {
@@ -45,7 +45,7 @@ public class AgarradorR : MonoBehaviour
         bola.Soltar();
         Rigidbody rigidBody = bola.GetComponent<Rigidbody>();
         Vector3 throwVector =  bola.transform.position - _currentGrabbedLocation; // Get the direction that we're throwing
-            rigidBody.AddForce(throwVector * 10, ForceMode.Impulse); // Throws the ball by sending a force
+            rigidBody.AddForce(throwVector * 50, ForceMode.Impulse); // Throws the ball by sending a force
             bola = null;
            Debug.Log("el metodo ocurre antes");
 
@@ -57,12 +57,12 @@ public class AgarradorR : MonoBehaviour
       }
 
 
-     // time -= Time.deltaTime;
-     //if ( time < 0 )
-     //{
-     //     Debug.Log("2siuu");
-     //     borrarEsto=false;
-     //     aggarreBorrar=0.1f;
+   //  time -= Time.deltaTime;
+  //   if ( time < 0 )
+   //  {
+          //Debug.Log("2siuu");
+         // borrarEsto=false;
+          //aggarreBorrar=0.1f;
     // }
 
     }
@@ -72,7 +72,7 @@ public class AgarradorR : MonoBehaviour
   //public float aggarreBorrar=0.1f;
     bool UpdateNivelAgarre()
     {
-        //bool limiteTraspasado=borrarEsto;
+       // bool limiteTraspasado=borrarEsto;
          bool limiteTraspasado=false;
        float actual=OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger,OVRInput.Controller.RTouch);
         //float actual=aggarreBorrar;
