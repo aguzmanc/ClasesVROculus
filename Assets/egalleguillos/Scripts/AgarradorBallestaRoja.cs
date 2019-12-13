@@ -58,7 +58,7 @@ public class AgarradorBallestaRoja : MonoBehaviour
 
     void OnTriggerEnter(Collider c) 
     {
-        if(c.tag=="arma")
+        if(c.tag=="BallestaRoja")
         {
             BallestaRoja ballestaTocada = c.GetComponent<BallestaRoja>();
             
@@ -71,7 +71,7 @@ public class AgarradorBallestaRoja : MonoBehaviour
 
     void OnTriggerExit(Collider c) 
     {
-         if(c.tag=="arma")
+         if(c.tag=="BallestaRoja")
          {
             BallestaRoja ballestaTocada = c.GetComponent<BallestaRoja>();
             if(ballestaTocada!=null) {

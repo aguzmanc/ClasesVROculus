@@ -19,6 +19,9 @@ TagManager:
   - ColliderInfIzq
   - ColliderDerIzq
   - ColliderIzqIzq
+  - BallestaRoja
+  - BallestaVerde
+  - BallestaAmarilla
   layers:
   - Default
   - TransparentFX
