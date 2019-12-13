@@ -11,9 +11,11 @@ public class ControladorIzquierdo : MonoBehaviour
 
     float timer;
     public int activo;
+    IEnumerator corr;
 
     IEnumerator Start()
     {
+        corr = Start();
         dianaAmarillaIzq = transform.GetChild(0).gameObject;
         dianaRojaIzq = transform.GetChild(1).gameObject;
         dianaVerdeIzq = transform.GetChild(2).gameObject;
@@ -28,7 +30,7 @@ public class ControladorIzquierdo : MonoBehaviour
                     dianaRojaIzq.SetActive(false);
                     dianaVerdeIzq.SetActive(false);
                     Luz.GetComponent<Light>().color = Color.yellow;
-                    activo = 0;
+                    activo = 1;
                     break;
                 case 2:
                     dianaAmarillaIzq.SetActive(false);
@@ -46,6 +48,23 @@ public class ControladorIzquierdo : MonoBehaviour
                     break;
             }
             yield return new WaitForSeconds(2f);
+        }
+    }
+    void OnTriggerEnter(Collider c) {
+        if(c.tag == "FlechaAmarilla" && activo == 1){
+            c.GetComponent<Rigidbody>().isKinematic = true;
+            this.GetComponent<MovimientoDianaIzquierda>().enabled = false;
+            StopCoroutine(corr);
+        }
+        if(c.tag == "FlechaRoja" && activo == 2){
+            c.GetComponent<Rigidbody>().isKinematic = true;
+            this.GetComponent<MovimientoDianaIzquierda>().enabled = false;
+            StopCoroutine(corr);
+        }
+        if(c.tag == "FlechaVerde" && activo == 3){
+            c.GetComponent<Rigidbody>().isKinematic = true;
+            this.GetComponent<MovimientoDianaIzquierda>().enabled = false;
+            StopCoroutine(corr);
         }
     }
 }
