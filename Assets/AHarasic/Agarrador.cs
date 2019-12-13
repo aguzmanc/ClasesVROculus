@@ -48,7 +48,7 @@ public class Agarrador : MonoBehaviour
          //f.GetComponent<Rigidbody>().AddForce(arco.transform.forward*speed*2);
          Rigidbody rigidBody = bola.GetComponent<Rigidbody>();
         Vector3 throwVector =  bola.transform.position - _currentGrabbedLocation; // Get the direction that we're throwing
-            rigidBody.AddForce(throwVector * 10, ForceMode.Impulse); // Throws the ball by sending a force
+            rigidBody.AddForce(throwVector * 100, ForceMode.Impulse); // Throws the ball by sending a force
             bola = null;
            Debug.Log("el metodo ocurre antes left");
       }
